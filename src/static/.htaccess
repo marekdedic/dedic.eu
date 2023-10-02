@@ -1,7 +1,24 @@
-# Upgrade to HTTPS
+Options -Indexes
+
 RewriteEngine On
+
+# Upgrade to HTTPS
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
-Header always set Content-Security-Policy "upgrade-insecure-requests;"
 
-#RewriteRule ^$ https://www.linkedin.com/in/marek-dedic/ [L,R=302]
+# Security headers
+Header always set Strict-Transport-Security "max-age=30; includeSubDomains"
+#Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header always set X-Frame-Options "DENY"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Xss-Protection "1; mode=block; report=https://marekdedic.report-uri.com/r/d/xss/enforce"
+Header always set Referrer-Policy "same-origin"
+Header always set Content-Security-Policy "upgrade-insecure-requests; default-src 'self'; script-src 'self'; connect-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; object-src 'none'; report-uri https://marekdedic.report-uri.com/r/d/csp/enforce"
+Header always set Permissions-Policy "camera=(), display-capture=(), fullscreen=(self), geolocation=(), microphone=(), web-share=()"
+
+# Compression
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/json
