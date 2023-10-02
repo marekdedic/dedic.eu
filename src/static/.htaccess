@@ -7,8 +7,7 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 
 # Security headers
-Header always set Strict-Transport-Security "max-age=30; includeSubDomains"
-#Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 Header always set X-Frame-Options "DENY"
 Header always set X-Content-Type-Options "nosniff"
 Header always set X-Xss-Protection "1; mode=block; report=https://marekdedic.report-uri.com/r/d/xss/enforce"
