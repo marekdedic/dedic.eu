@@ -56,6 +56,8 @@ jobs:
           server: ftp.dedic.eu
           username: github-ftp-deploy@dedic.eu
           password: ${{ secrets.ftp_password }}
+          protocol: ftps
+          security: strict
           local-dir: ./dist/
           exclude: |
             .well-known/pki-validation/*
