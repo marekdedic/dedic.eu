@@ -57,7 +57,6 @@ jobs:
           username: github-ftp-deploy@dedic.eu
           password: ${{ secrets.ftp_password }}
           local-dir: ./dist/
-          dry-run: true
           exclude: |
             .well-known/pki-validation/*
             cgi-bin/*
