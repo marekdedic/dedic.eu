@@ -56,7 +56,7 @@ module.exports = (env) => {
     },
     resolve: {
       alias: {
-        svelte: path.resolve("node_modules", "svelte"),
+        svelte: path.resolve("node_modules", "svelte/src/runtime"),
       },
       conditionNames: ["require", "node", "svelte"],
       extensions: [".ts", ".js"],
