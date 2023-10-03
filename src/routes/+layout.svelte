@@ -10,7 +10,10 @@
 </script>
 
 <Header />
-<slot />
+
+<div>
+  <slot />
+</div>
 
 <style lang="scss">
   @use "../lib/theme.scss";
@@ -39,5 +42,14 @@
 
   :global(svg.svelte-fa) {
     height: 1rem !important;
+  }
+
+  div {
+    margin-top: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 </style>
