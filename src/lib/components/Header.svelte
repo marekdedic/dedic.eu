@@ -19,7 +19,7 @@
         <NavigationItem href="/people" title="people" />
         <NavigationItem href="/submenus" title="submenus" />
         <li>
-          <button>
+          <button type="button">
             <Fa icon={faMoon} />
           </button>
         </li>
