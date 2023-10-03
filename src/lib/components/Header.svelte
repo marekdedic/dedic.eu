@@ -106,7 +106,7 @@
   }
 
   .active {
-    font-weight: bolder;
+    font-weight: 400;
     color: theme.$primary-color;
   }
 
