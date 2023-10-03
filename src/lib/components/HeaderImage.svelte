@@ -1,5 +1,9 @@
 <script lang="ts" strictEvents>
   export let src: string;
+
+  interface $$Slots {
+    default: Record<string, never>;
+  }
 </script>
 
 <div class="container">

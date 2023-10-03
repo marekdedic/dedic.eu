@@ -7,6 +7,10 @@
   import "@fontsource/roboto/700-italic.css";
 
   import Header from "$lib/components/Header.svelte";
+
+  interface $$Slots {
+    default: Record<string, never>;
+  }
 </script>
 
 <Header />
