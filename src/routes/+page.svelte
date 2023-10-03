@@ -10,7 +10,7 @@
     <span class="first-name">You</span> R. Name
   </span>
   <span slot="subtitle"
-    ><a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.</span
+    ><a href="/">Affiliations</a>. Address. Contacts. Moto. Etc.</span
   >
 </PageHeader>
 
