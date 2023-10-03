@@ -1,15 +1,15 @@
-import adapter from '@sveltejs/adapter-static';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import adapter from "@sveltejs/adapter-static";
+import { vitePreprocess } from "@sveltejs/kit/vite";
 
 export default {
   preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({
-      pages: 'dist',
-      assets: 'dist',
-      fallback: 'index.html',
+      pages: "dist",
+      assets: "dist",
+      fallback: "index.html",
       precompress: false,
-      strict: true
-    })
-  }
+      strict: true,
+    }),
+  },
 };
