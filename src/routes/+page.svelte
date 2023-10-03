@@ -1,4 +1,5 @@
 <script lang="ts" strictEvents>
+import HeaderImage from "$lib/components/HeaderImage.svelte";
 import PageHeader from "$lib/components/PageHeader.svelte";
 
 </script>
@@ -10,6 +11,12 @@ import PageHeader from "$lib/components/PageHeader.svelte";
     </span>
     <span slot="subtitle"><a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.</span>
   </PageHeader>
+
+  <HeaderImage src="https://alshedivat.github.io/al-folio/assets/img/prof_pic.jpg?974957d202f671e4fa6700c04e68deae">
+    555 your office number
+    123 your address street
+    Your City, State 12345
+  </HeaderImage>
 
   <p>Write your biography here. Tell the world about yourself. Link to your favorite subreddit. You can put a picture in, too. The code is already in, just name your picture prof_pic.jpg and put it in the img/ folder.</p>
 
