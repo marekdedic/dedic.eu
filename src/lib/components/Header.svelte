@@ -1,7 +1,8 @@
 <script lang="ts" strictEvents>
-  import Fa from 'svelte-fa';
-  import { faMoon } from '@fortawesome/free-solid-svg-icons'
-  import NavigationItem from './NavigationItem.svelte';
+  import { faMoon } from "@fortawesome/free-solid-svg-icons";
+  import Fa from "svelte-fa";
+
+  import NavigationItem from "./NavigationItem.svelte";
 </script>
 
 <header>
@@ -40,7 +41,7 @@
 
   nav {
     border-bottom: 1px solid theme.$divider-color;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     position: fixed;
     top: 0;
     right: 0;
