@@ -12,7 +12,18 @@
 <Header />
 <slot />
 
-<style>
+<style lang="scss">
+  @use "../lib/theme.scss";
+
+  :global(a) {
+    text-decoration: none;
+    color: theme.$primary-color;
+  }
+
+  :global(a:hover) {
+    text-decoration: underline;
+  }
+
   :global(body) {
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
