@@ -1,4 +1,6 @@
 <script lang="ts" strictEvents>
+  import Fa from 'svelte-fa';
+  import { faMoon } from '@fortawesome/free-solid-svg-icons'
 </script>
 
 <header>
@@ -7,7 +9,7 @@
       <div class="navbarNav">
         <ul>
           <li>
-            <a href="/">
+            <a href="/" class="active">
               about
             </a>
           </li>
@@ -51,22 +53,37 @@
               submenus
             </a>
           </li>
+          <li>
+            <button>
+              <Fa icon={faMoon} />
+            </button>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 </header>
 
-<style>
+<style lang="scss">
+  @use "../theme.scss";
+
   a {
+    color: black;
     display: block;
-    padding-left: .5rem;
-    padding-right: .5rem;
+    padding: .5rem;
     text-decoration: none;
   }
 
+  button {
+    background-color: inherit;
+    border: 0;
+    padding: 0;
+    padding-left: 10px;
+    padding-top: 12px;
+  }
+
   nav {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid theme.$divider-color;
     padding: .5rem 1rem;
     position: fixed;
     top: 0;
@@ -78,11 +95,19 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    margin-bottom: 0;
     margin-left: auto;
+    margin-top: 0;
+    padding-left: 0;
   }
 
   li {
     list-style: none;
+  }
+
+  .active {
+    font-weight: bolder;
+    color: theme.$primary-color;
   }
 
   .container {
