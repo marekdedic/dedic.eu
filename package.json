@@ -25,6 +25,7 @@
     "lint": "run-p -c --aggregate-output lint:*"
   },
   "devDependencies": {
+    "@fontsource/roboto": "^5.0.8",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.25.1",
     "@typescript-eslint/eslint-plugin": "^6.7.4",

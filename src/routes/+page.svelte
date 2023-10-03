@@ -1,4 +1,9 @@
 <script lang="ts" strictEvents>
+  import "@fontsource/roboto/300.css";
+  import "@fontsource/roboto/300-italic.css";
+  import "@fontsource/roboto/700.css";
+  import "@fontsource/roboto/700-italic.css";
+
   import Header from "$lib/components/Header.svelte";
 </script>
 
@@ -44,6 +49,10 @@
 </div>
 
 <style>
+  :global(body) {
+    font-family: "Roboto", sans-serif;
+  }
+
   div {
     margin-top: 3rem;
     margin-left: auto;
