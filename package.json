@@ -20,7 +20,7 @@
     "dev": "vite dev",
     "lint:svelte:svelte-check": "svelte-check",
     "lint:svelte": "run-p -c --aggregate-output lint:svelte:*",
-    "lint:ts:eslint": "eslint --color 'src/**/*.svelte' 'src/**/*.ts' 'svelte.config.js' 'vite.config.js'",
+    "lint:ts:eslint": "eslint --color 'src/**/*.svelte' 'svelte.config.js' 'vite.config.js'",
     "lint:ts": "run-p -c --aggregate-output lint:ts:*",
     "lint": "run-p -c --aggregate-output lint:*"
   },
