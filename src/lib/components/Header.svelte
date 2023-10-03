@@ -4,7 +4,7 @@
   import { faMoon } from "@fortawesome/free-solid-svg-icons";
   import Fa from "svelte-fa";
 
-  import Name from "./Name.svelte";
+  import HeaderName from "./HeaderName.svelte";
   import NavigationItem from "./NavigationItem.svelte";
 
   $: isBase = $page.route.id === "/";
@@ -14,10 +14,8 @@
   <nav>
     <div class="container">
       {#if !isBase}
-        <a class="name" href="/">
-          <Name first="You" last="R. Name" />
-        </a>
-    {/if}
+        <HeaderName first="You" last="R. Name" />
+      {/if}
       <ul>
         <NavigationItem href="/" title="about" />
         <NavigationItem href="/blog" title="blog" />
@@ -77,18 +75,5 @@
     max-width: 800px;
     padding-left: 15px;
     padding-right: 15px;
-  }
-
-  .name {
-    color: theme.$text-color;
-    font-size: 1.25rem;
-    margin-bottom: .3125rem;
-    margin-right: 1rem;
-    margin-top: .3125rem;
-    white-space: nowrap;
-  }
-
-  .name:hover {
-    text-decoration: none;
   }
 </style>
