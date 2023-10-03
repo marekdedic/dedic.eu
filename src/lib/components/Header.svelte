@@ -1,57 +1,22 @@
 <script lang="ts" strictEvents>
   import Fa from 'svelte-fa';
   import { faMoon } from '@fortawesome/free-solid-svg-icons'
+  import NavigationItem from './NavigationItem.svelte';
 </script>
 
 <header>
   <nav>
     <div class="container">
       <ul>
-        <li>
-          <a href="/" class="active">
-            about
-          </a>
-        </li>
-        <li>
-          <a href="/blog">
-            blog
-          </a>
-        </li>
-        <li>
-          <a href="/publications">
-            publications
-          </a>
-        </li>
-        <li>
-          <a href="/projects">
-            projects
-          </a>
-        </li>
-        <li>
-          <a href="/repositories">
-            repositories
-          </a>
-        </li>
-        <li>
-          <a href="/cv">
-            cv
-          </a>
-        </li>
-        <li>
-          <a href="/teaching">
-            teaching
-          </a>
-        </li>
-        <li>
-          <a href="/people">
-            people
-          </a>
-        </li>
-        <li>
-          <a href="/submenus">
-            submenus
-          </a>
-        </li>
+        <NavigationItem href="/" title="about" />
+        <NavigationItem href="/blog" title="blog" />
+        <NavigationItem href="/publications" title="publications" />
+        <NavigationItem href="/projects" title="projects" />
+        <NavigationItem href="/repositories" title="repositories" />
+        <NavigationItem href="/cv" title="cv" />
+        <NavigationItem href="/teaching" title="teaching" />
+        <NavigationItem href="/people" title="people" />
+        <NavigationItem href="/submenus" title="submenus" />
         <li>
           <button>
             <Fa icon={faMoon} />
@@ -64,13 +29,6 @@
 
 <style lang="scss">
   @use "../theme.scss";
-
-  a {
-    color: theme.$text-color;
-    display: block;
-    padding: .5rem;
-    text-decoration: none;
-  }
 
   button {
     background-color: inherit;
@@ -99,11 +57,6 @@
 
   li {
     list-style: none;
-  }
-
-  .active {
-    font-weight: 400;
-    color: theme.$primary-color;
   }
 
   .container {
