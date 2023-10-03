@@ -6,60 +6,58 @@
 <header>
   <nav>
     <div class="container">
-      <div class="navbarNav">
-        <ul>
-          <li>
-            <a href="/" class="active">
-              about
-            </a>
-          </li>
-          <li>
-            <a href="/blog">
-              blog
-            </a>
-          </li>
-          <li>
-            <a href="/publications">
-              publications
-            </a>
-          </li>
-          <li>
-            <a href="/projects">
-              projects
-            </a>
-          </li>
-          <li>
-            <a href="/repositories">
-              repositories
-            </a>
-          </li>
-          <li>
-            <a href="/cv">
-              cv
-            </a>
-          </li>
-          <li>
-            <a href="/teaching">
-              teaching
-            </a>
-          </li>
-          <li>
-            <a href="/people">
-              people
-            </a>
-          </li>
-          <li>
-            <a href="/submenus">
-              submenus
-            </a>
-          </li>
-          <li>
-            <button>
-              <Fa icon={faMoon} />
-            </button>
-          </li>
-        </ul>
-      </div>
+      <ul>
+        <li>
+          <a href="/" class="active">
+            about
+          </a>
+        </li>
+        <li>
+          <a href="/blog">
+            blog
+          </a>
+        </li>
+        <li>
+          <a href="/publications">
+            publications
+          </a>
+        </li>
+        <li>
+          <a href="/projects">
+            projects
+          </a>
+        </li>
+        <li>
+          <a href="/repositories">
+            repositories
+          </a>
+        </li>
+        <li>
+          <a href="/cv">
+            cv
+          </a>
+        </li>
+        <li>
+          <a href="/teaching">
+            teaching
+          </a>
+        </li>
+        <li>
+          <a href="/people">
+            people
+          </a>
+        </li>
+        <li>
+          <a href="/submenus">
+            submenus
+          </a>
+        </li>
+        <li>
+          <button>
+            <Fa icon={faMoon} />
+          </button>
+        </li>
+      </ul>
     </div>
   </nav>
 </header>
@@ -68,7 +66,7 @@
   @use "../theme.scss";
 
   a {
-    color: black;
+    color: theme.$text-color;
     display: block;
     padding: .5rem;
     text-decoration: none;
@@ -93,8 +91,6 @@
 
   ul {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     margin-bottom: 0;
     margin-left: auto;
     margin-top: 0;
@@ -111,22 +107,11 @@
   }
 
   .container {
-    align-items: center;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
     padding-left: 15px;
     padding-right: 15px;
-  }
-
-  .navbarNav {
-    align-items: center;
-    display: flex;
-    flex-basis: auto;
-    flex-grow: 1;
-    text-align: right;
   }
 </style>
