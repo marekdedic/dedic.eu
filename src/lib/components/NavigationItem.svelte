@@ -18,11 +18,11 @@
     color: theme.$text-color;
     display: block;
     padding: .5rem;
-    text-decoration: none;
   }
 
   a:hover {
     color: theme.$primary-color;
+    text-decoration: none;
   }
 
   li {
