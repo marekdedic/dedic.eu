@@ -1,6 +1,8 @@
 <script lang="ts" strictEvents>
   import "@fontsource/roboto/300.css";
   import "@fontsource/roboto/300-italic.css";
+  import "@fontsource/roboto/500.css";
+  import "@fontsource/roboto/500-italic.css";
   import "@fontsource/roboto/700.css";
   import "@fontsource/roboto/700-italic.css";
 
@@ -51,6 +53,17 @@
 <style>
   :global(body) {
     font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  :global(*) {
+    box-sizing: border-box;
+  }
+
+  :global(svg.svelte-fa) {
+    height: 1rem !important;
   }
 
   div {
