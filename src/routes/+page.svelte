@@ -22,9 +22,9 @@ import PageHeader from "$lib/components/PageHeader.svelte";
 
   <p>Write your biography here. Tell the world about yourself. Link to your favorite <a href="http://reddit.com">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture <InlineCode>prof_pic.jpg</InlineCode> and put it in the <InlineCode>img/</InlineCode> folder.</p>
 
-  <p>Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing profile property of the YAML header of your _pages/about.md. Edit _bibliography/papers.bib and Jekyll will render your publications page automatically.</p>
+  <p>Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing <InlineCode>profile</InlineCode> property of the YAML header of your <InlineCode>_pages/about.md</InlineCode>. Edit <InlineCode>_bibliography/papers.bib</InlineCode> and Jekyll will render your <a href="/publication/">publications page</a> automatically.</p>
 
-  <p>Link to your social media connections, too. This theme is set up to use Font Awesome icons and Academicons, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.</p>
+  <p>Link to your social media connections, too. This theme is set up to use <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome icons</a> and <a href="https://jpswalsh.github.io/academicons/">Academicons</a>, like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.</p>
   news
   <p>Jan 15, 2016 	A simple inline announcement with Markdown emoji! :sparkles: :smile:</p>
   <p>Nov 7, 2015 	A long announcement with details</p>
