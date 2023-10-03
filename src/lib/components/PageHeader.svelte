@@ -1,4 +1,8 @@
 <script lang="ts" strictEvents>
+  interface $$Slots {
+    subtitle: Record<string, never>;
+    title: Record<string, never>;
+  }
 </script>
 
 <header>
