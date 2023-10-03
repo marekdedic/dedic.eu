@@ -1,6 +1,6 @@
 <script lang="ts" strictEvents>
   interface $$Slots {
-    defalt: Record<string, never>;
+    default: Record<string, never>;
   }
 </script>
 
