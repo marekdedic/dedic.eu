@@ -58,7 +58,7 @@
       {
         "enforceScriptPresent": true,
         "script": "ts",
-        "style": null
+        "style": ["scss", null]
       }
     ],
     "svelte/button-has-type": "error",
