@@ -21,6 +21,10 @@
     text-decoration: none;
   }
 
+  a:hover {
+    color: theme.$primary-color;
+  }
+
   li {
     list-style: none;
   }
