@@ -16,6 +16,7 @@
 
 <PageContent>
   <HeaderImage
+    alt="Me"
     src="https://alshedivat.github.io/al-folio/assets/img/prof_pic.jpg?974957d202f671e4fa6700c04e68deae"
   >
     555 your office number 123 your address street Your City, State 12345

@@ -1,4 +1,5 @@
 <script lang="ts" strictEvents>
+  export let alt: string;
   export let src: string;
 
   interface $$Slots {
@@ -9,7 +10,7 @@
 <div class="container">
   <figure>
     <picture>
-      <img {src} />
+      <img {alt} {src} />
     </picture>
   </figure>
 
