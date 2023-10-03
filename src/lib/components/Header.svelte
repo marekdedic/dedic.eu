@@ -1,6 +1,7 @@
 <script lang="ts" strictEvents>
   import { faMoon } from "@fortawesome/free-solid-svg-icons";
   import Fa from "svelte-fa";
+  import Name from "./Name.svelte";
 
   import NavigationItem from "./NavigationItem.svelte";
 </script>
@@ -8,6 +9,9 @@
 <header>
   <nav>
     <div class="container">
+      <div class="name">
+        <Name first="You" last="R. Name" />
+      </div>
       <ul>
         <NavigationItem href="/" title="about" />
         <NavigationItem href="/blog" title="blog" />
@@ -67,5 +71,11 @@
     max-width: 800px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .name {
+    font-size: 1.25rem;
+    margin-bottom: .3125rem;
+    margin-top: .3125rem;
   }
 </style>
