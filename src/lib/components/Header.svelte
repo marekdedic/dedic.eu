@@ -62,10 +62,12 @@
     display: block;
     padding-left: .5rem;
     padding-right: .5rem;
+    text-decoration: none;
   }
 
   nav {
     border-bottom: 1px solid black;
+    padding: .5rem 1rem;
     position: fixed;
     top: 0;
     right: 0;
@@ -75,7 +77,8 @@
   ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap !important;
+    flex-wrap: nowrap;
+    margin-left: auto;
   }
 
   li {
@@ -90,10 +93,13 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .navbarNav {
     align-items: center;
+    display: flex;
     flex-basis: auto;
     flex-grow: 1;
     text-align: right;
