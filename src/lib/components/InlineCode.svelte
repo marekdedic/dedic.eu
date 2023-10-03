@@ -1,3 +1,9 @@
+<script lang="ts" strictEvents>
+  interface $$Slots {
+    defalt: Record<string, never>;
+  }
+</script>
+
 <code>
   <slot />
 </code>
