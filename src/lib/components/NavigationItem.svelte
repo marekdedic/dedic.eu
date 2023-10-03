@@ -3,10 +3,12 @@
 
   export let href: string;
   export let title: string;
+
+  $: active = $page.route.id === href;
 </script>
 
 <li>
-  <a class:active={$page.route.id === href} {href}>
+  <a class:active {href}>
     {title}
   </a>
 </li>
