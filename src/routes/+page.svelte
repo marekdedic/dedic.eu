@@ -1,5 +1,6 @@
 <script lang="ts" strictEvents>
 import HeaderImage from "$lib/components/HeaderImage.svelte";
+import PageContent from "$lib/components/PageContent.svelte";
 import PageHeader from "$lib/components/PageHeader.svelte";
 
 </script>
@@ -11,6 +12,7 @@ import PageHeader from "$lib/components/PageHeader.svelte";
     </span>
     <span slot="subtitle"><a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.</span>
   </PageHeader>
+  <PageContent>
 
   <HeaderImage src="https://alshedivat.github.io/al-folio/assets/img/prof_pic.jpg?974957d202f671e4fa6700c04e68deae">
     555 your office number
@@ -42,6 +44,7 @@ import PageHeader from "$lib/components/PageHeader.svelte";
   Article has an altmetric score of 812
   11k
   11k total citations on Dimensions.
+  </PageContent>
 </div>
 
 <style>
