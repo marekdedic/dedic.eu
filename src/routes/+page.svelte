@@ -1,5 +1,6 @@
 <script lang="ts" strictEvents>
 import HeaderImage from "$lib/components/HeaderImage.svelte";
+import InlineCode from "$lib/components/InlineCode.svelte";
 import PageContent from "$lib/components/PageContent.svelte";
 import PageHeader from "$lib/components/PageHeader.svelte";
 
@@ -19,7 +20,7 @@ import PageHeader from "$lib/components/PageHeader.svelte";
     Your City, State 12345
   </HeaderImage>
 
-  <p>Write your biography here. Tell the world about yourself. Link to your favorite subreddit. You can put a picture in, too. The code is already in, just name your picture prof_pic.jpg and put it in the img/ folder.</p>
+  <p>Write your biography here. Tell the world about yourself. Link to your favorite <a href="http://reddit.com">subreddit</a>. You can put a picture in, too. The code is already in, just name your picture <InlineCode>prof_pic.jpg</InlineCode> and put it in the <InlineCode>img/</InlineCode> folder.</p>
 
   <p>Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing profile property of the YAML header of your _pages/about.md. Edit _bibliography/papers.bib and Jekyll will render your publications page automatically.</p>
 
