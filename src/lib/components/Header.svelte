@@ -1,17 +1,23 @@
 <script lang="ts" strictEvents>
+  import { page } from "$app/stores";
+
   import { faMoon } from "@fortawesome/free-solid-svg-icons";
   import Fa from "svelte-fa";
-  import Name from "./Name.svelte";
 
+  import Name from "./Name.svelte";
   import NavigationItem from "./NavigationItem.svelte";
+
+  $: isBase = $page.route.id === "/";
 </script>
 
 <header>
   <nav>
     <div class="container">
-      <div class="name">
-        <Name first="You" last="R. Name" />
-      </div>
+      {#if !isBase}
+        <a class="name" href="/">
+          <Name first="You" last="R. Name" />
+        </a>
+    {/if}
       <ul>
         <NavigationItem href="/" title="about" />
         <NavigationItem href="/blog" title="blog" />
@@ -74,8 +80,15 @@
   }
 
   .name {
+    color: theme.$text-color;
     font-size: 1.25rem;
     margin-bottom: .3125rem;
+    margin-right: 1rem;
     margin-top: .3125rem;
+    white-space: nowrap;
+  }
+
+  .name:hover {
+    text-decoration: none;
   }
 </style>
