@@ -1,5 +1,5 @@
 <script lang="ts" strictEvents>
-  import GoogleSheet from "../../lib/components/GoogleSheet.svelte";
+  import GoogleSheet from "$lib/components/GoogleSheet.svelte";
 </script>
 
 <GoogleSheet
