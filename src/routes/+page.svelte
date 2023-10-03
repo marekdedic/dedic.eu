@@ -1,5 +1,5 @@
 <script lang="ts">
-	export const prerender = true;
+	export const prerender: boolean = true;
 </script>
 
 <b>Hello</b>
