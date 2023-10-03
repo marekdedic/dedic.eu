@@ -1,19 +1,15 @@
 <script lang="ts" strictEvents>
+import PageHeader from "$lib/components/PageHeader.svelte";
+
 </script>
 
 <div>
-  <b>Hello</b>
-
-  <p>You R. Name</p>
-
-  <p>Affiliations. Address. Contacts. Moto. Etc.</p>
-  prof_pic.jpg
-
-  <p>555 your office number</p>
-
-  <p>123 your address street</p>
-
-  <p>Your City, State 12345</p>
+  <PageHeader>
+    <span slot="title">
+      <span class="first-name">You</span> R. Name
+    </span>
+    <span slot="subtitle"><a href="#">Affiliations</a>. Address. Contacts. Moto. Etc.</span>
+  </PageHeader>
 
   <p>Write your biography here. Tell the world about yourself. Link to your favorite subreddit. You can put a picture in, too. The code is already in, just name your picture prof_pic.jpg and put it in the img/ folder.</p>
 
@@ -49,5 +45,9 @@
     max-width: 800px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  .first-name {
+    font-weight: 700;
   }
 </style>
