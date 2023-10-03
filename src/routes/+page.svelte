@@ -1,13 +1,14 @@
 <script lang="ts" strictEvents>
   import HeaderImage from "$lib/components/HeaderImage.svelte";
   import InlineCode from "$lib/components/InlineCode.svelte";
+  import Name from "$lib/components/Name.svelte";
   import PageContent from "$lib/components/PageContent.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
 </script>
 
 <PageHeader>
   <span slot="title">
-    <span class="first-name">You</span> R. Name
+    <Name first="You" last="R. Name" />
   </span>
   <span slot="subtitle"
     ><a href="/">Affiliations</a>. Address. Contacts. Moto. Etc.</span
@@ -64,9 +65,3 @@
   Complete? A. Einstein, B. Podolsky, and N. Rosen Phys. Rev., May 1935 Article has
   an altmetric score of 812 11k 11k total citations on Dimensions.
 </PageContent>
-
-<style>
-  .first-name {
-    font-weight: 700;
-  }
-</style>
