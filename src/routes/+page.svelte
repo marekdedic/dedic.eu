@@ -47,9 +47,9 @@
       Link to your social media connections, too. This theme is set up to use <a
         href="http://fortawesome.github.io/Font-Awesome/">Font Awesome icons</a
       >
-      and <a href="https://jpswalsh.github.io/academicons/">Academicons</a>, like
-      the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or
-      just disable all of them.
+      and <a href="https://jpswalsh.github.io/academicons/">Academicons</a>,
+      like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar,
+      or just disable all of them.
     </p>
   </PageSection>
   <h2>news</h2>
