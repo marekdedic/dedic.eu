@@ -48,6 +48,7 @@
   }
 
   nav {
+    background-color: theme.$background-color;
     border-bottom: 1px solid theme.$divider-color;
     padding: 0.5rem 1rem;
     position: fixed;
