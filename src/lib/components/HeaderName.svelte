@@ -15,9 +15,9 @@
   a {
     color: theme.$text-color;
     font-size: 1.25rem;
-    margin-bottom: .3125rem;
+    margin-bottom: 0.3125rem;
     margin-right: 1rem;
-    margin-top: .3125rem;
+    margin-top: 0.3125rem;
     white-space: nowrap;
   }
 

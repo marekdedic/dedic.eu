@@ -3,7 +3,8 @@
   export let last: string;
 </script>
 
-<span>{first}</span> {last}
+<span>{first}</span>
+{last}
 
 <style>
   span {
