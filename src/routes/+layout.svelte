@@ -40,6 +40,15 @@
     padding-top: 57px;
   }
 
+  :global(h1, h2, h3, h4, h5, h6) {
+    font-weight: 300;
+    margin-top: 0;
+  }
+
+  :global(h2) {
+    font-size: 2rem;
+  }
+
   :global(*) {
     box-sizing: border-box;
   }
