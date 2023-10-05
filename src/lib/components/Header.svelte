@@ -18,12 +18,10 @@
   </nav>
 </header>
 
-<style lang="scss">
-  @use "../theme.scss";
-
+<style>
   nav {
-    background-color: theme.$background-color;
-    border-bottom: 1px solid theme.$divider-color;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--divider-color);
     padding: 0.5rem 1rem;
     position: fixed;
     top: 0;

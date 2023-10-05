@@ -9,11 +9,9 @@
   <Name {first} {last} />
 </a>
 
-<style lang="scss">
-  @use "../theme.scss";
-
+<style>
   a {
-    color: theme.$text-color;
+    color: var(--text-color);
     font-size: 1.25rem;
     margin-bottom: 0.3125rem;
     margin-right: 1rem;

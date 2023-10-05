@@ -39,22 +39,44 @@
 <style lang="scss">
   @use "../lib/theme.scss";
 
-  :global(a) {
-    text-decoration: none;
-    color: theme.$primary-color;
+  :global(*) {
+    box-sizing: border-box;
   }
 
-  :global(a:hover) {
-    text-decoration: underline;
+  :global(html[data-theme='dark']) {
+    --background-color: #{theme.$background-color-dark};
+    --divider-color: #{theme.$divider-color-dark};
+    --primary-bg-color: #{theme.$primary-bg-color-dark};
+    --primary-color: #{theme.$primary-color-dark};
+    --text-color: #{theme.$text-color-dark};
+  }
+
+  :global(html[data-theme='light']) {
+    --background-color: #{theme.$background-color-light};
+    --divider-color: #{theme.$divider-color-light};
+    --primary-bg-color: #{theme.$primary-bg-color-light};
+    --primary-color: #{theme.$primary-color-light};
+    --text-color: #{theme.$text-color-light};
   }
 
   :global(body) {
+    background-color: var(--background-color);
+    color: var(--text-color);
     font-family: "Roboto", sans-serif;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.5;
     margin: 0;
     padding-top: 57px;
+  }
+
+  :global(a) {
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+
+  :global(a:hover) {
+    text-decoration: underline;
   }
 
   :global(h1, h2, h3, h4, h5, h6) {
@@ -64,10 +86,6 @@
 
   :global(h2) {
     font-size: 2rem;
-  }
-
-  :global(*) {
-    box-sizing: border-box;
   }
 
   div {
