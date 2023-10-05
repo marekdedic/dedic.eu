@@ -1,5 +1,5 @@
 <script lang="ts" strictEvents>
-  import { faMoon } from "@fortawesome/free-solid-svg-icons";
+  import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
   import Fa from "svelte-fa";
 
   import { theme } from "$lib/stores";
@@ -10,7 +10,7 @@
     type="button"
     on:click={theme.toggle}
   >
-    <Fa icon={faMoon} />
+    <Fa icon={$theme === "dark" ? faSun : faMoon} size="lg" />
   </button>
 </li>
 
@@ -18,10 +18,15 @@
   button {
     background-color: inherit;
     border: 0;
+    color: var(--text-color);
     cursor: pointer;
     padding: 0;
     padding-left: 10px;
-    padding-top: 12px;
+    padding-top: 11px;
+  }
+
+  button:hover {
+    color: var(--primary-color);
   }
 
   li {
