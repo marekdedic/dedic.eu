@@ -21,7 +21,11 @@
       </button>
       {#if expandNavigation}
         <ul class="vertical-navigation">
-          <NavigationItems />
+          <NavigationItems
+            on:click={() => {
+              expandNavigation = false;
+            }}
+          />
         </ul>
       {/if}
     </div>
