@@ -19,6 +19,8 @@
       "Courier New", monospace;
     font-size: 87.5%;
     padding: 3px;
-    transition: background-color theme.$transition-duration ease, color theme.$transition-duration ease;
+    transition:
+      background-color theme.$transition-duration ease,
+      color theme.$transition-duration ease;
   }
 </style>

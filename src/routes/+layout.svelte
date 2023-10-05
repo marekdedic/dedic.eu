@@ -17,7 +17,6 @@
 
   let unsubscribe: (() => void) | undefined = undefined;
 
-
   onMount(() => {
     if ("theme" in localStorage) {
       theme.set(localStorage.theme as string);
@@ -52,7 +51,7 @@
     box-sizing: border-box;
   }
 
-  :global(html[data-theme='dark']) {
+  :global(html[data-theme="dark"]) {
     --background-color: #{theme.$background-color-dark};
     --divider-color: #{theme.$divider-color-dark};
     --primary-bg-color: #{theme.$primary-bg-color-dark};
@@ -60,7 +59,7 @@
     --text-color: #{theme.$text-color-dark};
   }
 
-  :global(html[data-theme='light']) {
+  :global(html[data-theme="light"]) {
     --background-color: #{theme.$background-color-light};
     --divider-color: #{theme.$divider-color-light};
     --primary-bg-color: #{theme.$primary-bg-color-light};
@@ -77,7 +76,9 @@
     line-height: 1.5;
     margin: 0;
     padding-top: 57px;
-    transition: background-color theme.$transition-duration ease, color theme.$transition-duration ease;
+    transition:
+      background-color theme.$transition-duration ease,
+      color theme.$transition-duration ease;
   }
 
   :global(a) {

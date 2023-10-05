@@ -29,7 +29,9 @@
     top: 0;
     right: 0;
     left: 0;
-    transition: background-color theme.$transition-duration ease, border-color theme.$transition-duration ease;
+    transition:
+      background-color theme.$transition-duration ease,
+      border-color theme.$transition-duration ease;
   }
 
   .container {
