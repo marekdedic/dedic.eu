@@ -8,13 +8,11 @@
   <slot />
 </code>
 
-<style lang="scss">
-  @use "../theme.scss";
-
+<style>
   code {
-    background-color: theme.$primary-bg-color;
+    background-color: var(--primary-bg-color);
     border-radius: 3px;
-    color: theme.$primary-color;
+    color: var(--primary-color);
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     font-size: 87.5%;

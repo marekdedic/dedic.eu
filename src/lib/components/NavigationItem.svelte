@@ -23,17 +23,15 @@
   </a>
 </li>
 
-<style lang="scss">
-  @use "../theme.scss";
-
+<style>
   a {
-    color: theme.$text-color;
+    color: var(--text-color);
     display: block;
     padding: 0.5rem;
   }
 
   a:hover {
-    color: theme.$primary-color;
+    color: var(--primary-color);
     text-decoration: none;
   }
 
@@ -43,6 +41,6 @@
 
   .active {
     font-weight: 400;
-    color: theme.$primary-color;
+    color: var(--primary-color);
   }
 </style>
