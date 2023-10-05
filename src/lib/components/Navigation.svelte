@@ -36,13 +36,22 @@
   {/if}
 </MediaQuery>
 
-<style>
+<style lang="scss">
+  @use "../theme.scss";
+
   button {
     background-color: inherit;
     border: 0;
+    color: var(--text-color);
     cursor: pointer;
     margin-left: auto;
     padding: 0.4rem;
+    transition: color theme.$transition-duration ease;
+  }
+
+  button:hover {
+    color: var(--primary-color);
+    transition: color theme.$transition-duration ease;
   }
 
   div {
