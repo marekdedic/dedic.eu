@@ -53,10 +53,6 @@
     box-sizing: border-box;
   }
 
-  :global(svg.svelte-fa) {
-    height: 1rem !important;
-  }
-
   div {
     margin-top: 3rem;
     margin-left: auto;
