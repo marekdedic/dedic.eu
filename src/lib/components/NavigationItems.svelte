@@ -1,8 +1,7 @@
 <script lang="ts" strictEvents>
-  import { faMoon } from "@fortawesome/free-solid-svg-icons";
   import { createEventDispatcher } from "svelte";
-  import Fa from "svelte-fa";
 
+  import DarkModeToggle from "./DarkModeToggle.svelte";
   import NavigationItem from "./NavigationItem.svelte";
 
   const dispatch = createEventDispatcher<{ click: never }>();
@@ -71,23 +70,4 @@
     dispatch("click");
   }}
 />
-<li>
-  <button type="button">
-    <Fa icon={faMoon} />
-  </button>
-</li>
-
-<style>
-  button {
-    background-color: inherit;
-    border: 0;
-    cursor: pointer;
-    padding: 0;
-    padding-left: 10px;
-    padding-top: 12px;
-  }
-
-  li {
-    list-style: none;
-  }
-</style>
+<DarkModeToggle />
