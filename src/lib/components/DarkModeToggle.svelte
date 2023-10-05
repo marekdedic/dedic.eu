@@ -7,6 +7,7 @@
 
 <li>
   <button
+    class:light={$theme !== "dark"}
     type="button"
     on:click={() => {
       theme.toggle();
@@ -37,5 +38,9 @@
 
   li {
     list-style: none;
+  }
+
+  .light {
+    margin-right: 0.275rem;
   }
 </style>
