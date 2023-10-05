@@ -33,7 +33,6 @@
 
   .container {
     display: flex;
-    flex-direction: column;
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;

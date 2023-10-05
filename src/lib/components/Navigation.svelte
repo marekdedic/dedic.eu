@@ -10,27 +10,29 @@
 
 <MediaQuery query="(max-width: 800px)" let:matches>
   {#if matches}
-    <button class="menu-toggle" type="button" on:click={() => {expandNavigation = !expandNavigation}}>
-      <Fa icon={expandNavigation ? faXmark : faBars} size="2x" />
-    </button>
-    {#if expandNavigation}
-      <ul class="vertical-navigation">
-        <NavigationItem href="/" title="about" />
-        <NavigationItem href="/blog" title="blog" />
-        <NavigationItem href="/publications" title="publications" />
-        <NavigationItem href="/projects" title="projects" />
-        <NavigationItem href="/repositories" title="repositories" />
-        <NavigationItem href="/cv" title="cv" />
-        <NavigationItem href="/teaching" title="teaching" />
-        <NavigationItem href="/people" title="people" />
-        <NavigationItem href="/submenus" title="submenus" />
-        <li>
-          <button class="dark-mode-toggle" type="button">
-            <Fa icon={faMoon} />
-          </button>
-        </li>
-      </ul>
-    {/if}
+    <div>
+      <button class="menu-toggle" type="button" on:click={() => {expandNavigation = !expandNavigation}}>
+        <Fa icon={expandNavigation ? faXmark : faBars} size="2x" />
+      </button>
+      {#if expandNavigation}
+        <ul class="vertical-navigation">
+          <NavigationItem href="/" title="about" />
+          <NavigationItem href="/blog" title="blog" />
+          <NavigationItem href="/publications" title="publications" />
+          <NavigationItem href="/projects" title="projects" />
+          <NavigationItem href="/repositories" title="repositories" />
+          <NavigationItem href="/cv" title="cv" />
+          <NavigationItem href="/teaching" title="teaching" />
+          <NavigationItem href="/people" title="people" />
+          <NavigationItem href="/submenus" title="submenus" />
+          <li>
+            <button class="dark-mode-toggle" type="button">
+              <Fa icon={faMoon} />
+            </button>
+          </li>
+        </ul>
+      {/if}
+    </div>
   {:else}
     <ul>
       <NavigationItem href="/" title="about" />
@@ -57,6 +59,12 @@
     border: 0;
     cursor: pointer;
     padding: 0;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
   }
 
   ul {
