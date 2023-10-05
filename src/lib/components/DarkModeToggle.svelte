@@ -8,10 +8,7 @@
 <li>
   <button
     type="button"
-    on:click={() => {
-      console.log("click");
-      theme.toggle();
-    }}
+    on:click={theme.toggle}
   >
     <Fa icon={faMoon} />
   </button>

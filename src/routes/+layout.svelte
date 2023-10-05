@@ -19,7 +19,6 @@
 
   onMount(() => {
     unsubscribe = theme.subscribe((value) => {
-      console.log(value);
       document.documentElement.dataset.theme = value;
     });
   });
