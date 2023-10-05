@@ -17,9 +17,18 @@
 
   let unsubscribe: (() => void) | undefined = undefined;
 
+
   onMount(() => {
+    if ("theme" in localStorage) {
+      theme.set(localStorage.theme as string);
+    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      theme.set("dark");
+    }
+
     unsubscribe = theme.subscribe((value) => {
       document.documentElement.dataset.theme = value;
+
+      localStorage.setItem("theme", value);
     });
   });
 
