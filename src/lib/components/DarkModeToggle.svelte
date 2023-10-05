@@ -8,7 +8,9 @@
 <li>
   <button
     type="button"
-    on:click={theme.toggle}
+    on:click={() => {
+      theme.toggle();
+    }}
   >
     <Fa icon={$theme === "dark" ? faSun : faMoon} size="lg" />
   </button>
