@@ -6,11 +6,29 @@
   import "@fontsource/roboto/700.css";
   import "@fontsource/roboto/700-italic.css";
 
+  import { onDestroy, onMount } from "svelte";
+
   import Header from "$lib/components/Header.svelte";
+  import { theme } from "$lib/stores";
 
   interface $$Slots {
     default: Record<string, never>;
   }
+
+  let unsubscribe: (() => void) | undefined = undefined;
+
+  onMount(() => {
+    unsubscribe = theme.subscribe((value) => {
+      console.log(value);
+      document.documentElement.dataset.theme = value;
+    });
+  });
+
+  onDestroy(() => {
+    if (unsubscribe !== undefined) {
+      unsubscribe();
+    }
+  });
 </script>
 
 <Header />
