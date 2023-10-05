@@ -1,14 +1,24 @@
 <script lang="ts" strictEvents>
+  import { createEventDispatcher } from "svelte";
+
   import { page } from "$app/stores";
 
   export let href: string;
   export let title: string;
 
+  const dispatch = createEventDispatcher<{ click: never }>();
+
   $: active = $page.route.id === href;
 </script>
 
 <li>
-  <a class:active {href}>
+  <a
+    class:active
+    {href}
+    on:click={() => {
+      dispatch("click");
+    }}
+  >
     {title}
   </a>
 </li>
