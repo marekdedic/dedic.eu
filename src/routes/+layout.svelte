@@ -68,11 +68,13 @@
     line-height: 1.5;
     margin: 0;
     padding-top: 57px;
+    transition: background-color theme.$transition-duration ease, color theme.$transition-duration ease;
   }
 
   :global(a) {
     text-decoration: none;
     color: var(--primary-color);
+    transition: color theme.$transition-duration ease;
   }
 
   :global(a:hover) {

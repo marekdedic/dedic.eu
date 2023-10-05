@@ -8,7 +8,9 @@
   <slot />
 </code>
 
-<style>
+<style lang="scss">
+  @use "../theme.scss";
+
   code {
     background-color: var(--primary-bg-color);
     border-radius: 3px;
@@ -17,5 +19,6 @@
       "Courier New", monospace;
     font-size: 87.5%;
     padding: 3px;
+    transition: background-color theme.$transition-duration ease, color theme.$transition-duration ease;
   }
 </style>

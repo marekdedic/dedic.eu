@@ -14,7 +14,9 @@
   </button>
 </li>
 
-<style>
+<style lang="scss">
+  @use "../theme.scss";
+
   button {
     background-color: inherit;
     border: 0;
@@ -23,10 +25,12 @@
     padding: 0;
     padding-left: 10px;
     padding-top: 11px;
+    transition: color theme.$transition-duration ease;
   }
 
   button:hover {
     color: var(--primary-color);
+    transition: color theme.$transition-duration ease;
   }
 
   li {
