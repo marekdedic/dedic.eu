@@ -16,20 +16,13 @@
   }}
 />
 <NavigationItem
-  href="/blog"
-  title="blog"
-  on:click={() => {
-    dispatch("click");
-  }}
-/>
-<NavigationItem
   href="/publications"
   title="publications"
   on:click={() => {
     dispatch("click");
   }}
 />
-<NavigationItem
+<!--NavigationItem
   href="/projects"
   title="projects"
   on:click={() => {
@@ -49,24 +42,10 @@
   on:click={() => {
     dispatch("click");
   }}
-/>
+/-->
 <NavigationItem
-  href="/teaching"
+  href="/vyuka"
   title="teaching"
-  on:click={() => {
-    dispatch("click");
-  }}
-/>
-<NavigationItem
-  href="/people"
-  title="people"
-  on:click={() => {
-    dispatch("click");
-  }}
-/>
-<NavigationItem
-  href="/submenus"
-  title="submenus"
   on:click={() => {
     dispatch("click");
   }}
