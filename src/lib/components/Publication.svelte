@@ -1,4 +1,6 @@
 <script lang="ts" strictEvents>
+  import CodeBlock from "$lib/components/CodeBlock.svelte";
+
   export let abstract: string;
   export let authors: Array<string>;
   export let date: Date;
@@ -8,6 +10,8 @@
   export let pdf: string | undefined = undefined;
   export let previewImage: string | undefined = undefined;
   export let tags: Array<string> = [];
+
+  let showBib = false;
 
   function monthName(month: number): string {
     switch (month) {
@@ -71,12 +75,17 @@
     </div>
     <div>
       {#if bib !== undefined}
-        <a>BIB</a>
+        <a on:click={() => {showBib = !showBib}}>BIB</a>
       {/if}
       {#if pdf !== undefined}
         <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
       {/if}
     </div>
+    {#if showBib}
+      <div class="bib">
+        <CodeBlock language="bib" code={bib} />
+      </div>
+    {/if}
   </div>
   {#if previewImage !== undefined}
     <div class="preview">
@@ -137,8 +146,13 @@
     transition: color theme.$transition-duration ease;
   }
 
+  .bib {
+    margin-top: 1rem;
+  }
+
   .description {
     flex: 0 0 50%;
+    width: 50%;
   }
 
   .metadata {
