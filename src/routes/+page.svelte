@@ -44,7 +44,7 @@
       > property of the YAML header of your <InlineCode
         >_pages/about.md</InlineCode
       >. Edit <InlineCode>_bibliography/papers.bib</InlineCode> and Jekyll will render
-      your <a href="/publication/">publications page</a> automatically.
+      your <a href="/publications">publications page</a> automatically.
     </p>
 
     <p>
