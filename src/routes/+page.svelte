@@ -13,7 +13,7 @@
 
 <PageHeader>
   <span slot="title">
-    <Name first="You" last="R. Name" />
+    <Name first="Marek" last="Dědič" />
   </span>
   <span slot="subtitle"
     ><a href="/">Affiliations</a>. Address. Contacts. Moto. Etc.</span

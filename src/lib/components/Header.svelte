@@ -11,7 +11,7 @@
   <nav>
     <div class="container">
       {#if !isBase}
-        <HeaderName first="You" last="R. Name" />
+        <HeaderName first="Marek" last="Dědič" />
       {/if}
       <Navigation />
     </div>
