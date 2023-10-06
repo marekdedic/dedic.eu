@@ -4,7 +4,7 @@
   import DarkModeToggle from "./DarkModeToggle.svelte";
   import NavigationItem from "./NavigationItem.svelte";
 
-  const dispatch = createEventDispatcher<{ click: never }>();
+  const dispatch = createEventDispatcher<{ click: void }>();
 </script>
 
 <NavigationItem

@@ -6,7 +6,7 @@
   export let href: string;
   export let title: string;
 
-  const dispatch = createEventDispatcher<{ click: never }>();
+  const dispatch = createEventDispatcher<{ click: void }>();
 
   $: active = $page.route.id === href;
 </script>
