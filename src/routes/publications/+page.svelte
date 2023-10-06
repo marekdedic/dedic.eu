@@ -3,8 +3,9 @@
   import PageHeader from "$lib/components/PageHeader.svelte";
   import Publication from "$lib/components/Publication.svelte";
 
-  const bib =
-    "@book{przibram1967letters,\n  title = {Letters on wave mechanics},\n  author = {Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},\n  year = {1967},\n  publisher = {Vision},\n}";
+  import type { JsonPublication } from "./JsonPublication.ts";
+
+  export let data: { publications: Array<JsonPublication> };
 </script>
 
 <PageHeader>
@@ -15,33 +16,16 @@
   >
 </PageHeader>
 <PageContent>
-  <Publication
-    abstract="Understanding the building blocks and design choices of graph neural networks."
-    authors={[
-      "Albert Einstein",
-      "Erwin Schrödinger",
-      "Max Planck",
-      "Hendrik Antoon Lorentz",
-      "Karl Przibram",
-    ]}
-    {bib}
-    date={new Date("1967-03-05")}
-    pdf="https://alshedivat.github.io/al-folio/assets/pdf/example_pdf.pdf"
-    previewImage="https://alshedivat.github.io/al-folio/assets/img/publication_preview/wave-mechanics.gif"
-    tags={["AJP", "PhysRev"]}
-    title="Letters on wave mechanics"
-  />
-  <Publication
-    abstract="Understanding the building blocks and design choices of graph neural networks."
-    authors={["Albert Einstein"]}
-    date={new Date("1956")}
-    previewImage="https://alshedivat.github.io/al-folio/assets/img/publication_preview/brownian-motion.gif"
-    title="Investigations on the Theory of the Brownian Movement"
-  />
-  <Publication
-    abstract="Understanding the building blocks and design choices of graph neural networks."
-    authors={["Albert Einstein", "AH Taub"]}
-    date={new Date("1950")}
-    title="The meaning of relativity"
-  />
+  {#each data.publications as publication (publication.title)}
+    <Publication
+      abstract={publication.abstract}
+      authors={publication.authors}
+      bib={publication.bib}
+      date={new Date(publication.date)}
+      pdf={publication.pdf}
+      previewImage={publication.previewImage}
+      tags={publication.tags}
+      title={publication.title}
+    />
+  {/each}
 </PageContent>

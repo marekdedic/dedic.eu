@@ -27,7 +27,7 @@
     margin-right: 0;
   }
 
-  @media(max-width: 576px) {
+  @media (max-width: 576px) {
     .container {
       width: 100%;
     }
