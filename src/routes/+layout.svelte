@@ -57,6 +57,7 @@
     --primary-bg-color: #{theme.$primary-bg-color-dark};
     --primary-color: #{theme.$primary-color-dark};
     --text-color: #{theme.$text-color-dark};
+    --text-color-faded: #{theme.$text-color-faded-dark};
   }
 
   :global(html[data-theme="light"]) {
@@ -65,6 +66,7 @@
     --primary-bg-color: #{theme.$primary-bg-color-light};
     --primary-color: #{theme.$primary-color-light};
     --text-color: #{theme.$text-color-light};
+    --text-color-faded: #{theme.$text-color-faded-light};
   }
 
   :global(body) {
