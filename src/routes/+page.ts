@@ -1,5 +1,6 @@
-import type { PageLoad } from "./$types";
 import type { JsonPublication } from "$lib/types/JsonPublication";
+
+import type { PageLoad } from "./$types";
 
 export const load: PageLoad<{ publications: Array<JsonPublication> }> = async ({
   fetch,
