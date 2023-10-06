@@ -27,9 +27,16 @@
     margin-right: 0;
   }
 
+  @media(max-width: 576px) {
+    .container {
+      width: 100%;
+    }
+  }
+
   .title {
     font-family: monospace;
-    margin-top: 5px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 
   figure {
