@@ -76,14 +76,17 @@
     </div>
     <div>
       {#if bib !== undefined}
-        <a
+        <button
+          type="button"
           on:click={() => {
             showBib = !showBib;
-          }}>BIB</a
+          }}>BIB</button
         >
       {/if}
       {#if pdf !== undefined}
-        <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
+        <button type="button">
+          <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
+        </button>
       {/if}
     </div>
     {#if showBib && bib !== undefined}
@@ -107,9 +110,19 @@
   @use "../../lib/theme.scss";
 
   a {
+    color: var(--text-color);
+    transition: color theme.$transition-duration ease;
+  }
+
+  a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+
+  button {
+    background-color: var(--background-color);
     border: 1px solid var(--text-color);
     border-radius: 3px;
-    color: var(--text-color);
     cursor: pointer;
     font-size: 0.64rem;
     font-weight: 400;
@@ -117,16 +130,17 @@
     padding: 0.25rem 1rem;
     transition:
       color theme.$transition-duration ease,
+      background-color theme.$transition-duration ease,
       border-color theme.$transition-duration ease;
   }
 
-  a:hover {
+  button:hover {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
-    text-decoration: none;
-    transition:
-      color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
+  }
+
+  button:hover a {
+    color: var(--primary-color);
   }
 
   h2 {
