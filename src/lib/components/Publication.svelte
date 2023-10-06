@@ -59,7 +59,7 @@
   <div class="metadata">
     <div>{formatDate(date)}</div>
     <div>
-      {#each tags as tag}
+      {#each tags as tag, i (i)}
         <div class="tag">{tag}</div>
       {/each}
     </div>
