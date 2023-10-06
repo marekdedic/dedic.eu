@@ -75,7 +75,11 @@
     </div>
     <div>
       {#if bib !== undefined}
-        <a on:click={() => {showBib = !showBib}}>BIB</a>
+        <a
+          on:click={() => {
+            showBib = !showBib;
+          }}>BIB</a
+        >
       {/if}
       {#if pdf !== undefined}
         <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
@@ -83,7 +87,7 @@
     </div>
     {#if showBib}
       <div class="bib">
-        <CodeBlock language="bib" code={bib} />
+        <CodeBlock code={bib} language="bib" />
       </div>
     {/if}
   </div>
