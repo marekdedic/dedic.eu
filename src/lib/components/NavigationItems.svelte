@@ -22,7 +22,7 @@
     dispatch("click");
   }}
 />
-<!--NavigationItem
+<!-- NavigationItem
   href="/projects"
   title="projects"
   on:click={() => {
@@ -42,7 +42,7 @@
   on:click={() => {
     dispatch("click");
   }}
-/-->
+/ -->
 <NavigationItem
   href="/vyuka"
   title="teaching"
