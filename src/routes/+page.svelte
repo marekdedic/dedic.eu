@@ -6,9 +6,9 @@
   import PageHeader from "$lib/components/PageHeader.svelte";
   import PageSection from "$lib/components/PageSection.svelte";
   import Publication from "$lib/components/Publication.svelte";
-  import type { JsonPublication } from "$lib/types/JsonPublication.ts";
+  import type { PublicationParams } from "$lib/types/PublicationParams.ts";
 
-  export let data: { publications: Array<JsonPublication> };
+  export let data: { publications: Array<PublicationParams> };
 </script>
 
 <PageHeader>
@@ -71,16 +71,7 @@
   <h2 class="no-space">recent publications</h2>
 
   {#each data.publications.slice(0, 2) as publication (publication.title)}
-    <Publication
-      abstract={publication.abstract}
-      authors={publication.authors}
-      bib={publication.bib}
-      date={new Date(publication.date)}
-      pdf={publication.pdf}
-      previewImage={publication.previewImage}
-      tags={publication.tags}
-      title={publication.title}
-    />
+    <Publication {...publication} />
   {/each}
 </PageContent>
 
