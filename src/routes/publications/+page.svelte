@@ -2,6 +2,9 @@
   import PageContent from "$lib/components/PageContent.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
   import Publication from "$lib/components/Publication.svelte";
+
+  const bib =
+    "@book{przibram1967letters,\n  title = {Letters on wave mechanics},\n  author = {Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},\n  year = {1967},\n  publisher = {Vision},\n}";
 </script>
 
 <PageHeader>
@@ -13,6 +16,7 @@
 </PageHeader>
 <PageContent>
   <Publication
+    abstract="Understanding the building blocks and design choices of graph neural networks."
     authors={[
       "Albert Einstein",
       "Erwin Schrödinger",
@@ -20,9 +24,10 @@
       "Hendrik Antoon Lorentz",
       "Karl Przibram",
     ]}
+    {bib}
     date={new Date("1967-03-05")}
+    pdf="https://alshedivat.github.io/al-folio/assets/pdf/example_pdf.pdf"
     previewImage="https://alshedivat.github.io/al-folio/assets/img/publication_preview/wave-mechanics.gif"
-    abstract="Understanding the building blocks and design choices of graph neural networks."
     tags={["AJP", "PhysRev"]}
     title="Letters on wave mechanics"
   />
