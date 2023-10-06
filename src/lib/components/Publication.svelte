@@ -1,8 +1,11 @@
 <script lang="ts" strictEvents>
-  export let title: string;
   export let abstract: string;
   export let authors: Array<string>;
   export let date: Date;
+  export let title: string;
+
+  export let bib: string | undefined = undefined;
+  export let pdf: string | undefined = undefined;
   export let previewImage: string | undefined = undefined;
   export let tags: Array<string> = [];
 
@@ -63,8 +66,16 @@
       {/if}
       {authors[authors.length - 1]}
     </div>
-    <div>
+    <div class="abstract">
       {abstract}
+    </div>
+    <div>
+      {#if bib !== undefined}
+        <a>BIB</a>
+      {/if}
+      {#if pdf !== undefined}
+        <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
+      {/if}
     </div>
   </div>
   {#if previewImage !== undefined}
@@ -80,6 +91,43 @@
 
 <style lang="scss">
   @use "../../lib/theme.scss";
+
+  a {
+    border: 1px solid var(--text-color);
+    border-radius: 3px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.64rem;
+    font-weight: 400;
+    margin-right: 10px;
+    padding: 0.25rem 1rem;
+    transition:
+      color theme.$transition-duration ease,
+      border-color theme.$transition-duration ease;
+  }
+
+  a:hover {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    transition:
+      color theme.$transition-duration ease,
+      border-color theme.$transition-duration ease;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  .abstract {
+    margin-bottom: 0.5rem;
+  }
 
   .authors {
     color: var(--text-color-faded);
@@ -126,16 +174,8 @@
     margin-top: 0.5rem;
     padding: 0.1rem 0.3rem;
     width: fit-content;
-    transition: background-color theme.$transition-duration ease, border-color theme.$transition-duration ease;
-  }
-
-  h2 {
-    font-weight: 400;
-    font-size: 1.5rem;
-    margin: 0;
-  }
-
-  figure {
-    margin: 0;
+    transition:
+      background-color theme.$transition-duration ease,
+      border-color theme.$transition-duration ease;
   }
 </style>
