@@ -40,6 +40,7 @@
       case 12:
         return "December";
     }
+    return month.toString();
   }
 
   function formatDate(date: Date): string {
@@ -85,7 +86,7 @@
         <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
       {/if}
     </div>
-    {#if showBib}
+    {#if showBib && bib !== undefined}
       <div class="bib">
         <CodeBlock code={bib} language="bib" />
       </div>

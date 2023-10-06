@@ -32,12 +32,14 @@
     title="Letters on wave mechanics"
   />
   <Publication
+    abstract="Understanding the building blocks and design choices of graph neural networks."
     authors={["Albert Einstein"]}
     date={new Date("1956")}
     previewImage="https://alshedivat.github.io/al-folio/assets/img/publication_preview/brownian-motion.gif"
     title="Investigations on the Theory of the Brownian Movement"
   />
   <Publication
+    abstract="Understanding the building blocks and design choices of graph neural networks."
     authors={["Albert Einstein", "AH Taub"]}
     date={new Date("1950")}
     title="The meaning of relativity"
