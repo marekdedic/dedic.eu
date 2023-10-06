@@ -5,6 +5,10 @@
   import PageContent from "$lib/components/PageContent.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
   import PageSection from "$lib/components/PageSection.svelte";
+  import Publication from "$lib/components/Publication.svelte";
+  import type { JsonPublication } from "$lib/types/JsonPublication.ts";
+
+  export let data: { publications: Array<JsonPublication> };
 </script>
 
 <PageHeader>
@@ -63,8 +67,25 @@
   <p>Jul 12, 2023 a post with bibliography</p>
   <p>Jul 4, 2023 a post with jupyter notebook</p>
   <p>May 12, 2023 a post with custom blockquotes</p>
-  <h2>selected publications</h2>
-  1935 PhysRev Can Quantum-Mechanical Description of Physical Reality Be Considered
-  Complete? A. Einstein, B. Podolsky, and N. Rosen Phys. Rev., May 1935 Article has
-  an altmetric score of 812 11k 11k total citations on Dimensions.
+
+  <h2 class="no-space">recent publications</h2>
+
+  {#each data.publications.slice(0, 2) as publication (publication.title)}
+    <Publication
+      abstract={publication.abstract}
+      authors={publication.authors}
+      bib={publication.bib}
+      date={new Date(publication.date)}
+      pdf={publication.pdf}
+      previewImage={publication.previewImage}
+      tags={publication.tags}
+      title={publication.title}
+    />
+  {/each}
 </PageContent>
+
+<style>
+  .no-space {
+    margin-bottom: 0;
+  }
+</style>

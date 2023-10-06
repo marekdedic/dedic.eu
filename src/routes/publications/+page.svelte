@@ -2,8 +2,7 @@
   import PageContent from "$lib/components/PageContent.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
   import Publication from "$lib/components/Publication.svelte";
-
-  import type { JsonPublication } from "./JsonPublication.ts";
+  import type { JsonPublication } from "$lib/types/JsonPublication.ts";
 
   export let data: { publications: Array<JsonPublication> };
 </script>
