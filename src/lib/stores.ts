@@ -1,6 +1,6 @@
 import { writable } from "svelte/store";
 
-const { subscribe, set, update } = writable("light"); // TODO: Persistence & set default from browser
+const { subscribe, set, update } = writable("light");
 export const theme = {
   subscribe,
   set,
