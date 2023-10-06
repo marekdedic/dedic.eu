@@ -55,7 +55,6 @@
   }
 
   div {
-    animation: max-height 5s ease;
     display: flex;
     flex-direction: column;
     margin-left: auto;
