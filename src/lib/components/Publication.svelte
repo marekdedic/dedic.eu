@@ -13,6 +13,8 @@
 
   let showBib = false;
 
+  $: descriptionWidth = previewImage !== undefined ? "50%" : "85%";
+
   function monthName(month: number): string {
     switch (month) {
       case 1:
@@ -64,7 +66,7 @@
       {/each}
     </div>
   </div>
-  <div class="description">
+  <div style:flex="0 0 {descriptionWidth}" style:width={descriptionWidth}>
     <h2>{title}</h2>
     <div class="authors">
       {authors.slice(0, -1).join(", ")}{#if authors.length > 1}, and
@@ -171,11 +173,6 @@
 
   .bib {
     margin-top: 1rem;
-  }
-
-  .description {
-    flex: 0 0 50%;
-    width: 50%;
   }
 
   .metadata {
