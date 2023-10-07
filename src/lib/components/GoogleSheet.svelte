@@ -5,10 +5,12 @@
   export let showSheetTab = false;
   export let showRowColumnHeaders = true;
   export let showTitle = false;
+
+  export let height = 1024;
 </script>
 
 <iframe
-  height="1024"
+  {height}
   src={url +
     "?gid=" +
     sheetId +
