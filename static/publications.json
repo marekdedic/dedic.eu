@@ -1,5 +1,17 @@
 [
   {
+    "abstract": "Automatický klasifikátor rozpoznávající aktivity malware na úrovni síťových spojení za pomoci multi-instančního učení.",
+    "authors": [
+      "Marek Dědič"
+    ],
+    "bib": "@thesis{dedic_hierarchicke_2017,\n\taddress = {Prague, Czech Republic},\n\ttype = {Bachelor thesis},\n\ttitle = {Hierarchické modely síťového provozu},\n\turl = {https://dspace.cvut.cz/handle/10467/75824},\n\tlanguage = {Czech},\n\tschool = {Czech Technical University in Prague},\n\tauthor = {Dědič, Marek},\n\tmonth = aug,\n\tyear = {2017},\n}",
+    "date": "2017-08-30",
+    "pdf": "/publications/dedic_hierarchicke_2017.pdf",
+    "previewImage": "/images/publication-preview-images/dedic_hierarchicke_2017.png",
+    "tags": ["Thesis"],
+    "title": "Hierarchické modely síťového provozu"
+  },
+  {
     "abstract": "Multi-instance clustering using contrastive predictive coding, triplet and magnet loss.",
     "authors": [
       "Marek Dědič",
