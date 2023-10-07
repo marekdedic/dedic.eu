@@ -102,6 +102,10 @@
     font-size: 2rem;
   }
 
+  :global(h3) {
+    font-weight: 400;
+  }
+
   div {
     margin-top: 3rem;
     margin-left: auto;
