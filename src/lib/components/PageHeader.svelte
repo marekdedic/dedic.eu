@@ -11,6 +11,10 @@
 </header>
 
 <style>
+  header {
+    margin-bottom: 1rem;
+  }
+
   h1 {
     font-size: 2.5rem;
     line-height: 1.2;
