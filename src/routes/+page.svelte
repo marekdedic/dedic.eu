@@ -1,7 +1,6 @@
 <script lang="ts" strictEvents>
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import HeaderImage from "$lib/components/HeaderImage.svelte";
-  import InlineCode from "$lib/components/InlineCode.svelte";
   import Name from "$lib/components/Name.svelte";
   import PageContent from "$lib/components/PageContent.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
@@ -17,60 +16,48 @@
     <Name first="Marek" last="Dědič" />
   </span>
   <span slot="subtitle">
-    <a href="/">Affiliations</a>. Address. Contacts. Moto. Etc.
+    machine learning scientist at Cisco & PhD student at CTU
   </span>
 </PageHeader>
 
 <PageContent>
   <PageSection>
-    <HeaderImage
-      alt="Me"
-      src="https://alshedivat.github.io/al-folio/assets/img/prof_pic.jpg?974957d202f671e4fa6700c04e68deae"
-    >
-      555 your office number 123 your address street Your City, State 12345
-    </HeaderImage>
+    <HeaderImage alt="Me" src="/images/profile.jpg" />
 
     <p>
-      Write your biography here. Tell the world about yourself. Link to your
-      favorite <ExternalLink href="http://reddit.com">subreddit</ExternalLink>.
-      You can put a picture in, too. The code is already in, just name your
-      picture <InlineCode>prof_pic.jpg</InlineCode> and put it in the <InlineCode
-        >img/</InlineCode
-      > folder.
+      I am a machine learning researcher working at <ExternalLink
+        href="https://cognitive-intelligence.github.io/cognitive-web/"
+        >Cisco</ExternalLink
+      > and specializing in neural networks and ways to exploit data structure with
+      them. At the same time, I am doing a PhD at the <ExternalLink
+        href="https://www.fjfi.cvut.cz/en/"
+        >Faculty of Nuclear Sciences and Physical Engineering</ExternalLink
+      > of the Czech Technical University.
     </p>
 
     <p>
-      Put your address / P.O. box / other info right below your picture. You can
-      also disable any of these elements by editing <InlineCode
-        >profile</InlineCode
-      > property of the YAML header of your <InlineCode
-        >_pages/about.md</InlineCode
-      >. Edit <InlineCode>_bibliography/papers.bib</InlineCode> and Jekyll will render
-      your <a href="/publications">publications page</a> automatically.
+      My current interests are mostly in graphs and graph neural networks,
+      particularly graph structure and its interplay with the performance of
+      machine learning tasks on the graph. I proposed a method for graph
+      reduction guided by local properties of the graph. Together with my
+      colleagues, we study the effect of graph properties on downstream tasks
+      and their usability in hyper-parameter optimization for GNNs.
+      Additionally, I maintain an interest in multi-instance learning, an
+      underdeveloped field of machine learning. I am mainly interested in nested
+      hierarchical models and their use in the field of computer network
+      security. See more details in the <a href="/publications">publications</a>
+      page.
     </p>
 
     <p>
-      Link to your social media connections, too. This theme is set up to use <ExternalLink
-        href="http://fortawesome.github.io/Font-Awesome/"
-        >Font Awesome icons</ExternalLink
-      >
-      and <ExternalLink href="https://jpswalsh.github.io/academicons/"
-        >Academicons</ExternalLink
-      >, like the ones below. Add your Facebook, Twitter, LinkedIn, Google
-      Scholar, or just disable all of them.
+      Additionally, I am an active member of the Czech Scouting organization.
+      Since 2015, I am a lecturer at a summer course for aspiring patrol
+      leaders, which I was also leading from 2019 until 2023. Currently, I am
+      organising an educator conference for ca. 100 attendees as a programme
+      chair. I am also combining IT with scouting, both as a software developer
+      and a member of the IT committee of the executive board.
     </p>
   </PageSection>
-  <h2>news</h2>
-  <p>
-    Jan 15, 2016 A simple inline announcement with Markdown emoji! :sparkles:
-    :smile:
-  </p>
-  <p>Nov 7, 2015 A long announcement with details</p>
-  <p>Oct 22, 2015 A simple inline announcement.</p>
-  <h2>latest posts</h2>
-  <p>Jul 12, 2023 a post with bibliography</p>
-  <p>Jul 4, 2023 a post with jupyter notebook</p>
-  <p>May 12, 2023 a post with custom blockquotes</p>
 
   <h2 class="no-space">recent publications</h2>
 
