@@ -68,7 +68,7 @@
     "title": "Adaptive graph coarsening in the context of local graph quality"
   },
   {
-    "abstract": "We propose a simple scalable task-aware graph preprocessing procedure allowing us to obtain a reduced graph such that a GNN achieves a given desired performance on a given downstream task.",
+    "abstract": "A simple scalable task-aware graph preprocessing procedure allowing us to obtain a reduced graph such that a GNN achieves a given desired performance on a given downstream task.",
     "authors": [
       "Pavel Procházka",
       "Michal Mareš",
@@ -80,5 +80,20 @@
     "previewImage": "/images/publication-preview-images/prochazka_scalable_2022.png",
     "tags": ["ITAT"],
     "title": "Scalable Graph Size Reduction for Efficient GNN Application"
+  },
+  {
+    "abstract": "A method for node classification that allows a user to precisely select the resolution at which the graph in question should be pretrained.",
+    "authors": [
+      "Marek Dědič",
+      "Lukáš Bajer",
+      "Pavel Procházka",
+      "Martin Holeňa"
+    ],
+    "bib": "@inproceedings{dedic_balancing_2023,\n\taddress = {Torino, Italy},\n\ttitle = {Balancing performance and complexity with adaptive graph coarsening},\n\turl = {https://mlg-europe.github.io/papers/234.pdf},\n\turldate = {2023-09-22},\n\tauthor = {Dědič, Marek and Bajer, Lukáš and Procházka, Pavel and Holeňa, Martin},\n\tmonth = sep,\n\tyear = {2023},\n}",
+    "date": "2023-09-22",
+    "pdf": "/publications/dedic_balancing_2023.pdf",
+    "previewImage": "/images/publication-preview-images/dedic_balancing_2023.png",
+    "tags": ["MLG", "ECML"],
+    "title": "Balancing performance and complexity with adaptive graph coarsening"
   }
 ]
