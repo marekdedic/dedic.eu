@@ -1,4 +1,5 @@
 <script lang="ts" strictEvents>
+  import ExternalLink from "$lib/components/ExternalLink.svelte";
   import HeaderImage from "$lib/components/HeaderImage.svelte";
   import InlineCode from "$lib/components/InlineCode.svelte";
   import Name from "$lib/components/Name.svelte";
@@ -15,9 +16,9 @@
   <span slot="title">
     <Name first="Marek" last="Dědič" />
   </span>
-  <span slot="subtitle"
-    ><a href="/">Affiliations</a>. Address. Contacts. Moto. Etc.</span
-  >
+  <span slot="subtitle">
+    <a href="/">Affiliations</a>. Address. Contacts. Moto. Etc.
+  </span>
 </PageHeader>
 
 <PageContent>
@@ -31,10 +32,11 @@
 
     <p>
       Write your biography here. Tell the world about yourself. Link to your
-      favorite <a href="http://reddit.com">subreddit</a>. You can put a picture
-      in, too. The code is already in, just name your picture <InlineCode
-        >prof_pic.jpg</InlineCode
-      > and put it in the <InlineCode>img/</InlineCode> folder.
+      favorite <ExternalLink href="http://reddit.com">subreddit</ExternalLink>.
+      You can put a picture in, too. The code is already in, just name your
+      picture <InlineCode>prof_pic.jpg</InlineCode> and put it in the <InlineCode
+        >img/</InlineCode
+      > folder.
     </p>
 
     <p>
@@ -48,12 +50,14 @@
     </p>
 
     <p>
-      Link to your social media connections, too. This theme is set up to use <a
-        href="http://fortawesome.github.io/Font-Awesome/">Font Awesome icons</a
+      Link to your social media connections, too. This theme is set up to use <ExternalLink
+        href="http://fortawesome.github.io/Font-Awesome/"
+        >Font Awesome icons</ExternalLink
       >
-      and <a href="https://jpswalsh.github.io/academicons/">Academicons</a>,
-      like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar,
-      or just disable all of them.
+      and <ExternalLink href="https://jpswalsh.github.io/academicons/"
+        >Academicons</ExternalLink
+      >, like the ones below. Add your Facebook, Twitter, LinkedIn, Google
+      Scholar, or just disable all of them.
     </p>
   </PageSection>
   <h2>news</h2>
