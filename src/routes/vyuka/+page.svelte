@@ -1,6 +1,7 @@
 <script lang="ts" strictEvents>
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import GoogleSheet from "$lib/components/GoogleSheet.svelte";
+  import InlineCode from "$lib/components/InlineCode.svelte";
   import PageContent from "$lib/components/PageContent.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
 </script>
@@ -20,7 +21,7 @@
     Cvičení pro 1.kruh oboru jaderná a částicová fyzika probíhají každé pondělí
     od 14:00 do 15:30 v místnosti T-209. Informace ke zkoušce, podmínky splnění
     předmětu a klasifikace lze nalézt v Microsoft Teams, kde by všichni studenti
-    měli být členy týmu <i>Team-B231-01LAL</i>, případně na <ExternalLink
+    měli být členy týmu <InlineCode>Team-B231-01LAL</InlineCode>, případně na <ExternalLink
       href="https://kmlinux.fjfi.cvut.cz/~ambrop1/?loc=lna1&lg=cs"
       >webu přednášejících</ExternalLink
     >.
