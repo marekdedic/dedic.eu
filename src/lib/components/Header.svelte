@@ -32,6 +32,7 @@
     transition:
       background-color theme.$transition-duration ease,
       border-color theme.$transition-duration ease;
+    z-index: 1000;
   }
 
   .container {
