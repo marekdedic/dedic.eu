@@ -14,6 +14,18 @@
   {
     "abstract": "Multi-instance clustering using contrastive predictive coding, triplet and magnet loss.",
     "authors": [
+      "Marek Dědič"
+    ],
+    "bib": "@mastersthesis{dedic_optimalization_2020,\n\taddress = {Prague, Czech Republic},\n\ttitle = {Optimalization of distances for multi-instance clustering},\n\tschool = {Czech Technical University in Prague},\n\tauthor = {Dědič, Marek},\n\tmonth = jan,\n\tyear = {2020},\n}",
+    "date": "2020-01-07",
+    "pdf": "/publications/dedic_optimalization_2020.pdf",
+    "previewImage": "/images/publication-preview-images/dedic_optimalization_2020.png",
+    "tags": ["Thesis"],
+    "title": "Optimalization of distances for multi-instance clustering"
+  },
+  {
+    "abstract": "Multi-instance clustering using contrastive predictive coding, triplet and magnet loss.",
+    "authors": [
       "Marek Dědič",
       "Tomáš Pevný",
       "Lukáš Bajer",
