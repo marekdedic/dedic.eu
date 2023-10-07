@@ -153,6 +153,10 @@
     margin: 0;
   }
 
+  img {
+    max-width: 100%;
+  }
+
   .abstract {
     margin-bottom: 0.5rem;
   }
