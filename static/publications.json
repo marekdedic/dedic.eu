@@ -1,31 +1,60 @@
 [
   {
-    "abstract": "Understanding the building blocks and design choices of graph neural networks.",
+    "abstract": "Multi-instance clustering using contrastive predictive coding, triplet and magnet loss.",
     "authors": [
-      "Albert Einstein",
-      "Erwin Schrödinger",
-      "Max Planck",
-      "Hendrik Antoon Lorentz",
-      "Karl Przibram"
+      "Marek Dědič",
+      "Tomáš Pevný",
+      "Lukáš Bajer",
+      "Martin Holeňa"
     ],
-    "bib": "@book{przibram1967letters,\n  title = {Letters on wave mechanics},\n  author = {Einstein, Albert and Schrödinger, Erwin and Planck, Max and Lorentz, Hendrik Antoon and Przibram, Karl},\n  year = {1967},\n  publisher = {Vision},\n}",
-    "date": "1967-03-05",
-    "pdf": "https://alshedivat.github.io/al-folio/assets/pdf/example_pdf.pdf",
-    "previewImage": "https://alshedivat.github.io/al-folio/assets/img/publication_preview/wave-mechanics.gif",
-    "tags": ["AJP", "PhysRev"],
-    "title": "Letters on wave mechanics"
+    "bib": "@inproceedings{dedic_loss_2020,\n\taddress = {Oravská Lesná, Slovakia},\n\ttitle = {Loss Functions for Clustering in Multi-instance Learning},\n\tvolume={2718},\n\turl = {http://ceur-ws.org/Vol-2718/#paper05},\n\tbooktitle = {Proceedings of the 20th Conference Information Technologies - Applications and Theory (ITAT 2020)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Dědič, Marek and Pevný, Tomáš and Bajer, Lukáš and Holeňa, Martin},\n\tmonth = oct,\n\tyear = {2020},\n\tpages = {137--146},\n}",
+    "date": "2020-10-30",
+    "pdf": "/publications/dedic_loss_2020.pdf",
+    "previewImage": "/images/publication-preview-images/dedic_loss_2020.png",
+    "tags": ["ITAT"],
+    "title": "Loss Functions for Clustering in Multi-instance Learning"
   },
   {
-    "abstract": "Understanding the building blocks and design choices of graph neural networks.",
-    "authors": ["Albert Einstein"],
-    "date": "1956",
-    "previewImage": "https://alshedivat.github.io/al-folio/assets/img/publication_preview/brownian-motion.gif",
-    "title": "Investigations on the Theory of the Brownian Movement"
+    "abstract": "An experimental comparison of four variants of 1-GNN and GIN from the point of view of graph representation for downstream classification.",
+    "authors": [
+      "Sergej Borisov",
+      "Marek Dědič",
+      "Martin Holeňa"
+    ],
+    "bib": "@inproceedings{borisov_experimental_2021,\n\taddress = {Heľpa, Slovakia},\n\ttitle = {Experimental Investigation of Neural and Weisfeiler-Lehman-Kernel Graph Representations for Downstream Classification},\n\tvolume = {2962},\n\turl = {http://ceur-ws.org/Vol-2962/#paper50},\n\tbooktitle = {Proceedings of the 21st Conference Information Technologies – Applications and Theory (ITAT 2021)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Borisov, Sergej and Dědič, Marek and Holeňa, Martin},\n\tmonth = oct,\n\tyear = {2021},\n\tpages = {130--139},\n}",
+    "date": "2021-10-02",
+    "pdf": "/publications/borisov_experimental_2021.pdf",
+    "tags": ["ITAT"],
+    "title": "Experimental Investigation of Neural and Weisfeiler-Lehman-Kernel Graph Representations for Downstream Classification"
   },
   {
-    "abstract": "Understanding the building blocks and design choices of graph neural networks.",
-    "authors": ["Albert Einstein", "AH Taub"],
-    "date": "1950",
-    "title": "The meaning of relativity"
+    "abstract": "A method for studying graph properties from the point of view of a downstream task.",
+    "authors": [
+      "Marek Dědič",
+      "Lukáš Bajer",
+      "Jakub Repický",
+      "Pavel Procházka",
+      "Martin Holeňa"
+    ],
+    "bib": "@unpublished{dedic_adaptive_2022,\n\taddress = {Grenoble, France},\n\ttitle = {Adaptive graph coarsening in the context of local graph quality},\n\turl = {https://graphquality.github.io/rsc/art1.pdf},\n\turldate = {2022-09-23},\n\tauthor = {Dědič, Marek and Bajer, Lukáš and Repický, Jakub and Procházka, Pavel and Holeňa, Martin},\n\tmonth = sep,\n\tyear = {2022},\n}",
+    "date": "2022-09-29",
+    "pdf": "/publications/dedic_adaptive_2022.pdf",
+    "previewImage": "/images/publication-preview-images/dedic_adaptive_2022.png",
+    "tags": ["Graph Quality", "ECML"],
+    "title": "Adaptive graph coarsening in the context of local graph quality"
+  },
+  {
+    "abstract": "We propose a simple scalable task-aware graph preprocessing procedure allowing us to obtain a reduced graph such that a GNN achieves a given desired performance on a given downstream task.",
+    "authors": [
+      "Pavel Procházka",
+      "Michal Mareš",
+      "Marek Dědič"
+    ],
+    "bib": "@inproceedings{prochazka_scalable_2022,\n\taddress = {Zuberec, Slovakia},\n\ttitle = {Scalable Graph Size Reduction for Efficient GNN Application},\n\tvolume = {3226},\n\turl = {http://ceur-ws.org/Vol-3226/#paper9},\n\tbooktitle = {Proceedings of the 22nd Conference Information Technologies – Applications and Theory (ITAT 2022)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Procházka, Pavel and Mareš, Michal and Dědič, Marek},\n\tmonth = sep,\n\tyear = {2022},\n\tpages = {75--84},\n}}",
+    "date": "2022-09-30",
+    "pdf": "/publications/prochazka_scalable_2022.pdf",
+    "previewImage": "/images/publication-preview-images/prochazka_scalable_2022.png",
+    "tags": ["ITAT"],
+    "title": "Scalable Graph Size Reduction for Efficient GNN Application"
   }
 ]
