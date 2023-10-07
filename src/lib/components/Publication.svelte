@@ -76,13 +76,16 @@
     <div class="abstract">
       {abstract}
     </div>
-    <div>
+    <div class="source-buttons">
       {#if bib !== undefined}
-        <a
+        <button
+          type="button"
           on:click={() => {
             showBib = !showBib;
-          }}>BIB</a
+          }}
         >
+          BIB
+        </button>
       {/if}
       {#if pdf !== undefined}
         <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
@@ -108,27 +111,32 @@
 <style lang="scss">
   @use "../../lib/theme.scss";
 
-  a {
+  a, button {
+    background-color: var(--background-color);
     border: 1px solid var(--text-color);
     border-radius: 3px;
     color: var(--text-color);
     cursor: pointer;
     font-size: 0.64rem;
     font-weight: 400;
-    margin-right: 10px;
+    margin-right: 20px;
     padding: 0.25rem 1rem;
+    transition:
+      color theme.$transition-duration ease,
+      background-color theme.$transition-duration ease,
+      border-color theme.$transition-duration ease;
+  }
+
+  a:hover, button:hover {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     transition:
       color theme.$transition-duration ease,
       border-color theme.$transition-duration ease;
   }
 
   a:hover {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
     text-decoration: none;
-    transition:
-      color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
   }
 
   h2 {
@@ -185,6 +193,10 @@
 
   .row:last-of-type {
     border-bottom: none;
+  }
+
+  .source-buttons {
+    display: flex;
   }
 
   .tag {
