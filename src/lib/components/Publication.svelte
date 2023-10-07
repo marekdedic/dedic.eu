@@ -58,52 +58,54 @@
 </script>
 
 <div class="row">
-  <div class="metadata">
-    <div>{formatDate(date)}</div>
-    <div>
-      {#each tags as tag, i (i)}
-        <div class="tag">{tag}</div>
-      {/each}
+  <div class="container">
+    <div class="metadata">
+      <div>{formatDate(date)}</div>
+      <div>
+        {#each tags as tag, i (i)}
+          <div class="tag">{tag}</div>
+        {/each}
+      </div>
     </div>
-  </div>
-  <div style:flex="0 0 {descriptionWidth}" style:width={descriptionWidth}>
-    <h2>{title}</h2>
-    <div class="authors">
-      {authors.slice(0, -1).join(", ")}{#if authors.length > 1}, and
-      {/if}
-      {authors[authors.length - 1]}
+    <div style:flex="0 0 {descriptionWidth}" style:width={descriptionWidth}>
+      <h2>{title}</h2>
+      <div class="authors">
+        {authors.slice(0, -1).join(", ")}{#if authors.length > 1}, and
+        {/if}
+        {authors[authors.length - 1]}
+      </div>
+      <div class="abstract">
+        {abstract}
+      </div>
+      <div class="source-buttons">
+        {#if bib !== undefined}
+          <button
+            type="button"
+            on:click={() => {
+              showBib = !showBib;
+            }}
+          >
+            BIB
+          </button>
+        {/if}
+        {#if pdf !== undefined}
+          <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
+        {/if}
+      </div>
     </div>
-    <div class="abstract">
-      {abstract}
-    </div>
-    <div class="source-buttons">
-      {#if bib !== undefined}
-        <button
-          type="button"
-          on:click={() => {
-            showBib = !showBib;
-          }}
-        >
-          BIB
-        </button>
-      {/if}
-      {#if pdf !== undefined}
-        <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
-      {/if}
-    </div>
-    {#if showBib && bib !== undefined}
-      <div class="bib">
-        <CodeBlock code={bib} language="bib" />
+    {#if previewImage !== undefined}
+      <div class="preview">
+        <figure>
+          <picture>
+            <img alt={title} src={previewImage} />
+          </picture>
+        </figure>
       </div>
     {/if}
   </div>
-  {#if previewImage !== undefined}
-    <div class="preview">
-      <figure>
-        <picture>
-          <img alt={title} src={previewImage} />
-        </picture>
-      </figure>
+  {#if showBib && bib !== undefined}
+    <div class="bib">
+      <CodeBlock code={bib} language="bib" />
     </div>
   {/if}
 </div>
@@ -111,7 +113,8 @@
 <style lang="scss">
   @use "../../lib/theme.scss";
 
-  a, button {
+  a,
+  button {
     background-color: var(--background-color);
     border: 1px solid var(--text-color);
     border-radius: 3px;
@@ -127,7 +130,8 @@
       border-color theme.$transition-duration ease;
   }
 
-  a:hover, button:hover {
+  a:hover,
+  button:hover {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     transition:
@@ -166,7 +170,12 @@
   }
 
   .bib {
-    margin-top: 1rem;
+    margin-left: auto;
+    max-width: 85%;
+  }
+
+  .container {
+    display: flex;
   }
 
   .metadata {
@@ -185,7 +194,6 @@
 
   .row {
     border-bottom: 1px solid var(--divider-color);
-    display: flex;
     padding-bottom: 2rem;
     padding-top: 2rem;
     transition: border-color theme.$transition-duration ease;
