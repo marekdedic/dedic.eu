@@ -7,7 +7,7 @@
 </script>
 
 <PageHeader>
-  <span slot="title"> Výuka </span>
+  <span slot="title">výuka</span>
   <span slot="subtitle">
     informace k předmětům, které učím – studijní materiály, podmínky splnění,
     výsledky.
@@ -18,10 +18,16 @@
   <h2>lineární algera 1 – FJFI, ZS 23/24</h2>
 
   <p>
-    Cvičení pro 1.kruh oboru jaderná a částicová fyzika probíhají každé pondělí
-    od 14:00 do 15:30 v místnosti T-209. Informace ke zkoušce, podmínky splnění
-    předmětu a klasifikace lze nalézt v Microsoft Teams, kde by všichni studenti
-    měli být členy týmu <InlineCode>Team-B231-01LAL</InlineCode>, případně na <ExternalLink
+    Cvičení pro 1. kruh oboru jaderná a částicová fyzika probíhají každé <b
+      >pondělí od 14:00 do 15:30</b
+    >
+    v místnosti <b>T-209</b>.
+  </p>
+  <p>
+    Informace ke zkoušce, podmínky splnění předmětu a klasifikace lze nalézt v
+    Microsoft Teams, kde by všichni studenti měli být členy týmu <InlineCode
+      >Team-B231-01LAL</InlineCode
+    >, případně na <ExternalLink
       href="https://kmlinux.fjfi.cvut.cz/~ambrop1/?loc=lna1&lg=cs"
       >webu přednášejících</ExternalLink
     >.
@@ -30,8 +36,8 @@
   <h3>studijní materiály</h3>
 
   <p>
-    Aktuální studijní materiály od přednášejících jsou v Microsoft Teams,
-    nicméně obecně jde hlavně o:
+    Aktuální studijní materiály od přednášejících jsou v Microsoft Teams, obecně
+    jde hlavně o:
   </p>
 
   <ul>
@@ -72,25 +78,25 @@
   <h3>podmínky zápočtu</h3>
 
   Na konci semestru na základě práce při cvičeních každý může získat kromě
-  zápočtu navíc až 10% navíc k praktické části zkoušky (podrobnosti v podmínkách
+  zápočtu až 10% navíc k praktické části zkoušky (podrobnosti v podmínkách
   zkoušky). Získání zápočtu i tyto bonusová procenta se počítají z bodů
   získaných během cvičení. Body lze získat třemi různými způsoby:
 
   <ul>
     <li>
-      Na začátku každého cvičení (počínaje třetím) se bude psát mini-test
-      obsahující 1 příklad typově z předcházejícího cvičení. Za každý test lze
-      získat maximálně 1 bod. Testy jsou <i>open-book</i>, tedy je povoleno
-      používání jakýchkoliv materiálů (skripta, vlastní poznámky...), není
-      povoleno komunikovat s kýmkoliv dalším či používat software, řešící
-      příklady.
+      Na začátku každého cvičení (počínaje třetím, včetně posledního) se bude
+      psát mini-test obsahující 1 příklad typově z předcházejícího cvičení. Za
+      každý test lze získat maximálně 1 bod. Testy jsou <i>open-book</i>, tedy
+      je povoleno používání jakýchkoliv materiálů (skripta, vlastní
+      poznámky...), není povoleno komunikovat s kýmkoliv dalším či používat
+      software řešící příklady.
     </li>
     <li>
       Za aktivitu při cvičeních (počítání příkladů u tabule apod.) lze získat za
       každé cvičení 0.5 bodu.
     </li>
     <li>
-      Pro ty, co nenasbírají dostatečný počet bodů budou ke konci semestru
+      Pro ty, kdo nenasbírají dostatečný počet bodů, budou ke konci semestru
       zadané 3 domácí úkoly, z každého z nich lze získat maximálně 1 bod.
     </li>
   </ul>
