@@ -77,7 +77,7 @@
       Interaktivní demo <ExternalLink
         href="https://yizhe-ang.github.io/matrix-explorable/"
         >The matrix arcade</ExternalLink
-      > vhodné k 9. cvičení lineárních zobrazeních.
+      > vhodné k 9. cvičení o lineárních zobrazeních.
     </li>
   </ul>
 
@@ -125,6 +125,7 @@
   <h3>výsledky</h3>
 
   <GoogleSheet
+    height="700px"
     sheetId="2096801087"
     title="Přehled výsledků"
     url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOlPd-nlIljrCz_NIvkTFehlMJzedOHIClP1CSohavxk7hcTK-BRC4-wJXJ7KJ5Y3f6sMIzXduTxG0/pubhtml"
