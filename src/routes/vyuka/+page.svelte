@@ -73,6 +73,12 @@
         >Essence of linear algebra</ExternalLink
       > od 3Blue1Brown
     </li>
+    <li>
+      Interaktivní demo <ExternalLink
+        href="https://yizhe-ang.github.io/matrix-explorable/"
+        >The matrix arcade</ExternalLink
+      > vhodné k 9. cvičení lineárních zobrazeních.
+    </li>
   </ul>
 
   <h3>podmínky zápočtu</h3>
