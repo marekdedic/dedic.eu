@@ -123,4 +123,14 @@
     title="Přehled výsledků"
     url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOlPd-nlIljrCz_NIvkTFehlMJzedOHIClP1CSohavxk7hcTK-BRC4-wJXJ7KJ5Y3f6sMIzXduTxG0/pubhtml"
   />
+
+  <h2>teorie neuronových sítí – FIT, LS 22/23</h2>
+
+  <p>
+    Cvičení předmětu teorie neuronových sítí probíhají nepravidelně, viz e-mail.
+    Informace ke zkoušce, podmínky splnění předmětu a klasifikace lze nalézt v <ExternalLink
+      href="https://courses.fit.cvut.cz/NI-TNN/index.html"
+      >FIT courses</ExternalLink
+    >.
+  </p>
 </PageContent>
