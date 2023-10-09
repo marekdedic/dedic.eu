@@ -6,7 +6,7 @@
   export let showRowColumnHeaders = true;
   export let showTitle = false;
 
-  export let height = 1024;
+  export let height = "1024px";
 </script>
 
 <iframe
