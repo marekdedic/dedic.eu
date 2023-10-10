@@ -80,6 +80,7 @@
       <div class="source-buttons">
         {#if bib !== undefined}
           <button
+            aria-label="Show bibtex citation"
             type="button"
             on:click={() => {
               showBib = !showBib;

@@ -30,7 +30,7 @@
 
 <div>
   {#if copyButton}
-    <button type="button" on:click={copy}>
+    <button aria-label="Copy to clipboard" type="button" on:click={copy}>
       <Fa icon={copied ? faClipboardCheck : faClipboard} size="lg" />
     </button>
   {/if}
