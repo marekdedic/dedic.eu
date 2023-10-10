@@ -8,6 +8,7 @@
 <li>
   <button
     class:light={$theme !== "dark"}
+    aria-label="Dark mode toggle"
     type="button"
     on:click={() => {
       theme.toggle();

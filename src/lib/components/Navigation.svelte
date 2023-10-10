@@ -12,6 +12,7 @@
   {#if matches}
     <div>
       <button
+        aria-label="Open/close navigation"
         type="button"
         on:click={() => {
           expandNavigation = !expandNavigation;
