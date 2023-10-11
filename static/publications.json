@@ -24,6 +24,19 @@
     "title": "Optimalization of distances for multi-instance clustering"
   },
   {
+    "abstract": "Identification of infected computers in the computer network from their HTTP traffic using recent progress in multiple-instance learning.",
+    "authors": [
+      "Tomas Pevny",
+      "Marek Dedic"
+    ],
+    "bib": "@misc{pevny_nested_2020,\n\ttitle = {Nested Multiple Instance Learning in Modelling of HTTP network traffic},\n\turl = {http://arxiv.org/abs/2002.04059},\n\tdoi = {10.48550/arXiv.2002.04059},\n\tpublisher = {arXiv},\n\tauthor = {Pevny, Tomas and Dedic, Marek},\n\tmonth = feb,\n\tyear = {2020},\n}",
+    "date": "2020-02-10",
+    "pdf": "/publications/pevny_nested_2020.pdf",
+    "previewImage": "/images/publication-preview-images/pevny_nested_2020.png",
+    "tags": ["arXiv"],
+    "title": "Nested Multiple Instance Learning in Modelling of HTTP network traffic"
+  },
+  {
     "abstract": "Multi-instance clustering using contrastive predictive coding, triplet and magnet loss.",
     "authors": [
       "Marek Dědič",
