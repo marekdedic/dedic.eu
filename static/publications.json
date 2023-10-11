@@ -24,6 +24,19 @@
     "title": "Optimalization of distances for multi-instance clustering"
   },
   {
+    "abstract": "Identification of infected computers in the computer network from their HTTP traffic using recent progress in multiple-instance learning.",
+    "authors": [
+      "Tomas Pevny",
+      "Marek Dedic"
+    ],
+    "bib": "@misc{pevny_nested_2020,\n\ttitle = {Nested Multiple Instance Learning in Modelling of HTTP network traffic},\n\turl = {http://arxiv.org/abs/2002.04059},\n\tdoi = {10.48550/arXiv.2002.04059},\n\tpublisher = {arXiv},\n\tauthor = {Pevny, Tomas and Dedic, Marek},\n\tmonth = feb,\n\tyear = {2020},\n}",
+    "date": "2020-02-10",
+    "pdf": "/publications/pevny_nested_2020.pdf",
+    "previewImage": "/images/publication-preview-images/pevny_nested_2020.png",
+    "tags": ["arXiv"],
+    "title": "Nested Multiple Instance Learning in Modelling of HTTP network traffic"
+  },
+  {
     "abstract": "Multi-instance clustering using contrastive predictive coding, triplet and magnet loss.",
     "authors": [
       "Marek Dědič",
@@ -95,5 +108,19 @@
     "previewImage": "/images/publication-preview-images/dedic_balancing_2023.png",
     "tags": ["MLG", "ECML"],
     "title": "Balancing performance and complexity with adaptive graph coarsening"
+  },
+  {
+    "abstract": "A methodical way of linking graph properties with the performance of a GNN solving a given task on such graph via a surrogate regression model that is trained to predict the performance of the GNN from the properties of the graph dataset.",
+    "authors": [
+      "Pavel Procházka",
+      "Michal Mareš",
+      "Marek Dědič"
+    ],
+    "bib": "@inproceedings{prochazka_which_2023,\n\taddress = {Tatranské Matliare, Slovakia},\n\ttitle = {Which Graph Properties Affect GNN Performance for a Given Downstream Task?},\n\tvolume = {3498},\n\turl = {https://ceur-ws.org/Vol-3498/#paper7},\n\tbooktitle = {Proceedings of the 23nd Conference Information Technologies – Applications and Theory (ITAT 2023)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Procházka, Pavel and Mareš, Michal and Dědič, Marek},\n\tmonth = oct,\n\tyear = {2023},\n\tpages = {58--66},\n}",
+    "date": "2023-10-07",
+    "pdf": "/publications/prochazka_which_2023.pdf",
+    "previewImage": "/images/publication-preview-images/prochazka_which_2023.png",
+    "tags": ["ITAT"],
+    "title": "Which Graph Properties Affect GNN Performance for a Given Downstream Task?"
   }
 ]
