@@ -28,7 +28,7 @@
     "@fontsource/roboto": "^5.0.8",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@sveltejs/adapter-static": "^2.0.3",
-    "@sveltejs/kit": "^1.25.1",
+    "@sveltejs/kit": "^1.25.2",
     "@types/prismjs": "^1.26.1",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
