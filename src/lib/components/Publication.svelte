@@ -2,6 +2,7 @@
   import CodeBlock from "$lib/components/CodeBlock.svelte";
   import Authors from "$lib/components/Publication/Authors.svelte";
   import Metadata from "$lib/components/Publication/Metadata.svelte";
+  import Preview from "$lib/components/Publication/Preview.svelte";
   import SourceButtons from "$lib/components/Publication/SourceButtons.svelte";
   import Title from "$lib/components/Publication/Title.svelte";
 
@@ -43,11 +44,7 @@
     </div>
     {#if previewImage !== undefined}
       <div class="preview">
-        <figure>
-          <picture>
-            <img alt={title} src={previewImage} />
-          </picture>
-        </figure>
+        <Preview {previewImage} {title} />
       </div>
     {/if}
   </div>
@@ -60,14 +57,6 @@
 
 <style lang="scss">
   @use "../../lib/theme.scss";
-
-  figure {
-    margin: 0;
-  }
-
-  img {
-    max-width: 100%;
-  }
 
   .abstract {
     margin-bottom: 0.5rem;
