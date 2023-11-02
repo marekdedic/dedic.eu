@@ -1,5 +1,6 @@
 <script lang="ts" strictEvents>
   import CodeBlock from "$lib/components/CodeBlock.svelte";
+  import Authors from "$lib/components/Publication/Authors.svelte";
   import Metadata from "$lib/components/Publication/Metadata.svelte";
   import Title from "$lib/components/Publication/Title.svelte";
 
@@ -26,9 +27,7 @@
     <div style:flex="0 0 {descriptionWidth}" style:width={descriptionWidth}>
       <Title {title} />
       <div class="authors">
-        {authors.slice(0, -1).join(", ")}{#if authors.length > 1}, and
-        {/if}
-        {authors[authors.length - 1]}
+        <Authors {authors} />
       </div>
       <div class="abstract">
         {abstract}
@@ -113,11 +112,8 @@
   }
 
   .authors {
-    color: var(--text-color-faded);
-    font-size: 0.8rem;
     margin-bottom: 0.9rem;
     margin-top: 0.3rem;
-    transition: color theme.$transition-duration ease;
   }
 
   .bib {
