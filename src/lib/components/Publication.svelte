@@ -18,8 +18,6 @@
   export let tags: Array<string> = [];
 
   let showBib = false;
-
-  $: descriptionWidth = previewImage !== undefined ? "50%" : "85%";
 </script>
 
 <div class="row">
@@ -55,7 +53,10 @@
         <div class="metadata">
           <Metadata {date} {tags} />
         </div>
-        <div class:one-column={previewImage !== undefined} class:two-column={previewImage === undefined}>
+        <div
+          class:one-column={previewImage !== undefined}
+          class:two-column={previewImage === undefined}
+        >
           <Title {title} />
           <div class="authors">
             <Authors {authors} />
@@ -119,7 +120,7 @@
 
   .one-column {
     flex: 0 0 50%;
-    width: 50%
+    width: 50%;
   }
 
   .preview {
@@ -147,6 +148,6 @@
 
   .two-column {
     flex: 0 0 85%;
-    width: 85%
+    width: 85%;
   }
 </style>
