@@ -1,6 +1,7 @@
 <script lang="ts" strictEvents>
   export let date: Date;
   export let tags: Array<string>;
+  export let inline = false;
 
   function monthName(month: number): string {
     switch (month) {
@@ -44,10 +45,10 @@
   }
 </script>
 
-<div>{formatDate(date)}</div>
-<div>
+<div class:inline>{formatDate(date)}</div>
+<div class:inline>
   {#each tags as tag, i (i)}
-    <div class="tag">{tag}</div>
+    <div class="tag" class:inline>{tag}</div>
   {/each}
 </div>
 
@@ -56,6 +57,11 @@
 
   div {
     font-size: 0.8rem;
+  }
+
+  .inline {
+    display: inline-block;
+    margin-right: 1rem;
   }
 
   .tag {

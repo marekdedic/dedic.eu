@@ -1,5 +1,6 @@
 <script lang="ts" strictEvents>
   import CodeBlock from "$lib/components/CodeBlock.svelte";
+  import MediaQuery from "$lib/components/MediaQuery.svelte";
   import Authors from "$lib/components/Publication/Authors.svelte";
   import Metadata from "$lib/components/Publication/Metadata.svelte";
   import Preview from "$lib/components/Publication/Preview.svelte";
@@ -22,15 +23,20 @@
 </script>
 
 <div class="row">
-  <div class="container">
-    <div class="metadata">
-      <Metadata {date} {tags} />
-    </div>
-    <div style:flex="0 0 {descriptionWidth}" style:width={descriptionWidth}>
+  <MediaQuery query="(max-width: 800px)" let:matches>
+    {#if matches}
       <Title {title} />
+      <div class="metadata-mobile">
+        <Metadata {date} inline {tags} />
+      </div>
       <div class="authors">
         <Authors {authors} />
       </div>
+      {#if previewImage !== undefined}
+        <div class="preview preview-mobile">
+          <Preview {previewImage} {title} />
+        </div>
+      {/if}
       <div class="abstract">
         {abstract}
       </div>
@@ -41,18 +47,43 @@
           showBib = !showBib;
         }}
       />
-    </div>
-    {#if previewImage !== undefined}
-      <div class="preview">
-        <Preview {previewImage} {title} />
+      {#if showBib && bib !== undefined}
+        <CodeBlock code={bib} language="bib" />
+      {/if}
+    {:else}
+      <div class="container">
+        <div class="metadata">
+          <Metadata {date} {tags} />
+        </div>
+        <div style:flex="0 0 {descriptionWidth}" style:width={descriptionWidth}>
+          <Title {title} />
+          <div class="authors">
+            <Authors {authors} />
+          </div>
+          <div class="abstract">
+            {abstract}
+          </div>
+          <SourceButtons
+            {bib}
+            {pdf}
+            on:toggleBib={() => {
+              showBib = !showBib;
+            }}
+          />
+        </div>
+        {#if previewImage !== undefined}
+          <div class="preview">
+            <Preview {previewImage} {title} />
+          </div>
+        {/if}
       </div>
+      {#if showBib && bib !== undefined}
+        <div class="bib">
+          <CodeBlock code={bib} language="bib" />
+        </div>
+      {/if}
     {/if}
-  </div>
-  {#if showBib && bib !== undefined}
-    <div class="bib">
-      <CodeBlock code={bib} language="bib" />
-    </div>
-  {/if}
+  </MediaQuery>
 </div>
 
 <style lang="scss">
@@ -81,12 +112,21 @@
     padding-top: 0.5rem;
   }
 
+  .metadata-mobile {
+    padding-bottom: 0.5rem;
+    padding-top: 0.2rem;
+  }
+
   .preview {
     align-items: center;
     display: flex;
     flex: 0 0 35%;
     justify-content: center;
     padding: 0 30px;
+  }
+
+  .preview-mobile {
+    padding: 0rem 2rem 1rem 2rem;
   }
 
   .row {
