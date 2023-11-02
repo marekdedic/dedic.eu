@@ -55,7 +55,7 @@
         <div class="metadata">
           <Metadata {date} {tags} />
         </div>
-        <div style:flex="0 0 {descriptionWidth}" style:width={descriptionWidth}>
+        <div class:one-column={previewImage !== undefined} class:two-column={previewImage === undefined}>
           <Title {title} />
           <div class="authors">
             <Authors {authors} />
@@ -117,6 +117,11 @@
     padding-top: 0.2rem;
   }
 
+  .one-column {
+    flex: 0 0 50%;
+    width: 50%
+  }
+
   .preview {
     align-items: center;
     display: flex;
@@ -138,5 +143,10 @@
 
   .row:last-of-type {
     border-bottom: none;
+  }
+
+  .two-column {
+    flex: 0 0 85%;
+    width: 85%
   }
 </style>
