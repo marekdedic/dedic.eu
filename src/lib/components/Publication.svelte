@@ -1,6 +1,7 @@
 <script lang="ts" strictEvents>
   import CodeBlock from "$lib/components/CodeBlock.svelte";
   import Metadata from "$lib/components/Publication/Metadata.svelte";
+  import Title from "$lib/components/Publication/Title.svelte";
 
   export let abstract: string;
   export let authors: Array<string>;
@@ -23,7 +24,7 @@
       <Metadata {date} {tags} />
     </div>
     <div style:flex="0 0 {descriptionWidth}" style:width={descriptionWidth}>
-      <h2>{title}</h2>
+      <Title {title} />
       <div class="authors">
         {authors.slice(0, -1).join(", ")}{#if authors.length > 1}, and
         {/if}
@@ -97,12 +98,6 @@
 
   a:hover {
     text-decoration: none;
-  }
-
-  h2 {
-    font-weight: 400;
-    font-size: 1.5rem;
-    margin: 0;
   }
 
   figure {
