@@ -2,6 +2,7 @@
   import CodeBlock from "$lib/components/CodeBlock.svelte";
   import Authors from "$lib/components/Publication/Authors.svelte";
   import Metadata from "$lib/components/Publication/Metadata.svelte";
+  import SourceButtons from "$lib/components/Publication/SourceButtons.svelte";
   import Title from "$lib/components/Publication/Title.svelte";
 
   export let abstract: string;
@@ -32,22 +33,13 @@
       <div class="abstract">
         {abstract}
       </div>
-      <div class="source-buttons">
-        {#if bib !== undefined}
-          <button
-            aria-label="Show bibtex citation"
-            type="button"
-            on:click={() => {
-              showBib = !showBib;
-            }}
-          >
-            BIB
-          </button>
-        {/if}
-        {#if pdf !== undefined}
-          <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
-        {/if}
-      </div>
+      <SourceButtons
+        {bib}
+        {pdf}
+        on:toggleBib={() => {
+          showBib = !showBib;
+        }}
+      />
     </div>
     {#if previewImage !== undefined}
       <div class="preview">
@@ -68,36 +60,6 @@
 
 <style lang="scss">
   @use "../../lib/theme.scss";
-
-  a,
-  button {
-    background-color: var(--background-color);
-    border: 1px solid var(--text-color);
-    border-radius: 3px;
-    color: var(--text-color);
-    cursor: pointer;
-    font-size: 0.64rem;
-    font-weight: 400;
-    margin-right: 20px;
-    padding: 0.25rem 1rem;
-    transition:
-      color theme.$transition-duration ease,
-      background-color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
-  }
-
-  a:hover,
-  button:hover {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    transition:
-      color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
-  }
-
-  a:hover {
-    text-decoration: none;
-  }
 
   figure {
     margin: 0;
@@ -147,9 +109,5 @@
 
   .row:last-of-type {
     border-bottom: none;
-  }
-
-  .source-buttons {
-    display: flex;
   }
 </style>
