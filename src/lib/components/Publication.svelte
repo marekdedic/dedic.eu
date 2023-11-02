@@ -1,5 +1,11 @@
 <script lang="ts" strictEvents>
   import CodeBlock from "$lib/components/CodeBlock.svelte";
+  import MediaQuery from "$lib/components/MediaQuery.svelte";
+  import Authors from "$lib/components/Publication/Authors.svelte";
+  import Metadata from "$lib/components/Publication/Metadata.svelte";
+  import Preview from "$lib/components/Publication/Preview.svelte";
+  import SourceButtons from "$lib/components/Publication/SourceButtons.svelte";
+  import Title from "$lib/components/Publication/Title.svelte";
 
   export let abstract: string;
   export let authors: Array<string>;
@@ -14,160 +20,82 @@
   let showBib = false;
 
   $: descriptionWidth = previewImage !== undefined ? "50%" : "85%";
-
-  function monthName(month: number): string {
-    switch (month) {
-      case 1:
-        return "January";
-      case 2:
-        return "February";
-      case 3:
-        return "March";
-      case 4:
-        return "April";
-      case 5:
-        return "May";
-      case 6:
-        return "June";
-      case 7:
-        return "July";
-      case 8:
-        return "August";
-      case 9:
-        return "September";
-      case 10:
-        return "October";
-      case 11:
-        return "November";
-      case 12:
-        return "December";
-    }
-    return month.toString();
-  }
-
-  function formatDate(date: Date): string {
-    return (
-      date.getDay() +
-      1 +
-      " " +
-      monthName(date.getMonth() + 1) +
-      " " +
-      date.getFullYear()
-    );
-  }
 </script>
 
 <div class="row">
-  <div class="container">
-    <div class="metadata">
-      <div>{formatDate(date)}</div>
-      <div>
-        {#each tags as tag, i (i)}
-          <div class="tag">{tag}</div>
-        {/each}
+  <MediaQuery query="(max-width: 800px)" let:matches>
+    {#if matches}
+      <Title {title} />
+      <div class="metadata-mobile">
+        <Metadata {date} inline {tags} />
       </div>
-    </div>
-    <div style:flex="0 0 {descriptionWidth}" style:width={descriptionWidth}>
-      <h2>{title}</h2>
       <div class="authors">
-        {authors.slice(0, -1).join(", ")}{#if authors.length > 1}, and
-        {/if}
-        {authors[authors.length - 1]}
+        <Authors {authors} />
       </div>
+      {#if previewImage !== undefined}
+        <div class="preview preview-mobile">
+          <Preview {previewImage} {title} />
+        </div>
+      {/if}
       <div class="abstract">
         {abstract}
       </div>
-      <div class="source-buttons">
-        {#if bib !== undefined}
-          <button
-            aria-label="Show bibtex citation"
-            type="button"
-            on:click={() => {
+      <SourceButtons
+        {bib}
+        {pdf}
+        on:toggleBib={() => {
+          showBib = !showBib;
+        }}
+      />
+      {#if showBib && bib !== undefined}
+        <CodeBlock code={bib} language="bib" />
+      {/if}
+    {:else}
+      <div class="container">
+        <div class="metadata">
+          <Metadata {date} {tags} />
+        </div>
+        <div style:flex="0 0 {descriptionWidth}" style:width={descriptionWidth}>
+          <Title {title} />
+          <div class="authors">
+            <Authors {authors} />
+          </div>
+          <div class="abstract">
+            {abstract}
+          </div>
+          <SourceButtons
+            {bib}
+            {pdf}
+            on:toggleBib={() => {
               showBib = !showBib;
             }}
-          >
-            BIB
-          </button>
-        {/if}
-        {#if pdf !== undefined}
-          <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
+          />
+        </div>
+        {#if previewImage !== undefined}
+          <div class="preview">
+            <Preview {previewImage} {title} />
+          </div>
         {/if}
       </div>
-    </div>
-    {#if previewImage !== undefined}
-      <div class="preview">
-        <figure>
-          <picture>
-            <img alt={title} src={previewImage} />
-          </picture>
-        </figure>
-      </div>
+      {#if showBib && bib !== undefined}
+        <div class="bib">
+          <CodeBlock code={bib} language="bib" />
+        </div>
+      {/if}
     {/if}
-  </div>
-  {#if showBib && bib !== undefined}
-    <div class="bib">
-      <CodeBlock code={bib} language="bib" />
-    </div>
-  {/if}
+  </MediaQuery>
 </div>
 
 <style lang="scss">
   @use "../../lib/theme.scss";
-
-  a,
-  button {
-    background-color: var(--background-color);
-    border: 1px solid var(--text-color);
-    border-radius: 3px;
-    color: var(--text-color);
-    cursor: pointer;
-    font-size: 0.64rem;
-    font-weight: 400;
-    margin-right: 20px;
-    padding: 0.25rem 1rem;
-    transition:
-      color theme.$transition-duration ease,
-      background-color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
-  }
-
-  a:hover,
-  button:hover {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    transition:
-      color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
-  }
-
-  a:hover {
-    text-decoration: none;
-  }
-
-  h2 {
-    font-weight: 400;
-    font-size: 1.5rem;
-    margin: 0;
-  }
-
-  figure {
-    margin: 0;
-  }
-
-  img {
-    max-width: 100%;
-  }
 
   .abstract {
     margin-bottom: 0.5rem;
   }
 
   .authors {
-    color: var(--text-color-faded);
-    font-size: 0.8rem;
     margin-bottom: 0.9rem;
     margin-top: 0.3rem;
-    transition: color theme.$transition-duration ease;
   }
 
   .bib {
@@ -181,8 +109,12 @@
 
   .metadata {
     flex: 0 0 15%;
-    font-size: 0.8rem;
     padding-top: 0.5rem;
+  }
+
+  .metadata-mobile {
+    padding-bottom: 0.5rem;
+    padding-top: 0.2rem;
   }
 
   .preview {
@@ -191,6 +123,10 @@
     flex: 0 0 35%;
     justify-content: center;
     padding: 0 30px;
+  }
+
+  .preview-mobile {
+    padding: 0rem 2rem 1rem 2rem;
   }
 
   .row {
@@ -202,21 +138,5 @@
 
   .row:last-of-type {
     border-bottom: none;
-  }
-
-  .source-buttons {
-    display: flex;
-  }
-
-  .tag {
-    background-color: var(--primary-bg-color);
-    border: 1px solid var(--primary-color);
-    border-radius: 3px;
-    margin-top: 0.5rem;
-    padding: 0.1rem 0.3rem;
-    width: fit-content;
-    transition:
-      background-color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
   }
 </style>
