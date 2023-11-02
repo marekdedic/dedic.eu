@@ -11,15 +11,5 @@
 	</head>
 	<body>
 		<div style="display: contents">%sveltekit.body%</div>
-
-		<script>
-			let theme = "light";
-			if ("theme" in localStorage) {
-			  theme = localStorage.theme;
-			} else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-			  theme = "dark";
-			}
-			document.documentElement.dataset.theme = theme;
-		</script>
 	</body>
 </html>
