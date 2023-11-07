@@ -15,7 +15,7 @@
 </PageHeader>
 
 <PageContent>
-  <h2>lineární algera 1 – FJFI, ZS 23/24</h2>
+  <h2>lineární algebra 1 – FJFI, ZS 23/24</h2>
 
   <p>
     Cvičení pro 1. kruh oboru jaderná a částicová fyzika probíhají každé <b
