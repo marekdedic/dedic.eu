@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@fontsource/roboto": "^5.0.8",
-    "@fortawesome/free-solid-svg-icons": "^6.4.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@sveltejs/adapter-static": "^2.0.3",
     "@sveltejs/kit": "^1.27.6",
     "@types/prismjs": "^1.26.3",
