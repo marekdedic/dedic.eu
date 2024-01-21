@@ -4,8 +4,7 @@
   export let bib: string | undefined;
   export let pdf: string | undefined;
 
-  // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-  const dispatch = createEventDispatcher<{ toggleBib: void }>();
+  const dispatch = createEventDispatcher<{ toggleBib: null }>();
 </script>
 
 <div>
