@@ -4,8 +4,7 @@
   import DarkModeToggle from "./DarkModeToggle.svelte";
   import NavigationItem from "./NavigationItem.svelte";
 
-  // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
-  const dispatch = createEventDispatcher<{ click: void }>();
+  const dispatch = createEventDispatcher<{ click: null }>();
 </script>
 
 <NavigationItem
