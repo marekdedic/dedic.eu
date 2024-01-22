@@ -46,7 +46,7 @@
     "prismjs-bibtex": "^2.1.0",
     "rimraf": "^5.0.5",
     "sass": "^1.69.7",
-    "svelte": "^4.2.8",
+    "svelte": "^4.2.9",
     "svelte-check": "^3.6.3",
     "svelte-fa": "^4.0.2",
     "vite": "^5.0.11"
