@@ -1,9 +1,9 @@
 import { loadPublications } from "$lib/loadPublications";
 import type { PublicationParams } from "$lib/types/PublicationParams";
 
-import type { PageLoad } from "./$types";
+import type { PageServerLoad } from "./$types";
 
-export const load: PageLoad<{
+export const load: PageServerLoad<{
   publications: Array<PublicationParams>;
 }> = async ({ fetch }) => ({
   publications: await loadPublications("/publications.json", fetch),
