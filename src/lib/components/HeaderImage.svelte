@@ -12,9 +12,7 @@
 
 <div class="container">
   <figure>
-    <picture>
-      <img {alt} {src} />
-    </picture>
+    <enhanced:img class="image" {alt} {src} />
   </figure>
 
   {#if children !== undefined}
@@ -48,7 +46,7 @@
     margin: 0 0 1rem;
   }
 
-  img {
+  .image {
     border-radius: 0.25rem;
     box-shadow:
       0 2px 5px 0 rgba(0, 0, 0, 0.16),
