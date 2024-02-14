@@ -20,7 +20,7 @@
     }
   }
 
-  function addNewListener(query: string): void {
+  function addNewListener(): void {
     mql = window.matchMedia(query);
     mql.addEventListener("change", mqlListener);
     matches = mql.matches;
@@ -28,7 +28,7 @@
 
   onMount(() => {
     removeActiveListener();
-    addNewListener(query);
+    addNewListener();
     return (): void => {
       removeActiveListener();
     };
