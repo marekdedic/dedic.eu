@@ -14,25 +14,25 @@
     matches = v.matches;
   };
 
-  onMount(() => {
-    removeActiveListener();
-    addNewListener(query);
-    return (): void => {
-      removeActiveListener();
-    };
-  });
-
-  function addNewListener(query: string): void {
-    mql = window.matchMedia(query);
-    mql.addEventListener("change", mqlListener);
-    matches = mql.matches;
-  }
-
   function removeActiveListener(): void {
     if (mql) {
       mql.removeEventListener("change", mqlListener);
     }
   }
+
+  function addNewListener(): void {
+    mql = window.matchMedia(query);
+    mql.addEventListener("change", mqlListener);
+    matches = mql.matches;
+  }
+
+  onMount(() => {
+    removeActiveListener();
+    addNewListener();
+    return (): void => {
+      removeActiveListener();
+    };
+  });
 </script>
 
 <slot {matches} />
