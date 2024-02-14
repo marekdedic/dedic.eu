@@ -14,13 +14,11 @@
     matches = v.matches;
   };
 
-  onMount(() => {
-    removeActiveListener();
-    addNewListener(query);
-    return (): void => {
-      removeActiveListener();
-    };
-  });
+  function removeActiveListener(): void {
+    if (mql) {
+      mql.removeEventListener("change", mqlListener);
+    }
+  }
 
   function addNewListener(query: string): void {
     mql = window.matchMedia(query);
@@ -28,11 +26,13 @@
     matches = mql.matches;
   }
 
-  function removeActiveListener(): void {
-    if (mql) {
-      mql.removeEventListener("change", mqlListener);
-    }
-  }
+  onMount(() => {
+    removeActiveListener();
+    addNewListener(query);
+    return (): void => {
+      removeActiveListener();
+    };
+  });
 </script>
 
 <slot {matches} />
