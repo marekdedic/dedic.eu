@@ -33,19 +33,16 @@
     return month.toString();
   }
 
-  function formatDate(date: Date): string {
-    return (
-      date.getDay() +
-      1 +
-      " " +
-      monthName(date.getMonth() + 1) +
-      " " +
-      date.getFullYear()
-    );
-  }
+  $: formattedDate =
+    date.getDay() +
+    1 +
+    " " +
+    monthName(date.getMonth() + 1) +
+    " " +
+    date.getFullYear();
 </script>
 
-<div class:inline>{formatDate(date)}</div>
+<div class:inline>{formattedDate}</div>
 <div class:inline>
   {#each tags as tag, i (i)}
     <div class="tag" class:inline>{tag}</div>
