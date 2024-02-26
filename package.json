@@ -24,6 +24,7 @@
     "lint:ts:eslint": "eslint --color 'src/**/*.{svetle,ts}' 'tests/**/*.ts' 'playwright.config.js' 'svelte.config.js' 'vite.config.js'",
     "lint:ts": "run-p -c --aggregate-output lint:ts:*",
     "lint": "run-p -c --aggregate-output lint:*",
+    "playwright-accept": "playwright test --update-snapshots",
     "playwright-interactive": "playwright test --ui"
   },
   "devDependencies": {
