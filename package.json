@@ -20,7 +20,7 @@
     "start": "vite",
     "lint:svelte:svelte-check": "svelte-check",
     "lint:svelte": "run-p -c --aggregate-output lint:svelte:*",
-    "lint:ts:eslint": "eslint --color 'src/**/*.svelte' 'src/**/*.ts' 'svelte.config.js' 'vite.config.js'",
+    "lint:ts:eslint": "eslint --color 'src/**/*.{svetle,ts}' 'tests/**/*.ts' 'playwright.config.js' 'svelte.config.js' 'vite.config.js'",
     "lint:ts": "run-p -c --aggregate-output lint:ts:*",
     "lint": "run-p -c --aggregate-output lint:*",
     "playwright-interactive": "playwright test --ui"
@@ -40,6 +40,7 @@
     "eslint-plugin-compat": "^4.2.0",
     "eslint-plugin-deprecation": "^2.0.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-playwright": "^1.3.1",
     "eslint-plugin-prefer-arrow-functions": "^3.3.1",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-simple-import-sort": "^12.0.0",
