@@ -46,7 +46,7 @@
     "prettier-plugin-svelte": "^3.2.1",
     "prismjs-bibtex": "^2.1.0",
     "rimraf": "^5.0.5",
-    "sass": "^1.71.0",
+    "sass": "^1.71.1",
     "svelte": "^4.2.12",
     "svelte-check": "^3.6.4",
     "svelte-fa": "^4.0.2",
