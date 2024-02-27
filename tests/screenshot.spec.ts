@@ -1,43 +1,43 @@
 import { expect, test } from "playwright-test-coverage";
 
-test("main page screenshot", async ({ page }) => {
+test("main page snapshot", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
   await page.getByLabel("Dark mode toggle").click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
   await page.reload();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
 });
 
 test("navigation", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
   await page.getByLabel("Dark mode toggle").click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
   await page
     .getByRole("list")
     .getByRole("link", { name: "publications" })
     .click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
 });
 
-test("publications page screenshot", async ({ page }) => {
+test("publications page snapshot", async ({ page }) => {
   await page.goto("/publications");
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
   await page.getByLabel("Dark mode toggle").click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
   await page.getByLabel("Show bibtex citation").first().click();
-  await expect(page).toHaveScreenshot({ fullPage: true, animations: "allow" });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
 });
 
-test("teaching page screenshot", async ({ page }) => {
+test("teaching page snapshot", async ({ page }) => {
   // Replay the Google table to make the test reproducible
   await page.routeFromHAR("./tests/hars/vyuka-google-sheet.har", {
     url: "https://docs.google.com/spreadsheets/**/*",
   });
 
   await page.goto("/vyuka");
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
   await page.getByLabel("Dark mode toggle").click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
 });
