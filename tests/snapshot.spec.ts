@@ -1,4 +1,4 @@
-import { expect, test } from "playwright-test-coverage";
+import { expect, test } from "@playwright/test";
 
 test("main page snapshot", async ({ page }) => {
   await page.goto("/");
