@@ -14,7 +14,7 @@
 
 					Promise.all([
 						import("/node_modules/@sveltejs/kit/src/runtime/client/entry.js"),
-						import("/@fs/home/personal/Documents/git/dedic.eu/.svelte-kit/generated/client/app.js")
+						import("/@fs/stubbed/base/.svelte-kit/generated/client/app.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 3],
