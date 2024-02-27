@@ -3,6 +3,7 @@
 import { expect, type Page, test } from "@playwright/test";
 
 async function snapshot(page: Page): Promise<string> {
+  // eslint-disable-next-line playwright/no-raw-locators -- No other way to get the body element
   return (await page.locator("body").innerHTML()).replace(
     process.cwd(),
     "/stubbed/base",
