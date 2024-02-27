@@ -49,7 +49,6 @@
     "eslint-plugin-svelte": "^2.35.1",
     "npm-run-all": "^4.1.5",
     "playwright": "^1.41.2",
-    "playwright-test-coverage": "^1.2.12",
     "prettier-plugin-svelte": "^3.2.1",
     "prismjs-bibtex": "^2.1.0",
     "rimraf": "^5.0.5",
