@@ -480,4 +480,8 @@ tags
 
 # End of https://www.toptal.com/developers/gitignore/api/vim,node,svelte,latex
 
+/test-results/
+/playwright-report/
+/playwright/.cache/
+
 .well-known/pki-validation

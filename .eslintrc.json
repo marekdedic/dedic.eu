@@ -31,7 +31,12 @@
     "compat/compat": "warn",
     "deprecation/deprecation": "warn",
     "eslint-comments/no-unused-disable": "error",
-    "eslint-comments/require-description": "error",
+    "eslint-comments/require-description": [
+      "error",
+      {
+        "ignore": ["eslint-env"]
+      }
+    ],
     "prefer-arrow-functions/prefer-arrow-functions": [
       "error",
       {
@@ -144,7 +149,7 @@
       "parserOptions": {
         "project": null
       },
-      "files": ["svelte.config.js", "vite.config.js"],
+      "files": ["playwright.config.js", "svelte.config.js", "vite.config.js"],
       "rules": {
         "deprecation/deprecation": "off",
         "@typescript-eslint/await-thenable": "off",
@@ -197,6 +202,28 @@
         "@typescript-eslint/strict-boolean-expressions": "off",
         "@typescript-eslint/switch-exhaustiveness-check": "off",
         "@typescript-eslint/unbound-method": "off"
+      }
+    },
+    {
+      "files": [
+        "tests/**/*.ts"
+      ],
+      "extends": ["plugin:playwright/recommended"],
+      "rules": {
+        "playwright/no-commented-out-tests": "error",
+        "playwright/no-duplicate-hooks": "error",
+        "playwright/no-raw-locators": "error",
+        "playwright/prefer-comparison-matcher": "error",
+        "playwright/prefer-equality-matcher": "error",
+        "playwright/prefer-hooks-in-order": "error",
+        "playwright/prefer-hooks-on-top": "error",
+        "playwright/prefer-strict-equal": "error",
+        "playwright/prefer-to-be": "error",
+        "playwright/prefer-to-contain": "error",
+        "playwright/prefer-to-have-count": "error",
+        "playwright/prefer-to-have-length": "error",
+        "playwright/require-hook": "error",
+        "playwright/require-to-throw-message": "error"
       }
     }
   ]
