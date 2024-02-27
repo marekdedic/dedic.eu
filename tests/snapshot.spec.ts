@@ -7,6 +7,8 @@ test("main page snapshot", async ({ page }) => {
   expect(await page.locator("body").innerHTML()).toMatchSnapshot();
   await page.reload();
   expect(await page.locator("body").innerHTML()).toMatchSnapshot();
+  await page.getByLabel("Dark mode toggle").click();
+  expect(await page.locator("body").innerHTML()).toMatchSnapshot();
 });
 
 test("navigation", async ({ page }) => {
