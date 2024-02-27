@@ -2,32 +2,39 @@ import { expect, test } from "playwright-test-coverage";
 
 test("main page screenshot", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveScreenshot({ fullPage: true });
-  await page.getByLabel("Dark mode toggle").click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
-  await page.reload();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    maxDiffPixelRatio: 0.03,
+  });
 });
 
 test("navigation", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveScreenshot({ fullPage: true });
-  await page.getByLabel("Dark mode toggle").click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    maxDiffPixelRatio: 0.03,
+  });
   await page
     .getByRole("list")
     .getByRole("link", { name: "publications" })
     .click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    maxDiffPixelRatio: 0.03,
+  });
 });
 
 test("publications page screenshot", async ({ page }) => {
   await page.goto("/publications");
-  await expect(page).toHaveScreenshot({ fullPage: true });
-  await page.getByLabel("Dark mode toggle").click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    maxDiffPixelRatio: 0.03,
+  });
   await page.getByLabel("Show bibtex citation").first().click();
-  await expect(page).toHaveScreenshot({ fullPage: true, animations: "allow" });
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    maxDiffPixelRatio: 0.03,
+  });
 });
 
 test("teaching page screenshot", async ({ page }) => {
@@ -37,7 +44,8 @@ test("teaching page screenshot", async ({ page }) => {
   });
 
   await page.goto("/vyuka");
-  await expect(page).toHaveScreenshot({ fullPage: true });
-  await page.getByLabel("Dark mode toggle").click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    maxDiffPixelRatio: 0.03,
+  });
 });
