@@ -212,7 +212,6 @@
       "rules": {
         "playwright/no-commented-out-tests": "error",
         "playwright/no-duplicate-hooks": "error",
-        "playwright/no-nth-methods": "error",
         "playwright/no-raw-locators": "error",
         "playwright/prefer-comparison-matcher": "error",
         "playwright/prefer-equality-matcher": "error",
