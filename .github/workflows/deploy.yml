@@ -57,7 +57,7 @@ jobs:
           path: dist
 
       - name: "Deploy over FTP"
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.dedic.eu
           username: github-ftp-deploy@dedic.eu
