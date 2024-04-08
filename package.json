@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@fontsource/roboto": "^5.0.12",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@playwright/test": "^1.43.0",
     "@sveltejs/adapter-static": "^3.0.1",
     "@sveltejs/kit": "^2.5.5",
