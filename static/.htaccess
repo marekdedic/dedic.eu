@@ -6,8 +6,9 @@ RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
 
+# Remove www.
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [L,NE]
+RewriteRule ^(.*)$ http://%1%{REQUEST_URI} [L,R=301,NE]
 
 # Rewrite nonexistent paths to index.html
 RewriteRule ^index\.html$ - [L]
