@@ -95,21 +95,6 @@
     "title": "Scalable Graph Size Reduction for Efficient GNN Application"
   },
   {
-    "abstract": "A method for node classification that allows a user to precisely select the resolution at which the graph in question should be pretrained.",
-    "authors": [
-      "Marek Dědič",
-      "Lukáš Bajer",
-      "Pavel Procházka",
-      "Martin Holeňa"
-    ],
-    "bib": "@inproceedings{dedic_balancing_2023,\n\taddress = {Torino, Italy},\n\ttitle = {Balancing performance and complexity with adaptive graph coarsening},\n\turl = {https://mlg-europe.github.io/papers/234.pdf},\n\turldate = {2023-09-22},\n\tauthor = {Dědič, Marek and Bajer, Lukáš and Procházka, Pavel and Holeňa, Martin},\n\tmonth = sep,\n\tyear = {2023},\n}",
-    "date": "2023-09-22",
-    "pdf": "/publications/dedic_balancing_2023.pdf",
-    "previewImage": "/images/publication-preview-images/dedic_balancing_2023.png",
-    "tags": ["MLG", "ECML"],
-    "title": "Balancing performance and complexity with adaptive graph coarsening"
-  },
-  {
     "abstract": "A methodical way of linking graph properties with the performance of a GNN solving a given task on such graph via a surrogate regression model that is trained to predict the performance of the GNN from the properties of the graph dataset.",
     "authors": [
       "Pavel Procházka",
