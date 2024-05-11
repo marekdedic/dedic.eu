@@ -87,7 +87,7 @@
       "Michal Mareš",
       "Marek Dědič"
     ],
-    "bib": "@inproceedings{prochazka_scalable_2022,\n\taddress = {Zuberec, Slovakia},\n\ttitle = {Scalable Graph Size Reduction for Efficient GNN Application},\n\tvolume = {3226},\n\turl = {http://ceur-ws.org/Vol-3226/#paper9},\n\tbooktitle = {Proceedings of the 22nd Conference Information Technologies – Applications and Theory (ITAT 2022)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Procházka, Pavel and Mareš, Michal and Dědič, Marek},\n\tmonth = sep,\n\tyear = {2022},\n\tpages = {75--84},\n}}",
+    "bib": "@inproceedings{prochazka_scalable_2022,\n\taddress = {Zuberec, Slovakia},\n\ttitle = {Scalable Graph Size Reduction for Efficient GNN Application},\n\tvolume = {3226},\n\turl = {http://ceur-ws.org/Vol-3226/#paper9},\n\tbooktitle = {Proceedings of the 22nd Conference Information Technologies – Applications and Theory (ITAT 2022)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Procházka, Pavel and Mareš, Michal and Dědič, Marek},\n\tmonth = sep,\n\tyear = {2022},\n\tpages = {75--84},\n}",
     "date": "2022-09-30",
     "pdf": "/publications/prochazka_scalable_2022.pdf",
     "previewImage": "/images/publication-preview-images/prochazka_scalable_2022.png",
