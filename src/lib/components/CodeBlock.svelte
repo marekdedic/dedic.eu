@@ -63,6 +63,7 @@
     background-color: var(--background-color);
     border: none;
     border-radius: 5px;
+    color: var(--text-color);
     cursor: pointer;
     display: none;
     padding: 5px;
