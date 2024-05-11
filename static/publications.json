@@ -131,8 +131,8 @@
       "Pavel Prochazka",
       "Martin Holena"
     ],
-    "bib": "@inproceedings{dedic_balancing_2024,\n\taddress = {Vienna, Austria},\n\ttitle = {Balancing performance and complexity with adaptive graph coarsening},\n\turl = {https://openreview.net/forum?id=DrHwIzz93C&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2024%2FTinyPapers%2FAuthors%23your-submissions)},\n\tbooktitle = {The Second Tiny Papers Track at ICLR 2024},\n\tauthor = {Dědič, Marek and Bajer, Lukas and Prochazka, Pavel and Holena, Martin},\n\tmonth = mar,\n\tyear = {2024},\n}",
-    "date": "2024-03-19",
+    "bib": "@inproceedings{dedic_balancing_2024,\n\taddress = {Vienna, Austria},\n\ttitle = {Balancing performance and complexity with adaptive graph coarsening},\n\turl = {https://openreview.net/forum?id=DrHwIzz93C&referrer=%5BAuthor%20Console%5D(%2Fgroup%3Fid%3DICLR.cc%2F2024%2FTinyPapers%2FAuthors%23your-submissions)},\n\tbooktitle = {The Second Tiny Papers Track at ICLR 2024},\n\tauthor = {Dědič, Marek and Bajer, Lukas and Prochazka, Pavel and Holena, Martin},\n\tmonth = may,\n\tyear = {2024},\n}",
+    "date": "2024-05-11",
     "pdf": "/publications/dedic_balancing_2024.pdf",
     "previewImage": "/images/publication-preview-images/dedic_balancing_2024.png",
     "tags": ["ICLR"],
