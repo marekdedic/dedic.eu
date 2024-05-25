@@ -1,2 +1,3 @@
 User-agent: * 
+Sitemap: https://dedic.eu/sitemap.xml
 Crawl-Delay: 20
