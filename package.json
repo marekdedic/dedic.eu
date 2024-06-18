@@ -22,7 +22,7 @@
     "test": "playwright test",
     "lint:svelte:svelte-check": "svelte-check",
     "lint:svelte": "run-p -c --aggregate-output lint:svelte:*",
-    "lint:ts:eslint": "eslint --color 'src/**/*.{svelte,ts}' 'tests/**/*.ts' 'playwright.config.js' 'svelte.config.js' 'vite.config.js'",
+    "lint:ts:eslint": "eslint --color 'src/**/*.{svelte,ts}' 'tests/**/*.ts' '*.config.{js,ts}'",
     "lint:ts:typecheck": "tsc  --noEmit",
     "lint:ts": "run-p -c --aggregate-output lint:ts:*",
     "lint": "run-p -c --aggregate-output lint:*",
