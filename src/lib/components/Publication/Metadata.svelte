@@ -34,12 +34,11 @@
   }
 
   $: formattedDate =
-    date.getDay() +
-    1 +
+    (date.getDay() + 1).toString() +
     " " +
     monthName(date.getMonth() + 1) +
     " " +
-    date.getFullYear();
+    date.getFullYear().toString();
 </script>
 
 <div class:inline>{formattedDate}</div>
