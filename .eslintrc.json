@@ -150,7 +150,7 @@
       "parserOptions": {
         "project": null
       },
-      "files": ["playwright.config.js", "svelte.config.js", "vite.config.js"],
+      "files": ["*.config.js"],
       "rules": {
         "deprecation/deprecation": "off",
         "@typescript-eslint/await-thenable": "off",
