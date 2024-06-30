@@ -4,6 +4,18 @@ import type { Options } from "rollup-plugin-htaccess";
 const options: Partial<Options> = {
   template: "htaccess-template.txt",
   spec: {
+    AddOutputFilterByType: [
+      {
+        filters: ["DEFLATE"],
+        mediaTypes: [
+          "text/plain",
+          "text/html",
+          "text/css",
+          "application/javascript",
+          "application/json",
+        ],
+      },
+    ],
     Options: {
       minus: ["Indexes"],
     },
