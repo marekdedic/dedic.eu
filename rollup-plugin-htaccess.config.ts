@@ -2,7 +2,6 @@ import type { Options } from "rollup-plugin-htaccess";
 
 /* eslint-disable @typescript-eslint/naming-convention -- Most of these are things like header names */
 const options: Partial<Options> = {
-  template: "htaccess-template.txt",
   spec: {
     AddOutputFilterByType: [
       {
@@ -70,6 +69,68 @@ const options: Partial<Options> = {
     ],
     Options: {
       minus: ["Indexes"],
+    },
+    rewrite: {
+      rules: [
+        // Upgrade to HTTPS
+        {
+          conditions: [
+            {
+              testString: "%{HTTPS}",
+              conditionPattern: "!=on",
+            },
+          ],
+          pattern: "^(.*)$",
+          substitution: "https://%{HTTP_HOST}%{REQUEST_URI}",
+          flags: {
+            last: true,
+            qsappend: true,
+            redirect: 301,
+          },
+        },
+        // Remove www.
+        {
+          conditions: [
+            {
+              testString: "%{HTTP_HOST}",
+              conditionPattern: "^www\\.(.*)$",
+              flags: { nocase: true },
+            },
+          ],
+          pattern: "^(.*)$",
+          substitution: "http://%1%{REQUEST_URI}",
+          flags: {
+            last: true,
+            qsappend: true,
+            redirect: 301,
+          },
+        },
+        // Rewrite non-existent paths to index.html
+        {
+          pattern: "^index\\.html$",
+          substitution: null,
+          flags: {
+            last: true,
+          },
+        },
+        {
+          conditions: [
+            {
+              testString: "%{REQUEST_FILENAME}",
+              conditionPattern: "!-f",
+            },
+            {
+              testString: "%{REQUEST_FILENAME}",
+              conditionPattern: "!-d",
+            },
+          ],
+          pattern: ".",
+          substitution: "/index.html",
+          flags: {
+            last: true,
+          },
+        },
+      ],
     },
   },
 };
