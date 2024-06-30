@@ -1,5 +1,3 @@
-Options -Indexes
-
 RewriteEngine On
 
 # Upgrade to HTTPS
