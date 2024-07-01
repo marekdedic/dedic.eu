@@ -1,6 +1,7 @@
 <script lang="ts" strictEvents>
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import GoogleSheet from "$lib/components/GoogleSheet.svelte";
+  import Heading from "$lib/components/Heading.svelte";
   import InlineCode from "$lib/components/InlineCode.svelte";
   import PageContent from "$lib/components/PageContent.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
@@ -15,7 +16,7 @@
 </PageHeader>
 
 <PageContent>
-  <h2>teorie neuronových sítí – FIT, LS 23/24</h2>
+  <Heading level={2}>teorie neuronových sítí – FIT, LS 23/24</Heading>
 
   <p>
     Cvičení předmětu teorie neuronových sítí probíhají v liché týdny ve čtvrtky
@@ -28,7 +29,7 @@
       >FIT courses</ExternalLink
     >.
   </p>
-  <h2>lineární algebra 1 – FJFI, ZS 23/24</h2>
+  <Heading level={2}>lineární algebra 1 – FJFI, ZS 23/24</Heading>
 
   <p>
     Cvičení pro 1. kruh oboru jaderná a částicová fyzika probíhají každé <b
@@ -147,7 +148,7 @@
     url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOlPd-nlIljrCz_NIvkTFehlMJzedOHIClP1CSohavxk7hcTK-BRC4-wJXJ7KJ5Y3f6sMIzXduTxG0/pubhtml"
   />
 
-  <h2>teorie neuronových sítí – FIT, LS 22/23</h2>
+  <Heading level={2}>teorie neuronových sítí – FIT, LS 22/23</Heading>
 
   <p>
     Cvičení předmětu teorie neuronových sítí probíhají nepravidelně, viz e-mail.
