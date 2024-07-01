@@ -1,6 +1,7 @@
 <script lang="ts" strictEvents>
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import HeaderImage from "$lib/components/HeaderImage.svelte";
+  import Heading from "$lib/components/Heading.svelte";
   import Name from "$lib/components/Name.svelte";
   import PageContent from "$lib/components/PageContent.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
@@ -59,15 +60,9 @@
     </p>
   </PageSection>
 
-  <h2 class="no-space">recent publications</h2>
+  <Heading level={2}>recent publications</Heading>
 
   {#each data.publications.slice(0, 2) as publication (publication.title)}
     <Publication {...publication} />
   {/each}
 </PageContent>
-
-<style>
-  .no-space {
-    margin-bottom: 0;
-  }
-</style>
