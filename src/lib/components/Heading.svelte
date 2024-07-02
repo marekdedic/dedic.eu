@@ -3,7 +3,7 @@
 
   import { tableOfContents } from "$lib/stores";
 
-  export let level: number;
+  export let level: 2 | 3 | 4 | 5 | 6;
   export let inToC = true;
 
   interface $$Slots {
@@ -22,7 +22,7 @@
 
   $: if (inToC && id !== "") {
     tableOfContents.update((toc) => {
-      toc.set(id, title);
+      toc.set(id, [title, level]);
       return toc;
     });
   }

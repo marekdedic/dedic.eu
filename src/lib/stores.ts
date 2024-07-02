@@ -9,4 +9,6 @@ export const theme = {
   },
 };
 
-export const tableOfContents = writable<Map<string, string>>(new Map());
+export const tableOfContents = writable<
+  Map<string, [string, 2 | 3 | 4 | 5 | 6]>
+>(new Map());

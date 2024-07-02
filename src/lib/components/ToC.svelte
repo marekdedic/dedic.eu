@@ -6,9 +6,9 @@
 
 <ul>
   <h3>Contents</h3>
-  {#each tocEntries as [id, name] (id)}
+  {#each tocEntries as [id, [name, level]] (id)}
     <li>
-      <a href={"#" + id}>{name}</a>
+      <a class={"level-" + level.toString()} href={"#" + id}>{name}</a>
     </li>
   {/each}
 </ul>
@@ -36,5 +36,21 @@
   a {
     color: unset;
     text-decoration: underline;
+  }
+
+  .level-3 {
+    margin-left: 1rem;
+  }
+
+  .level-4 {
+    margin-left: 2rem;
+  }
+
+  .level-5 {
+    margin-left: 3rem;
+  }
+
+  .level-6 {
+    margin-left: 4rem;
   }
 </style>
