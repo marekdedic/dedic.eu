@@ -4,9 +4,7 @@
 </script>
 
 <figure>
-  <picture>
-    <img alt={title} src={previewImage} />
-  </picture>
+  <enhanced:img class="image" alt={title} src={previewImage} />
 </figure>
 
 <style>
@@ -14,7 +12,7 @@
     margin: 0;
   }
 
-  img {
+  .image {
     max-width: 100%;
   }
 </style>
