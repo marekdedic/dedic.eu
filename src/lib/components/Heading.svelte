@@ -73,4 +73,8 @@
     cursor: pointer;
     text-decoration: unset;
   }
+
+  a:hover {
+    text-decoration: underline;
+  }
 </style>
