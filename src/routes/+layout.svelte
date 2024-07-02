@@ -19,7 +19,7 @@
 
   onMount(() => {
     if ("theme" in localStorage) {
-      theme.set(localStorage.theme as string);
+      theme.set(localStorage.theme as "dark" | "light");
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       theme.set("dark");
     }
