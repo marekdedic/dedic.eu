@@ -8,3 +8,5 @@ export const theme = {
     update((current) => (current === "dark" ? "light" : "dark"));
   },
 };
+
+export const tableOfContents = writable<Map<string, string>>(new Map());

@@ -1,5 +1,10 @@
 <script lang="ts" strictEvents>
+  import { onDestroy } from "svelte";
+
+  import { tableOfContents } from "$lib/stores";
+
   export let level: number;
+  export let inToC = true;
 
   interface $$Slots {
     default: Record<string, never>;
@@ -14,6 +19,20 @@
     .toLowerCase()
     .replace(/[^0-9a-z\s]/g, "")
     .replace(/\s+/g, "-");
+
+  $: if (inToC && id !== "") {
+    tableOfContents.update((toc) => {
+      toc.set(id, title);
+      return toc;
+    });
+  }
+
+  onDestroy(() => {
+    tableOfContents.update((toc) => {
+      toc.delete(id);
+      return toc;
+    });
+  });
 </script>
 
 {#if level === 2}

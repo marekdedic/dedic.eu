@@ -5,6 +5,7 @@
   import InlineCode from "$lib/components/InlineCode.svelte";
   import PageContent from "$lib/components/PageContent.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
+  import ToC from "$lib/components/ToC.svelte";
 </script>
 
 <PageHeader>
@@ -14,6 +15,8 @@
     výsledky.
   </span>
 </PageHeader>
+
+<ToC />
 
 <PageContent>
   <Heading level={2}>teorie neuronových sítí – FIT, LS 23/24</Heading>
