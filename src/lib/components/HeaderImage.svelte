@@ -1,5 +1,5 @@
 <script lang="ts" strictEvents>
-  import EnhancedImg from "$lib/components/EnhancedImg.svelte";
+  import Image from "$lib/components/Image.svelte";
 
   export let alt: string;
   export let src: string;
@@ -10,9 +10,7 @@
 </script>
 
 <div class="container">
-  <figure>
-    <EnhancedImg {alt} {src} />
-  </figure>
+  <Image {alt} {src} />
 
   <div class="title">
     <slot />
@@ -39,17 +37,10 @@
     margin-top: 1rem;
   }
 
-  figure {
-    margin: 0 0 1rem;
-  }
-
-  figure :global(img) {
+  .container :global(img) {
     border-radius: 0.25rem;
     box-shadow:
       0 2px 5px 0 rgba(0, 0, 0, 0.16),
       0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    height: auto;
-    vertical-align: middle;
-    width: 100%;
   }
 </style>

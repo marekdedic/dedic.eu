@@ -2,7 +2,7 @@
   import type { Picture } from "vite-imagetools";
 
   const allImages = import.meta.glob<{ default: Picture }>(
-    ["../../../static/images/**/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}"],
+    ["../../images/**/*.{avif,gif,heif,jpeg,jpg,png,tiff,webp}"],
     {
       eager: true,
       query: { enhanced: true },
@@ -10,7 +10,7 @@
   );
 
   function getImage(src: string): Picture {
-    return allImages[`../../../static${src}`].default;
+    return allImages[`../..${src}`].default;
   }
 </script>
 
@@ -21,4 +21,17 @@
   const image = getImage(src);
 </script>
 
-<enhanced:img {alt} src={image} />
+<figure>
+  <enhanced:img {alt} src={image} />
+</figure>
+
+<style>
+  figure {
+    margin: 0;
+  }
+
+  figure :global(img) {
+    height: auto;
+    max-width: 100%;
+  }
+</style>
