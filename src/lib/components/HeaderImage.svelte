@@ -1,4 +1,6 @@
 <script lang="ts" strictEvents>
+  import EnhancedImg from "$lib/components/EnhancedImg.svelte";
+
   export let alt: string;
   export let src: string;
 
@@ -9,7 +11,7 @@
 
 <div class="container">
   <figure>
-    <enhanced:img class="image" {alt} {src} />
+    <EnhancedImg {alt} {src} />
   </figure>
 
   <div class="title">
@@ -41,11 +43,12 @@
     margin: 0 0 1rem;
   }
 
-  .image {
+  figure :global(img) {
     border-radius: 0.25rem;
     box-shadow:
       0 2px 5px 0 rgba(0, 0, 0, 0.16),
       0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    height: auto;
     vertical-align: middle;
     width: 100%;
   }

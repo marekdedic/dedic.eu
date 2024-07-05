@@ -1,10 +1,12 @@
 <script lang="ts" strictEvents>
+  import EnhancedImg from "$lib/components/EnhancedImg.svelte";
+
   export let title: string;
-  export let previewImage: string | undefined;
+  export let previewImage: string;
 </script>
 
 <figure>
-  <enhanced:img class="image" alt={title} src={previewImage} />
+  <EnhancedImg alt={title} src={previewImage} />
 </figure>
 
 <style>
@@ -12,7 +14,8 @@
     margin: 0;
   }
 
-  .image {
+  figure :global(img) {
+    height: auto;
     max-width: 100%;
   }
 </style>
