@@ -21,4 +21,17 @@
   const image = getImage(src);
 </script>
 
-<enhanced:img {alt} src={image} />
+<figure>
+  <enhanced:img {alt} src={image} />
+</figure>
+
+<style>
+  figure {
+    margin: 0;
+  }
+
+  figure :global(img) {
+    height: auto;
+    max-width: 100%;
+  }
+</style>
