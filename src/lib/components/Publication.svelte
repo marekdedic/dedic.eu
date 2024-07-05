@@ -1,9 +1,9 @@
 <script lang="ts">
   import CodeBlock from "$lib/components/CodeBlock.svelte";
+  import Image from "$lib/components/Image.svelte";
   import MediaQuery from "$lib/components/MediaQuery.svelte";
   import Authors from "$lib/components/Publication/Authors.svelte";
   import Metadata from "$lib/components/Publication/Metadata.svelte";
-  import Preview from "$lib/components/Publication/Preview.svelte";
   import SourceButtons from "$lib/components/Publication/SourceButtons.svelte";
   import Title from "$lib/components/Publication/Title.svelte";
 
@@ -45,7 +45,7 @@
         </div>
         {#if previewImage !== undefined}
           <div class="preview preview-mobile">
-            <Preview {previewImage} {title} />
+            <Image alt={title} src={previewImage} />
           </div>
         {/if}
         <div class="abstract">
@@ -87,7 +87,7 @@
           </div>
           {#if previewImage !== undefined}
             <div class="preview">
-              <Preview {previewImage} {title} />
+              <Image alt={title} src={previewImage} />
             </div>
           {/if}
         </div>

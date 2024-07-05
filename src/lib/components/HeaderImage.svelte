@@ -1,6 +1,8 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
 
+  import Image from "$lib/components/Image.svelte";
+
   interface Props {
     alt: string;
     children?: Snippet;
@@ -11,9 +13,7 @@
 </script>
 
 <div class="container">
-  <figure>
-    <enhanced:img class="image" {alt} {src} />
-  </figure>
+  <Image {alt} {src} />
 
   {#if children !== undefined}
     <div class="title">
@@ -42,16 +42,10 @@
     margin-top: 1rem;
   }
 
-  figure {
-    margin: 0 0 1rem;
-  }
-
-  .image {
+  .container :global(img) {
     border-radius: 0.25rem;
     box-shadow:
       0 2px 5px 0 rgba(0, 0, 0, 0.16),
       0 2px 10px 0 rgba(0, 0, 0, 0.12);
-    vertical-align: middle;
-    width: 100%;
   }
 </style>
