@@ -32,7 +32,7 @@
   "devDependencies": {
     "@fontsource/roboto": "^5.0.13",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@playwright/test": "^1.45.0",
+    "@playwright/test": "^1.45.1",
     "@sveltejs/adapter-static": "^3.0.2",
     "@sveltejs/kit": "^2.5.18",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
