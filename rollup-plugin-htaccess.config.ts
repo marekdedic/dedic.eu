@@ -2,6 +2,11 @@ import type { Options } from "rollup-plugin-htaccess";
 
 /* eslint-disable @typescript-eslint/naming-convention -- Most of these are things like header names */
 const options: Partial<Options> = {
+  extractMetaCSP: {
+    enabled: true,
+    htaccessFile: "dist/.htaccess",
+    files: ["dist/index.html"],
+  },
   spec: {
     AddOutputFilterByType: [
       {
