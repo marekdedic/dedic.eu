@@ -57,20 +57,6 @@ const options: Partial<Options> = {
           nosniff: true,
         },
       },
-      {
-        header: "X-Frame-Options",
-        always: true,
-        action: "set",
-        value: "deny",
-      },
-      {
-        header: "X-Xss-Protection",
-        always: true,
-        action: "set",
-        value: {
-          mode: "block",
-        },
-      },
     ],
     Options: {
       minus: ["Indexes"],
