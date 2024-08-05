@@ -29,7 +29,7 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: "npm run start -- --host",
+    command: 'NODE_ENV="test" npm run start -- --host',
     url: "http://127.0.0.1:5173",
     reuseExistingServer: false, // Breaks snapshots
   },

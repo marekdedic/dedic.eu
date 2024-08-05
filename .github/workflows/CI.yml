@@ -56,6 +56,7 @@ jobs:
         run: |
           npm run test
         env:
+          NODE_ENV: test
           HOME: /root
 
       - uses: actions/upload-artifact@v4
