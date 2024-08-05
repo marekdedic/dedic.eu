@@ -19,14 +19,14 @@
     "build": "vite build",
     "postbuild": "npx svelte-sitemap --out-dir dist --domain https://dedic.eu",
     "start": "vite",
-    "test": "NODE_ENV=\"test\" playwright test",
+    "test": "NODE_ENV=\"development\" playwright test",
     "lint:svelte:svelte-check": "svelte-check",
     "lint:svelte": "run-p -c --aggregate-output lint:svelte:*",
     "lint:ts:eslint": "eslint --color 'src/**/*.{svelte,ts}' 'tests/**/*.ts' '*.config.{js,ts}'",
     "lint:ts:typecheck": "tsc  --noEmit",
     "lint:ts": "run-p -c --aggregate-output lint:ts:*",
     "lint": "run-p -c --aggregate-output lint:*",
-    "playwright-accept": "NODE_ENV=\"test\" playwright test --update-snapshots",
+    "playwright-accept": "NODE_ENV=\"development\" playwright test --update-snapshots",
     "playwright-interactive": "playwright test --ui"
   },
   "devDependencies": {
