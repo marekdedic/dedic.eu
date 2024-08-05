@@ -34,7 +34,7 @@
   }
 
   $: formattedDate =
-    (date.getDay() + 1).toString() +
+    date.getDate().toString() +
     " " +
     monthName(date.getMonth() + 1) +
     " " +
