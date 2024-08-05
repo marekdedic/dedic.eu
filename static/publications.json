@@ -122,5 +122,18 @@
     "previewImage": "/images/publication-preview-images/dedic_balancing_2024.png",
     "tags": ["ICLR"],
     "title": "Balancing performance and complexity with adaptive graph coarsening"
+  },
+  {
+    "abstract": "A simple, scalable and efficient baseline algorithm for classification and retrieval in hypergraphs, based on non-parametric convolution.",
+    "authors": [
+      "Pavel Procházka",
+      "Marek Dědič",
+      "Lukáš Bajer"
+    ],
+    "bib": "@inproceedings{prochazka_convolutional_2024,\n\taddress = {Vilnius, Lithuania},\n\ttitle = {Convolutional Signal Propagation: A Simple Scalable Algorithm for Hypergraphs},\n\tauthor = {Procházka, Pavel and Dědič, Marek and Bajer, Lukáš},\n\tmonth = sep,\n\tyear = {2024},\n}",
+    "date": "2024-09-09",
+    "pdf": "/publications/prochazka_convolutional_2024.pdf",
+    "tags": ["MLG", "ECML"],
+    "title": "Convolutional Signal Propagation: A Simple Scalable Algorithm for Hypergraphs"
   }
 ]
