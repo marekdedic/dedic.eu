@@ -53,10 +53,12 @@
     <p>
       Additionally, I am an active member of the Czech Scouting organization.
       Since 2015, I am a lecturer at a summer course for aspiring patrol
-      leaders, which I was also leading from 2019 until 2023. Currently, I am
-      organising an educator conference for ca. 100 attendees as a programme
-      chair. I am also combining IT with scouting, both as a software developer
-      and a member of the IT committee of the executive board.
+      leaders, which I was also leading from 2019 until 2023. I was in previous
+      years organising an educator conference for ca. 100 attendees as a
+      programme chair or a general chair. I am also combining IT with scouting
+      as a software developer for internal applications. Lastly, since 2024, I
+      am serving as an elected member of the National Board, the top legislative
+      and strategic body of the Czech Scouting organization.
     </p>
   </PageSection>
 
