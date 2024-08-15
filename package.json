@@ -30,7 +30,7 @@
     "playwright-interactive": "playwright test --ui"
   },
   "devDependencies": {
-    "@fontsource/roboto": "^5.0.13",
+    "@fontsource/roboto": "^5.0.14",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@playwright/test": "^1.46.0",
     "@sveltejs/adapter-static": "^3.0.4",
