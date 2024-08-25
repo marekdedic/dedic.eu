@@ -36,6 +36,7 @@ test("publications page snapshot", async ({ page }) => {
   expect(await snapshot(page)).toMatchSnapshot();
   await page.getByLabel("Dark mode toggle").click();
   expect(await snapshot(page)).toMatchSnapshot();
+  // eslint-disable-next-line playwright/no-nth-methods -- General testing, what's first is irrelevant
   await page.getByLabel("Show bibtex citation").first().click();
   expect(await snapshot(page)).toMatchSnapshot();
 });
