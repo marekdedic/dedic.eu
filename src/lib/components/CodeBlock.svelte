@@ -1,13 +1,11 @@
 <script lang="ts" strictEvents>
-  // eslint-disable-next-line simple-import-sort/imports -- Needs to be in this order, otherwise prism-bibtex doesn't work
-  import * as Prism from "prismjs";
-  import "prismjs/themes/prism-coy.css";
-  import "prismjs-bibtex";
-
   import {
     faClipboard,
     faClipboardCheck,
   } from "@fortawesome/free-solid-svg-icons";
+  import * as Prism from "prismjs";
+  import "prismjs/themes/prism-coy.css";
+  import "prismjs-bibtex";
   import Fa from "svelte-fa";
 
   export let language: string;

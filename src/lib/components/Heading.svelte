@@ -1,7 +1,6 @@
 <script lang="ts" strictEvents>
-  import { onDestroy } from "svelte";
-
   import { tableOfContents } from "$lib/stores";
+  import { onDestroy } from "svelte";
 
   export let level: 2 | 3 | 4 | 5 | 6;
   export let inToC = true;

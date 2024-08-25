@@ -1,5 +1,6 @@
-import { loadPublications } from "$lib/loadPublications";
 import type { PublicationParams } from "$lib/types/PublicationParams";
+
+import { loadPublications } from "$lib/loadPublications";
 
 import type { PageServerLoad } from "./$types";
 

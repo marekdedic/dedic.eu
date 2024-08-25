@@ -1,15 +1,13 @@
 <script lang="ts" strictEvents>
+  import Header from "$lib/components/Header.svelte";
+  import { theme } from "$lib/stores";
   import "@fontsource/roboto/300.css";
   import "@fontsource/roboto/300-italic.css";
   import "@fontsource/roboto/400.css";
   import "@fontsource/roboto/400-italic.css";
   import "@fontsource/roboto/700.css";
   import "@fontsource/roboto/700-italic.css";
-
   import { onDestroy, onMount } from "svelte";
-
-  import Header from "$lib/components/Header.svelte";
-  import { theme } from "$lib/stores";
 
   interface $$Slots {
     default: Record<string, never>;

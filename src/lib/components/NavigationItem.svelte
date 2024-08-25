@@ -1,7 +1,6 @@
 <script lang="ts" strictEvents>
-  import { createEventDispatcher } from "svelte";
-
   import { page } from "$app/stores";
+  import { createEventDispatcher } from "svelte";
 
   export let href: string;
   export let title: string;
