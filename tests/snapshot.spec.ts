@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 import { expect, type Page, test } from "@playwright/test";
 
 async function snapshot(page: Page): Promise<string> {
