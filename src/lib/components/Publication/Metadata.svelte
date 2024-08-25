@@ -29,8 +29,9 @@
         return "November";
       case 12:
         return "December";
+      default:
+        return month.toString();
     }
-    return month.toString();
   }
 
   $: formattedDate =
