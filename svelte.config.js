@@ -13,6 +13,7 @@ export default {
     }),
     csp: {
       mode: "hash",
+      /* eslint-disable @typescript-eslint/naming-convention -- These are CSP directive names */
       directives: {
         "upgrade-insecure-requests": true,
         "default-src": ["self"],
@@ -21,6 +22,7 @@ export default {
         "font-src": ["self", "data:"],
         "report-uri": ["https://marekdedic.report-uri.com/r/d/csp/enforce"],
       },
+      /* eslint-enable @typescript-eslint/naming-convention */
     },
   },
 };
