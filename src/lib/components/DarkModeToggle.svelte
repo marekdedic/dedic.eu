@@ -1,8 +1,7 @@
 <script lang="ts" strictEvents>
+  import { theme } from "$lib/stores";
   import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
   import Fa from "svelte-fa";
-
-  import { theme } from "$lib/stores";
 </script>
 
 <li>

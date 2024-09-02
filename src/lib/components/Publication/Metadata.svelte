@@ -29,16 +29,12 @@
         return "November";
       case 12:
         return "December";
+      default:
+        return month.toString();
     }
-    return month.toString();
   }
 
-  $: formattedDate =
-    date.getDate().toString() +
-    " " +
-    monthName(date.getMonth() + 1) +
-    " " +
-    date.getFullYear().toString();
+  $: formattedDate = `${date.getDate().toString()} ${monthName(date.getMonth() + 1)} ${date.getFullYear().toString()}`;
 </script>
 
 <div class:inline>{formattedDate}</div>

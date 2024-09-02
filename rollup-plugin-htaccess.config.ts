@@ -4,8 +4,8 @@ import type { Options } from "rollup-plugin-htaccess";
 const options: Partial<Options> = {
   extractMetaCSP: {
     enabled: true,
-    htaccessFile: "dist/.htaccess",
     files: ["dist/index.html"],
+    htaccessFile: "dist/.htaccess",
   },
   spec: {
     AddOutputFilterByType: [
@@ -22,9 +22,9 @@ const options: Partial<Options> = {
     ],
     Header: [
       {
-        header: "Permissions-Policy",
-        always: true,
         action: "set",
+        always: true,
+        header: "Permissions-Policy",
         value: {
           camera: {},
           "display-capture": {},
@@ -35,24 +35,24 @@ const options: Partial<Options> = {
         },
       },
       {
-        header: "Referrer-Policy",
-        always: true,
         action: "set",
+        always: true,
+        header: "Referrer-Policy",
         value: "same-origin",
       },
       {
-        header: "Strict-Transport-Security",
-        always: true,
         action: "set",
+        always: true,
+        header: "Strict-Transport-Security",
         value: {
-          maxAge: 31536000,
           includeSubDomains: true,
+          maxAge: 31536000,
         },
       },
       {
-        header: "X-Content-Type-Options",
-        always: true,
         action: "set",
+        always: true,
+        header: "X-Content-Type-Options",
         value: {
           nosniff: true,
         },
@@ -67,59 +67,59 @@ const options: Partial<Options> = {
         {
           conditions: [
             {
-              testString: "%{HTTPS}",
               conditionPattern: "!=on",
+              testString: "%{HTTPS}",
             },
           ],
-          pattern: "^(.*)$",
-          substitution: "https://%{HTTP_HOST}%{REQUEST_URI}",
           flags: {
             last: true,
             qsappend: true,
             redirect: 301,
           },
+          pattern: "^(.*)$",
+          substitution: "https://%{HTTP_HOST}%{REQUEST_URI}",
         },
         // Remove www.
         {
           conditions: [
             {
-              testString: "%{HTTP_HOST}",
               conditionPattern: "^www\\.(.*)$",
               flags: { nocase: true },
+              testString: "%{HTTP_HOST}",
             },
           ],
-          pattern: "^(.*)$",
-          substitution: "http://%1%{REQUEST_URI}",
           flags: {
             last: true,
             qsappend: true,
             redirect: 301,
           },
+          pattern: "^(.*)$",
+          substitution: "http://%1%{REQUEST_URI}",
         },
         // Rewrite non-existent paths to index.html
         {
-          pattern: "^index\\.html$",
-          substitution: null,
           flags: {
             last: true,
           },
+          pattern: "^index\\.html$",
+          substitution: null,
         },
         {
           conditions: [
             {
-              testString: "%{REQUEST_FILENAME}",
               conditionPattern: "!-f",
+              testString: "%{REQUEST_FILENAME}",
             },
             {
-              testString: "%{REQUEST_FILENAME}",
               conditionPattern: "!-d",
+              testString: "%{REQUEST_FILENAME}",
             },
           ],
-          pattern: ".",
-          substitution: "/index.html",
           flags: {
             last: true,
           },
+          pattern: ".",
+          substitution: "/index.html",
         },
       ],
     },

@@ -1,4 +1,6 @@
 <script lang="ts" strictEvents>
+  import type { PublicationParams } from "$lib/types/PublicationParams.ts";
+
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import HeaderImage from "$lib/components/HeaderImage.svelte";
   import Heading from "$lib/components/Heading.svelte";
@@ -7,7 +9,6 @@
   import PageHeader from "$lib/components/PageHeader.svelte";
   import PageSection from "$lib/components/PageSection.svelte";
   import Publication from "$lib/components/Publication.svelte";
-  import type { PublicationParams } from "$lib/types/PublicationParams.ts";
 
   export let data: { publications: Array<PublicationParams> };
 </script>

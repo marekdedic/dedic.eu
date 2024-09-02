@@ -11,15 +11,7 @@
 
 <iframe
   {height}
-  src={url +
-    "?gid=" +
-    sheetId +
-    "&amp;single=true&amp;widget=" +
-    showSheetTab.toString() +
-    "&amp;headers=" +
-    showRowColumnHeaders.toString() +
-    "&amp;chrome=" +
-    showTitle.toString()}
+  src={`${url}?gid=${sheetId}&amp;single=true&amp;widget=${showSheetTab.toString()}&amp;headers=${showRowColumnHeaders.toString()}&amp;chrome=${showTitle.toString()}`}
   {title}
   width="100%"
 ></iframe>

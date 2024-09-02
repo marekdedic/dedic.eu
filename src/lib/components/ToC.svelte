@@ -8,7 +8,7 @@
   <h3>Contents</h3>
   {#each tocEntries as [id, [name, level]] (id)}
     <li>
-      <a class={"level-" + level.toString()} href={"#" + id}>{name}</a>
+      <a class={`level-${level.toString()}`} href={`#${id}`}>{name}</a>
     </li>
   {/each}
 </ul>
