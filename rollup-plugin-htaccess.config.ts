@@ -110,10 +110,6 @@ const options: Partial<Options> = {
               conditionPattern: "!-f",
               testString: "%{REQUEST_FILENAME}",
             },
-            {
-              conditionPattern: "!-d",
-              testString: "%{REQUEST_FILENAME}",
-            },
           ],
           flags: {
             last: true,
