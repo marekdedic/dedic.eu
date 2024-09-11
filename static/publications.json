@@ -133,6 +133,7 @@
     "bib": "@inproceedings{prochazka_convolutional_2024,\n\taddress = {Vilnius, Lithuania},\n\ttitle = {Convolutional Signal Propagation: A Simple Scalable Algorithm for Hypergraphs},\n\tauthor = {Procházka, Pavel and Dědič, Marek and Bajer, Lukáš},\n\tmonth = sep,\n\tyear = {2024},\n}",
     "date": "2024-09-09",
     "pdf": "/publications/prochazka_convolutional_2024.pdf",
+    "previewImage": "/images/publication-preview-images/prochazka_convolutional_2024.png",
     "tags": ["MLG", "ECML"],
     "title": "Convolutional Signal Propagation: A Simple Scalable Algorithm for Hypergraphs"
   }
