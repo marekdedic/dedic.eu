@@ -4,8 +4,6 @@
     "forceConsistentCasingInFileNames": true,
     "target": "es6",
 
-    "skipLibCheck": true,
-
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "exactOptionalPropertyTypes": true,
