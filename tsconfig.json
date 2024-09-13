@@ -1,13 +1,20 @@
 {
   "extends": "./.svelte-kit/tsconfig.json",
   "compilerOptions": {
-    "target": "es6",
     "forceConsistentCasingInFileNames": true,
+    "target": "es6",
+
+    "skipLibCheck": true,
+
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
     "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "skipLibCheck": true,
     "strict": true
   }
 }
