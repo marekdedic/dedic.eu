@@ -19,6 +19,117 @@
 <ToC />
 
 <PageContent>
+  <Heading level={2}>lineární algebra 1 – FJFI, ZS 24/25</Heading>
+
+  <p>
+    Cvičení pro obory Aplikace informatiky v přírodních vědách a Aplikované
+    matematicko-stochastické metody probíhají každé <b
+      >úterý od 14:00 do 15:40</b
+    >
+    v místnosti <b>B-115</b>.
+  </p>
+  <p>
+    Informace ke zkoušce, podmínky splnění předmětu a klasifikace lze nalézt v
+    Microsoft Teams, kde by všichni studenti měli být členy týmu <InlineCode
+      >Team-B241-01LAL</InlineCode
+    >, případně na <ExternalLink
+      href="https://kmlinux.fjfi.cvut.cz/~ambrop1/?loc=lna1&lg=cs"
+      >webu přednášejících</ExternalLink
+    >.
+  </p>
+
+  <h3>studijní materiály</h3>
+
+  <p>
+    Aktuální studijní materiály od přednášejících jsou v Microsoft Teams, obecně
+    jde hlavně o:
+  </p>
+
+  <ul>
+    <li>
+      <ExternalLink href="https://people.fjfi.cvut.cz/balkolub/galleryW20/"
+        >Skripta</ExternalLink
+      > k přednáškám
+    </li>
+    <li>
+      <ExternalLink href="https://kmlinux.fjfi.cvut.cz/~ambrop1/?loc=lna1&lg=cs"
+        >Seznamy příkladů</ExternalLink
+      >, z nichž část budeme řešit na cvičeních
+    </li>
+  </ul>
+
+  <p>Z dalších materiálů pak mohu doporučit ještě:</p>
+
+  <ul>
+    <li>
+      <ExternalLink href="https://nsa.fjfi.cvut.cz/david/other/reseni-LA1.pdf"
+        >Řešené příklady ze cvičení</ExternalLink
+      > od prof. Krejčiříka
+    </li>
+    <li>
+      <ExternalLink
+        href="https://kmlinux.fjfi.cvut.cz/~balkolub/Vyuka/zima2012/LAPzima2012/sbirka_array.pdf"
+        >Sbírka příkladů</ExternalLink
+      > z lineární algebry
+    </li>
+    <li>
+      Sérii videí <ExternalLink
+        href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
+        >Essence of linear algebra</ExternalLink
+      > od 3Blue1Brown
+    </li>
+    <li>
+      Interaktivní demo <ExternalLink
+        href="https://yizhe-ang.github.io/matrix-explorable/"
+        >The matrix arcade</ExternalLink
+      > vhodné k 9. cvičení o lineárních zobrazeních.
+    </li>
+  </ul>
+
+  <h3>podmínky zápočtu</h3>
+
+  Na konci semestru na základě práce při cvičeních každý může získat kromě
+  zápočtu až 10% navíc k praktické části zkoušky (podrobnosti v podmínkách
+  zkoušky). Získání zápočtu i tyto bonusová procenta se počítají z bodů
+  získaných během cvičení. Body lze získat třemi různými způsoby:
+
+  <ul>
+    <li>
+      Na začátku každého cvičení (počínaje druhým, včetně posledního) se bude
+      psát mini-test obsahující 1 příklad typově z předcházejícího cvičení. Za
+      každý test lze získat maximálně 1 bod. Testy jsou <i>open-book</i>, tedy
+      je povoleno používání jakýchkoliv materiálů (skripta, vlastní
+      poznámky...), není povoleno komunikovat s kýmkoliv dalším či používat
+      software řešící příklady.
+    </li>
+    <li>
+      Za aktivitu při cvičeních (počítání příkladů u tabule apod.) lze získat za
+      každé cvičení 0.5 bodu.
+    </li>
+    <li>
+      Pro ty, kdo nenasbírají dostatečný počet bodů, budou ke konci semestru
+      zadané 3 domácí úkoly, z každého z nich lze získat maximálně 1 bod.
+    </li>
+  </ul>
+
+  <p>Pro získání zápočtu je třeba splnit 2 podmínky:</p>
+
+  <ul>
+    <li>Mít maximálně 2 absence.</li>
+    <li>Mít součet bodů alespoň 5.</li>
+  </ul>
+
+  <p>Bonusová procenta ke zkoušce jsou pak daná součtem bodů, mínus 5.</p>
+
+  <h3>výsledky</h3>
+
+  <GoogleSheet
+    height="700px"
+    sheetId="2096801087"
+    title="Přehled výsledků"
+    url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnfVXCFtXcJx8K-fkwNKOnPg9v8nUbr1in4K7ErpwKhyk8dSiVjc8VLUsrbDBFzOyc2rUQhvpVapJz/pubhtml"
+  />
+
   <Heading level={2}>teorie neuronových sítí – FIT, LS 23/24</Heading>
 
   <p>
@@ -32,6 +143,7 @@
       >FIT courses</ExternalLink
     >.
   </p>
+
   <Heading level={2}>lineární algebra 1 – FJFI, ZS 23/24</Heading>
 
   <p>
