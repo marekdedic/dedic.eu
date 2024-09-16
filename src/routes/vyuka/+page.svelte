@@ -88,9 +88,9 @@
 
   <h3>podmínky zápočtu</h3>
 
-  Na konci semestru na základě práce při cvičeních každý může získat kromě
+  Na konci semestru na základě práce při cvičeních může každý získat kromě
   zápočtu až 10% navíc k praktické části zkoušky (podrobnosti v podmínkách
-  zkoušky). Získání zápočtu i tyto bonusová procenta se počítají z bodů
+  zkoušky). Získání zápočtu i tato bonusová procenta se počítají z bodů
   získaných během cvičení. Body lze získat třemi různými způsoby:
 
   <ul>
@@ -212,9 +212,9 @@
 
   <h3>podmínky zápočtu</h3>
 
-  Na konci semestru na základě práce při cvičeních každý může získat kromě
+  Na konci semestru na základě práce při cvičeních může každý získat kromě
   zápočtu až 10% navíc k praktické části zkoušky (podrobnosti v podmínkách
-  zkoušky). Získání zápočtu i tyto bonusová procenta se počítají z bodů
+  zkoušky). Získání zápočtu i tato bonusová procenta se počítají z bodů
   získaných během cvičení. Body lze získat třemi různými způsoby:
 
   <ul>
