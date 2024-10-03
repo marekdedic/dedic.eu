@@ -29,7 +29,7 @@
       "Tomas Pevny",
       "Marek Dedic"
     ],
-    "bib": "@misc{pevny_nested_2020,\n\ttitle = {Nested Multiple Instance Learning in Modelling of HTTP network traffic},\n\turl = {http://arxiv.org/abs/2002.04059},\n\tdoi = {10.48550/arXiv.2002.04059},\n\tpublisher = {arXiv},\n\tauthor = {Pevny, Tomas and Dedic, Marek},\n\tmonth = feb,\n\tyear = {2020},\n}",
+    "bib": "@misc{pevny_nested_2020,\n\ttitle = {Nested {Multiple} {Instance} {Learning} in {Modelling} of {HTTP} network traffic},\n\turl = {http://arxiv.org/abs/2002.04059},\n\tdoi = {10.48550/arXiv.2002.04059},\n\tpublisher = {arXiv},\n\tauthor = {Pevny, Tomas and Dedic, Marek},\n\tmonth = feb,\n\tyear = {2020},\n}",
     "date": "2020-02-10",
     "pdf": "/publications/pevny_nested_2020.pdf",
     "previewImage": "/images/publication-preview-images/pevny_nested_2020.png",
@@ -44,7 +44,7 @@
       "Lukáš Bajer",
       "Martin Holeňa"
     ],
-    "bib": "@inproceedings{dedic_loss_2020,\n\taddress = {Oravská Lesná, Slovakia},\n\ttitle = {Loss Functions for Clustering in Multi-instance Learning},\n\tvolume={2718},\n\turl = {http://ceur-ws.org/Vol-2718/#paper05},\n\tbooktitle = {Proceedings of the 20th Conference Information Technologies - Applications and Theory (ITAT 2020)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Dědič, Marek and Pevný, Tomáš and Bajer, Lukáš and Holeňa, Martin},\n\tmonth = oct,\n\tyear = {2020},\n\tpages = {137--146},\n}",
+    "bib": "@inproceedings{dedic_loss_2020,\n\taddress = {Oravská Lesná, Slovakia},\n\ttitle = {Loss {Functions} for {Clustering} in {Multi}-instance {Learning}},\n\tvolume = {2718},\n\turl = {http://ceur-ws.org/Vol-2718/#paper05},\n\tbooktitle = {Proceedings of the 20th {Conference} {Information} {Technologies} - {Applications} and {Theory} ({ITAT} 2020)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Dědič, Marek and Pevný, Tomáš and Bajer, Lukáš and Holeňa, Martin},\n\tmonth = oct,\n\tyear = {2020},\n\tpages = {137--146},\n}",
     "date": "2020-10-30",
     "pdf": "/publications/dedic_loss_2020.pdf",
     "previewImage": "/images/publication-preview-images/dedic_loss_2020.png",
@@ -58,7 +58,7 @@
       "Marek Dědič",
       "Martin Holeňa"
     ],
-    "bib": "@inproceedings{borisov_experimental_2021,\n\taddress = {Heľpa, Slovakia},\n\ttitle = {Experimental Investigation of Neural and Weisfeiler-Lehman-Kernel Graph Representations for Downstream Classification},\n\tvolume = {2962},\n\turl = {http://ceur-ws.org/Vol-2962/#paper50},\n\tbooktitle = {Proceedings of the 21st Conference Information Technologies – Applications and Theory (ITAT 2021)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Borisov, Sergej and Dědič, Marek and Holeňa, Martin},\n\tmonth = oct,\n\tyear = {2021},\n\tpages = {130--139},\n}",
+    "bib": "@inproceedings{borisov_experimental_2021,\n\taddress = {Heľpa, Slovakia},\n\ttitle = {Experimental {Investigation} of {Neural} and {Weisfeiler}-{Lehman}-{Kernel} {Graph} {Representations} for {Downstream} {Classification}},\n\tvolume = {2962},\n\turl = {http://ceur-ws.org/Vol-2962/#paper50},\n\tbooktitle = {Proceedings of the 21st {Conference} {Information} {Technologies} – {Applications} and {Theory} ({ITAT} 2021)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Borisov, Sergej and Dědič, Marek and Holeňa, Martin},\n\tmonth = oct,\n\tyear = {2021},\n\tpages = {130--139},\n}",
     "date": "2021-10-02",
     "pdf": "/publications/borisov_experimental_2021.pdf",
     "tags": ["ITAT"],
@@ -73,7 +73,7 @@
       "Pavel Procházka",
       "Martin Holeňa"
     ],
-    "bib": "@unpublished{dedic_adaptive_2022,\n\taddress = {Grenoble, France},\n\ttitle = {Adaptive graph coarsening in the context of local graph quality},\n\turl = {https://graphquality.github.io/rsc/art1.pdf},\n\turldate = {2022-09-23},\n\tauthor = {Dědič, Marek and Bajer, Lukáš and Repický, Jakub and Procházka, Pavel and Holeňa, Martin},\n\tmonth = sep,\n\tyear = {2022},\n}",
+    "bib": "@inproceedings{dedic_adaptive_2022,\n\taddress = {Grenoble, France},\n\ttitle = {Adaptive graph coarsening in the context of local graph quality},\n\turl = {https://graphquality.github.io/rsc/art1.pdf},\n\tbooktitle = {Data and {Model} {Quality} for {Mining} and {Learning} with {Graphs}: {Methods} and {Open} {Challenges} @{ECML}-{PKDD} 2022},\n\tauthor = {Dědič, Marek and Bajer, Lukáš and Repický, Jakub and Procházka, Pavel and Holeňa, Martin},\n\tmonth = sep,\n\tyear = {2022},\n}",
     "date": "2022-09-29",
     "pdf": "/publications/dedic_adaptive_2022.pdf",
     "previewImage": "/images/publication-preview-images/dedic_adaptive_2022.png",
@@ -87,7 +87,7 @@
       "Michal Mareš",
       "Marek Dědič"
     ],
-    "bib": "@inproceedings{prochazka_scalable_2022,\n\taddress = {Zuberec, Slovakia},\n\ttitle = {Scalable Graph Size Reduction for Efficient GNN Application},\n\tvolume = {3226},\n\turl = {http://ceur-ws.org/Vol-3226/#paper9},\n\tbooktitle = {Proceedings of the 22nd Conference Information Technologies – Applications and Theory (ITAT 2022)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Procházka, Pavel and Mareš, Michal and Dědič, Marek},\n\tmonth = sep,\n\tyear = {2022},\n\tpages = {75--84},\n}",
+    "bib": "@inproceedings{prochazka_scalable_2022,\n\taddress = {Zuberec, Slovakia},\n\ttitle = {Scalable {Graph} {Size} {Reduction} for {Efficient} {GNN} {Application}},\n\tvolume = {3226},\n\turl = {http://ceur-ws.org/Vol-3226/#paper9},\n\tbooktitle = {Proceedings of the 22nd {Conference} {Information} {Technologies} – {Applications} and {Theory} ({ITAT} 2022)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Procházka, Pavel and Mareš, Michal and Dědič, Marek},\n\tmonth = sep,\n\tyear = {2022},\n\tpages = {75--84},\n}",
     "date": "2022-09-30",
     "pdf": "/publications/prochazka_scalable_2022.pdf",
     "previewImage": "/images/publication-preview-images/prochazka_scalable_2022.png",
@@ -101,7 +101,7 @@
       "Michal Mareš",
       "Marek Dědič"
     ],
-    "bib": "@inproceedings{prochazka_which_2023,\n\taddress = {Tatranské Matliare, Slovakia},\n\ttitle = {Which Graph Properties Affect GNN Performance for a Given Downstream Task?},\n\tvolume = {3498},\n\turl = {https://ceur-ws.org/Vol-3498/#paper7},\n\tbooktitle = {Proceedings of the 23nd Conference Information Technologies – Applications and Theory (ITAT 2023)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Procházka, Pavel and Mareš, Michal and Dědič, Marek},\n\tmonth = oct,\n\tyear = {2023},\n\tpages = {58--66},\n}",
+    "bib": "@inproceedings{prochazka_which_2023,\n\taddress = {Tatranské Matliare, Slovakia},\n\ttitle = {Which {Graph} {Properties} {Affect} {GNN} {Performance} for a {Given} {Downstream} {Task}?},\n\tvolume = {3498},\n\turl = {https://ceur-ws.org/Vol-3498/#paper7},\n\tbooktitle = {Proceedings of the 23nd {Conference} {Information} {Technologies} – {Applications} and {Theory} ({ITAT} 2023)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Procházka, Pavel and Mareš, Michal and Dědič, Marek},\n\tmonth = oct,\n\tyear = {2023},\n\tpages = {58--66},\n}",
     "date": "2023-10-07",
     "pdf": "/publications/prochazka_which_2023.pdf",
     "previewImage": "/images/publication-preview-images/prochazka_which_2023.png",
@@ -116,7 +116,7 @@
       "Pavel Prochazka",
       "Martin Holena"
     ],
-    "bib": "@inproceedings{dedic_balancing_2024,\n\taddress = {Vienna, Austria},\n\ttitle = {Balancing performance and complexity with adaptive graph coarsening},\n\turl = {https://openreview.net/forum?id=DrHwIzz93C},\n\tbooktitle = {The Second Tiny Papers Track at ICLR 2024},\n\tauthor = {Dědič, Marek and Bajer, Lukas and Prochazka, Pavel and Holena, Martin},\n\tmonth = may,\n\tyear = {2024},\n}",
+    "bib": "@inproceedings{dedic_balancing_2024,\n\taddress = {Vienna, Austria},\n\ttitle = {Balancing performance and complexity with adaptive graph coarsening},\n\turl = {https://openreview.net/forum?id=DrHwIzz93C},\n\tbooktitle = {The {Second} {Tiny} {Papers} {Track} at {ICLR} 2024},\n\tauthor = {Dědič, Marek and Bajer, Lukas and Prochazka, Pavel and Holena, Martin},\n\tmonth = may,\n\tyear = {2024},\n}",
     "date": "2024-05-11",
     "pdf": "/publications/dedic_balancing_2024.pdf",
     "previewImage": "/images/publication-preview-images/dedic_balancing_2024.png",
@@ -130,7 +130,7 @@
       "Marek Dědič",
       "Lukáš Bajer"
     ],
-    "bib": "@inproceedings{prochazka_convolutional_2024,\n\taddress = {Vilnius, Lithuania},\n\ttitle = {Convolutional Signal Propagation: A Simple Scalable Algorithm for Hypergraphs},\n\tauthor = {Procházka, Pavel and Dědič, Marek and Bajer, Lukáš},\n\tmonth = sep,\n\tyear = {2024},\n}",
+    "bib": "@inproceedings{prochazka_convolutional_2024,\n\taddress = {Vilnius, Lithuania},\n\ttitle = {Convolutional {Signal} {Propagation}: {A} {Simple} {Scalable} {Algorithm} for {Hypergraphs}},\n\turl = {https://mlg-europe.github.io/2024/papers/131/CameraReady/MLG-ECML-2024-paper.pdf},\n\tbooktitle = {21st {International} {Workshop} on {Mining} and {Learning} with {Graphs} @{ECMLPKDD} 2024},\n\tauthor = {Procházka, Pavel and Dědič, Marek and Bajer, Lukáš},\n\tmonth = sep,\n\tyear = {2024},\n}",
     "date": "2024-09-09",
     "pdf": "/publications/prochazka_convolutional_2024.pdf",
     "previewImage": "/images/publication-preview-images/prochazka_convolutional_2024.png",
