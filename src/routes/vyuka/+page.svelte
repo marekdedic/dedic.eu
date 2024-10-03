@@ -124,7 +124,7 @@
   <h3>výsledky</h3>
 
   <GoogleSheet
-    height="700px"
+    height="990px"
     sheetId="2096801087"
     title="Přehled výsledků"
     url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnfVXCFtXcJx8K-fkwNKOnPg9v8nUbr1in4K7ErpwKhyk8dSiVjc8VLUsrbDBFzOyc2rUQhvpVapJz/pubhtml"
@@ -257,7 +257,7 @@
   <h3>výsledky</h3>
 
   <GoogleSheet
-    height="700px"
+    height="660px"
     sheetId="2096801087"
     title="Přehled výsledků"
     url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOlPd-nlIljrCz_NIvkTFehlMJzedOHIClP1CSohavxk7hcTK-BRC4-wJXJ7KJ5Y3f6sMIzXduTxG0/pubhtml"
