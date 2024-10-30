@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { tableOfContents } from "$lib/stores";
+  import { tableOfContents } from "$lib/toc.svelte";
   import { onDestroy, type Snippet } from "svelte";
 
   interface Props {
@@ -24,18 +24,12 @@
 
   $effect(() => {
     if (inToC && id !== "") {
-      tableOfContents.update((toc) => {
-        toc.set(id, [title, level]);
-        return toc;
-      });
+      tableOfContents.set(id, [title, level]);
     }
   });
 
   onDestroy(() => {
-    tableOfContents.update((toc) => {
-      toc.delete(id);
-      return toc;
-    });
+    tableOfContents.delete(id);
   });
 </script>
 
