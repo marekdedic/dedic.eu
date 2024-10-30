@@ -1,19 +1,17 @@
 <script lang="ts">
-  import { theme } from "$lib/stores";
+  import { theme, toggleTheme } from "$lib/theme.svelte";
   import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
   import Fa from "svelte-fa";
 </script>
 
 <li>
   <button
-    class:light={$theme !== "dark"}
+    class:light={theme.value !== "dark"}
     aria-label="Dark mode toggle"
-    onclick={() => {
-      theme.toggle();
-    }}
+    onclick={toggleTheme}
     type="button"
   >
-    <Fa icon={$theme === "dark" ? faSun : faMoon} size="lg" />
+    <Fa icon={theme.value === "dark" ? faSun : faMoon} size="lg" />
   </button>
 </li>
 

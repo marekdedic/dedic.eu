@@ -1,13 +1,13 @@
 <script lang="ts">
   import Header from "$lib/components/Header.svelte";
-  import { theme } from "$lib/stores";
+  import { theme } from "$lib/theme.svelte";
   import "@fontsource/roboto/300.css";
   import "@fontsource/roboto/300-italic.css";
   import "@fontsource/roboto/400.css";
   import "@fontsource/roboto/400-italic.css";
   import "@fontsource/roboto/700.css";
   import "@fontsource/roboto/700-italic.css";
-  import { onDestroy, onMount, type Snippet } from "svelte";
+  import { onMount, type Snippet } from "svelte";
 
   interface Props {
     children: Snippet;
@@ -15,26 +15,16 @@
 
   let { children }: Props = $props();
 
-  let unsubscribe: (() => void) | undefined = undefined;
-
   onMount(() => {
     if ("theme" in localStorage) {
-      theme.set(localStorage["theme"] as "dark" | "light");
+      theme.value = localStorage["theme"] as "dark" | "light";
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      theme.set("dark");
+      theme.value = "dark";
     }
-
-    unsubscribe = theme.subscribe((value) => {
-      document.documentElement.dataset["theme"] = value;
-
-      localStorage.setItem("theme", value);
+    $effect(() => {
+      document.documentElement.dataset["theme"] = theme.value;
+      localStorage.setItem("theme", theme.value);
     });
-  });
-
-  onDestroy(() => {
-    if (unsubscribe !== undefined) {
-      unsubscribe();
-    }
   });
 </script>
 
