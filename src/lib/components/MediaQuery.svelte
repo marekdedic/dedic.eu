@@ -1,14 +1,15 @@
-<script lang="ts" strictEvents>
-  import { onMount } from "svelte";
+<script lang="ts">
+  import { onMount, type Snippet } from "svelte";
 
-  export let query: string;
-
-  interface $$Slots {
-    default: { matches: boolean };
+  interface Props {
+    children: Snippet<[boolean]>;
+    query: string;
   }
 
-  let mql: MediaQueryList | undefined;
-  let matches = false;
+  let { children, query }: Props = $props();
+
+  let mql: MediaQueryList | undefined = undefined;
+  let matches = $state(false);
 
   const mqlListener = (v: MediaQueryListEvent): void => {
     matches = v.matches;
@@ -35,4 +36,4 @@
   });
 </script>
 
-<slot {matches} />
+{@render children(matches)}

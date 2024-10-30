@@ -1,40 +1,42 @@
-<script lang="ts" strictEvents>
+<script lang="ts">
   import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
   import Fa from "svelte-fa";
 
   import MediaQuery from "./MediaQuery.svelte";
   import NavigationItems from "./NavigationItems.svelte";
 
-  let expandNavigation = false;
+  let expandNavigation = $state(false);
 </script>
 
-<MediaQuery query="(max-width: 800px)" let:matches>
-  {#if matches}
-    <div>
-      <button
-        aria-label="Open/close navigation"
-        type="button"
-        on:click={() => {
-          expandNavigation = !expandNavigation;
-        }}
-      >
-        <Fa icon={expandNavigation ? faXmark : faBars} size="2x" />
-      </button>
-      {#if expandNavigation}
-        <ul class="vertical-navigation">
-          <NavigationItems
-            on:click={() => {
-              expandNavigation = false;
-            }}
-          />
-        </ul>
-      {/if}
-    </div>
-  {:else}
-    <ul>
-      <NavigationItems />
-    </ul>
-  {/if}
+<MediaQuery query="(max-width: 800px)">
+  {#snippet children(matches)}
+    {#if matches}
+      <div>
+        <button
+          aria-label="Open/close navigation"
+          onclick={() => {
+            expandNavigation = !expandNavigation;
+          }}
+          type="button"
+        >
+          <Fa icon={expandNavigation ? faXmark : faBars} size="2x" />
+        </button>
+        {#if expandNavigation}
+          <ul class="vertical-navigation">
+            <NavigationItems
+              onclick={() => {
+                expandNavigation = false;
+              }}
+            />
+          </ul>
+        {/if}
+      </div>
+    {:else}
+      <ul>
+        <NavigationItems />
+      </ul>
+    {/if}
+  {/snippet}
 </MediaQuery>
 
 <style lang="scss">

@@ -1,6 +1,10 @@
-<script lang="ts" strictEvents>
-  export let title: string;
-  export let previewImage: string | undefined;
+<script lang="ts">
+  interface Props {
+    previewImage: string | undefined;
+    title: string;
+  }
+
+  let { previewImage, title }: Props = $props();
 </script>
 
 <figure>

@@ -1,10 +1,13 @@
-<script lang="ts" strictEvents>
-  export let alt: string;
-  export let src: string;
+<script lang="ts">
+  import type { Snippet } from "svelte";
 
-  interface $$Slots {
-    default: Record<string, never>;
+  interface Props {
+    alt: string;
+    children?: Snippet;
+    src: string;
   }
+
+  let { alt, children, src }: Props = $props();
 </script>
 
 <div class="container">
@@ -14,9 +17,11 @@
     </picture>
   </figure>
 
-  <div class="title">
-    <slot />
-  </div>
+  {#if children !== undefined}
+    <div class="title">
+      {@render children()}
+    </div>
+  {/if}
 </div>
 
 <style>

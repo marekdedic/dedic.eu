@@ -1,8 +1,12 @@
-<script lang="ts" strictEvents>
+<script lang="ts">
   import Name from "./Name.svelte";
 
-  export let first: string;
-  export let last: string;
+  interface Props {
+    first: string;
+    last: string;
+  }
+
+  let { first, last }: Props = $props();
 </script>
 
 <a href="/">

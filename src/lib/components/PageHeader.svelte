@@ -1,13 +1,17 @@
-<script lang="ts" strictEvents>
-  interface $$Slots {
-    subtitle: Record<string, never>;
-    title: Record<string, never>;
+<script lang="ts">
+  import type { Snippet } from "svelte";
+
+  interface Props {
+    subtitle?: Snippet;
+    title: Snippet;
   }
+
+  let { subtitle, title }: Props = $props();
 </script>
 
 <header>
-  <h1><slot name="title" /></h1>
-  <slot name="subtitle" />
+  <h1>{@render title()}</h1>
+  {@render subtitle?.()}
 </header>
 
 <style>

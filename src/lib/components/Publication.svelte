@@ -1,4 +1,4 @@
-<script lang="ts" strictEvents>
+<script lang="ts">
   import CodeBlock from "$lib/components/CodeBlock.svelte";
   import MediaQuery from "$lib/components/MediaQuery.svelte";
   import Authors from "$lib/components/Publication/Authors.svelte";
@@ -7,83 +7,97 @@
   import SourceButtons from "$lib/components/Publication/SourceButtons.svelte";
   import Title from "$lib/components/Publication/Title.svelte";
 
-  export let abstract: string;
-  export let authors: Array<string>;
-  export let date: Date;
-  export let title: string;
+  interface Props {
+    abstract: string;
+    authors: Array<string>;
+    bib?: string | undefined;
+    date: Date;
+    pdf?: string | undefined;
+    previewImage?: string | undefined;
+    tags?: Array<string>;
+    title: string;
+  }
 
-  export let bib: string | undefined = undefined;
-  export let pdf: string | undefined = undefined;
-  export let previewImage: string | undefined = undefined;
-  export let tags: Array<string> = [];
+  let {
+    abstract,
+    authors,
+    bib = undefined,
+    date,
+    pdf = undefined,
+    previewImage = undefined,
+    tags = [],
+    title,
+  }: Props = $props();
 
-  let showBib = false;
+  let showBib = $state(false);
 </script>
 
 <div class="row">
-  <MediaQuery query="(max-width: 800px)" let:matches>
-    {#if matches}
-      <Title {title} />
-      <div class="metadata-mobile">
-        <Metadata {date} inline {tags} />
-      </div>
-      <div class="authors">
-        <Authors {authors} />
-      </div>
-      {#if previewImage !== undefined}
-        <div class="preview preview-mobile">
-          <Preview {previewImage} {title} />
+  <MediaQuery query="(max-width: 800px)">
+    {#snippet children(matches)}
+      {#if matches}
+        <Title {title} />
+        <div class="metadata-mobile">
+          <Metadata {date} inline {tags} />
         </div>
-      {/if}
-      <div class="abstract">
-        {abstract}
-      </div>
-      <SourceButtons
-        {bib}
-        {pdf}
-        on:toggleBib={() => {
-          showBib = !showBib;
-        }}
-      />
-      {#if showBib && bib !== undefined}
-        <CodeBlock code={bib} language="bib" />
-      {/if}
-    {:else}
-      <div class="container">
-        <div class="metadata">
-          <Metadata {date} {tags} />
-        </div>
-        <div
-          class:one-column={previewImage !== undefined}
-          class:two-column={previewImage === undefined}
-        >
-          <Title {title} />
-          <div class="authors">
-            <Authors {authors} />
-          </div>
-          <div class="abstract">
-            {abstract}
-          </div>
-          <SourceButtons
-            {bib}
-            {pdf}
-            on:toggleBib={() => {
-              showBib = !showBib;
-            }}
-          />
+        <div class="authors">
+          <Authors {authors} />
         </div>
         {#if previewImage !== undefined}
-          <div class="preview">
+          <div class="preview preview-mobile">
             <Preview {previewImage} {title} />
           </div>
         {/if}
-      </div>
-      {#if showBib && bib !== undefined}
-        <div class="bib">
-          <CodeBlock code={bib} language="bib" />
+        <div class="abstract">
+          {abstract}
         </div>
+        <SourceButtons
+          {bib}
+          {pdf}
+          toggleBib={() => {
+            showBib = !showBib;
+          }}
+        />
+        {#if showBib && bib !== undefined}
+          <CodeBlock code={bib} language="bib" />
+        {/if}
+      {:else}
+        <div class="container">
+          <div class="metadata">
+            <Metadata {date} {tags} />
+          </div>
+          <div
+            class:one-column={previewImage !== undefined}
+            class:two-column={previewImage === undefined}
+          >
+            <Title {title} />
+            <div class="authors">
+              <Authors {authors} />
+            </div>
+            <div class="abstract">
+              {abstract}
+            </div>
+            <SourceButtons
+              {bib}
+              {pdf}
+              toggleBib={() => {
+                showBib = !showBib;
+              }}
+            />
+          </div>
+          {#if previewImage !== undefined}
+            <div class="preview">
+              <Preview {previewImage} {title} />
+            </div>
+          {/if}
+        </div>
+        {#if showBib && bib !== undefined}
+          <div class="bib">
+            <CodeBlock code={bib} language="bib" />
+          </div>
+        {/if}
       {/if}
-    {/if}
+    {/snippet}
   </MediaQuery>
 </div>
 

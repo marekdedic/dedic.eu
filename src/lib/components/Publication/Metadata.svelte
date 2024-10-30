@@ -1,7 +1,11 @@
-<script lang="ts" strictEvents>
-  export let date: Date;
-  export let tags: Array<string>;
-  export let inline = false;
+<script lang="ts">
+  interface Props {
+    date: Date;
+    inline?: boolean;
+    tags: Array<string>;
+  }
+
+  let { date, inline = false, tags }: Props = $props();
 
   function monthName(month: number): string {
     switch (month) {
@@ -34,7 +38,9 @@
     }
   }
 
-  $: formattedDate = `${date.getDate().toString()} ${monthName(date.getMonth() + 1)} ${date.getFullYear().toString()}`;
+  let formattedDate = $derived(
+    `${date.getDate().toString()} ${monthName(date.getMonth() + 1)} ${date.getFullYear().toString()}`,
+  );
 </script>
 
 <div class:inline>{formattedDate}</div>

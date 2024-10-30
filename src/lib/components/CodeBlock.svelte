@@ -1,4 +1,4 @@
-<script lang="ts" strictEvents>
+<script lang="ts">
   import {
     faClipboard,
     faClipboardCheck,
@@ -8,13 +8,19 @@
   import "prismjs-bibtex";
   import Fa from "svelte-fa";
 
-  export let language: string;
-  export let code: string;
-  export let copyButton = true;
+  interface Props {
+    code: string;
+    copyButton?: boolean;
+    language: string;
+  }
 
-  $: formattedCode = Prism.highlight(code, Prism.languages[language], language);
+  let { code, copyButton = true, language }: Props = $props();
 
-  let copied = false;
+  let formattedCode = $derived(
+    Prism.highlight(code, Prism.languages[language], language),
+  );
+
+  let copied = $state(false);
 
   function copy(): void {
     void navigator.clipboard.writeText(code).then(() => {
@@ -28,7 +34,7 @@
 
 <div>
   {#if copyButton}
-    <button aria-label="Copy to clipboard" type="button" on:click={copy}>
+    <button aria-label="Copy to clipboard" onclick={copy} type="button">
       <Fa icon={copied ? faClipboardCheck : faClipboard} size="lg" />
     </button>
   {/if}
