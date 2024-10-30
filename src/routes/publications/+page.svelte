@@ -1,16 +1,24 @@
-<script lang="ts" strictEvents>
+<script lang="ts">
   import type { PublicationParams } from "$lib/types/PublicationParams.ts";
 
   import PageContent from "$lib/components/PageContent.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
   import Publication from "$lib/components/Publication.svelte";
 
-  export let data: { publications: Array<PublicationParams> };
+  interface Props {
+    data: { publications: Array<PublicationParams> };
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <PageHeader>
-  <span slot="title">publications</span>
-  <span slot="subtitle">my publications in reverse chronological order.</span>
+  {#snippet title()}
+    <span>publications</span>
+  {/snippet}
+  {#snippet subtitle()}
+    <span>my publications in reverse chronological order.</span>
+  {/snippet}
 </PageHeader>
 <PageContent>
   {#each data.publications as publication (publication.title)}

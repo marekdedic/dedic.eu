@@ -1,4 +1,4 @@
-<script lang="ts" strictEvents>
+<script lang="ts">
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import GoogleSheet from "$lib/components/GoogleSheet.svelte";
   import Heading from "$lib/components/Heading.svelte";
@@ -9,11 +9,15 @@
 </script>
 
 <PageHeader>
-  <span slot="title">výuka</span>
-  <span slot="subtitle">
-    informace k předmětům, které učím – studijní materiály, podmínky splnění,
-    výsledky.
-  </span>
+  {#snippet title()}
+    <span>výuka</span>
+  {/snippet}
+  {#snippet subtitle()}
+    <span>
+      informace k předmětům, které učím – studijní materiály, podmínky splnění,
+      výsledky.
+    </span>
+  {/snippet}
 </PageHeader>
 
 <ToC />
