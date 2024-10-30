@@ -1,6 +1,7 @@
 import type { Options } from "rollup-plugin-htaccess";
 
 /* eslint-disable @typescript-eslint/naming-convention -- Most of these are things like header names */
+
 const options: Partial<Options> = {
   extractMetaCSP: {
     enabled: true,
@@ -121,6 +122,7 @@ const options: Partial<Options> = {
     },
   },
 };
-/* eslint-enable -- Re-enable naming-convention */
+
+/* eslint-enable */
 
 export default options;

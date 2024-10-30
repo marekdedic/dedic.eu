@@ -20,7 +20,7 @@ export default {
         "report-uri": ["https://marekdedic.report-uri.com/r/d/csp/enforce"],
         "upgrade-insecure-requests": true,
       },
-      /* eslint-enable @typescript-eslint/naming-convention */
+      /* eslint-enable */
       mode: "hash",
     },
   },

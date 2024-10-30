@@ -250,4 +250,4 @@ export default tseslint.config(
   },
 );
 
-/* eslint-enable @typescript-eslint/naming-convention */
+/* eslint-enable */
