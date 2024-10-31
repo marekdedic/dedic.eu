@@ -1,21 +1,16 @@
-<script lang="ts" strictEvents>
-  import { createEventDispatcher } from "svelte";
+<script lang="ts">
+  interface Props {
+    bib: string | undefined;
+    pdf: string | undefined;
+    toggleBib(this: void): void;
+  }
 
-  export let bib: string | undefined;
-  export let pdf: string | undefined;
-
-  const dispatch = createEventDispatcher<{ toggleBib: null }>();
+  let { bib, pdf, toggleBib }: Props = $props();
 </script>
 
 <div>
   {#if bib !== undefined}
-    <button
-      aria-label="Show bibtex citation"
-      type="button"
-      on:click={() => {
-        dispatch("toggleBib");
-      }}
-    >
+    <button aria-label="Show bibtex citation" onclick={toggleBib} type="button">
       BIB
     </button>
   {/if}

@@ -1,12 +1,23 @@
-<script lang="ts" strictEvents>
-  export let title: string;
-  export let url: string;
-  export let sheetId: string;
-  export let showSheetTab = false;
-  export let showRowColumnHeaders = true;
-  export let showTitle = false;
+<script lang="ts">
+  interface Props {
+    height?: string;
+    sheetId: string;
+    showRowColumnHeaders?: boolean;
+    showSheetTab?: boolean;
+    showTitle?: boolean;
+    title: string;
+    url: string;
+  }
 
-  export let height = "1024px";
+  let {
+    height = "1024px",
+    sheetId,
+    showRowColumnHeaders = true,
+    showSheetTab = false,
+    showTitle = false,
+    title,
+    url,
+  }: Props = $props();
 </script>
 
 <iframe

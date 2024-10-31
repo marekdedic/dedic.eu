@@ -1,12 +1,10 @@
-<script lang="ts" strictEvents>
-  import { tableOfContents } from "$lib/stores";
-
-  $: tocEntries = $tableOfContents.entries();
+<script lang="ts">
+  import { tableOfContents } from "$lib/toc.svelte";
 </script>
 
 <ul>
   <h3>Contents</h3>
-  {#each tocEntries as [id, [name, level]] (id)}
+  {#each tableOfContents.entries() as [id, [name, level]] (id)}
     <li>
       <a class={`level-${level.toString()}`} href={`#${id}`}>{name}</a>
     </li>

@@ -1,6 +1,10 @@
-<script lang="ts" strictEvents>
-  export let first: string;
-  export let last: string;
+<script lang="ts">
+  interface Props {
+    first: string;
+    last: string;
+  }
+
+  let { first, last }: Props = $props();
 </script>
 
 <span>{first}</span>

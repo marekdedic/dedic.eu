@@ -1,9 +1,13 @@
-<script lang="ts" strictEvents>
-  interface $$Slots {
-    default: Record<string, never>;
+<script lang="ts">
+  import type { Snippet } from "svelte";
+
+  interface Props {
+    children: Snippet;
   }
+
+  let { children }: Props = $props();
 </script>
 
 <article>
-  <slot />
+  {@render children()}
 </article>

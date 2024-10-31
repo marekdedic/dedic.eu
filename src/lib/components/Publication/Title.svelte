@@ -1,5 +1,9 @@
-<script lang="ts" strictEvents>
-  export let title: string;
+<script lang="ts">
+  interface Props {
+    title: string;
+  }
+
+  let { title }: Props = $props();
 </script>
 
 <h2>{title}</h2>

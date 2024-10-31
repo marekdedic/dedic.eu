@@ -1,5 +1,9 @@
-<script lang="ts" strictEvents>
-  export let authors: Array<string>;
+<script lang="ts">
+  interface Props {
+    authors: Array<string>;
+  }
+
+  let { authors }: Props = $props();
 </script>
 
 <div>

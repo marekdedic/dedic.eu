@@ -1,26 +1,16 @@
-<script lang="ts" strictEvents>
-  import { createEventDispatcher } from "svelte";
-
+<script lang="ts">
   import DarkModeToggle from "./DarkModeToggle.svelte";
   import NavigationItem from "./NavigationItem.svelte";
 
-  const dispatch = createEventDispatcher<{ click: null }>();
+  interface Props {
+    onclick?(this: void): void;
+  }
+
+  let { onclick }: Props = $props();
 </script>
 
-<NavigationItem
-  href="/"
-  title="about"
-  on:click={() => {
-    dispatch("click");
-  }}
-/>
-<NavigationItem
-  href="/publications"
-  title="publications"
-  on:click={() => {
-    dispatch("click");
-  }}
-/>
+<NavigationItem href="/" {onclick} title="about" />
+<NavigationItem href="/publications" {onclick} title="publications" />
 <!-- NavigationItem
   href="/projects"
   title="projects"
@@ -42,11 +32,5 @@
     dispatch("click");
   }}
 / -->
-<NavigationItem
-  href="/vyuka"
-  title="teaching"
-  on:click={() => {
-    dispatch("click");
-  }}
-/>
+<NavigationItem href="/vyuka" {onclick} title="teaching" />
 <DarkModeToggle />

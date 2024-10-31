@@ -1,4 +1,4 @@
-<script lang="ts" strictEvents>
+<script lang="ts">
   import type { PublicationParams } from "$lib/types/PublicationParams.ts";
 
   import ExternalLink from "$lib/components/ExternalLink.svelte";
@@ -10,16 +10,22 @@
   import PageSection from "$lib/components/PageSection.svelte";
   import Publication from "$lib/components/Publication.svelte";
 
-  export let data: { publications: Array<PublicationParams> };
+  interface Props {
+    data: { publications: Array<PublicationParams> };
+  }
+
+  let { data }: Props = $props();
 </script>
 
 <PageHeader>
-  <span slot="title">
-    <Name first="Marek" last="Dědič" />
-  </span>
-  <span slot="subtitle">
-    machine learning scientist at Cisco & PhD student at CTU
-  </span>
+  {#snippet title()}
+    <span>
+      <Name first="Marek" last="Dědič" />
+    </span>
+  {/snippet}
+  {#snippet subtitle()}
+    <span> machine learning scientist at Cisco & PhD student at CTU </span>
+  {/snippet}
 </PageHeader>
 
 <PageContent>
