@@ -128,7 +128,7 @@
   <h3>výsledky</h3>
 
   <GoogleSheet
-    height="1010px"
+    height="920px"
     sheetId="2096801087"
     title="Přehled výsledků"
     url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnfVXCFtXcJx8K-fkwNKOnPg9v8nUbr1in4K7ErpwKhyk8dSiVjc8VLUsrbDBFzOyc2rUQhvpVapJz/pubhtml"
