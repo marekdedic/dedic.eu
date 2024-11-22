@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { theme, toggleTheme } from "$lib/theme.svelte";
+  import { theme } from "$lib/theme.svelte";
   import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
   import Fa from "svelte-fa";
 </script>
@@ -8,7 +8,9 @@
   <button
     class:light={theme.value !== "dark"}
     aria-label="Dark mode toggle"
-    onclick={toggleTheme}
+    onclick={() => {
+      theme.toggle();
+    }}
     type="button"
   >
     <Fa icon={theme.value === "dark" ? faSun : faMoon} size="lg" />

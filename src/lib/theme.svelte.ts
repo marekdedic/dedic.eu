@@ -1,5 +1,21 @@
-export const theme: { value: "dark" | "light" } = $state({ value: "light" });
+function createThemeState(): {
+  set(value: "dark" | "light"): void;
+  toggle(): void;
+  value: "dark" | "light";
+} {
+  let state: "dark" | "light" = $state("light");
 
-export function toggleTheme(): void {
-  theme.value = theme.value === "dark" ? "light" : "dark";
+  return {
+    set: (value: "dark" | "light"): void => {
+      state = value;
+    },
+    toggle: (): void => {
+      state = state === "dark" ? "light" : "dark";
+    },
+    get value(): "dark" | "light" {
+      return state;
+    },
+  };
 }
+
+export const theme = createThemeState();
