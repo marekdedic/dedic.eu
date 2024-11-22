@@ -17,9 +17,9 @@
 
   onMount(() => {
     if ("theme" in localStorage) {
-      theme.value = localStorage["theme"] as "dark" | "light";
+      theme.set(localStorage["theme"] as "dark" | "light");
     } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      theme.value = "dark";
+      theme.set("dark");
     }
     $effect(() => {
       document.documentElement.dataset["theme"] = theme.value;
