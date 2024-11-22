@@ -18,6 +18,7 @@ export default {
         "frame-src": ["https://docs.google.com/"],
         "object-src": ["none"],
         "report-uri": ["https://marekdedic.report-uri.com/r/d/csp/enforce"],
+        "style-src": ["self", "unsafe-inline"],
         "upgrade-insecure-requests": true,
       },
       /* eslint-enable */
