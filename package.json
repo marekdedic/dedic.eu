@@ -36,7 +36,7 @@
     "@playwright/test": "^1.49.0",
     "@sveltejs/adapter-static": "^3.0.6",
     "@sveltejs/kit": "^2.8.0",
-    "@sveltejs/vite-plugin-svelte": "^4.0.1",
+    "@sveltejs/vite-plugin-svelte": "^4.0.2",
     "@types/node": "^22.9.0",
     "@types/prismjs": "^1.26.4",
     "eslint": "^9.14.0",
