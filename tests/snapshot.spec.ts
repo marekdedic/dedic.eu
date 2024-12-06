@@ -1,54 +1,63 @@
-import { expect, type Page, test } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
-async function snapshot(page: Page): Promise<string> {
-  // eslint-disable-next-line playwright/no-raw-locators -- No other way to get the body element
-  return (await page.locator("body").innerHTML()).replace(
-    process.cwd(),
-    "/stubbed/base",
-  );
-}
-
-test("main page snapshot", async ({ page }) => {
+test("main page", async ({ page }) => {
   await page.goto("/");
-  expect(await snapshot(page)).toMatchSnapshot();
+  await expect(page).toHaveScreenshot({ fullPage: true });
+});
+
+test("dark mode toggling", async ({ page }) => {
+  await page.goto("/");
+  await expect(page).toHaveScreenshot({ fullPage: true });
   await page.getByLabel("Dark mode toggle").click();
-  expect(await snapshot(page)).toMatchSnapshot();
+  await expect(page.getByRole("document")).toHaveAttribute(
+    "data-theme",
+    "dark",
+  );
+  await expect(page).toHaveScreenshot({ fullPage: true });
   await page.reload();
-  expect(await snapshot(page)).toMatchSnapshot();
+  await expect(page.getByRole("document")).toHaveAttribute(
+    "data-theme",
+    "dark",
+  );
+  await expect(page).toHaveScreenshot({ fullPage: true });
   await page.getByLabel("Dark mode toggle").click();
-  expect(await snapshot(page)).toMatchSnapshot();
+  await expect(page.getByRole("document")).toHaveAttribute(
+    "data-theme",
+    "light",
+  );
+  await expect(page).toHaveScreenshot({ fullPage: true });
 });
 
 test("navigation", async ({ page }) => {
   await page.goto("/");
-  expect(await snapshot(page)).toMatchSnapshot();
-  await page.getByLabel("Dark mode toggle").click();
-  expect(await snapshot(page)).toMatchSnapshot();
+  await expect(page).toHaveScreenshot({ fullPage: true });
   await page
     .getByRole("list")
     .getByRole("link", { name: "publications" })
     .click();
-  expect(await snapshot(page)).toMatchSnapshot();
+  await expect(page).toHaveScreenshot({ fullPage: true });
 });
 
-test("publications page snapshot", async ({ page }) => {
+test("publications page", async ({ page }) => {
   await page.goto("/publications");
-  expect(await snapshot(page)).toMatchSnapshot();
-  await page.getByLabel("Dark mode toggle").click();
-  expect(await snapshot(page)).toMatchSnapshot();
+  await expect(page).toHaveScreenshot({ fullPage: true });
   // eslint-disable-next-line playwright/no-nth-methods -- General testing, what's first is irrelevant
   await page.getByLabel("Show bibtex citation").first().click();
-  expect(await snapshot(page)).toMatchSnapshot();
+  await expect(page).toHaveScreenshot({ fullPage: true });
 });
 
-test("teaching page snapshot", async ({ page }) => {
+test("teaching page", async ({ page }) => {
   // Replay the Google table to make the test reproducible
   await page.routeFromHAR("./tests/hars/vyuka-google-sheet.har", {
     url: "https://docs.google.com/spreadsheets/**/*",
   });
 
   await page.goto("/vyuka");
-  expect(await snapshot(page)).toMatchSnapshot();
-  await page.getByLabel("Dark mode toggle").click();
-  expect(await snapshot(page)).toMatchSnapshot();
+  await expect(
+    page
+      .getByRole("list")
+      .filter({ hasText: "Contents" })
+      .getByRole("listitem"),
+  ).not.toHaveCount(0);
+  await expect(page).toHaveScreenshot({ fullPage: true });
 });
