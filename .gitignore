@@ -483,5 +483,6 @@ tags
 /test-results/
 /playwright-report/
 /playwright/.cache/
+xauth-cookie
 
 .well-known/pki-validation
