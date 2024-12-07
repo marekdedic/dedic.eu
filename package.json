@@ -26,6 +26,7 @@
     "lint:ts:typecheck": "tsc  --noEmit",
     "lint:ts": "run-p -c --aggregate-output lint:ts:*",
     "lint": "run-p -c --aggregate-output lint:*",
+    "playwright-version": "node -e 'console.log(require(\"./package-lock.json\")[\"packages\"][\"node_modules/@playwright/test\"].version)'",
     "playwright-accept": "playwright test --update-snapshots",
     "playwright-interactive": "playwright test --ui"
   },

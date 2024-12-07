@@ -42,7 +42,7 @@ jobs:
       - name: "Extract @playwright/test version"
         id: extract_playwright_version
         run: |
-          playwright_version=$(node -e 'console.log(require("./package-lock.json")["packages"]["node_modules/@playwright/test"].version)')
+          playwright_version=$(npm run --silent playwright-version)
           echo "playwright-version=$playwright_version" >> $GITHUB_OUTPUT
 
   test:
