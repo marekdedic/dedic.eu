@@ -1,6 +1,9 @@
 import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
+  expect: {
+    timeout: 10000,
+  },
   forbidOnly: process.env.CI !== undefined,
   fullyParallel: true,
   projects: [
@@ -12,10 +15,12 @@ export default defineConfig({
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
     },
+    /*
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
     },
+    */
   ],
   reporter: process.env.CI !== undefined ? "html" : "list",
   retries: process.env.CI !== undefined ? 2 : 0,

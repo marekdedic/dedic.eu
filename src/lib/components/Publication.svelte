@@ -32,7 +32,7 @@
   let showBib = $state(false);
 </script>
 
-<div class="row">
+<div class="publication">
   <MediaQuery query="(max-width: 800px)">
     {#snippet children(matches)}
       {#if matches}
@@ -149,14 +149,14 @@
     padding: 0rem 2rem 1rem 2rem;
   }
 
-  .row {
+  .publication {
     border-bottom: 1px solid var(--divider-color);
     padding-bottom: 2rem;
     padding-top: 2rem;
     transition: border-color theme.$transition-duration ease;
   }
 
-  .row:last-of-type {
+  .publication:last-of-type {
     border-bottom: none;
   }
 
