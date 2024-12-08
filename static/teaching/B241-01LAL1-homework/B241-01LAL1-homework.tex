@@ -1,0 +1,143 @@
+\documentclass{article}
+
+\usepackage{polyglossia}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[noanswer]{exercise}
+%\usepackage{exercise}
+\usepackage[a4paper, margin = 2cm]{geometry}
+\usepackage{microtype}
+\usepackage{systeme}
+
+\setdefaultlanguage{czech}
+
+\title{Domácí úkoly LAL1}
+
+\sysdelim..
+
+\newcommand{\mathbasis}{\ensuremath{\mathcal}}
+\newcommand{\mathdim}{\ensuremath{\mathrm{dim}}}
+\newcommand{\mathfield}{\ensuremath{\mathbb}}
+\newcommand{\mathkernel}{\ensuremath{\mathrm{Ker}}}
+\newcommand{\mathmat}{\ensuremath{\mathbb}}
+\newcommand{\mathnull}[1]{\ensuremath{\mathrm{d} \left( #1 \right)}}
+\newcommand{\mathrank}[1]{\ensuremath{\mathrm{h} \left( #1 \right)}}
+\newcommand{\mathspace}{\ensuremath{\mathcal}}
+\newcommand{\mathvec}{\ensuremath{\vec}}
+\newcommand{\subspace}{\ensuremath{\subset \subset}}
+
+\begin{document}
+
+\maketitle
+
+\begin{Exercise}[name=Úkol, label=bases]
+	Uvažujme prostor \( \mathfield{C}^{2, 2} \), jeho standardní bázi \( \mathbasis{E} = \left( \mathmat{E}_1, \mathmat{E}_2, \mathmat{E}_3, \mathmat{E}_4 \right) \) a báze \( \mathbasis{X} = \left( \mathmat{X}_1, \mathmat{X}_2, \mathmat{X}_3, \mathmat{X}_4 \right) \) a \( \mathbasis{Y} = \left( \mathmat{Y}_1, \mathmat{Y}_2, \mathmat{Y}_3, \mathmat{Y}_4 \right) \), kde
+	\[
+		\mathmat{X}_1 = \begin{pmatrix} 1 & 2 \\ 0 & 1 \end{pmatrix} \qquad
+		\mathmat{X}_2 = \begin{pmatrix} 0 & 0 \\ 3 & -1 \end{pmatrix} \qquad
+		\mathmat{X}_3 = \begin{pmatrix} 2 & 3 \\ 3 & 2 \end{pmatrix} \qquad
+		\mathmat{X}_4 = \begin{pmatrix} 1 & 0 \\ 0 & 2 \end{pmatrix}
+	\]
+	a
+	\[
+		\left( \mathmat{Y}_1 \right)_\mathbasis{X} = \begin{pmatrix} 1 \\ 1 \\ 0 \\ 1 \end{pmatrix} \qquad
+		\left( \mathmat{Y}_2 \right)_\mathbasis{X} = \begin{pmatrix} 0 \\ 1 \\ 0 \\ 2 \end{pmatrix} \qquad
+		\left( \mathmat{Y}_3 \right)_\mathbasis{X} = \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \end{pmatrix} \qquad
+		\left( \mathmat{Y}_4 \right)_\mathbasis{X} = \begin{pmatrix} -4 \\ -3 \\ -2 \\ -1 \end{pmatrix} \text{.}
+	\]
+	Dále definujme matice \( \mathmat{A} \in \mathfield{C}^{2, 2} \) a \( \mathmat{B} \in \mathfield{C}^{2, 2} \) jako
+	\[
+		\left( \mathmat{A} \right)_\mathbasis{Y} = \begin{pmatrix} 1 \\ 2 \\ 3 \\ 4 \end{pmatrix} \qquad
+		\left( \mathmat{B} \right)_\mathbasis{E} = \begin{pmatrix} 10 \\ 18 \\ 15 \\ 7 \end{pmatrix}\text{.}
+	\]
+	\Question Najděte \( \mathmat{A} \).
+	\Question Najděte \( \left( \mathmat{B} \right)_\mathbasis{Y} \).
+	\Question Najděte \( \left( \mathmat{E}_1 \right)_\mathbasis{X} \).
+	\Question Najděte \( \left( \mathmat{E}_2 \right)_\mathbasis{Y} \).
+	\Question Najděte bázi prostoru \( \mathfield{C}^{2, 2} \) obsahující \( \mathmat{X}_1, \mathmat{Y}_2, \mathmat{E}_3 \).
+\end{Exercise}
+
+\begin{Answer}[ref=bases]
+	\Question (20\%) \quad \( \mathmat{A} = \begin{pmatrix} -27 & -48 \\ -51 & -17 \end{pmatrix} \)
+	\Question (20\%) \quad \( \left( \mathmat{B} \right)_\mathbasis{Y} = \begin{pmatrix} 1 \\ -1 \\ 1 \\ -1 \end{pmatrix} \)
+	\Question (10\%) \quad \( \left( \mathmat{E}_1 \right)_\mathbasis{X} = \begin{pmatrix} 6 \\ 4 \\ -4 \\ 3 \end{pmatrix} \)
+	\Question (20\%) \quad \( \left( \mathmat{E}_2 \right)_\mathbasis{Y} = \frac{1}{2} \begin{pmatrix} -7 \\ 2 \\ 1 \\ -1 \end{pmatrix} \)
+	\Question (30\%) \quad Například \( \left( \mathmat{X}_1, \mathmat{Y}_2, \mathmat{E}_3, \mathmat{E}_1 \right) \)
+\end{Answer}
+
+\newpage
+
+\begin{Exercise}[name=Úkol, label=subspaces]
+	Nechť \( P \subspace \mathfield{R}^5 \) a \( Q \subspace \mathfield{R}^5 \), kde
+	\[
+		P = \left[
+			\begin{pmatrix} 1 \\ 2 \\ 0 \\ 1 \\ 2 \end{pmatrix},
+			\begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \\ 1 \end{pmatrix},
+			\begin{pmatrix} 0 \\ 1 \\ 1 \\ 1 \\ 0 \end{pmatrix}
+		\right]_\lambda
+	\]
+	a
+	\[
+		Q = \left\{
+			\begin{pmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{pmatrix} \in \mathfield{R}^5
+			\: \middle| \:
+			\systeme{
+				x_1 - x_2 +x_3 + 3x_4 -x_5 = 0,
+				-x_1 + 2x_3 - x_4 + x_5 = 0,
+				3x_1 - 2x_2 + 7x_4 - 3x_5 = 0
+			}
+		\right\} \text{.}
+	\]
+	\Question Platí \( P \subspace Q \) ?
+	\Question Najděte dimenzi a bázi \( P \cap Q \), \( P \cup Q \) a \( P + Q \), pokud jsou to dobře definované prostory.
+	\Question Najděte doplněk \( Q \) do \( \mathfield{R}^5 \).
+\end{Exercise}
+
+\begin{Answer}[ref=subspaces]
+	\Question (20\%) \quad Ne, protože \( \mathvec{p}_3 \notin Q \).
+	\Question \begin{itemize}
+		\item (10\%) \quad Nalezení báze \( Q \), např. \( \left( \begin{pmatrix} 2 \\ 3 \\ 1 \\ 0 \\ 0 \end{pmatrix}, \begin{pmatrix} -1 \\ 2 \\ 0 \\ 1 \\ 0 \end{pmatrix}, \begin{pmatrix} 1 \\ 0 \\ 0 \\ 0 \\ 1 \end{pmatrix} \right) \), případně nějaký z nich nahrazený \( \mathvec{p}_1 \)
+		\item (10\%) \quad Sestavení společné matice, pokud je potřeba
+		\item (15\%) \quad \( \mathdim{(P + Q)} = 4 \), báze \( P + Q \) např. \( \left( \mathvec{p}_1, \mathvec{p}_2, \mathvec{p}_3, \mathvec{q}_1 \right) \)
+		\item (15\%) \quad \( \mathdim{(P \cap Q)} = 2 \), báze \( P \cap Q \) např. \( \left( \mathvec{p}_1, \mathvec{p}_2 \right) \)
+		\item (10\%) \quad Sjednocení není vektorový prostor.
+	\end{itemize}
+	\Question (20\%) \quad Např. \( \left[ \mathvec{e}_1, \mathvec{e}_2 \right]_\lambda \)
+\end{Answer}
+
+\newpage
+
+\begin{Exercise}[name=Úkol, label=linear-maps]
+	Nechť \( A : \mathfield{C}^2_\mathfield{R} \to \mathspace{P}_5 \) (kde \( \mathspace{P}_5 \) označíme prostor reálných polynomů stupně nejvýše 4 s přidáním nulového polynomu) takové, že \( \forall \alpha, \beta, \gamma, \delta, t \in \mathfield{R} \) platí
+	\[
+		\begin{aligned}
+			 \left( A \begin{pmatrix} \alpha + \beta i \\ \gamma + \delta i \end{pmatrix} \right) \left( t \right) = &\left( \alpha + \beta \right) + \left( \alpha + 4\beta - 2\gamma - \delta \right) t + \\
+			+ &\left( \gamma - \beta \right) t^2 + \left( 2\alpha + \gamma + \delta \right) t^3 + \left( \alpha + \delta \right) t^4 \text{.}
+		\end{aligned}
+	\]
+	\Question Ukažte, že \( A \) je lineární zobrazení.
+	\Question Najděte hodnost, defekt a jádro \( A \).
+	\Question Určete, zda je \( A \) monomorfní, epimorfní a izomorfní.
+	\Question Popište množinu všech řešení \( \mathvec{x} \) rovnice
+	\[
+		\forall t \in \mathfield{R} \quad \left( A \mathvec{x} \right) \left( t \right) = 3 - t + t^2 + 9t^3 + 5t^4 \text{.}
+	\]
+\end{Exercise}
+
+\begin{Answer}[ref=linear-maps]
+	\Question (25\%) \quad Ověření aditivity a homogenity
+	\Question \begin{itemize}
+		\item (20\%) \quad \( \mathkernel{A} = \left[ \begin{pmatrix} -1 + i \\ 1 + i \end{pmatrix} \right]_\lambda \)
+		\item (5\%) \quad \( \mathnull{A} = 1 \)
+		\item (5\%) \quad \( \mathrank{A} = 3 \)
+	\end{itemize}
+	\Question \begin{itemize}
+		\item (10\%) \quad Není monomorfní, protože \( \mathnull{A} \neq 0 \)
+		\item (10\%) \quad Není epimorfní, protože \( \mathrank{A} \neq \mathdim{\mathspace{P}_5} \)
+		\item (5\%) \quad Není izomorfní, protože není monomorfní ani epimorfní.
+	\end{itemize}
+	\Question (20\%) \quad Např. \( \mathvec{x} = \begin{pmatrix} 5 - 2i \\ -1 \end{pmatrix} + \mathkernel{A} \)
+\end{Answer}
+
+\end{document}

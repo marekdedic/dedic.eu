@@ -112,7 +112,10 @@
     </li>
     <li>
       Pro ty, kdo nenasbírají dostatečný počet bodů, budou ke konci semestru
-      zadané 3 domácí úkoly, z každého z nich lze získat maximálně 1 bod.
+      zadané <a
+        href="/teaching/B241-01LAL1-homework/B241-01LAL1-homework.pdf"
+        target="_blank">3 domácí úkoly</a
+      >, z každého z nich lze získat maximálně 1 bod.
     </li>
   </ul>
 
