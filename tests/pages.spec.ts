@@ -29,5 +29,9 @@ test("teaching page", async ({ page }) => {
       .filter({ hasText: "Contents" })
       .getByRole("listitem"),
   ).not.toHaveCount(0);
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    // eslint-disable-next-line playwright/no-raw-locators -- No other way to locate iframe
+    mask: [page.locator("iframe")],
+  });
 });
