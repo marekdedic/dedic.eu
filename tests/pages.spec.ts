@@ -1,14 +1,14 @@
-import { expect, test } from "@playwright/test";
+import { expect } from "@playwright/test";
+
+import { test } from "./test-fixture";
 
 test("main page", async ({ page }) => {
   await page.goto("/");
-  await page.waitForTimeout(1000);
   await expect(page).toHaveScreenshot({ fullPage: true });
 });
 
 test("publications page", async ({ page }) => {
   await page.goto("/publications");
-  await page.waitForTimeout(1000);
   await expect(page).toHaveScreenshot({ fullPage: true });
   // eslint-disable-next-line playwright/no-nth-methods -- General testing, what's first is irrelevant
   await page.getByLabel("Show bibtex citation").first().click();
@@ -22,7 +22,6 @@ test("teaching page", async ({ page }) => {
   });
 
   await page.goto("/vyuka");
-  await page.waitForTimeout(1000);
   await expect(
     page
       .getByRole("list")
