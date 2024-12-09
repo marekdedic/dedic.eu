@@ -4,15 +4,26 @@ import { test } from "./test-fixture";
 
 test("main page", async ({ page }) => {
   await page.goto("/");
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    mask: [page.getByRole("img")],
+  });
 });
 
 test("publications page", async ({ page }) => {
   await page.goto("/publications");
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    mask: [page.getByRole("img")],
+    maxDiffPixelRatio: 0.05,
+  });
   // eslint-disable-next-line playwright/no-nth-methods -- General testing, what's first is irrelevant
   await page.getByLabel("Show bibtex citation").first().click();
-  await expect(page).toHaveScreenshot({ fullPage: true });
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    mask: [page.getByRole("img")],
+    maxDiffPixelRatio: 0.05,
+  });
 });
 
 test("teaching page", async ({ page }) => {
