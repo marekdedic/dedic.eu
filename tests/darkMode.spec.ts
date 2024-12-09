@@ -1,8 +1,9 @@
-import { expect, test } from "@playwright/test";
+import { expect } from "@playwright/test";
+
+import { test } from "./test-fixture";
 
 test("dark mode toggling", async ({ page }) => {
   await page.goto("/");
-  await page.waitForTimeout(1000);
   await expect(page).toHaveScreenshot({
     // eslint-disable-next-line playwright/no-raw-locators -- No other way to locate publications
     mask: [page.locator(".publication")],

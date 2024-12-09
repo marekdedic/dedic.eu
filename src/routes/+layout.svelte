@@ -26,6 +26,10 @@
       localStorage.setItem("theme", theme.value);
     });
   });
+
+  onMount(() => {
+    document.body.classList.add("svelteKitReady");
+  });
 </script>
 
 <Header />
