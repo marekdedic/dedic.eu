@@ -109,6 +109,23 @@ const options: Partial<Options> = {
               conditionPattern: "!-f",
               testString: "%{REQUEST_FILENAME}",
             },
+            {
+              conditionPattern: "-f",
+              testString: "%{REQUEST_FILENAME}.html",
+            },
+          ],
+          flags: {
+            last: true,
+          },
+          pattern: "^(.*)$",
+          substitution: "/$1.html",
+        },
+        {
+          conditions: [
+            {
+              conditionPattern: "!-f",
+              testString: "%{REQUEST_FILENAME}",
+            },
           ],
           flags: {
             last: true,
