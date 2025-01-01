@@ -11,8 +11,6 @@ import globals from "globals";
 import svelteParser from "svelte-eslint-parser";
 import tseslint from "typescript-eslint";
 
-/* eslint-disable @typescript-eslint/naming-convention -- Not applicable to this file */
-
 export default tseslint.config(
   js.configs.recommended,
   prettierRecommended,
@@ -48,7 +46,6 @@ export default tseslint.config(
       "@typescript-eslint/explicit-module-boundary-types": "error",
       "@typescript-eslint/init-declarations": "error",
       "@typescript-eslint/method-signature-style": ["error", "method"],
-      "@typescript-eslint/naming-convention": "error",
       "@typescript-eslint/no-import-type-side-effects": "error",
       "@typescript-eslint/no-invalid-void-type": [
         "error",
@@ -252,5 +249,3 @@ export default tseslint.config(
     },
   },
 );
-
-/* eslint-enable */
