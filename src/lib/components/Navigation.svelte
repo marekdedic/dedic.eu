@@ -14,7 +14,7 @@
       <div>
         <button
           aria-label="Open/close navigation"
-          onclick={() => {
+          onclick={(): void => {
             expandNavigation = !expandNavigation;
           }}
           type="button"
@@ -24,7 +24,7 @@
         {#if expandNavigation}
           <ul class="vertical-navigation">
             <NavigationItems
-              onclick={() => {
+              onclick={(): void => {
                 expandNavigation = false;
               }}
             />

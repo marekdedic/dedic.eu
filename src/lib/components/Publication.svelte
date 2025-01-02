@@ -54,7 +54,7 @@
         <SourceButtons
           {bib}
           {pdf}
-          toggleBib={() => {
+          toggleBib={(): void => {
             showBib = !showBib;
           }}
         />
@@ -80,7 +80,7 @@
             <SourceButtons
               {bib}
               {pdf}
-              toggleBib={() => {
+              toggleBib={(): void => {
                 showBib = !showBib;
               }}
             />

@@ -201,11 +201,6 @@ export default tseslint.config(
         parser: tseslint.parser,
       },
     },
-    settings: {
-      svelte: {
-        ignoreWarnings: ["@typescript-eslint/explicit-function-return-type"],
-      },
-    },
   },
   {
     ...playwright.configs["flat/recommended"],
