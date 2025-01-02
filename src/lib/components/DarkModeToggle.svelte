@@ -8,7 +8,7 @@
   <button
     class:light={theme.value !== "dark"}
     aria-label="Dark mode toggle"
-    onclick={() => {
+    onclick={(): void => {
       theme.toggle();
     }}
     type="button"

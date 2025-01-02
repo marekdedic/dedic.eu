@@ -201,14 +201,6 @@ export default tseslint.config(
         parser: tseslint.parser,
       },
     },
-    rules: {
-      "@typescript-eslint/no-unsafe-assignment": "off",
-    },
-    settings: {
-      svelte: {
-        ignoreWarnings: ["@typescript-eslint/explicit-function-return-type"],
-      },
-    },
   },
   {
     ...playwright.configs["flat/recommended"],
