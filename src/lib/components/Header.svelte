@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
 
   import HeaderName from "./HeaderName.svelte";
   import Navigation from "./Navigation.svelte";
 
-  let isBase = $derived($page.route.id === "/");
+  let isBase = $derived(page.route.id === "/");
 </script>
 
 <header>
