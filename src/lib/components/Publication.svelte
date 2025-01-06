@@ -1,11 +1,11 @@
 <script lang="ts">
   import CodeBlock from "$lib/components/CodeBlock.svelte";
   import Image from "$lib/components/Image.svelte";
-  import MediaQuery from "$lib/components/MediaQuery.svelte";
   import Authors from "$lib/components/Publication/Authors.svelte";
   import Metadata from "$lib/components/Publication/Metadata.svelte";
   import SourceButtons from "$lib/components/Publication/SourceButtons.svelte";
   import Title from "$lib/components/Publication/Title.svelte";
+  import { MediaQuery } from "svelte/reactivity";
 
   interface Props {
     abstract: string;
@@ -30,24 +30,50 @@
   }: Props = $props();
 
   let showBib = $state(false);
+
+  let isNarrow = new MediaQuery("max-width: 800px");
 </script>
 
 <div class="publication">
-  <MediaQuery query="(max-width: 800px)">
-    {#snippet children(matches)}
-      {#if matches}
+  {#if isNarrow.current}
+    <Title {title} />
+    <div class="metadata-mobile">
+      <Metadata {date} inline {tags} />
+    </div>
+    <div class="authors">
+      <Authors {authors} />
+    </div>
+    {#if previewImage !== undefined}
+      <div class="preview preview-mobile">
+        <Image alt={title} src={previewImage} />
+      </div>
+    {/if}
+    <div class="abstract">
+      {abstract}
+    </div>
+    <SourceButtons
+      {bib}
+      {pdf}
+      toggleBib={(): void => {
+        showBib = !showBib;
+      }}
+    />
+    {#if showBib && bib !== undefined}
+      <CodeBlock code={bib} language="bib" />
+    {/if}
+  {:else}
+    <div class="container">
+      <div class="metadata">
+        <Metadata {date} {tags} />
+      </div>
+      <div
+        class:one-column={previewImage !== undefined}
+        class:two-column={previewImage === undefined}
+      >
         <Title {title} />
-        <div class="metadata-mobile">
-          <Metadata {date} inline {tags} />
-        </div>
         <div class="authors">
           <Authors {authors} />
         </div>
-        {#if previewImage !== undefined}
-          <div class="preview preview-mobile">
-            <Image alt={title} src={previewImage} />
-          </div>
-        {/if}
         <div class="abstract">
           {abstract}
         </div>
@@ -58,47 +84,19 @@
             showBib = !showBib;
           }}
         />
-        {#if showBib && bib !== undefined}
-          <CodeBlock code={bib} language="bib" />
-        {/if}
-      {:else}
-        <div class="container">
-          <div class="metadata">
-            <Metadata {date} {tags} />
-          </div>
-          <div
-            class:one-column={previewImage !== undefined}
-            class:two-column={previewImage === undefined}
-          >
-            <Title {title} />
-            <div class="authors">
-              <Authors {authors} />
-            </div>
-            <div class="abstract">
-              {abstract}
-            </div>
-            <SourceButtons
-              {bib}
-              {pdf}
-              toggleBib={(): void => {
-                showBib = !showBib;
-              }}
-            />
-          </div>
-          {#if previewImage !== undefined}
-            <div class="preview">
-              <Image alt={title} src={previewImage} />
-            </div>
-          {/if}
+      </div>
+      {#if previewImage !== undefined}
+        <div class="preview">
+          <Image alt={title} src={previewImage} />
         </div>
-        {#if showBib && bib !== undefined}
-          <div class="bib">
-            <CodeBlock code={bib} language="bib" />
-          </div>
-        {/if}
       {/if}
-    {/snippet}
-  </MediaQuery>
+    </div>
+    {#if showBib && bib !== undefined}
+      <div class="bib">
+        <CodeBlock code={bib} language="bib" />
+      </div>
+    {/if}
+  {/if}
 </div>
 
 <style lang="scss">
