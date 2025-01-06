@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
 
   interface Props {
     href: string;
@@ -9,7 +9,7 @@
 
   let { href, onclick, title }: Props = $props();
 
-  let active = $derived($page.route.id === href);
+  let active = $derived(page.route.id === href);
 </script>
 
 <li>
