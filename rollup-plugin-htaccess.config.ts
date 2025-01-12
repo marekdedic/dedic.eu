@@ -94,7 +94,7 @@ const options: Partial<Options> = {
             redirect: 301,
           },
           pattern: "^(.*)$",
-          substitution: "http://%1%{REQUEST_URI}",
+          substitution: "https://%1%{REQUEST_URI}",
         },
         // Rewrite non-existent paths to fallback.html
         {
