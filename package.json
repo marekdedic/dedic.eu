@@ -59,7 +59,7 @@
     "prettier-plugin-svelte": "^3.3.2",
     "prismjs-bibtex": "^2.1.0",
     "rimraf": "^6.0.1",
-    "rollup-plugin-htaccess": "^0.10.1",
+    "rollup-plugin-htaccess": "^0.11.0",
     "sass": "^1.83.1",
     "svelte": "^5.17.2",
     "svelte-check": "^4.1.3",
