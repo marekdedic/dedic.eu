@@ -21,7 +21,7 @@
     "start": "vite",
     "test": "npm run playwright-docker-run --command='npm run test-native'",
     "test-native": "playwright test",
-    "lint:svelte:svelte-check": "svelte-check",
+    "lint:svelte:svelte-check": "FORCE_COLOR=1 svelte-check",
     "lint:svelte": "run-p -c --aggregate-output lint:svelte:*",
     "lint:ts:eslint": "eslint --color 'src/**/*.{svelte,ts}' 'tests/**/*.ts' '*.config.{js,ts}'",
     "lint:ts:typecheck": "tsc  --noEmit",
