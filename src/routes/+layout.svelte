@@ -45,6 +45,15 @@
     box-sizing: border-box;
   }
 
+  :global(html:not([data-theme]), html[data-theme="light"]) {
+    --background-color: #{theme.$background-color-light};
+    --divider-color: #{theme.$divider-color-light};
+    --primary-bg-color: #{theme.$primary-bg-color-light};
+    --primary-color: #{theme.$primary-color-light};
+    --text-color: #{theme.$text-color-light};
+    --text-color-faded: #{theme.$text-color-faded-light};
+  }
+
   :global(html[data-theme="dark"]) {
     --background-color: #{theme.$background-color-dark};
     --divider-color: #{theme.$divider-color-dark};
@@ -52,15 +61,6 @@
     --primary-color: #{theme.$primary-color-dark};
     --text-color: #{theme.$text-color-dark};
     --text-color-faded: #{theme.$text-color-faded-dark};
-  }
-
-  :global(html[data-theme="light"]) {
-    --background-color: #{theme.$background-color-light};
-    --divider-color: #{theme.$divider-color-light};
-    --primary-bg-color: #{theme.$primary-bg-color-light};
-    --primary-color: #{theme.$primary-color-light};
-    --text-color: #{theme.$text-color-light};
-    --text-color-faded: #{theme.$text-color-faded-light};
   }
 
   :global(body) {
