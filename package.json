@@ -15,6 +15,7 @@
   },
   "scripts": {
     "clean": "rimraf dist/*",
+    "prepare": "svelte-kit sync",
     "prebuild": "npm run clean",
     "build": "vite build",
     "postbuild": "npx svelte-sitemap --out-dir dist --domain https://dedic.eu",
