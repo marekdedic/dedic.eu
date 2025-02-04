@@ -15,6 +15,7 @@
   },
   "scripts": {
     "clean": "rimraf dist/*",
+    "prepare": "svelte-kit sync",
     "prebuild": "npm run clean",
     "build": "vite build",
     "postbuild": "npx svelte-sitemap --out-dir dist --domain https://dedic.eu",
@@ -40,7 +41,7 @@
     "@playwright/test": "^1.50.0",
     "@sveltejs/adapter-static": "^3.0.8",
     "@sveltejs/enhanced-img": "^0.4.1",
-    "@sveltejs/kit": "^2.15.2",
+    "@sveltejs/kit": "^2.17.1",
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
     "@types/node": "^22.13.0",
     "@types/prismjs": "^1.26.4",
