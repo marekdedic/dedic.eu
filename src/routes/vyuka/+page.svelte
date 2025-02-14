@@ -134,7 +134,7 @@
     height="920px"
     sheetId="2096801087"
     title="Přehled výsledků"
-    url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQnfVXCFtXcJx8K-fkwNKOnPg9v8nUbr1in4K7ErpwKhyk8dSiVjc8VLUsrbDBFzOyc2rUQhvpVapJz/pubhtml"
+    url="https://docs.google.com/spreadsheets/d/e/2PACX-1vTH5_Nyf7fqlbrQaWU0kIH1D9O4jGirf-FrJyE2yPUd_d9h11pmSzagpXrYUE7yteqPzm9J26aHpSax/pubhtml"
   />
 
   <Heading level={2}>teorie neuronových sítí – FIT, LS 23/24</Heading>
@@ -267,7 +267,7 @@
     height="660px"
     sheetId="2096801087"
     title="Přehled výsledků"
-    url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQOlPd-nlIljrCz_NIvkTFehlMJzedOHIClP1CSohavxk7hcTK-BRC4-wJXJ7KJ5Y3f6sMIzXduTxG0/pubhtml"
+    url="https://docs.google.com/spreadsheets/d/e/2PACX-1vSd1Iv2HuIZhq8XMgYmW8KtoP6kaCK2JefGOceLyaQ6fACbm0iWCYwfjlixWwEX0SLzaFIlNw833b3P/pubhtml"
   />
 
   <Heading level={2}>teorie neuronových sítí – FIT, LS 22/23</Heading>
