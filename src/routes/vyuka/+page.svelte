@@ -23,6 +23,20 @@
 <ToC />
 
 <PageContent>
+  <Heading level={2}>teorie neuronových sítí – FIT, LS 24/25</Heading>
+
+  <p>
+    Cvičení předmětu teorie neuronových sítí probíhají v sudé týdny ve úterky od
+    14:30 do 16:0 v místnosti T9:351 (viz <ExternalLink
+      href="https://timetable.fit.cvut.cz/new/courses/NI-TNN"
+      >rozvrh</ExternalLink
+    >), případně dle změn oznámených na přednáškách a cvičeních. Informace ke
+    zkoušce, podmínky splnění předmětu a klasifikace lze nalézt v <ExternalLink
+      href="https://courses.fit.cvut.cz/NI-TNN/index.html"
+      >FIT courses</ExternalLink
+    >.
+  </p>
+
   <Heading level={2}>lineární algebra 1 – FJFI, ZS 24/25</Heading>
 
   <p>
