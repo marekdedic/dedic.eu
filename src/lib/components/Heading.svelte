@@ -33,35 +33,36 @@
   });
 </script>
 
+{#snippet link()}
+  <a bind:this={anchorComponent} {id} href={`#${id}`}>
+    {@render children()}
+  </a>
+{/snippet}
+
 {#if level === 2}
   <h2>
-    <a bind:this={anchorComponent} {id} href={`#${id}`}>
-      {@render children()}
-    </a>
+    <!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -- False positive caused by sveltejs/svelte-eslint-parser#657 -->
+    {@render link()}
   </h2>
 {:else if level === 3}
   <h3>
-    <a bind:this={anchorComponent} {id} href={`#${id}`}>
-      {@render children()}
-    </a>
+    <!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -- False positive caused by sveltejs/svelte-eslint-parser#657 -->
+    {@render link()}
   </h3>
 {:else if level === 4}
   <h4>
-    <a bind:this={anchorComponent} {id} href={`#${id}`}>
-      {@render children()}
-    </a>
+    <!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -- False positive caused by sveltejs/svelte-eslint-parser#657 -->
+    {@render link()}
   </h4>
 {:else if level === 5}
   <h5>
-    <a bind:this={anchorComponent} {id} href={`#${id}`}>
-      {@render children()}
-    </a>
+    <!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -- False positive caused by sveltejs/svelte-eslint-parser#657 -->
+    {@render link()}
   </h5>
 {:else if level === 6}
   <h6>
-    <a bind:this={anchorComponent} {id} href={`#${id}`}>
-      {@render children()}
-    </a>
+    <!-- eslint-disable-next-line @typescript-eslint/no-confusing-void-expression -- False positive caused by sveltejs/svelte-eslint-parser#657 -->
+    {@render link()}
   </h6>
 {/if}
 

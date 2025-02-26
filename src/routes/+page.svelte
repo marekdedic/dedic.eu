@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { PublicationParams } from "$lib/types/PublicationParams.ts";
 
+  import { base } from "$app/paths";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import HeaderImage from "$lib/components/HeaderImage.svelte";
   import Heading from "$lib/components/Heading.svelte";
@@ -53,8 +54,9 @@
       Additionally, I maintain an interest in multi-instance learning, an
       underdeveloped field of machine learning. I am mainly interested in nested
       hierarchical models and their use in the field of computer network
-      security. See more details in the <a href="/publications">publications</a>
-      page.
+      security. See more details in the <a href={`${base}/publications`}
+        >publications</a
+      > page.
     </p>
 
     <p>

@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { base } from "$app/paths";
+
   import Name from "./Name.svelte";
 
   interface Props {
@@ -9,7 +11,7 @@
   let { first, last }: Props = $props();
 </script>
 
-<a href="/">
+<a href={`${base}/`}>
   <Name {first} {last} />
 </a>
 
