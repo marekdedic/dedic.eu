@@ -9,7 +9,7 @@
 
 <header>
   <nav>
-    <div class="container">
+    <div>
       {#if !isBase}
         <HeaderName first="Marek" last="Dědič" />
       {/if}
@@ -35,7 +35,7 @@
     z-index: 1000;
   }
 
-  .container {
+  div {
     display: flex;
     margin-left: auto;
     margin-right: auto;

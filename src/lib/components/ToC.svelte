@@ -11,6 +11,8 @@
   {/each}
 </ul>
 
+<!-- eslint-disable svelte/consistent-selector-style -- dynamically generated class names, see sveltejs/eslint-plugin-svelte#1109 -->
+
 <style lang="scss">
   @use "../theme.scss";
 

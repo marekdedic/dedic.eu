@@ -167,7 +167,12 @@ export default tseslint.config(
         },
       ],
       "svelte/button-has-type": "error",
-      "svelte/consistent-selector-style": "error",
+      "svelte/consistent-selector-style": [
+        "error",
+        {
+          style: ["type", "class"],
+        },
+      ],
       "svelte/derived-has-same-inputs-outputs": "error",
       "svelte/no-extra-reactive-curlies": "error",
       "svelte/no-ignored-unsubscribe": "error",
