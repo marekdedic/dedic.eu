@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { base } from "$app/paths";
+
   interface Props {
     bib: string | undefined;
     pdf: string | undefined;
@@ -15,7 +17,7 @@
     </button>
   {/if}
   {#if pdf !== undefined}
-    <a href={pdf} rel="noopener noreferrer" target="_blank">PDF</a>
+    <a href={`${base}/${pdf}`} rel="noopener noreferrer" target="_blank">PDF</a>
   {/if}
 </div>
 

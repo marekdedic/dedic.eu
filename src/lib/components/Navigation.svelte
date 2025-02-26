@@ -6,7 +6,7 @@
   import NavigationItems from "./NavigationItems.svelte";
 
   let expandNavigation = $state(false);
-  let isNarrow = new MediaQuery("max-width: 800px");
+  const isNarrow = new MediaQuery("max-width: 800px");
 </script>
 
 {#if isNarrow.current}

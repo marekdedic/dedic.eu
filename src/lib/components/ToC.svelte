@@ -6,6 +6,7 @@
   <h3>Contents</h3>
   {#each tableOfContents.entries() as [id, [name, level]] (id)}
     <li>
+      <!-- eslint-disable-next-line svelte/no-navigation-without-base -- False positive caused by sveltejs/eslint-plugin-svelte#1104 -->
       <a class={`level-${level.toString()}`} href={`#${id}`}>{name}</a>
     </li>
   {/each}

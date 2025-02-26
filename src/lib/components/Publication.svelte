@@ -31,7 +31,7 @@
 
   let showBib = $state(false);
 
-  let isNarrow = new MediaQuery("max-width: 800px");
+  const isNarrow = new MediaQuery("max-width: 800px");
 </script>
 
 <div class="publication">
