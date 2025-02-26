@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import GoogleSheet from "$lib/components/GoogleSheet.svelte";
   import Heading from "$lib/components/Heading.svelte";
@@ -127,7 +128,8 @@
     <li>
       Pro ty, kdo nenasbírají dostatečný počet bodů, budou ke konci semestru
       zadané <a
-        href="/teaching/B241-01LAL1-homework/B241-01LAL1-homework.pdf"
+        href={`${base}/teaching/B241-01LAL1-homework/B241-01LAL1-homework.pdf`}
+        rel="noopener noreferrer"
         target="_blank">3 domácí úkoly</a
       >, z každého z nich lze získat maximálně 1 bod.
     </li>
@@ -254,7 +256,8 @@
     <li>
       Pro ty, kdo nenasbírají dostatečný počet bodů, budou ke konci semestru
       zadané <a
-        href="/teaching/B231-01LAL1-homework/B231-01LAL1-homework.pdf"
+        href={`${base}/teaching/B231-01LAL1-homework/B231-01LAL1-homework.pdf`}
+        rel="noopener noreferrer"
         target="_blank">3 domácí úkoly</a
       >, z každého z nich lze získat maximálně 1 bod.
     </li>
