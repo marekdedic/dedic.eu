@@ -62,7 +62,7 @@
     "rimraf": "^6.0.1",
     "rollup-plugin-htaccess": "^0.11.0",
     "sass": "^1.85.1",
-    "svelte": "^5.20.4",
+    "svelte": "^5.23.1",
     "svelte-check": "^4.1.5",
     "svelte-fa": "^4.0.3",
     "svelte-sitemap": "^2.7.0",
