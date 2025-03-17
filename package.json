@@ -46,7 +46,7 @@
     "@types/node": "^22.13.10",
     "@types/prismjs": "^1.26.4",
     "eslint": "^9.22.0",
-    "eslint-config-prettier": "^10.0.1",
+    "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-compat": "^6.0.1",
     "eslint-plugin-perfectionist": "^4.9.0",
     "eslint-plugin-playwright": "^2.2.0",
