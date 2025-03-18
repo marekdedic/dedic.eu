@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.0",
-    "@fontsource/roboto": "^5.1.1",
+    "@fontsource/roboto": "^5.2.5",
     "@fortawesome/free-solid-svg-icons": "^6.7.1",
     "@playwright/test": "^1.50.0",
     "@sveltejs/adapter-static": "^3.0.8",
