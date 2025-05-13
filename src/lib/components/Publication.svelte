@@ -53,10 +53,10 @@
     </div>
     <SourceButtons
       {bib}
-      {pdf}
-      toggleBib={(): void => {
+      ontoggleBib={(): void => {
         showBib = !showBib;
       }}
+      {pdf}
     />
     {#if showBib && bib !== undefined}
       <CodeBlock code={bib} language="bib" />
@@ -79,10 +79,10 @@
         </div>
         <SourceButtons
           {bib}
-          {pdf}
-          toggleBib={(): void => {
+          ontoggleBib={(): void => {
             showBib = !showBib;
           }}
+          {pdf}
         />
       </div>
       {#if previewImage !== undefined}

@@ -3,16 +3,20 @@
 
   interface Props {
     bib: string | undefined;
+    ontoggleBib(this: void): void;
     pdf: string | undefined;
-    toggleBib(this: void): void;
   }
 
-  let { bib, pdf, toggleBib }: Props = $props();
+  let { bib, ontoggleBib, pdf }: Props = $props();
 </script>
 
 <div>
   {#if bib !== undefined}
-    <button aria-label="Show bibtex citation" onclick={toggleBib} type="button">
+    <button
+      aria-label="Show bibtex citation"
+      onclick={ontoggleBib}
+      type="button"
+    >
       BIB
     </button>
   {/if}
