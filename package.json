@@ -45,7 +45,7 @@
     "@sveltejs/vite-plugin-svelte": "^5.1.0",
     "@types/node": "^22.15.30",
     "@types/prismjs": "^1.26.4",
-    "eslint": "^9.28.0",
+    "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-compat": "^6.0.1",
     "eslint-plugin-perfectionist": "^4.14.0",
