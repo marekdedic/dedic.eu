@@ -3,6 +3,7 @@ import commentsConfig from "@eslint-community/eslint-plugin-eslint-comments/conf
 import js from "@eslint/js";
 import json from "@eslint/json";
 import compat from "eslint-plugin-compat";
+import packageJson from "eslint-plugin-package-json";
 import perfectionist from "eslint-plugin-perfectionist";
 import playwright from "eslint-plugin-playwright";
 import preferArrowFunctions from "eslint-plugin-prefer-arrow-functions";
@@ -15,9 +16,11 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   globalIgnores([".svelte-kit/", "dist/", "package-lock.json"]),
+  packageJson.configs.recommended,
   {
     extends: [json.configs.recommended],
     files: ["**/*.json"],
+    ignores: ["package.json"],
     language: "json/json",
   },
   {
