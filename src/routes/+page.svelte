@@ -25,7 +25,7 @@
     </span>
   {/snippet}
   {#snippet subtitle()}
-    <span> machine learning scientist at Cisco & PhD student at CTU </span>
+    <span>executive director of EA Czechia & machine learning scientist</span>
   {/snippet}
 </PageHeader>
 
@@ -34,22 +34,24 @@
     <HeaderImage alt="Me" src="/images/profile.jpg" />
 
     <p>
-      I am a machine learning researcher working at <ExternalLink
+      I am the executive director of <ExternalLink
+        href="https://www.efektivni-altruismus.cz/en/"
+        >Effective altruism Czechia</ExternalLink
+      > and a machine learning researcher specializing in neural networks and ways
+      to exploit data structure with them. I am doing a PhD at <ExternalLink
         href="https://cognitive-intelligence.github.io/cognitive-web/"
         >Cisco</ExternalLink
-      > and specializing in neural networks and ways to exploit data structure with
-      them. At the same time, I am doing a PhD at the <ExternalLink
-        href="https://www.fjfi.cvut.cz/en/"
+      > and the <ExternalLink href="https://www.fjfi.cvut.cz/en/"
         >Faculty of Nuclear Sciences and Physical Engineering</ExternalLink
       > of the Czech Technical University.
     </p>
 
     <p>
-      My current interests are mostly in graphs and graph neural networks,
-      particularly graph structure and its interplay with the performance of
-      machine learning tasks on the graph. I proposed a method for graph
-      reduction guided by local properties of the graph. Together with my
-      colleagues, we study the effect of graph properties on downstream tasks
+      My current research interests are mostly in graphs and graph neural
+      networks, particularly graph structure and its interplay with the
+      performance of machine learning tasks on the graph. I proposed a method
+      for graph reduction guided by local properties of the graph. Together with
+      my colleagues, we study the effect of graph properties on downstream tasks
       and their usability in hyper-parameter optimization for GNNs.
       Additionally, I maintain an interest in multi-instance learning, an
       underdeveloped field of machine learning. I am mainly interested in nested
