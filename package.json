@@ -38,7 +38,7 @@
     "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
     "@eslint/json": "^0.13.1",
     "@fontsource/roboto": "^5.2.6",
-    "@fortawesome/free-solid-svg-icons": "^6.7.1",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
     "@playwright/test": "^1.54.2",
     "@sveltejs/adapter-static": "^3.0.8",
     "@sveltejs/enhanced-img": "^0.7.0",
