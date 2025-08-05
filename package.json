@@ -62,7 +62,7 @@
     "prettier-plugin-svelte": "^3.4.0",
     "prismjs-bibtex": "^2.1.0",
     "rimraf": "^6.0.1",
-    "rollup-plugin-htaccess": "^0.11.1",
+    "rollup-plugin-htaccess": "^0.11.2",
     "sass": "^1.89.2",
     "svelte": "^5.37.3",
     "svelte-check": "^4.2.2",
@@ -70,6 +70,6 @@
     "svelte-sitemap": "^2.7.1",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.39.0",
-    "vite": "^6.3.5"
+    "vite": "^7.0.6"
   }
 }
