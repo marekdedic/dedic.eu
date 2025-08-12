@@ -42,7 +42,7 @@
     "@playwright/test": "^1.54.2",
     "@sveltejs/adapter-static": "^3.0.9",
     "@sveltejs/enhanced-img": "^0.7.1",
-    "@sveltejs/kit": "^2.23.0",
+    "@sveltejs/kit": "^2.28.0",
     "@sveltejs/vite-plugin-svelte": "^6.1.1",
     "@types/node": "^24.2.1",
     "@types/prismjs": "^1.26.4",
