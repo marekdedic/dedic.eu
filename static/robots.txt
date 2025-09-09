@@ -1,3 +1,4 @@
-User-agent: * 
+User-agent: *
+Disallow:
 Sitemap: https://dedic.eu/sitemap.xml
-Crawl-Delay: 20
+Crawl-delay: 20
