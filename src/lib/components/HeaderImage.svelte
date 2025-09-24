@@ -25,7 +25,7 @@
 <style>
   .container {
     float: right;
-    width: 30%;
+    width: 40%;
     margin-left: 1rem;
     margin-right: 0;
   }
