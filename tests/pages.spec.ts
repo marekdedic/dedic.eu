@@ -42,6 +42,6 @@ test("teaching page", async ({ page }) => {
   await expect(page).toHaveScreenshot({
     fullPage: true,
     // eslint-disable-next-line playwright/no-raw-locators -- No other way to locate iframe
-    mask: [page.locator("iframe")],
+    mask: [page.locator("table"), page.locator("iframe")],
   });
 });
