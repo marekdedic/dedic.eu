@@ -15,7 +15,7 @@ import svelteParser from "svelte-eslint-parser";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  globalIgnores([".svelte-kit/", "dist/", "package-lock.json"]),
+  globalIgnores([".svelte-kit/", "dist/", "package-lock.json", "**/.venv/"]),
   packageJson.configs.recommended,
   {
     extends: [json.configs.recommended],
