@@ -1,9 +1,11 @@
 $transition-duration: 0.5s;
 
-$background-color-dark: #1c1c1d;
+$background-color-dark: #1c1c1c;
 $divider-color-dark: #424246;
 $primary-bg-color-dark: #2c3237;
 $primary-color-dark: #2698ba;
+$table-border-dark: #424246;
+$table-odd-row-background-dark: #202020;
 $text-color-dark: #e8e8e8;
 $text-color-faded-dark: #e8e8e8;
 
@@ -11,5 +13,7 @@ $background-color-light: #fff;
 $divider-color-light: rgba(0,0,0,.1);
 $primary-bg-color-light: rgba(181,9,172,0.05);
 $primary-color-light: #b509ac;
+$table-border-light: #ddd;
+$table-odd-row-background-light: #f0f0f0;
 $text-color-light: #000;
 $text-color-faded-light: #727272;
