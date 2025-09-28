@@ -76,7 +76,13 @@
           gradientů, jednoduché neuronové sítě, jejich architektura, gradientní
           sestup, aktivační funkce, hyperparametery a jejich volba</td
         >
-        <td></td>
+        <td
+          ><a
+            href={`${base}/teaching/B251-TZN-materials/TZN-01.ipynb`}
+            rel="noopener noreferrer"
+            target="_blank">notebook</a
+          ></td
+        >
         <td></td>
       </tr>
       <tr>
