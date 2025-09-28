@@ -50,6 +50,8 @@
     --divider-color: #{theme.$divider-color-light};
     --primary-bg-color: #{theme.$primary-bg-color-light};
     --primary-color: #{theme.$primary-color-light};
+    --table-border: #{theme.$table-border-light};
+    --table-odd-row-background: #{theme.$table-odd-row-background-light};
     --text-color: #{theme.$text-color-light};
     --text-color-faded: #{theme.$text-color-faded-light};
   }
@@ -59,6 +61,8 @@
     --divider-color: #{theme.$divider-color-dark};
     --primary-bg-color: #{theme.$primary-bg-color-dark};
     --primary-color: #{theme.$primary-color-dark};
+    --table-border: #{theme.$table-border-dark};
+    --table-odd-row-background: #{theme.$table-odd-row-background-dark};
     --text-color: #{theme.$text-color-dark};
     --text-color-faded: #{theme.$text-color-faded-dark};
   }
@@ -99,6 +103,26 @@
 
   :global(h3) {
     font-weight: 400;
+  }
+
+  :global(table) {
+    margin-top: 1rem;
+    border: 1px solid var(--table-border);
+    border-collapse: collapse;
+  }
+
+  :global(td),
+  :global(th) {
+    border: 1px solid var(--table-border);
+    padding: 8px 20px;
+  }
+
+  :global(th) {
+    border-bottom-width: 2px;
+  }
+
+  :global(tbody tr:nth-child(2n + 1)) {
+    background-color: var(--table-odd-row-background);
   }
 
   div {
