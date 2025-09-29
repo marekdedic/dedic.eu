@@ -63,7 +63,7 @@
     "prismjs-bibtex": "^2.1.0",
     "rimraf": "^6.0.1",
     "rollup-plugin-htaccess": "^0.11.3",
-    "sass": "^1.93.0",
+    "sass": "^1.93.2",
     "svelte": "^5.39.6",
     "svelte-check": "^4.3.2",
     "svelte-fa": "^4.0.4",
