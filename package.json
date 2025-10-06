@@ -39,7 +39,7 @@
     "@eslint/json": "^0.13.2",
     "@fontsource/roboto": "^5.2.8",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
-    "@playwright/test": "^1.55.1",
+    "@playwright/test": "^1.56.0",
     "@sveltejs/adapter-static": "^3.0.9",
     "@sveltejs/enhanced-img": "^0.8.4",
     "@sveltejs/kit": "^2.23.0",
