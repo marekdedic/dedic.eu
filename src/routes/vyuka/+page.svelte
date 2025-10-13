@@ -105,7 +105,13 @@
             target="_blank">notebook</a
           ></td
         >
-        <td></td>
+        <td
+          ><a
+            href={`${base}/teaching/B251-TZN-materials/TZN-02-solutions.ipynb`}
+            rel="noopener noreferrer"
+            target="_blank">notebook</a
+          ></td
+        >
       </tr>
       <tr>
         <td>3</td>
