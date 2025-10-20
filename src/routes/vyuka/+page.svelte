@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base } from "$app/paths";
+  import { asset } from "$app/paths";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import GoogleSheet from "$lib/components/GoogleSheet.svelte";
   import Heading from "$lib/components/Heading.svelte";
@@ -46,13 +46,13 @@
   >. K seznámení s touto technologií je určeno první cvičení. Pro replikaci
   přesného prostředí, v němž byly notebooky vytvořeny, můžete využít souborů
   <a
-    href={`${base}/teaching/B251-TZN-materials/pyproject.toml`}
+    href={asset("/teaching/B251-TZN-materials/pyproject.toml")}
     rel="noopener noreferrer"
     target="_blank">pyproject.toml</a
   >
   a
   <a
-    href={`${base}/teaching/B251-TZN-materials/uv.lock`}
+    href={asset("/teaching/B251-TZN-materials/uv.lock")}
     rel="noopener noreferrer"
     target="_blank">uv.lock</a
   >.
@@ -78,14 +78,14 @@
         >
         <td
           ><a
-            href={`${base}/teaching/B251-TZN-materials/TZN-01.ipynb`}
+            href={asset("/teaching/B251-TZN-materials/TZN-01.ipynb")}
             rel="noopener noreferrer"
             target="_blank">notebook</a
           ></td
         >
         <td
           ><a
-            href={`${base}/teaching/B251-TZN-materials/TZN-01-solutions.ipynb`}
+            href={asset("/teaching/B251-TZN-materials/TZN-01-solutions.ipynb")}
             rel="noopener noreferrer"
             target="_blank">notebook</a
           ></td
@@ -100,14 +100,14 @@
         >
         <td
           ><a
-            href={`${base}/teaching/B251-TZN-materials/TZN-02.ipynb`}
+            href={asset("/teaching/B251-TZN-materials/TZN-02.ipynb")}
             rel="noopener noreferrer"
             target="_blank">notebook</a
           ></td
         >
         <td
           ><a
-            href={`${base}/teaching/B251-TZN-materials/TZN-02-solutions.ipynb`}
+            href={asset("/teaching/B251-TZN-materials/TZN-02-solutions.ipynb")}
             rel="noopener noreferrer"
             target="_blank">notebook</a
           ></td
@@ -266,7 +266,7 @@
     <li>
       Pro ty, kdo nenasbírají dostatečný počet bodů, budou ke konci semestru
       zadané <a
-        href={`${base}/teaching/B241-01LAL1-homework/B241-01LAL1-homework.pdf`}
+        href={asset("/teaching/B241-01LAL1-homework/B241-01LAL1-homework.pdf")}
         rel="noopener noreferrer"
         target="_blank">3 domácí úkoly</a
       >, z každého z nich lze získat maximálně 1 bod.
@@ -394,7 +394,7 @@
     <li>
       Pro ty, kdo nenasbírají dostatečný počet bodů, budou ke konci semestru
       zadané <a
-        href={`${base}/teaching/B231-01LAL1-homework/B231-01LAL1-homework.pdf`}
+        href={asset("/teaching/B231-01LAL1-homework/B231-01LAL1-homework.pdf")}
         rel="noopener noreferrer"
         target="_blank">3 domácí úkoly</a
       >, z každého z nich lze získat maximálně 1 bod.

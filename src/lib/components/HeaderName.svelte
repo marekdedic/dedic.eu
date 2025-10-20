@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { base } from "$app/paths";
+  import { resolve } from "$app/paths";
 
   import Name from "./Name.svelte";
 
@@ -11,7 +11,7 @@
   let { first, last }: Props = $props();
 </script>
 
-<a href={`${base}/`}>
+<a href={resolve("/")}>
   <Name {first} {last} />
 </a>
 
