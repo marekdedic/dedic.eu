@@ -213,7 +213,6 @@ export default tseslint.config(
       "svelte/no-extra-reactive-curlies": "error",
       "svelte/no-ignored-unsubscribe": "error",
       "svelte/no-inline-styles": "error",
-      "svelte/no-navigation-without-base": "error",
       "svelte/no-target-blank": "error",
       "svelte/no-top-level-browser-globals": "error",
       "svelte/no-unused-class-name": "error",
