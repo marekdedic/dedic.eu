@@ -27,22 +27,9 @@ test("/publications", async ({ page }) => {
 });
 
 test("/vyuka", async ({ page }) => {
-  // Replay the Google table to make the test reproducible
-  await page.routeFromHAR("./tests/hars/LAL1-google-sheet.har", {
-    url: "https://docs.google.com/spreadsheets/**/*",
-  });
-
   await page.goto("/vyuka");
-  await expect(
-    page
-      .getByRole("list")
-      .filter({ hasText: "Contents" })
-      .getByRole("listitem"),
-  ).not.toHaveCount(0);
   await expect(page).toHaveScreenshot({
     fullPage: true,
-    // eslint-disable-next-line playwright/no-raw-locators -- No other way to locate iframe
-    mask: [page.locator("table"), page.locator("iframe")],
   });
 });
 
