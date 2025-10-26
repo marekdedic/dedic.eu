@@ -4,7 +4,6 @@
   import GoogleSheet from "$lib/components/GoogleSheet.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import InlineCode from "$lib/components/InlineCode.svelte";
-  import PageContent from "$lib/components/PageContent.svelte";
   import PageContentBox from "$lib/components/PageContentBox.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
   import ToC from "$lib/components/ToC.svelte";
@@ -23,7 +22,7 @@
 
   <ToC />
 
-  <PageContent>
+  <article>
     <Heading level={2}
       >teoretické základy neuronových sítí – FJFI, ZS 25/26</Heading
     >
@@ -446,5 +445,5 @@
         >FIT courses</ExternalLink
       >.
     </p>
-  </PageContent>
+  </article>
 </PageContentBox>

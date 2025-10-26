@@ -6,7 +6,6 @@
   import HeaderImage from "$lib/components/HeaderImage.svelte";
   import Heading from "$lib/components/Heading.svelte";
   import Name from "$lib/components/Name.svelte";
-  import PageContent from "$lib/components/PageContent.svelte";
   import PageContentBox from "$lib/components/PageContentBox.svelte";
   import PageHeader from "$lib/components/PageHeader.svelte";
   import PageSection from "$lib/components/PageSection.svelte";
@@ -29,7 +28,7 @@
     {/snippet}
   </PageHeader>
 
-  <PageContent>
+  <article>
     <PageSection>
       <HeaderImage alt="Me" src="/images/profile.jpg" />
 
@@ -78,5 +77,5 @@
     {#each data.publications.slice(0, 2) as publication (publication.title)}
       <Publication {...publication} />
     {/each}
-  </PageContent>
+  </article>
 </PageContentBox>
