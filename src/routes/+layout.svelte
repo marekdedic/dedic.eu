@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Header from "$lib/components/Header.svelte";
+  import TopBar from "$lib/components/TopBar.svelte";
   import { theme } from "$lib/theme.svelte";
   import "@fontsource/roboto/300.css";
   import "@fontsource/roboto/300-italic.css";
@@ -32,7 +32,7 @@
   });
 </script>
 
-<Header />
+<TopBar />
 
 <div>
   {@render children()}

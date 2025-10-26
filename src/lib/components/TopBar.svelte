@@ -1,22 +1,20 @@
 <script lang="ts">
   import { page } from "$app/state";
 
-  import HeaderName from "./HeaderName.svelte";
   import Navigation from "./Navigation.svelte";
+  import TopBarName from "./TopBarName.svelte";
 
   let isBase = $derived(page.route.id === "/");
 </script>
 
-<header>
-  <nav>
-    <div>
-      {#if !isBase}
-        <HeaderName first="Marek" last="Dědič" />
-      {/if}
-      <Navigation />
-    </div>
-  </nav>
-</header>
+<nav>
+  <div>
+    {#if !isBase}
+      <TopBarName first="Marek" last="Dědič" />
+    {/if}
+    <Navigation />
+  </div>
+</nav>
 
 <style lang="scss">
   @use "../theme.scss";
