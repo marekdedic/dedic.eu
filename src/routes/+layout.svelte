@@ -34,9 +34,7 @@
 
 <TopBar />
 
-<div>
-  {@render children()}
-</div>
+{@render children()}
 
 <style lang="scss">
   @use "../lib/theme.scss";
@@ -123,14 +121,5 @@
 
   :global(tbody tr:nth-child(2n + 1)) {
     background-color: var(--table-odd-row-background);
-  }
-
-  div {
-    margin-top: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 800px;
-    padding-left: 15px;
-    padding-right: 15px;
   }
 </style>
