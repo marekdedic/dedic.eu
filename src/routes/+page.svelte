@@ -20,12 +20,10 @@
 
 <PageHeader>
   {#snippet title()}
-    <span>
-      <Name first="Marek" last="Dědič" />
-    </span>
+    <Name first="Marek" last="Dědič" />
   {/snippet}
   {#snippet subtitle()}
-    <span>executive director of EA Czechia & machine learning scientist</span>
+    executive director of EA Czechia & machine learning scientist
   {/snippet}
 </PageHeader>
 

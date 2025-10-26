@@ -14,10 +14,10 @@
 
 <PageHeader>
   {#snippet title()}
-    <span>publications</span>
+    publications
   {/snippet}
   {#snippet subtitle()}
-    <span>my publications in reverse chronological order.</span>
+    my publications in reverse chronological order.
   {/snippet}
 </PageHeader>
 <PageContent>
