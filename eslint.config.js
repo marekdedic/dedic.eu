@@ -192,6 +192,7 @@ export default tseslint.config(
       },
     },
     rules: {
+      "@typescript-eslint/no-confusing-void-expression": "off", // Doesn't work well with snippets
       "prefer-const": "off",
       "svelte/block-lang": [
         "error",

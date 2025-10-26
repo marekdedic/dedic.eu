@@ -1,10 +1,21 @@
 <script lang="ts">
+  import type { CourseSpec } from "$lib/types/CourseSpec";
+
   import { asset } from "$app/paths";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import PageContentBox from "$lib/components/PageContentBox.svelte";
+  import TeachingSideNav from "$lib/components/TeachingSideNav.svelte";
+
+  interface Props {
+    data: { teachingSpec: Array<CourseSpec> };
+  }
+
+  let { data }: Props = $props();
 </script>
 
-<PageContentBox>
+<TeachingSideNav spec={data.teachingSpec} />
+
+<PageContentBox leftSidePanel={true}>
   <header>
     <h1>teoretické základy neuronových sítí</h1>
     FJFI, ZS 25/26

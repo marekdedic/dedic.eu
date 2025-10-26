@@ -1,9 +1,20 @@
 <script lang="ts">
+  import type { CourseSpec } from "$lib/types/CourseSpec";
+
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import PageContentBox from "$lib/components/PageContentBox.svelte";
+  import TeachingSideNav from "$lib/components/TeachingSideNav.svelte";
+
+  interface Props {
+    data: { teachingSpec: Array<CourseSpec> };
+  }
+
+  let { data }: Props = $props();
 </script>
 
-<PageContentBox>
+<TeachingSideNav spec={data.teachingSpec} />
+
+<PageContentBox leftSidePanel={true}>
   <header>
     <h1>neuronové sítě, strojové učení a náhodnost</h1>
     FIT, ZS 25/26
