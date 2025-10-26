@@ -11,13 +11,11 @@
 
 <PageHeader>
   {#snippet title()}
-    <span>výuka</span>
+    výuka
   {/snippet}
   {#snippet subtitle()}
-    <span>
-      informace k předmětům, které učím – studijní materiály, podmínky splnění,
-      výsledky.
-    </span>
+    informace k předmětům, které učím – studijní materiály, podmínky splnění,
+    výsledky.
   {/snippet}
 </PageHeader>
 
