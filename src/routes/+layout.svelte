@@ -79,6 +79,10 @@
       color theme.$transition-duration ease;
   }
 
+  :global(header) {
+    margin-bottom: 1rem;
+  }
+
   :global(a) {
     text-decoration: none;
     color: var(--primary-color);
@@ -93,6 +97,12 @@
     font-weight: 300;
     margin-bottom: 1rem;
     margin-top: 1.5rem;
+  }
+
+  :global(h1) {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
   }
 
   :global(h2) {

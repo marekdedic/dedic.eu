@@ -7,7 +7,6 @@
   import Heading from "$lib/components/Heading.svelte";
   import Name from "$lib/components/Name.svelte";
   import PageContentBox from "$lib/components/PageContentBox.svelte";
-  import PageHeader from "$lib/components/PageHeader.svelte";
   import PageSection from "$lib/components/PageSection.svelte";
   import Publication from "$lib/components/Publication.svelte";
 
@@ -19,14 +18,10 @@
 </script>
 
 <PageContentBox>
-  <PageHeader>
-    {#snippet title()}
-      <Name first="Marek" last="Dědič" />
-    {/snippet}
-    {#snippet subtitle()}
-      executive director of EA Czechia & machine learning scientist
-    {/snippet}
-  </PageHeader>
+  <header>
+    <h1><Name first="Marek" last="Dědič" /></h1>
+    executive director of EA Czechia & machine learning scientist
+  </header>
 
   <article>
     <PageSection>

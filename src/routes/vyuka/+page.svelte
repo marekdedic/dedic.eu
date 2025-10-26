@@ -5,20 +5,14 @@
   import Heading from "$lib/components/Heading.svelte";
   import InlineCode from "$lib/components/InlineCode.svelte";
   import PageContentBox from "$lib/components/PageContentBox.svelte";
-  import PageHeader from "$lib/components/PageHeader.svelte";
   import ToC from "$lib/components/ToC.svelte";
 </script>
 
 <PageContentBox>
-  <PageHeader>
-    {#snippet title()}
-      výuka
-    {/snippet}
-    {#snippet subtitle()}
-      informace k předmětům, které učím – studijní materiály, podmínky splnění,
-      výsledky.
-    {/snippet}
-  </PageHeader>
+  <header>
+    <h1>výuka</h1>
+    informace k předmětům, které učím – studijní materiály, podmínky splnění, výsledky.
+  </header>
 
   <ToC />
 
