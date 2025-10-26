@@ -1,8 +1,8 @@
-export interface JsonPublication {
+export interface PublicationSpec {
   abstract: string;
   authors: Array<string>;
   bib?: string;
-  date: string;
+  date: Date;
   pdf?: string;
   previewImage?: string;
   tags?: Array<string>;

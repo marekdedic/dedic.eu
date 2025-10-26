@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { PublicationParams } from "$lib/types/PublicationParams.ts";
+  import type { PublicationSpec } from "$lib/types/PublicationSpec.ts";
 
   import { resolve } from "$app/paths";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
@@ -12,7 +12,7 @@
   import Publication from "$lib/components/Publication.svelte";
 
   interface Props {
-    data: { publications: Array<PublicationParams> };
+    data: { publications: Array<PublicationSpec> };
   }
 
   let { data }: Props = $props();
