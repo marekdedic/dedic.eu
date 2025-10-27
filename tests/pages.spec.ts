@@ -46,6 +46,11 @@ test("/vyuka", async ({ page }) => {
   });
 });
 
+test("/vyuka/LAL1", async ({ page }) => {
+  await page.goto("/vyuka/LAL1");
+  await expect(page).toHaveURL("/vyuka/LAL1/2024-winter");
+});
+
 test("/vyuka/LAL1/2023-winter", async ({ page }) => {
   // Replay the Google table to make the test reproducible
   await page.routeFromHAR("./tests/hars/LAL1-google-sheet.har", {
@@ -74,6 +79,11 @@ test("/vyuka/LAL1/2024-winter", async ({ page }) => {
   });
 });
 
+test("/vyuka/TNN", async ({ page }) => {
+  await page.goto("/vyuka/TNN");
+  await expect(page).toHaveURL("/vyuka/TNN/2025-summer");
+});
+
 test("/vyuka/TNN/2023-summer", async ({ page }) => {
   await page.goto("/vyuka/TNN/2023-summer");
   await expect(page).toHaveScreenshot({
@@ -95,11 +105,21 @@ test("/vyuka/TNN/2025-summer", async ({ page }) => {
   });
 });
 
+test("/vyuka/NMS", async ({ page }) => {
+  await page.goto("/vyuka/NMS");
+  await expect(page).toHaveURL("/vyuka/NMS/2025-winter");
+});
+
 test("/vyuka/NMS/2025-winter", async ({ page }) => {
   await page.goto("/vyuka/NMS/2025-winter");
   await expect(page).toHaveScreenshot({
     fullPage: true,
   });
+});
+
+test("/vyuka/TZN", async ({ page }) => {
+  await page.goto("/vyuka/TZN");
+  await expect(page).toHaveURL("/vyuka/TZN/2025-winter");
 });
 
 test("/vyuka/TZN/2025-winter", async ({ page }) => {
