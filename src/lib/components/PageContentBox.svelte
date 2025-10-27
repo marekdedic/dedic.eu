@@ -3,12 +3,13 @@
 
   interface Props {
     children: Snippet;
+    leftSidePanel?: boolean;
   }
 
-  let { children }: Props = $props();
+  let { children, leftSidePanel = false }: Props = $props();
 </script>
 
-<div>
+<div class:left-side-panel={leftSidePanel}>
   {@render children()}
 </div>
 
@@ -20,5 +21,12 @@
     max-width: 800px;
     padding-left: 15px;
     padding-right: 15px;
+  }
+
+  @media (1150px <= width < 1500px) {
+    .left-side-panel {
+      margin-left: 350px;
+      margin-right: auto;
+    }
   }
 </style>
