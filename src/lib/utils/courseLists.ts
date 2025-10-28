@@ -10,13 +10,13 @@ export function getCurrentCourseList(spec: Array<CourseSpec>): Array<{
   name: string;
 }> {
   return spec
-    .reverse()
     .filter((course) => course.current !== null)
     .map((course) => ({
       defaultRoute: findCourseRoute(course),
       faculties: findDefaultCourseVersion(course).faculties,
       name: course.name,
-    }));
+    }))
+    .reverse();
 }
 
 export function getPastCourseList(spec: Array<CourseSpec>): Array<{
@@ -25,7 +25,6 @@ export function getPastCourseList(spec: Array<CourseSpec>): Array<{
   name: string;
 }> {
   return spec
-    .reverse()
     .filter((course) => course.current === null)
     .map((course) => ({
       defaultRoute: findCourseRoute(course),
@@ -33,5 +32,6 @@ export function getPastCourseList(spec: Array<CourseSpec>): Array<{
         ...new Set(course.versions.flatMap((version) => version.faculties)),
       ],
       name: course.name,
-    }));
+    }))
+    .reverse();
 }
