@@ -5,5 +5,5 @@ import { findDefaultCourseVersion } from "$lib/utils/findDefaultCourseVersion";
 
 export function findCourseRoute(course: CourseSpec): RouteId {
   const defaultVersion = findDefaultCourseVersion(course);
-  return `/vyuka/${course.slug}/${defaultVersion.slug}` as RouteId;
+  return `/teaching/${course.slug}/${defaultVersion.slug}` as RouteId;
 }

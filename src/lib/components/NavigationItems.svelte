@@ -32,5 +32,5 @@
     dispatch("click");
   }}
 / -->
-<NavigationItem href="/vyuka" {onclick} title="teaching" />
+<NavigationItem href="/teaching" {onclick} title="teaching" />
 <DarkModeToggle />
