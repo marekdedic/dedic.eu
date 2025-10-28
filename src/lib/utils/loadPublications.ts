@@ -1,5 +1,7 @@
 import type { PublicationSpec } from "$lib/types/PublicationSpec";
 
+import { loadJsonConfig } from "$lib/utils/loadJsonConfig";
+
 export interface RawPublicationSpec {
   abstract: string;
   authors: Array<string>;
@@ -15,8 +17,7 @@ export async function loadPublications(
   file: string,
   kitFetch: typeof fetch,
 ): Promise<Array<PublicationSpec>> {
-  const res = await kitFetch(file);
-  return ((await res.json()) as Array<RawPublicationSpec>)
+  return (await loadJsonConfig<Array<RawPublicationSpec>>(file, kitFetch))
     .map((publication) => ({
       ...publication,
       date: new Date(publication.date),

@@ -1,14 +1,12 @@
 <script lang="ts">
-  import { tableOfContents } from "$lib/toc.svelte";
-  import { onDestroy, type Snippet } from "svelte";
+  import type { Snippet } from "svelte";
 
   interface Props {
     children: Snippet;
-    inToC?: boolean;
     level: 2 | 3 | 4 | 5 | 6;
   }
 
-  let { children, inToC = true, level }: Props = $props();
+  let { children, level }: Props = $props();
 
   let anchorComponent: HTMLAnchorElement | undefined = $state();
 
@@ -21,16 +19,6 @@
       .replace(/[^0-9a-z\s]/gu, "")
       .replace(/\s+/gu, "-"),
   );
-
-  $effect(() => {
-    if (inToC && id !== "") {
-      tableOfContents.set(id, [title, level]);
-    }
-  });
-
-  onDestroy(() => {
-    tableOfContents.delete(id);
-  });
 </script>
 
 {#snippet link()}

@@ -1,8 +1,7 @@
 <script lang="ts">
   import type { PublicationSpec } from "$lib/types/PublicationSpec.ts";
 
-  import PageContent from "$lib/components/PageContent.svelte";
-  import PageHeader from "$lib/components/PageHeader.svelte";
+  import PageContentBox from "$lib/components/PageContentBox.svelte";
   import Publication from "$lib/components/Publication.svelte";
 
   interface Props {
@@ -12,16 +11,15 @@
   let { data }: Props = $props();
 </script>
 
-<PageHeader>
-  {#snippet title()}
-    publications
-  {/snippet}
-  {#snippet subtitle()}
+<PageContentBox>
+  <header>
+    <h1>publications</h1>
     my publications in reverse chronological order.
-  {/snippet}
-</PageHeader>
-<PageContent>
-  {#each data.publications as publication (publication.title)}
-    <Publication {...publication} />
-  {/each}
-</PageContent>
+  </header>
+
+  <article>
+    {#each data.publications as publication (publication.title)}
+      <Publication {...publication} />
+    {/each}
+  </article>
+</PageContentBox>

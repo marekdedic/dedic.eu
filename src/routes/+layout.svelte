@@ -34,9 +34,7 @@
 
 <TopBar />
 
-<div>
-  {@render children()}
-</div>
+{@render children()}
 
 <style lang="scss">
   @use "../lib/theme.scss";
@@ -54,6 +52,8 @@
     --table-odd-row-background: #{theme.$table-odd-row-background-light};
     --text-color: #{theme.$text-color-light};
     --text-color-faded: #{theme.$text-color-faded-light};
+    --error-color: #{theme.$error-color-light};
+    --warning-color: #{theme.$warning-color-light};
   }
 
   :global(html[data-theme="dark"]) {
@@ -65,6 +65,8 @@
     --table-odd-row-background: #{theme.$table-odd-row-background-dark};
     --text-color: #{theme.$text-color-dark};
     --text-color-faded: #{theme.$text-color-faded-dark};
+    --error-color: #{theme.$error-color-dark};
+    --warning-color: #{theme.$warning-color-dark};
   }
 
   :global(body) {
@@ -81,6 +83,10 @@
       color theme.$transition-duration ease;
   }
 
+  :global(header) {
+    margin-bottom: 1rem;
+  }
+
   :global(a) {
     text-decoration: none;
     color: var(--primary-color);
@@ -95,6 +101,12 @@
     font-weight: 300;
     margin-bottom: 1rem;
     margin-top: 1.5rem;
+  }
+
+  :global(h1) {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
   }
 
   :global(h2) {
@@ -123,14 +135,5 @@
 
   :global(tbody tr:nth-child(2n + 1)) {
     background-color: var(--table-odd-row-background);
-  }
-
-  div {
-    margin-top: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 800px;
-    padding-left: 15px;
-    padding-right: 15px;
   }
 </style>
