@@ -52,6 +52,8 @@
     --table-odd-row-background: #{theme.$table-odd-row-background-light};
     --text-color: #{theme.$text-color-light};
     --text-color-faded: #{theme.$text-color-faded-light};
+    --error-color: #{theme.$error-color-light};
+    --warning-color: #{theme.$warning-color-light};
   }
 
   :global(html[data-theme="dark"]) {
@@ -63,6 +65,8 @@
     --table-odd-row-background: #{theme.$table-odd-row-background-dark};
     --text-color: #{theme.$text-color-dark};
     --text-color-faded: #{theme.$text-color-faded-dark};
+    --error-color: #{theme.$error-color-dark};
+    --warning-color: #{theme.$warning-color-dark};
   }
 
   :global(body) {

@@ -1,6 +1,7 @@
 <script lang="ts">
   import type { CourseSpec } from "$lib/types/CourseSpec";
 
+  import CouseHeader from "$lib/components/CouseHeader.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import PageContentBox from "$lib/components/PageContentBox.svelte";
   import TeachingSideNav from "$lib/components/TeachingSideNav.svelte";
@@ -15,10 +16,10 @@
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>
-  <header>
-    <h1>teorie neuronových sítí</h1>
-    FIT, LS 23/24
-  </header>
+  <CouseHeader
+    course={data.teachingSpec.find((c) => c.slug === "TNN")}
+    version="2024-summer"
+  />
 
   <article>
     <p>

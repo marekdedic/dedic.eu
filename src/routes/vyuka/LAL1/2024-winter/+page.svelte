@@ -2,6 +2,7 @@
   import type { CourseSpec } from "$lib/types/CourseSpec";
 
   import { asset } from "$app/paths";
+  import CouseHeader from "$lib/components/CouseHeader.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import GoogleSheet from "$lib/components/GoogleSheet.svelte";
   import InlineCode from "$lib/components/InlineCode.svelte";
@@ -18,10 +19,10 @@
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>
-  <header>
-    <h1>lineární algebra 1</h1>
-    FJFI, ZS 24/25
-  </header>
+  <CouseHeader
+    course={data.teachingSpec.find((c) => c.slug === "LAL1")}
+    version="2024-winter"
+  />
 
   <article>
     <p>
