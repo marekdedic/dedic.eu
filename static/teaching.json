@@ -1,5 +1,17 @@
 [
   {
+    "name": "lineární algebra 2",
+    "slug": "LAL2",
+    "current": null,
+    "versions": [
+      {
+        "slug": "2021-summer",
+        "semester": "LS 20/21",
+        "faculties": ["FJFI"]
+      }
+    ]
+  },
+  {
     "name": "lineární algebra 1",
     "slug": "LAL1",
     "current": null,

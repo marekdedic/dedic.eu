@@ -38,6 +38,18 @@ test("/teaching", async ({ page }) => {
   });
 });
 
+test("/teaching/LAL2", async ({ page }) => {
+  await page.goto("/teaching/LAL2");
+  await expect(page).toHaveURL("/teaching/LAL2/2021-summer");
+});
+
+test("/teaching/LAL2/2021-summer", async ({ page }) => {
+  await page.goto("/teaching/LAL2/2021-summer");
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
+});
+
 test("/teaching/LAL1", async ({ page }) => {
   await page.goto("/teaching/LAL1");
   await expect(page).toHaveURL("/teaching/LAL1/2024-winter");
