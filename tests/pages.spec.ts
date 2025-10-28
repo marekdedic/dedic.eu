@@ -76,6 +76,13 @@ test("/teaching/TNN", async ({ page }) => {
   await expect(page).toHaveURL("/teaching/TNN/2025-summer");
 });
 
+test("/teaching/TNN/2022-summer", async ({ page }) => {
+  await page.goto("/teaching/TNN/2022-summer");
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
+});
+
 test("/teaching/TNN/2023-summer", async ({ page }) => {
   await page.goto("/teaching/TNN/2023-summer");
   await expect(page).toHaveScreenshot({
