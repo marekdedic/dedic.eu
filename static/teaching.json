@@ -5,6 +5,16 @@
     "current": null,
     "versions": [
       {
+        "slug": "2021-winter",
+        "semester": "ZS 21/22",
+        "faculties": ["FJFI"]
+      },
+      {
+        "slug": "2022-winter",
+        "semester": "ZS 22/23",
+        "faculties": ["FJFI"]
+      },
+      {
         "slug": "2023-winter",
         "semester": "ZS 23/24",
         "faculties": ["FJFI"]

@@ -43,6 +43,20 @@ test("/teaching/LAL1", async ({ page }) => {
   await expect(page).toHaveURL("/teaching/LAL1/2024-winter");
 });
 
+test("/teaching/LAL1/2021-winter", async ({ page }) => {
+  await page.goto("/teaching/LAL1/2021-winter");
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
+});
+
+test("/teaching/LAL1/2022-winter", async ({ page }) => {
+  await page.goto("/teaching/LAL1/2022-winter");
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
+});
+
 test("/teaching/LAL1/2023-winter", async ({ page }) => {
   // Replay the Google table to make the test reproducible
   await page.routeFromHAR("./tests/hars/LAL1-google-sheet.har", {
