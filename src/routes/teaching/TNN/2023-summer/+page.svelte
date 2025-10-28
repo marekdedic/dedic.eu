@@ -26,7 +26,7 @@
       Cvičení předmětu teorie neuronových sítí probíhají nepravidelně, viz
       e-mail. Informace ke zkoušce, podmínky splnění předmětu a klasifikace lze
       nalézt v <ExternalLink
-        href="https://courses.fit.cvut.cz/NI-TNN/index.html"
+        href="https://courses.fit.cvut.cz/NI-TNN/@B222/index.html"
         >FIT courses</ExternalLink
       >.
     </p>

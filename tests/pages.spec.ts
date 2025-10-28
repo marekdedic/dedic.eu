@@ -38,9 +38,47 @@ test("/teaching", async ({ page }) => {
   });
 });
 
+test("/teaching/MAT3", async ({ page }) => {
+  await page.goto("/teaching/MAT3");
+  await expect(page).toHaveURL("/teaching/MAT3/2020-winter");
+});
+
+test("/teaching/MAT3/2020-winter", async ({ page }) => {
+  await page.goto("/teaching/MAT3/2020-winter");
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
+});
+
+test("/teaching/LAL2", async ({ page }) => {
+  await page.goto("/teaching/LAL2");
+  await expect(page).toHaveURL("/teaching/LAL2/2021-summer");
+});
+
+test("/teaching/LAL2/2021-summer", async ({ page }) => {
+  await page.goto("/teaching/LAL2/2021-summer");
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
+});
+
 test("/teaching/LAL1", async ({ page }) => {
   await page.goto("/teaching/LAL1");
   await expect(page).toHaveURL("/teaching/LAL1/2024-winter");
+});
+
+test("/teaching/LAL1/2021-winter", async ({ page }) => {
+  await page.goto("/teaching/LAL1/2021-winter");
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
+});
+
+test("/teaching/LAL1/2022-winter", async ({ page }) => {
+  await page.goto("/teaching/LAL1/2022-winter");
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
 });
 
 test("/teaching/LAL1/2023-winter", async ({ page }) => {
@@ -74,6 +112,13 @@ test("/teaching/LAL1/2024-winter", async ({ page }) => {
 test("/teaching/TNN", async ({ page }) => {
   await page.goto("/teaching/TNN");
   await expect(page).toHaveURL("/teaching/TNN/2025-summer");
+});
+
+test("/teaching/TNN/2022-summer", async ({ page }) => {
+  await page.goto("/teaching/TNN/2022-summer");
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
 });
 
 test("/teaching/TNN/2023-summer", async ({ page }) => {

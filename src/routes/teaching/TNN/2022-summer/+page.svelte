@@ -18,16 +18,16 @@
 <PageContentBox leftSidePanel={true}>
   <CouseHeader
     course={data.teachingSpec.find((c) => c.slug === "TNN")}
-    version="2025-summer"
+    version="2022-summer"
   />
 
   <article>
     <p>
-      Cvičení předmětu teorie neuronových sítí probíhají v sudé týdny ve úterky
-      od 14:30 do 16:00 v místnosti T9:351, případně dle změn oznámených na
+      Cvičení předmětu teorie neuronových sítí probíhají v liché týdny v úterý
+      od 18:00 do 19:30 v místnosti T9:303, případně dle změn oznámených na
       přednáškách a cvičeních. Informace ke zkoušce, podmínky splnění předmětu a
       klasifikace lze nalézt v <ExternalLink
-        href="https://courses.fit.cvut.cz/NI-TNN/@B242/index.html"
+        href="https://courses.fit.cvut.cz/NI-TNN/@B212/index.html"
         >FIT courses</ExternalLink
       >.
     </p>
