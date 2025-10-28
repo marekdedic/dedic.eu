@@ -78,18 +78,6 @@
     ]
   },
   {
-    "name": "neural networks, machine learning and randomness",
-    "slug": "NMS",
-    "current": "2025-winter",
-    "versions": [
-      {
-          "slug": "2025-winter",
-          "semester": "winter 2025",
-          "faculties": ["FIT"]
-      }
-    ]
-  },
-  {
     "name": "theoretical fundamentals of neural networks",
     "slug": "TZN",
     "current": "2025-winter",
@@ -98,6 +86,18 @@
           "slug": "2025-winter",
           "semester": "winter 2025",
           "faculties": ["FJFI"]
+      }
+    ]
+  },
+  {
+    "name": "neural networks, machine learning and randomness",
+    "slug": "NMS",
+    "current": "2025-winter",
+    "versions": [
+      {
+          "slug": "2025-winter",
+          "semester": "winter 2025",
+          "faculties": ["FIT"]
       }
     ]
   }
