@@ -1,5 +1,17 @@
 [
   {
+    "name": "matematika 3",
+    "slug": "MAT3",
+    "current": null,
+    "versions": [
+      {
+        "slug": "2020-winter",
+        "semester": "ZS 20/21",
+        "faculties": ["FJFI"]
+      }
+    ]
+  },
+  {
     "name": "lineární algebra 2",
     "slug": "LAL2",
     "current": null,
