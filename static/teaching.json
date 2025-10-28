@@ -39,13 +39,13 @@
     ]
   },
   {
-    "name": "neuronové sítě, strojové učení a náhodnost",
+    "name": "neural networks, machine learning and randomness",
     "slug": "NMS",
     "current": "2025-winter",
     "versions": [
       {
           "slug": "2025-winter",
-          "semester": "ZS 25/26",
+          "semester": "winter 2025",
           "faculties": ["FIT"]
       }
     ]

@@ -23,12 +23,12 @@
 
   <article>
     <p>
-      Cvičení předmětu neuronové sítě, strojové učení a náhodnost probíhají v
-      sudé týdny ve středy od 16:15 do 17:45 v místnosti T9:348 (viz <ExternalLink
-        href="https://timetable.fit.cvut.cz/new/courses/NI-NMS"
-        >rozvrh</ExternalLink
-      >), případně dle změn oznámených na přednáškách a cvičeních. Informace ke
-      zkoušce, podmínky splnění předmětu a klasifikace lze nalézt v <ExternalLink
+      The tutorials for the course Neural Networks, Machine Learning and Randomness are held
+      on even weeks on Wednesdays from 16:15 to 17:45 in room T9:348 (see
+      <ExternalLink href="https://timetable.fit.cvut.cz/new/courses/NI-NMS"
+        >timetable</ExternalLink
+      >), or as announced in lectures and tutorials. Information about the exam, course
+      requirements, and grading can be found on <ExternalLink
         href="https://courses.fit.cvut.cz/NI-NMS/index.html"
         >FIT courses</ExternalLink
       >.
