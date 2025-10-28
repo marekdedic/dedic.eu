@@ -21,7 +21,8 @@
 <PageContentBox>
   <header>
     <h1>teaching</h1>
-    information about the courses I teach – study materials, passing requirements, grades.
+    information about the courses I teach – study materials, passing requirements,
+    grades.
   </header>
 
   {#if current.length > 0}

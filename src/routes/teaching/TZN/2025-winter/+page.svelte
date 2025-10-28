@@ -24,29 +24,27 @@
 
   <article>
     <p>
-      Cvičení předmětu teoretické základy neuronových sítí probíhají v sudé
-      týdny v pondělí od 8:00 do 9:40 v místnosti T-115, případně dle změn
-      oznámených na přednáškách a cvičeních. Informace ke zkoušce a podmínky
-      klasifikace posk
+      The tutorials for the course Theoretical Foundations of Neural Networks
+      are held on even weeks on Mondays from 8:00 to 9:40 in room T-115, or as
+      announced in lectures and tutorials.
     </p>
 
-    <!-- h3>zápočet</h3 -->
+    <h3>study materials</h3>
 
-    <h3>studijní materiály</h3>
-
-    Materiály ke cvičení mají podobu <ExternalLink
+    The exercise materials are in the form of <ExternalLink
       href="https://jupyter.org/install.html">Jupyter</ExternalLink
-    > notebooků využívajících Python. Pro snadnou instalaci pythonu, Jupyteru a potřebných
-    balíčků budeme využívat systém <ExternalLink
-      href="https://docs.astral.sh/uv/">uv</ExternalLink
-    >. K seznámení s touto technologií je určeno první cvičení. Pro replikaci
-    přesného prostředí, v němž byly notebooky vytvořeny, můžete využít souborů
+    > notebooks using Python. For easy installation of Python, Jupyter, and the required
+    packages, we will use <ExternalLink href="https://docs.astral.sh/uv/"
+      >uv</ExternalLink
+    >. The first exercise is intended to familiarize you with this technology.
+    To replicate the exact environment in which the notebooks were created, you
+    can use the files
     <a
       href={asset("/teaching/B251-TZN-materials/pyproject.toml")}
       rel="noopener noreferrer"
       target="_blank">pyproject.toml</a
     >
-    a
+    and
     <a
       href={asset("/teaching/B251-TZN-materials/uv.lock")}
       rel="noopener noreferrer"
@@ -57,20 +55,20 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>název</th>
-          <th>témata</th>
-          <th>zadání</th>
-          <th>řešení</th>
+          <th>name</th>
+          <th>topics</th>
+          <th>assignment</th>
+          <th>solution</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>1</td>
-          <td>úvod do neuronových sítí</td>
+          <td>introduction to neural networks</td>
           <td
-            >základy strojového učení v Python, algoritmy pro automatické
-            počítání gradientů, jednoduché neuronové sítě, jejich architektura,
-            gradientní sestup, aktivační funkce, hyperparametery a jejich volba</td
+            >basics of machine learning in Python, automatic differentiation,
+            simple neural networks, their architecture, gradient descent,
+            activation functions, hyperparameters and their selection</td
           >
           <td
             ><a
@@ -91,10 +89,10 @@
         </tr>
         <tr>
           <td>2</td>
-          <td>optimalizace</td>
+          <td>optimization</td>
           <td
-            >optimalizace neuronových sítí, algoritmy SGD, Momentum, Nesterov,
-            Adagrad, Adadelta, Adam, AdamW</td
+            >optimization of neural networks, SGD, Momentum, Nesterov, Adagrad,
+            Adadelta, Adam, AdamW</td
           >
           <td
             ><a
@@ -115,30 +113,29 @@
         </tr>
         <tr>
           <td>3</td>
-          <td>regularizace</td>
+          <td>regularization</td>
           <td
-            >rozdělení dat na trénovací a testovací sadu, overfitting,
-            bias-variance trade-off, L1, L2 regularizace, early stopping,
-            dropout, batching, cross-validace, její varianty a použití, fenomén
-            double descent</td
+            >data splitting into training and test sets, overfitting,
+            bias-variance trade-off, L1, L2 regularization, early stopping,
+            dropout, batching, cross-validation, its variants and usage, double
+            descent</td
           >
           <td></td>
           <td></td>
         </tr>
         <tr>
           <td>4</td>
-          <td>rekurentní sítě</td>
-          <td>rekurentní sítě, zpracovaní přirozeného jazyka, transformery</td>
-          <td></td>
+          <td>recurrent networks</td>
+          <td>recurrent networks, natural language processing, transformers</td>
           <td></td>
         </tr>
         <tr>
           <td>5</td>
-          <td>grafové neuronové sítě</td>
+          <td>graph neural networks</td>
           <td
-            >učení na grafech, rekurentní neuronové sítě na grafech, sítě
-            postavené na náhodných procházkách, analogie se zpracováním textu,
-            konvoluce na grafech</td
+            >learning on graphs, recurrent neural networks on graphs, networks
+            based on random walks, analogies with text processing, convolutions
+            on graphs</td
           >
           <td></td>
           <td></td>

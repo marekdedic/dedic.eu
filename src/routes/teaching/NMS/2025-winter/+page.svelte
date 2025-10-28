@@ -23,12 +23,13 @@
 
   <article>
     <p>
-      The tutorials for the course Neural Networks, Machine Learning and Randomness are held
-      on even weeks on Wednesdays from 16:15 to 17:45 in room T9:348 (see
+      The tutorials for the course Neural Networks, Machine Learning and
+      Randomness are held on even weeks on Wednesdays from 16:15 to 17:45 in
+      room T9:348 (see
       <ExternalLink href="https://timetable.fit.cvut.cz/new/courses/NI-NMS"
         >timetable</ExternalLink
-      >), or as announced in lectures and tutorials. Information about the exam, course
-      requirements, and grading can be found on <ExternalLink
+      >), or as announced in lectures and tutorials. Information about the exam,
+      course requirements, and grading can be found on <ExternalLink
         href="https://courses.fit.cvut.cz/NI-NMS/index.html"
         >FIT courses</ExternalLink
       >.

@@ -51,13 +51,13 @@
     ]
   },
   {
-    "name": "teoretické základy neuronových sítí",
+    "name": "theoretical fundamentals of neural networks",
     "slug": "TZN",
     "current": "2025-winter",
     "versions": [
       {
           "slug": "2025-winter",
-          "semester": "ZS 25/26",
+          "semester": "winter 2025",
           "faculties": ["FJFI"]
       }
     ]
