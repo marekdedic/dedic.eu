@@ -20,8 +20,9 @@
 
 <PageContentBox>
   <header>
-    <h1>výuka</h1>
-    informace k předmětům, které učím – studijní materiály, podmínky splnění, výsledky.
+    <h1>teaching</h1>
+    information about the courses I teach – study materials, passing requirements,
+    grades.
   </header>
 
   {#if current.length > 0}

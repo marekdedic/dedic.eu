@@ -22,7 +22,7 @@
     current={version}
     onselect={(newVersion: string): void => {
       void goto(
-        resolve(`/vyuka/${course?.slug ?? ""}/${newVersion}` as RouteId),
+        resolve(`/teaching/${course?.slug ?? ""}/${newVersion}` as RouteId),
       );
     }}
     options={Object.fromEntries(
