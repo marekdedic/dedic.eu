@@ -12,6 +12,7 @@
   let { children, href }: Props = $props();
 </script>
 
+<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- External links -->
 <a {href} rel="noopener noreferrer" target="_blank">
   {@render children()}
   <Fa icon={faArrowUpRightFromSquare} size="0.6x" translateY={-0.1} />

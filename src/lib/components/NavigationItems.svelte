@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { resolve } from "$app/paths";
+
   import DarkModeToggle from "./DarkModeToggle.svelte";
   import NavigationItem from "./NavigationItem.svelte";
 
@@ -9,8 +11,12 @@
   let { onclick }: Props = $props();
 </script>
 
-<NavigationItem href="/" {onclick} title="about" />
-<NavigationItem href="/publications" {onclick} title="publications" />
+<NavigationItem href={resolve("/")} {onclick} title="about" />
+<NavigationItem
+  href={resolve("/publications")}
+  {onclick}
+  title="publications"
+/>
 <!-- NavigationItem
   href="/projects"
   title="projects"
@@ -32,5 +38,5 @@
     dispatch("click");
   }}
 / -->
-<NavigationItem href="/teaching" {onclick} title="teaching" />
+<NavigationItem href={resolve("/teaching")} {onclick} title="teaching" />
 <DarkModeToggle />

@@ -1,8 +1,10 @@
 <script lang="ts">
+  import type { ResolvedPathname } from "$app/types";
+
   import { page } from "$app/state";
 
   interface Props {
-    href: string;
+    href: ResolvedPathname;
     onclick: ((this: void) => void) | undefined;
     title: string;
   }
@@ -13,6 +15,7 @@
 </script>
 
 <li>
+  <!-- eslint-disable-next-line svelte/no-navigation-without-resolve -- Already resolved -->
   <a class:active {href} {onclick}>
     {title}
   </a>
