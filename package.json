@@ -24,14 +24,14 @@
     "lint:svelte:svelte-check": "FORCE_COLOR=1 svelte-check",
     "lint:ts": "run-p -c --aggregate-output lint:ts:*",
     "lint:ts:typecheck": "tsc  --noEmit",
-    "playwright-accept": "npm run playwright-docker-run --command='npx playwright test --update-snapshots'",
+    "playwright-accept": "DOCKER_CMD='npx playwright test --update-snapshots' npm run playwright-docker-run",
     "preplaywright-docker-run": "xauth nlist $DISPLAY | xauth -f \"./xauth-cookie\" nmerge -",
-    "playwright-docker-run": "docker run -it --rm --ipc=host --user=$(id -u):$(id -g) -e DISPLAY=$DISPLAY -e XAUTHORITY=/cookie -v /tmp/.X11-unix:/tmp/.X11-unix -v ./xauth-cookie:/cookie -v \"${PWD}:/var/app/\" --workdir=\"/var/app\" \"mcr.microsoft.com/playwright:v$(npm run --silent playwright-version)\" /bin/bash -c \"${npm_config_command}\"; exit_code=$?; rm -f ./xauth-cookie; exit $exit_code",
-    "playwright-interactive": "npm run playwright-docker-run --command='npx playwright test --ui'",
+    "playwright-docker-run": "docker run -it --rm --ipc=host --user=$(id -u):$(id -g) -e DISPLAY=$DISPLAY -e XAUTHORITY=/cookie -v /tmp/.X11-unix:/tmp/.X11-unix -v ./xauth-cookie:/cookie -v \"${PWD}:/var/app/\" --workdir=\"/var/app\" \"mcr.microsoft.com/playwright:v$(npm run --silent playwright-version)\" /bin/bash -c \"$DOCKER_CMD\"; exit_code=$?; rm -f ./xauth-cookie; exit $exit_code",
+    "playwright-interactive": "DOCKER_CMD='npx playwright test --ui' npm run playwright-docker-run",
     "playwright-version": "node -e 'console.log(require(\"./package-lock.json\")[\"packages\"][\"node_modules/@playwright/test\"].version)'",
     "prepare": "svelte-kit sync",
     "start": "vite",
-    "test": "npm run playwright-docker-run --command='npm run test-native'",
+    "test": "DOCKER_CMD='npm run test-native' npm run playwright-docker-run",
     "test-native": "playwright test"
   },
   "devDependencies": {
