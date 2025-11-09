@@ -120,7 +120,13 @@
             dropout, batching, cross-validation, its variants and usage, double
             descent</td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset("/teaching/B251-TZN-materials/TZN-03.ipynb")}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
         </tr>
         <tr>
