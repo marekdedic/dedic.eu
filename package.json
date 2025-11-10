@@ -68,7 +68,7 @@
     "svelte-fa": "^4.0.4",
     "svelte-sitemap": "^2.7.1",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.3",
+    "typescript-eslint": "^8.46.4",
     "vite": "^7.2.2"
   }
 }
