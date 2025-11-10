@@ -127,7 +127,7 @@
               target="_blank">notebook</a
             ></td
           >
-          <td></td>
+          <td>N/A</td>
         </tr>
         <tr>
           <td>4</td>
