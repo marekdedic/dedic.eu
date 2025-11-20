@@ -1,0 +1,348 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+
+\usepackage{polyglossia}
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage[backend=biber,style=iso-authoryear,sortlocale=en_US,autolang=other,bibencoding=UTF8]{biblatex}
+\usepackage{csquotes}
+\usepackage{datetime}
+\usepackage{fontspec}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{subcaption}
+
+\addbibresource{zotero.bib}
+
+\setdefaultlanguage{english}
+\setmainfont{TeX Gyre Termes}
+\usetheme{Boadilla}
+\usecolortheme{crane}
+\setbeamertemplate{title page}[default][rounded=true,shadow=false]
+\setbeamertemplate{section in toc}[ball unnumbered]
+\setbeamertemplate{bibliography item}{}
+
+\hypersetup{%
+	pdfencoding=auto,
+	unicode=true,
+	citecolor=green,
+	filecolor=blue,
+	linkcolor=red,
+	urlcolor=blue
+}
+
+\makeatletter
+\newcommand*{\currentSection}{\@currentlabelname}
+\makeatother
+
+\title[GNNs]
+{%
+	Graph neural networks
+}
+
+\newdate{presentation}{24}{11}{2025}
+\date[November 2025]{TZN-04, \displaydate{presentation}}
+
+\author[Marek Dědič]
+{%
+	Marek~Dědič
+}
+
+\AtBeginSection[]{%
+	\begin{frame}{\currentSection}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\newcommand{\mathvec}{\ensuremath{\mathbf}}
+\newcommand{\mathmat}{\ensuremath{\mathbf}}
+\newcommand{\mathspace}{\ensuremath{\mathcal}}
+\newcommand{\mathfield}{\ensuremath{\mathbb}}
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+\begin{frame}{Contents}
+	\tableofcontents
+\end{frame}
+
+\section{Motivation}
+
+\begin{frame}{Motivation}
+	\begin{itemize}
+		\item Graphs are a natural way to represent many different mathematical problems
+		\item Examples: social networks, molecules, transportation networks, knowledge graphs, computer networks\dots
+	\end{itemize}
+	\centering
+	\includegraphics[width=0.55\pagewidth]{images/graphs.png}\footcite{velickovic_opening_2020}
+\end{frame}
+
+\begin{frame}{Definitions}
+	\begin{itemize}
+		\item Graph \( G = \left( V, E \right) \)
+		\item \( ne \left[ v \right] \) is the set of nodes connected to \( v \) by an edge
+		\item \( co \left[ v \right] \) is the set of edges leading to or from \( v \)
+		\item \( x_v \) are features of a node \( v \)
+		\item \( x_e \) are features of an edge \( e \)
+	\end{itemize}
+\end{frame}
+
+\section{Tasks}
+
+\begin{frame}{Node classification}
+	\centering
+	\includegraphics[width=0.7\pagewidth]{images/node-classification.png}\footcite{kubara_machine_2020}
+\end{frame}
+
+\begin{frame}{Link prediction}
+	\centering
+	\includegraphics[width=0.7\pagewidth]{images/link-prediction.png}\footcite{kubara_machine_2020}
+\end{frame}
+
+\begin{frame}{Graph learning}
+	\centering
+	\includegraphics[width=0.6\pagewidth]{images/whole-graph-learning.png}\footcite{kubara_machine_2020}
+\end{frame}
+
+\begin{frame}{Community detection}
+	\centering
+	\includegraphics[width=0.4\pagewidth]{images/community-detection.png}\footcite{girvan_community_2002}
+\end{frame}
+
+\section{GNN}
+
+\begin{frame}{GNN 1}
+	\begin{itemize}
+		\item We're solving \enquote{node classification}
+		\item We adapt neural networks to graph data
+		\item Formally, classification on the space \( \mathspace{G} \times \mathspace{N} \) -- pairs graph + one of its nodes
+		\item We assume features \( \mathvec{x}_v \) and \( \mathvec{x}_e \) for each node \( v \) and edge \( e \)
+		\item We model for each node \( v \) a hidden state \( \mathvec{h}_v \) capturing information about \( v \) and its neighbourhood
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{GNN 2}
+	\begin{itemize}
+		\item We model for each node \( v \) a hidden state \( \mathvec{h}_v \) capturing information about \( v \) and its neighbourhood as
+			\[ \mathvec{h}_v = f \left( \mathvec{x}_v, \mathvec{x}_{co \left[ v \right]}, \mathvec{h}_{ne \left[ v \right]}, \mathvec{x}_{ne \left[ v \right]} \right) \]
+		\item \dots and an output for node \( v \) as
+			\[ \mathvec{o}_v = g \left( \mathvec{h}_v, \mathvec{x}_v \right) \]
+		\item We can calculate the hidden state \( \mathvec{h}_v \) iteratively for all nodes as
+			\[ \mathmat{H}^{t + 1} = F \left( \mathmat{H}^t, \mathmat{X} \right) \]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{GNN 3}
+	\centering
+	\includegraphics[width=0.8\pagewidth]{images/GNN.png}\footcite{gori_new_2005}
+\end{frame}
+
+\begin{frame}{GNN -- conclusion}
+	\begin{itemize}
+		\item We can view the iterative application of function \( F \) as an RNN
+		\item We may replace the iterative process with an MLP
+		\item A GNN doesn't use edge hidden states, only node hidden states
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{GNN -- modifications}
+	\begin{figure}[h]
+		\centering
+		\begin{subfigure}[t]{0.25\textwidth}
+			\centering
+			\includegraphics[width=1\linewidth]{images/GNN-variants/variant1.pdf}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.35\textwidth}
+			\centering
+			\includegraphics[width=1\linewidth]{images/GNN-variants/variant3.pdf}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.47\textwidth}
+			\centering
+			\includegraphics[width=1\linewidth]{images/GNN-variants/variant2.pdf}
+		\end{subfigure}
+	\end{figure}\footcite{zhou_graph_2019}
+\end{frame}
+
+\section{DeepWalk}
+
+\begin{frame}{DeepWalk 1}
+	\begin{itemize}
+		\item Inspired by word2vec and skip-gram methods from NLP
+		\item \( M \) random walks of length \( L \) from a given node to generate sequences of nodes, analogous to sentences
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{DeepWalk 2}
+	\centering
+	\includegraphics[width=0.8\pagewidth]{images/DeepWalk-word2vec.png}\footcite{perozzi_deepwalk_2014}
+\end{frame}
+
+\begin{frame}{DeepWalk -- skip-gram}
+	\centering
+	\includegraphics[width=0.30\pagewidth]{images/SkipGram.pdf}\footcite{mikolov_efficient_2013}
+\end{frame}
+
+\begin{frame}{DeepWalk 4}
+	\begin{itemize}
+		\item For each vector \( v \) we learn its representation \( f : \mathspace{V} \to \mathfield{R}^{\left\lvert \mathfield{V} \right\rvert \times d} \)
+		\item We try to maximize the value
+			\[ \mathrm{P} \left( \left\{ v_{i - w}, \dots, v_{i + w} \right\} \setminus v_i \middle| f \left( v_i \right) \right) \]
+		\item Assuming independence, we simplify
+			\[ \mathrm{P} \left( \left\{ v_{i - w}, \dots, v_{i + w} \right\} \setminus v_i \middle| f \left( v_i \right) \right) = \prod_{\substack{j = i - w \\ j \neq i}}^{i + w} \mathrm{P} \left( v_j \middle| f \left( v_i \right) \right) \]
+		\item This is a problem solved by word2vec
+		\item It's further necessary to optimize using hierarchical softmax
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{DeepWalk -- conclusion}
+	\begin{itemize}
+		\item Using ideas from word2vec to learn on graphs
+		\item DeepWalk cannot classify new nodes -- it is necessary to retrain the model
+	\end{itemize}
+\end{frame}
+
+\section{node2vec}
+
+\begin{frame}{node2vec 1}
+	\begin{itemize}
+		\item Also inspired by word2vec, but in a different way
+		\item We are looking for an embedding \( \mathrm{node2vec} : \mathspace{G} \to \mathfield{R}^n \)
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{node2vec 2}
+	\centering
+	\includegraphics[width=0.9\pagewidth]{images/node2vec.png}\footcite{cohen_node2vec_2018}
+\end{frame}
+
+\begin{frame}{node2vec 3}
+	\begin{itemize}
+		\item For each vector \( v \) we learn its representation \( f : \mathspace{V} \to \mathfield{R}^{\left\lvert \mathfield{V} \right\rvert \times d} \)
+		\item We try to maximize the value
+			\[ \mathrm{P} \left( ne \left[ v \right] \middle| f \left( v \right) \right) \]
+		\item Assuming independence, we can simplify
+			\[ \mathrm{P} \left( ne \left[ v \right] \middle| f \left( v \right) \right) = \prod_{v_i \in ne \left[ v \right]} \mathrm{P} \left( v_i \middle| f \left( v \right) \right) \]
+		\item It's further necessary to optimize using hierarchical softmax and negative sampling
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{node2vec 4}
+	\begin{itemize}
+		\item How to find \( ne \left[ v \right] \)?
+		\item 2 extrema: BFS, DFS
+		\item Regular random walk: If I'm at node \( v \), I go to some node connected to \( v \) with equal probability for all such nodes
+		\item We modify the random walk to interpolate between BFS and DFS
+		\item If coming to \( v \) from \( t \), we assign weights to candidates for the next node \( x \) as
+			\[ \alpha \left( t, x \right) = \begin{cases}
+				\frac{1}{p} &\text{for}\; d_{tx} = 0 \\
+				1           &\text{for}\; d_{tx} = 1 \\
+				\frac{1}{q} &\text{for}\; d_{tx} = 2 \\
+			\end{cases} \]
+			where \( d_{tx} \) is the length of the shortest path from \( t \) to \( x \) and \( p, q \) are model parameters
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{node2vec 5}
+	\centering
+	\includegraphics[width=0.6\pagewidth]{images/node2vec-alpha.png}\footcite{grover_node2vec_2016}
+\end{frame}
+
+\begin{frame}{node2vec -- conclusion}
+	\begin{itemize}
+		\item Using ideas from word2vec to learn on graphs
+		\item An improvement over DeepWalk
+		\item node2vec cannot classify new nodes -- it is necessary to retrain the model
+	\end{itemize}
+\end{frame}
+
+\section{GCN}
+
+\begin{frame}{GCN 1}
+	\begin{itemize}
+		\item We are solving \enquote{node classification}
+		\item Inspired by CNNs
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{GCN 2}
+	\begin{itemize}
+		\item Expressed as a neural network operating on the whole graph, similar to GNN
+		\item Each layer has the form
+			\[ \mathmat{H}^{l + 1} = f \left( \mathmat{H}^{(l)}, \mathmat{A} \right) \]
+			where \( \mathmat{A} \) is the adjacency matrix
+		\item We can express a simple layer as
+			\[ f \left( \mathmat{H}^{(l)}, \mathmat{A} \right) = \sigma \left( \mathmat{A} \mathmat{H}^{(l)} \mathmat{W}^{(l)} \right) \]
+			where \( \mathmat{W} \) are the weights and \( \sigma \) is the activation function
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{GCN 3}
+	\begin{itemize}
+		\item If we multiplied by \( \mathmat{A} \), we would forget the information in the given node at each step. We solve this by using instead the matrix \( \widehat{\mathmat{A}} = \mathmat{A} + \mathmat{I} \)
+		\item Because the matrix \( \mathmat{A} \) is not normalized, the scale would change after each layer. To prevent this, we use instead the symmetrically normalized matrix \( \mathmat{D}^{-\frac{1}{2}} \mathmat{A} \mathmat{D}^{-\frac{1}{2}} \) where \( \mathmat{D} \) is the diagonal matrix of degrees of individual nodes
+		\item We thus obtain one layer of the network as
+			\[ f \left( \mathmat{H}^{(l)}, \mathmat{A} \right) = \sigma \left( \widehat{\mathmat{D}}^{-\frac{1}{2}} \widehat{\mathmat{A}} \widehat{\mathmat{D}}^{-\frac{1}{2}} \mathmat{H}^{(l)} \mathmat{W}^{(l)} \right) \]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{GCN 4}
+	\centering
+	\includegraphics[width=0.8\pagewidth]{images/GCN.png}\footcite{kipf_how_2016}
+\end{frame}
+
+\begin{frame}{GCN -- conclusion}
+	\begin{itemize}
+		\item Using ideas from CNNs to learn on graphs
+		\item GCNs are a first-order approximation of localized spectral filters on graphs -- see \cite{kipf_semi-supervised_2017}
+	\end{itemize}
+\end{frame}
+
+\section{GraphSAGE}
+
+\begin{frame}{GraphSAGE 1}
+	\begin{itemize}
+		\item GraphSAGE is and inductive framework for generating node embeddings -- there is no need to have the whole graph during training
+		\item We learn a representation for each node \( v \) using the representations of its neighbors, i.e.
+			\[ \mathvec{h}_v^{(l + 1)} = \sigma \left( \mathmat{W}^{(l)} \cdot \mathrm{concat} \left( \mathvec{h}_v^{(l)}, \mathvec{h}_{ne \left[ v \right]}^{(l)} \right) \right) \]
+			where
+			\[ \mathvec{h}_{ne \left[ v \right]}^{(l)} = \textsc{aggregate}_l \left( \left\{ \mathvec{h}_u^{(l)} \middle| u \in ne \left[ v \right] \right\} \right) \]
+		\item We need a special loss function
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{GraphSAGE 2}
+	\centering
+	\includegraphics[width=0.7\pagewidth]{images/GraphSAGE.png}\footcite{hamilton_inductive_2017}
+\end{frame}
+
+\begin{frame}{GraphSAGE 3}
+	\begin{itemize}
+		\item We can choose an aggregator for each layer independently
+		\item The mean aggregator yields a GCN-like layer
+		\item An LSTM aggregator can capture more complex relationships (we need to randomly permute the neighbors)
+		\item Pooling:
+			\[ \textsc{aggregate}_l = \max \left\{ \sigma \left( \mathmat{W}_{\mathrm{pool}} \mathvec{h}_u^{(l)} + \mathvec{b} \right) \middle| u \in ne \left[ v \right] \right\} \]
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{GraphSAGE -- conclusion}
+	\begin{itemize}
+		\item An inductive approach is suitable for graphs where nodes are added after training
+		\item We don't need to re-train the model, it will work with new data
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\centering
+	\includegraphics[width=0.65\pagewidth]{images/thats-all.png}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{Bibliography}
+	\printbibliography
+\end{frame}
+
+\end{document}

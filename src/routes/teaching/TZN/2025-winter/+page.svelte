@@ -131,19 +131,32 @@
         </tr>
         <tr>
           <td>4</td>
-          <td>recurrent networks</td>
-          <td>recurrent networks, natural language processing, transformers</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td>5</td>
           <td>graph neural networks</td>
           <td
             >learning on graphs, recurrent neural networks on graphs, networks
             based on random walks, analogies with text processing, convolutions
             on graphs</td
           >
+          <td
+            ><a
+              href={asset(
+                "/teaching/B251-TZN-materials/TZN-04-presentation/TZN-04-presentation.pdf",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">slides</a
+            >,
+            <a
+              href={asset("/teaching/B251-TZN-materials/TZN-04.ipynb")}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>recurrent networks</td>
+          <td>recurrent networks, natural language processing, transformers</td>
           <td></td>
         </tr>
       </tbody>
