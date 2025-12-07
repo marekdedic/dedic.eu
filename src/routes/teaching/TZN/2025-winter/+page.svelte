@@ -157,7 +157,14 @@
           <td>5</td>
           <td>recurrent networks</td>
           <td>recurrent networks, natural language processing, transformers</td>
-          <td></td>
+          <td
+            ><a
+              href={asset("/teaching/B251-TZN-materials/TZN-05.ipynb")}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
+          <td>N/A</td>
         </tr>
       </tbody>
     </table>
