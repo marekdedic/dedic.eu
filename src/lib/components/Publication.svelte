@@ -10,10 +10,10 @@
   interface Props {
     abstract: string;
     authors: Array<string>;
-    bib?: string | undefined;
+    bib?: string;
     date: Date;
-    pdf?: string | undefined;
-    previewImage?: string | undefined;
+    pdf?: string;
+    previewImage?: string;
     tags?: Array<string>;
     title: string;
   }
@@ -21,10 +21,10 @@
   let {
     abstract,
     authors,
-    bib = undefined,
+    bib,
     date,
-    pdf = undefined,
-    previewImage = undefined,
+    pdf,
+    previewImage,
     tags = [],
     title,
   }: Props = $props();
