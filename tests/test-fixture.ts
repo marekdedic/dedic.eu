@@ -1,15 +1,16 @@
-import { test as base, type Response } from "@playwright/test";
+import { test as base, type Page } from "@playwright/test";
 
-export const test = base.extend({
+export const test = base.extend<{
+  page: Page & {
+    waitForReady(): Promise<void>;
+  };
+}>({
   page: async ({ page }, use) => {
-    // eslint-disable-next-line @typescript-eslint/unbound-method -- No easy way to annotate this
-    const goto = page.goto;
-    page.goto = async (url, opts): Promise<Response | null> => {
-      const res = await goto.call(page, url, opts);
+    async function waitForReady(): Promise<void> {
       // eslint-disable-next-line playwright/no-wait-for-selector -- Used to wait for SvelteKit initialization
       await page.waitForSelector("body.svelteKitReady");
-      return res;
-    };
+    }
+    page.waitForReady = waitForReady;
     await use(page);
   },
 });
