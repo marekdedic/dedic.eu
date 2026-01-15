@@ -34,7 +34,7 @@
     "test-native": "playwright test"
   },
   "devDependencies": {
-    "@eslint-community/eslint-plugin-eslint-comments": "^4.5.0",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.6.0",
     "@eslint/json": "^0.14.0",
     "@fontsource/roboto": "^5.2.9",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
