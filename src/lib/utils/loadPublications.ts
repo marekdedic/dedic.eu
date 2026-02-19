@@ -7,6 +7,7 @@ export interface RawPublicationSpec {
   authors: Array<string>;
   bib?: string;
   date: string;
+  id: string;
   pdf?: string;
   previewImage?: string;
   tags?: Array<string>;

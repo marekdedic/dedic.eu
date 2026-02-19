@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { PublicationSpec } from "$lib/types/PublicationSpec";
+
   import CodeBlock from "$lib/components/CodeBlock.svelte";
   import Image from "$lib/components/Image.svelte";
   import Authors from "$lib/components/Publication/Authors.svelte";
@@ -8,35 +10,30 @@
   import { MediaQuery } from "svelte/reactivity";
 
   interface Props {
-    abstract: string;
-    authors: Array<string>;
-    bib?: string;
-    date: Date;
-    pdf?: string;
-    previewImage?: string;
-    tags?: Array<string>;
-    title: string;
+    publication: PublicationSpec;
   }
 
-  let {
+  let { publication }: Props = $props();
+  const {
     abstract,
     authors,
     bib,
     date,
+    id,
     pdf,
     previewImage,
     tags = [],
     title,
-  }: Props = $props();
+  } = $derived(publication);
 
   let showBib = $state(false);
 
   const isNarrow = new MediaQuery("max-width: 800px");
 </script>
 
-<div class="publication">
+<div {id} class="publication">
   {#if isNarrow.current}
-    <Title {title} />
+    <Title {id}>{title}</Title>
     <div class="metadata-mobile">
       <Metadata {date} inline {tags} />
     </div>
@@ -70,7 +67,7 @@
         class:one-column={previewImage !== undefined}
         class:two-column={previewImage === undefined}
       >
-        <Title {title} />
+        <Title {id}>{title}</Title>
         <div class="authors">
           <Authors {authors} />
         </div>
@@ -151,6 +148,7 @@
     border-bottom: 1px solid var(--divider-color);
     padding-bottom: 2rem;
     padding-top: 2rem;
+    scroll-margin-top: 2rem;
     transition: border-color theme.$transition-duration ease;
   }
 
