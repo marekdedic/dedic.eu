@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { PublicationSpec } from "$lib/types/PublicationSpec";
+
   import CodeBlock from "$lib/components/CodeBlock.svelte";
   import Image from "$lib/components/Image.svelte";
   import Authors from "$lib/components/Publication/Authors.svelte";
@@ -8,17 +10,11 @@
   import { MediaQuery } from "svelte/reactivity";
 
   interface Props {
-    abstract: string;
-    authors: Array<string>;
-    bib?: string;
-    date: Date;
-    pdf?: string;
-    previewImage?: string;
-    tags?: Array<string>;
-    title: string;
+    publication: PublicationSpec;
   }
 
-  let {
+  let { publication }: Props = $props();
+  const {
     abstract,
     authors,
     bib,
@@ -27,7 +23,7 @@
     previewImage,
     tags = [],
     title,
-  }: Props = $props();
+  } = $derived(publication);
 
   let showBib = $state(false);
 

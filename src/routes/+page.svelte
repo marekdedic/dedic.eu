@@ -70,7 +70,7 @@
     <Heading level={2}>recent publications</Heading>
 
     {#each data.publications.slice(0, 2) as publication (publication.title)}
-      <Publication {...publication} />
+      <Publication {publication} />
     {/each}
   </article>
 </PageContentBox>

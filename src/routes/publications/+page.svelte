@@ -19,7 +19,7 @@
 
   <article>
     {#each data.publications as publication (publication.title)}
-      <Publication {...publication} />
+      <Publication {publication} />
     {/each}
   </article>
 </PageContentBox>
