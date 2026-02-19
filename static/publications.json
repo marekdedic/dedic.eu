@@ -146,5 +146,19 @@
     "previewImage": "/images/publication-preview-images/prochazka_convolutional_2024.png",
     "tags": ["MLG", "ECML"],
     "title": "Convolutional Signal Propagation: A Simple Scalable Algorithm for Hypergraphs"
+  },
+  {
+    "abstract": "A benchmark of hyperparameter optimization algorithms on graph neural networks and a novel, dataset-property-informed hyperparameter optimization algorithm for graph learning.",
+    "authors": [
+      "Marek Dědič",
+      "Michal Bělohlávek"
+    ],
+    "bib": "@inproceedings{dedic_benchmarking_2026,\n\taddress = {Marbella, Spain},\n\ttitle = {Benchmarking and {Transfer} {Learning} for {Hyperparameter} {Optimization} of {Graph} {Neural} {Networks}},\n\tbooktitle = {Proceedings of the 18th {International} {Conference} on {Agents} and {Artificial} {Intelligence}},\n\tauthor = {Dědič, Marek and Bělohlávek, Michal},\n}",
+    "date": "2026-03-06",
+    "id": "dedic_benchmarking_2026",
+    "pdf": "publications/dedic_benchmarking_2026.pdf",
+    "previewImage": "/images/publication-preview-images/dedic_benchmarking_2026.png",
+    "tags": ["ICAART"],
+    "title": "Benchmarking and Transfer Learning for Hyperparameter Optimization of Graph Neural Networks"
   }
 ]
