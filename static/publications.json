@@ -153,7 +153,7 @@
       "Marek Dědič",
       "Michal Bělohlávek"
     ],
-    "bib": "@inproceedings{dedic_benchmarking_2026,\n\taddress = {Marbella, Spain},\n\ttitle = {Benchmarking and {Transfer} {Learning} for {Hyperparameter} {Optimization} of {Graph} {Neural} {Networks}},\n\tbooktitle = {Proceedings of the 18th {International} {Conference} on {Agents} and {Artificial} {Intelligence}},\n\tauthor = {Dědič, Marek and Bělohlávek, Michal},\n}",
+    "bib": "@inproceedings{dedic_benchmarking_2026,\n\tlocation = {Marbella, Spain},\n\ttitle = {Benchmarking and Transfer Learning for Hyperparameter Optimization of Graph Neural Networks},\n\tvolume = {4},\n\tisbn = {978-989-758-796-2},\n\teventtitle = {18th International Conference on Agentsand Artificial Intelligence},\n\tpages = {3079--3086},\n\tbooktitle = {Proceedings of the 18th International Conference on Agents and Artificial Intelligence},\n\tauthor = {Dědič, Marek and Bělohlávek, Michal},\n\tdate = {2026},\n}",
     "date": "2026-03-06",
     "id": "dedic_benchmarking_2026",
     "pdf": "publications/dedic_benchmarking_2026.pdf",
