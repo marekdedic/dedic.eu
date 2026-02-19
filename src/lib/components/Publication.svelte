@@ -19,6 +19,7 @@
     authors,
     bib,
     date,
+    id,
     pdf,
     previewImage,
     tags = [],
@@ -30,9 +31,9 @@
   const isNarrow = new MediaQuery("max-width: 800px");
 </script>
 
-<div class="publication">
+<div {id} class="publication">
   {#if isNarrow.current}
-    <Title {title} />
+    <Title {id}>{title}</Title>
     <div class="metadata-mobile">
       <Metadata {date} inline {tags} />
     </div>
@@ -66,7 +67,7 @@
         class:one-column={previewImage !== undefined}
         class:two-column={previewImage === undefined}
       >
-        <Title {title} />
+        <Title {id}>{title}</Title>
         <div class="authors">
           <Authors {authors} />
         </div>
@@ -147,6 +148,7 @@
     border-bottom: 1px solid var(--divider-color);
     padding-bottom: 2rem;
     padding-top: 2rem;
+    scroll-margin-top: 2rem;
     transition: border-color theme.$transition-duration ease;
   }
 
