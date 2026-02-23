@@ -125,7 +125,7 @@ test("/teaching/LAL1/2024-winter", async ({ page }) => {
 test("/teaching/TNN", async ({ page }) => {
   await page.goto("/teaching/TNN");
   await page.waitForReady();
-  await expect(page).toHaveURL("/teaching/TNN/2025-summer");
+  await expect(page).toHaveURL("/teaching/TNN/2026-summer");
 });
 
 test("/teaching/TNN/2022-summer", async ({ page }) => {
@@ -154,6 +154,14 @@ test("/teaching/TNN/2024-summer", async ({ page }) => {
 
 test("/teaching/TNN/2025-summer", async ({ page }) => {
   await page.goto("/teaching/TNN/2025-summer");
+  await page.waitForReady();
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
+});
+
+test("/teaching/TNN/2026-summer", async ({ page }) => {
+  await page.goto("/teaching/TNN/2026-summer");
   await page.waitForReady();
   await expect(page).toHaveScreenshot({
     fullPage: true,

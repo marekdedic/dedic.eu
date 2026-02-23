@@ -51,7 +51,7 @@
     "name": "teorie neuronových sítí",
     "slug": "TNN",
     "faculty": "FIT",
-    "current": null,
+    "current": "2026-summer",
     "versions": [
       {
           "slug": "2022-summer",
@@ -68,6 +68,10 @@
       {
           "slug": "2025-summer",
           "semester": "LS 24/25"
+      },
+      {
+          "slug": "2026-summer",
+          "semester": "winter 2026"
       }
     ]
   },
