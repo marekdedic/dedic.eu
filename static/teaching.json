@@ -2,102 +2,96 @@
   {
     "name": "matematika 3",
     "slug": "MAT3",
+    "faculty": "FJFI",
     "current": null,
     "versions": [
       {
         "slug": "2020-winter",
-        "semester": "ZS 20/21",
-        "faculties": ["FJFI"]
+        "semester": "ZS 20/21"
       }
     ]
   },
   {
     "name": "lineární algebra 2",
     "slug": "LAL2",
+    "faculty": "FJFI",
     "current": null,
     "versions": [
       {
         "slug": "2021-summer",
-        "semester": "LS 20/21",
-        "faculties": ["FJFI"]
+        "semester": "LS 20/21"
       }
     ]
   },
   {
     "name": "lineární algebra 1",
     "slug": "LAL1",
+    "faculty": "FJFI",
     "current": null,
     "versions": [
       {
         "slug": "2021-winter",
-        "semester": "ZS 21/22",
-        "faculties": ["FJFI"]
+        "semester": "ZS 21/22"
       },
       {
         "slug": "2022-winter",
-        "semester": "ZS 22/23",
-        "faculties": ["FJFI"]
+        "semester": "ZS 22/23"
       },
       {
         "slug": "2023-winter",
-        "semester": "ZS 23/24",
-        "faculties": ["FJFI"]
+        "semester": "ZS 23/24"
       },
       {
         "slug": "2024-winter",
-        "semester": "ZS 24/25",
-        "faculties": ["FJFI"]
+        "semester": "ZS 24/25"
       }
     ]
   },
   {
     "name": "teorie neuronových sítí",
     "slug": "TNN",
+    "faculty": "FIT",
     "current": null,
     "versions": [
       {
           "slug": "2022-summer",
-          "semester": "LS 21/22",
-          "faculties": ["FIT"]
+          "semester": "LS 21/22"
       },
       {
           "slug": "2023-summer",
-          "semester": "LS 22/23",
-          "faculties": ["FIT"]
+          "semester": "LS 22/23"
       },
       {
           "slug": "2024-summer",
-          "semester": "LS 23/24",
-          "faculties": ["FIT"]
+          "semester": "LS 23/24"
       },
       {
           "slug": "2025-summer",
-          "semester": "LS 24/25",
-          "faculties": ["FIT"]
+          "semester": "LS 24/25"
       }
     ]
   },
   {
     "name": "theoretical fundamentals of neural networks",
     "slug": "TZN",
+    "faculty": "FJFI",
     "current": null,
     "versions": [
       {
           "slug": "2025-winter",
-          "semester": "winter 2025",
-          "faculties": ["FJFI"]
+          "semester": "winter 2025"
       }
     ]
   },
   {
     "name": "neural networks, machine learning and randomness",
     "slug": "NMS",
+    "faculty": "FIT",
     "current": null,
     "versions": [
       {
           "slug": "2025-winter",
-          "semester": "winter 2025",
-          "faculties": ["FIT"]
+          "semester": "winter 2025"
       }
     ]
   }

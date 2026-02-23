@@ -28,7 +28,7 @@
     options={Object.fromEntries(
       course?.versions.map((v) => [
         v.slug,
-        `${v.faculties.join(", ")}, ${v.semester}`,
+        `${course.faculty}, ${v.semester}`,
       ]) ?? [],
     )}
   />
