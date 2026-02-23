@@ -80,7 +80,7 @@
   {
     "name": "theoretical fundamentals of neural networks",
     "slug": "TZN",
-    "current": "2025-winter",
+    "current": null,
     "versions": [
       {
           "slug": "2025-winter",
@@ -92,7 +92,7 @@
   {
     "name": "neural networks, machine learning and randomness",
     "slug": "NMS",
-    "current": "2025-winter",
+    "current": null,
     "versions": [
       {
           "slug": "2025-winter",
