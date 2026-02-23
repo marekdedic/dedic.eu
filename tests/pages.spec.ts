@@ -197,3 +197,19 @@ test("/teaching/TZN/2025-winter", async ({ page }) => {
     mask: [page.locator("table")],
   });
 });
+
+test("/teaching/NSN", async ({ page }) => {
+  await page.goto("/teaching/NSN");
+  await page.waitForReady();
+  await expect(page).toHaveURL("/teaching/NSN/2026-winter");
+});
+
+test("/teaching/NSN/2026-winter", async ({ page }) => {
+  await page.goto("/teaching/NSN/2026-winter");
+  await page.waitForReady();
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    // eslint-disable-next-line playwright/no-raw-locators -- No other way to locate iframe
+    mask: [page.locator("table")],
+  });
+});

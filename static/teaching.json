@@ -98,5 +98,17 @@
           "semester": "winter 2025"
       }
     ]
+  },
+  {
+    "name": "neural networks, machine learning, and randomness",
+    "slug": "NSN",
+    "faculty": "FJFI",
+    "current": "2026-winter",
+    "versions": [
+      {
+          "slug": "2026-winter",
+          "semester": "winter 2026"
+      }
+    ]
   }
 ]
