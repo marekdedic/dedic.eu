@@ -70,7 +70,13 @@
             reinforcement, self-supervised learning, linear regression, cost
             function, visualizing the regression line, evaluating simple models</td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset("/teaching/B252-NSN-materials/NSN-01.ipynb")}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
         </tr>
         <tr>
@@ -81,7 +87,13 @@
             implementation and visualizitaion of the decision strategy,
             perceptron, its learning algorithm and implementation</td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset("/teaching/B252-NSN-materials/NSN-02.ipynb")}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
         </tr>
         <tr>
