@@ -24,18 +24,16 @@
 
 {#snippet withoutFirstHeading()}
   {#if current.length > 0}
-    {#each current as { defaultRoute, faculties, name } (name)}
-      <a href={resolve(defaultRoute)}>{name} [{faculties.join(", ")}]</a>
+    {#each current as { defaultRoute, faculty, name } (name)}
+      <a href={resolve(defaultRoute)}>{name} [{faculty}]</a>
     {/each}
   {:else}
     <p>I am not teaching any courses currently.</p>
   {/if}
   {#if past.length > 0}
     <h3 class="past">past courses</h3>
-    {#each past as { defaultRoute, faculties, name } (name)}
-      <a class="past" href={resolve(defaultRoute)}
-        >{name} [{faculties.join(", ")}]</a
-      >
+    {#each past as { defaultRoute, faculty, name } (name)}
+      <a class="past" href={resolve(defaultRoute)}>{name} [{faculty}]</a>
     {/each}
   {/if}
 {/snippet}

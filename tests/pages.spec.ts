@@ -125,7 +125,7 @@ test("/teaching/LAL1/2024-winter", async ({ page }) => {
 test("/teaching/TNN", async ({ page }) => {
   await page.goto("/teaching/TNN");
   await page.waitForReady();
-  await expect(page).toHaveURL("/teaching/TNN/2025-summer");
+  await expect(page).toHaveURL("/teaching/TNN/2026-summer");
 });
 
 test("/teaching/TNN/2022-summer", async ({ page }) => {
@@ -160,6 +160,14 @@ test("/teaching/TNN/2025-summer", async ({ page }) => {
   });
 });
 
+test("/teaching/TNN/2026-summer", async ({ page }) => {
+  await page.goto("/teaching/TNN/2026-summer");
+  await page.waitForReady();
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
+});
+
 test("/teaching/NMS", async ({ page }) => {
   await page.goto("/teaching/NMS");
   await page.waitForReady();
@@ -182,6 +190,22 @@ test("/teaching/TZN", async ({ page }) => {
 
 test("/teaching/TZN/2025-winter", async ({ page }) => {
   await page.goto("/teaching/TZN/2025-winter");
+  await page.waitForReady();
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    // eslint-disable-next-line playwright/no-raw-locators -- No other way to locate iframe
+    mask: [page.locator("table")],
+  });
+});
+
+test("/teaching/NSN", async ({ page }) => {
+  await page.goto("/teaching/NSN");
+  await page.waitForReady();
+  await expect(page).toHaveURL("/teaching/NSN/2026-winter");
+});
+
+test("/teaching/NSN/2026-winter", async ({ page }) => {
+  await page.goto("/teaching/NSN/2026-winter");
   await page.waitForReady();
   await expect(page).toHaveScreenshot({
     fullPage: true,
