@@ -77,7 +77,15 @@
               target="_blank">notebook</a
             ></td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "/teaching/B252-NSN-materials/NSN-01-solutions.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
         </tr>
         <tr>
           <td>2</td>
