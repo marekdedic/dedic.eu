@@ -22,8 +22,8 @@ export default defineConfig({
     },
     */
   ],
-  reporter: process.env.CI !== undefined ? "html" : "list",
-  retries: process.env.CI !== undefined ? 2 : 0,
+  reporter: process.env.CI === undefined ? "list" : "html",
+  retries: process.env.CI === undefined ? 0 : 2,
   testDir: "./tests",
   use: {
     baseURL: "http://127.0.0.1:5173",
