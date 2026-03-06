@@ -6,6 +6,7 @@ export interface RawPublicationSpec {
   abstract: string;
   authors: Array<string>;
   bib?: string;
+  blogpost?: string;
   date: string;
   id: string;
   pdf?: string;
