@@ -18,6 +18,7 @@
     abstract,
     authors,
     bib,
+    blogpost,
     date,
     id,
     pdf,
@@ -50,6 +51,7 @@
     </div>
     <SourceButtons
       {bib}
+      {blogpost}
       ontoggleBib={(): void => {
         showBib = !showBib;
       }}
@@ -76,6 +78,7 @@
         </div>
         <SourceButtons
           {bib}
+          {blogpost}
           ontoggleBib={(): void => {
             showBib = !showBib;
           }}

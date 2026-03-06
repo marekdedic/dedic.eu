@@ -1,16 +1,28 @@
 <script lang="ts">
-  import { asset } from "$app/paths";
+  import type { RouteId } from "$app/types";
+
+  import { asset, resolve } from "$app/paths";
 
   interface Props {
     bib: string | undefined;
+    blogpost: string | undefined;
     ontoggleBib(this: void): void;
     pdf: string | undefined;
   }
 
-  let { bib, ontoggleBib, pdf }: Props = $props();
+  let { bib, blogpost, ontoggleBib, pdf }: Props = $props();
 </script>
 
 <div>
+  {#if blogpost !== undefined}
+    {#if blogpost.includes("://")}
+      <a href={blogpost} rel="external noopener noreferrer" target="_blank"
+        >Blog post</a
+      >
+    {:else}
+      <a href={resolve(blogpost as RouteId)}>Blog post</a>
+    {/if}
+  {/if}
   {#if bib !== undefined}
     <button
       aria-label="Show bibtex citation"
