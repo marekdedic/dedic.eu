@@ -3,7 +3,7 @@
     faClipboard,
     faClipboardCheck,
   } from "@fortawesome/free-solid-svg-icons";
-  import * as Prism from "prismjs";
+  import Prism from "prismjs";
   import "prismjs/themes/prism-coy.css";
   import "prismjs-bibtex";
   import Fa from "svelte-fa";
@@ -11,13 +11,16 @@
   interface Props {
     code: string;
     copyButton?: boolean;
-    language: string;
+    language?: string;
   }
 
   let { code, copyButton = true, language }: Props = $props();
 
+  // Missing a language? Add it to vite.config.js
   let formattedCode = $derived(
-    Prism.highlight(code, Prism.languages[language], language),
+    language !== undefined && language in Prism.languages
+      ? Prism.highlight(code, Prism.languages[language], language)
+      : code,
   );
 
   let copied = $state(false);
