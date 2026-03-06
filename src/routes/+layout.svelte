@@ -119,10 +119,12 @@
   }
 
   :global(table) {
-    margin-top: 1rem;
     border-collapse: collapse;
     display: block;
+    margin: 1rem auto 0 auto;
+    max-width: 100%;
     overflow-x: auto;
+    width: max-content;
   }
 
   :global(td),
