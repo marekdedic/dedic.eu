@@ -120,8 +120,9 @@
 
   :global(table) {
     margin-top: 1rem;
-    border: 1px solid var(--table-border);
     border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
   }
 
   :global(td),
