@@ -15,12 +15,10 @@ export default defineConfig({
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
     },
-    /*
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
     },
-    */
   ],
   reporter: process.env.CI === undefined ? "list" : "html",
   retries: process.env.CI === undefined ? 0 : 2,
