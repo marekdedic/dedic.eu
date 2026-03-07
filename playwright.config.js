@@ -27,12 +27,14 @@ export default defineConfig({
   testDir: "./tests",
   timeout: 60000,
   use: {
-    baseURL: "http://127.0.0.1:5173",
+    baseURL: "https://127.0.0.1:5173",
+    ignoreHTTPSErrors: true,
     trace: "on-first-retry",
   },
   webServer: {
     command: "npm run start -- --host",
+    ignoreHTTPSErrors: true,
     reuseExistingServer: false, // Breaks snapshots
-    url: "http://127.0.0.1:5173",
+    url: "https://127.0.0.1:5173",
   },
 });

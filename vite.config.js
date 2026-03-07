@@ -1,5 +1,6 @@
 import { enhancedImages } from "@sveltejs/enhanced-img";
 import { sveltekit } from "@sveltejs/kit/vite";
+import basicSsl from "@vitejs/plugin-basic-ssl";
 import htaccess from "rollup-plugin-htaccess";
 import { svelteSitemap } from "svelte-sitemap/vite";
 import { defineConfig } from "vite";
@@ -10,6 +11,7 @@ import { origin } from "./svelte.config.js";
 
 export default defineConfig({
   plugins: [
+    basicSsl(),
     enhancedImages(),
     prismjs({ languages: [] }),
     sveltekit(),
