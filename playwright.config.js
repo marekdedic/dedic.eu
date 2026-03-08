@@ -15,23 +15,23 @@ export default defineConfig({
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
     },
-    /*
     {
       name: "webkit",
       use: { ...devices["Desktop Safari"] },
     },
-    */
   ],
   reporter: process.env.CI === undefined ? "list" : "html",
   retries: process.env.CI === undefined ? 0 : 2,
   testDir: "./tests",
   use: {
-    baseURL: "http://127.0.0.1:5173",
+    baseURL: "https://127.0.0.1:5173",
+    ignoreHTTPSErrors: true,
     trace: "on-first-retry",
   },
   webServer: {
     command: "npm run start -- --host",
+    ignoreHTTPSErrors: true,
     reuseExistingServer: false, // Breaks snapshots
-    url: "http://127.0.0.1:5173",
+    url: "https://127.0.0.1:5173",
   },
 });
