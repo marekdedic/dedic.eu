@@ -26,10 +26,7 @@
       );
     }}
     options={Object.fromEntries(
-      course?.versions.map((v) => [
-        v.slug,
-        `${course.faculty}, ${v.semester}`,
-      ]) ?? [],
+      course?.versions.map((v) => [v.slug, v.semester]) ?? [],
     )}
   />
   {#if version !== course?.current}
