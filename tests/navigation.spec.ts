@@ -13,6 +13,7 @@ test("navigation", async ({ page }) => {
     .getByRole("list")
     .getByRole("link", { name: "publications" })
     .click();
+  await page.waitForURL("/publications");
   await expect(page).toHaveScreenshot({
     // eslint-disable-next-line playwright/no-raw-locators -- No other way to locate publications
     mask: [page.locator(".publication")],
