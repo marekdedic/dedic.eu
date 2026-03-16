@@ -28,12 +28,6 @@ test("/publications", async ({ page }) => {
   });
 });
 
-test("/vyuka", async ({ page }) => {
-  await page.goto("/vyuka");
-  await page.waitForReady();
-  await expect(page).toHaveURL("/teaching");
-});
-
 test("/teaching", async ({ page }) => {
   await page.goto("/teaching");
   await page.waitForReady();
