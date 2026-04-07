@@ -155,7 +155,13 @@
             a-posteriori estimation, naive bayes classifier vs. k-nearest
             neighbor classifier</td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset("/teaching/B252-NSN-materials/NSN-04.ipynb")}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
         </tr>
       </tbody>
