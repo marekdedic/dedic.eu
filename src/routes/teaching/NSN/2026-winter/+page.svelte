@@ -144,8 +144,22 @@
             >decision trees, random forrests, their construction, splitting
             criteria and implementation</td
           >
-          <td></td>
-          <td></td>
+          <td
+            ><a
+              href={asset("/teaching/B252-NSN-materials/NSN-04.ipynb")}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
+          <td
+            ><a
+              href={asset(
+                "/teaching/B252-NSN-materials/NSN-04-solutions.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
         </tr>
         <tr>
           <td>5</td>
@@ -155,13 +169,7 @@
             a-posteriori estimation, naive bayes classifier vs. k-nearest
             neighbor classifier</td
           >
-          <td
-            ><a
-              href={asset("/teaching/B252-NSN-materials/NSN-04.ipynb")}
-              rel="noopener noreferrer"
-              target="_blank">notebook</a
-            ></td
-          >
+          <td></td>
           <td></td>
         </tr>
       </tbody>
