@@ -1,6 +1,4 @@
 <script lang="ts">
-  import type { RouteId } from "$app/types";
-
   import { asset, resolve } from "$app/paths";
 
   interface Props {
@@ -20,7 +18,7 @@
         >Blog post</a
       >
     {:else}
-      <a href={resolve(blogpost as RouteId)}>Blog post</a>
+      <a href={resolve(blogpost as "/")}>Blog post</a>
     {/if}
   {/if}
   {#if bib !== undefined}

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import type { RouteId } from "$app/types";
   import type { CourseSpec } from "$lib/types/CourseSpec";
 
   import { goto } from "$app/navigation";
@@ -22,7 +21,7 @@
     current={version}
     onselect={(newVersion: string): void => {
       void goto(
-        resolve(`/teaching/${course?.slug ?? ""}/${newVersion}` as RouteId),
+        resolve(`/teaching/${course?.slug ?? ""}/${newVersion}` as "/"),
       );
     }}
     options={Object.fromEntries(
@@ -33,7 +32,8 @@
     <div>
       You are viewing an outdated version of this course.
       {#if course?.current}
-        <a href={resolve(findCourseRoute(course))}>Visit the current version.</a
+        <a href={resolve(findCourseRoute(course) as "/")}
+          >Visit the current version.</a
         >
       {/if}
     </div>
