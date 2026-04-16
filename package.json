@@ -23,7 +23,7 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "vite build",
-    "postbuild": "npx svelte-sitemap --out-dir dist --domain https://dedic.eu",
+    "postbuild": "npx svelte-sitemap",
     "clean": "rimraf dist/*",
     "lint": "run-p -c --aggregate-output lint:*",
     "lint:eslint": "eslint --color",
