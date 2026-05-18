@@ -22,6 +22,7 @@
     date,
     id,
     paperPdf,
+    posterPdf,
     previewImage,
     tags = [],
     title,
@@ -56,6 +57,7 @@
         showBib = !showBib;
       }}
       {paperPdf}
+      {posterPdf}
     />
     {#if showBib && bib !== undefined}
       <CodeBlock code={bib} language="bib" />
@@ -83,6 +85,7 @@
             showBib = !showBib;
           }}
           {paperPdf}
+          {posterPdf}
         />
       </div>
       {#if previewImage !== undefined}

@@ -6,9 +6,10 @@
     blogpostUrl: string | undefined;
     ontoggleBib(this: void): void;
     paperPdf: string | undefined;
+    posterPdf: string | undefined;
   }
 
-  let { bib, blogpostUrl, ontoggleBib, paperPdf }: Props = $props();
+  let { bib, blogpostUrl, ontoggleBib, paperPdf, posterPdf }: Props = $props();
 </script>
 
 <div>
@@ -24,6 +25,11 @@
   {#if paperPdf !== undefined}
     <a href={asset(`/${paperPdf}`)} rel="noopener noreferrer" target="_blank">
       Full paper
+    </a>
+  {/if}
+  {#if posterPdf !== undefined}
+    <a href={asset(`/${posterPdf}`)} rel="noopener noreferrer" target="_blank">
+      Poster
     </a>
   {/if}
   {#if bib !== undefined}

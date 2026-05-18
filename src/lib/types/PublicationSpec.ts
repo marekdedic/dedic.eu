@@ -6,6 +6,7 @@ export interface PublicationSpec {
   date: Date;
   id: string;
   paperPdf?: string;
+  posterPdf?: string;
   previewImage?: string;
   tags?: Array<string>;
   title: string;
