@@ -21,19 +21,19 @@
       <a href={resolve(blogpostUrl as "/")}>Blog post</a>
     {/if}
   {/if}
+  {#if paperPdf !== undefined}
+    <a href={asset(`/${paperPdf}`)} rel="noopener noreferrer" target="_blank">
+      Full paper
+    </a>
+  {/if}
   {#if bib !== undefined}
     <button
       aria-label="Show bibtex citation"
       onclick={ontoggleBib}
       type="button"
     >
-      BIB
+      Cite
     </button>
-  {/if}
-  {#if paperPdf !== undefined}
-    <a href={asset(`/${paperPdf}`)} rel="noopener noreferrer" target="_blank">
-      PDF
-    </a>
   {/if}
 </div>
 
