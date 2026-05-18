@@ -3,23 +3,34 @@
 
   interface Props {
     bib: string | undefined;
-    blogpost: string | undefined;
+    blogpostUrl: string | undefined;
     ontoggleBib(this: void): void;
-    pdf: string | undefined;
+    paperPdf: string | undefined;
+    posterPdf: string | undefined;
   }
 
-  let { bib, blogpost, ontoggleBib, pdf }: Props = $props();
+  let { bib, blogpostUrl, ontoggleBib, paperPdf, posterPdf }: Props = $props();
 </script>
 
 <div>
-  {#if blogpost !== undefined}
-    {#if blogpost.includes("://")}
-      <a href={blogpost} rel="external noopener noreferrer" target="_blank"
+  {#if blogpostUrl !== undefined}
+    {#if blogpostUrl.includes("://")}
+      <a href={blogpostUrl} rel="external noopener noreferrer" target="_blank"
         >Blog post</a
       >
     {:else}
-      <a href={resolve(blogpost as "/")}>Blog post</a>
+      <a href={resolve(blogpostUrl as "/")}>Blog post</a>
     {/if}
+  {/if}
+  {#if paperPdf !== undefined}
+    <a href={asset(`/${paperPdf}`)} rel="noopener noreferrer" target="_blank">
+      Full paper
+    </a>
+  {/if}
+  {#if posterPdf !== undefined}
+    <a href={asset(`/${posterPdf}`)} rel="noopener noreferrer" target="_blank">
+      Poster
+    </a>
   {/if}
   {#if bib !== undefined}
     <button
@@ -27,11 +38,8 @@
       onclick={ontoggleBib}
       type="button"
     >
-      BIB
+      Cite
     </button>
-  {/if}
-  {#if pdf !== undefined}
-    <a href={asset(`/${pdf}`)} rel="noopener noreferrer" target="_blank">PDF</a>
   {/if}
 </div>
 

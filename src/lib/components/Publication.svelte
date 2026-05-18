@@ -18,10 +18,11 @@
     abstract,
     authors,
     bib,
-    blogpost,
+    blogpostUrl,
     date,
     id,
-    pdf,
+    paperPdf,
+    posterPdf,
     previewImage,
     tags = [],
     title,
@@ -51,11 +52,12 @@
     </div>
     <SourceButtons
       {bib}
-      {blogpost}
+      {blogpostUrl}
       ontoggleBib={(): void => {
         showBib = !showBib;
       }}
-      {pdf}
+      {paperPdf}
+      {posterPdf}
     />
     {#if showBib && bib !== undefined}
       <CodeBlock code={bib} language="bib" />
@@ -78,11 +80,12 @@
         </div>
         <SourceButtons
           {bib}
-          {blogpost}
+          {blogpostUrl}
           ontoggleBib={(): void => {
             showBib = !showBib;
           }}
-          {pdf}
+          {paperPdf}
+          {posterPdf}
         />
       </div>
       {#if previewImage !== undefined}
