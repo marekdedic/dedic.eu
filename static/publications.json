@@ -158,6 +158,7 @@
     "date": "2026-03-08",
     "id": "dedic_benchmarking_2026",
     "paperPdf": "publications/papers/dedic_benchmarking_2026.pdf",
+    "posterPdf": "publications/posters/dedic_benchmarking_2026.pdf",
     "previewImage": "/images/publication-preview-images/dedic_benchmarking_2026.png",
     "tags": ["ICAART"],
     "title": "Benchmarking and Transfer Learning for Hyperparameter Optimization of Graph Neural Networks"
