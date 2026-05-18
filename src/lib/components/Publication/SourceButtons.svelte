@@ -3,22 +3,22 @@
 
   interface Props {
     bib: string | undefined;
-    blogpost: string | undefined;
+    blogpostUrl: string | undefined;
     ontoggleBib(this: void): void;
-    pdf: string | undefined;
+    paperPdf: string | undefined;
   }
 
-  let { bib, blogpost, ontoggleBib, pdf }: Props = $props();
+  let { bib, blogpostUrl, ontoggleBib, paperPdf }: Props = $props();
 </script>
 
 <div>
-  {#if blogpost !== undefined}
-    {#if blogpost.includes("://")}
-      <a href={blogpost} rel="external noopener noreferrer" target="_blank"
+  {#if blogpostUrl !== undefined}
+    {#if blogpostUrl.includes("://")}
+      <a href={blogpostUrl} rel="external noopener noreferrer" target="_blank"
         >Blog post</a
       >
     {:else}
-      <a href={resolve(blogpost as "/")}>Blog post</a>
+      <a href={resolve(blogpostUrl as "/")}>Blog post</a>
     {/if}
   {/if}
   {#if bib !== undefined}
@@ -30,8 +30,10 @@
       BIB
     </button>
   {/if}
-  {#if pdf !== undefined}
-    <a href={asset(`/${pdf}`)} rel="noopener noreferrer" target="_blank">PDF</a>
+  {#if paperPdf !== undefined}
+    <a href={asset(`/${paperPdf}`)} rel="noopener noreferrer" target="_blank">
+      PDF
+    </a>
   {/if}
 </div>
 
