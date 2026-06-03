@@ -41,7 +41,7 @@
     "test-native": "playwright test"
   },
   "devDependencies": {
-    "@eslint-community/eslint-plugin-eslint-comments": "^4.7.1",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.7.2",
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^1.2.0",
     "@fontsource/roboto": "^5.2.10",
