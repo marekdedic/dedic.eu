@@ -73,7 +73,7 @@
     "rollup-plugin-htaccess": "^0.13.2",
     "sass": "^1.101.0",
     "svelte": "^5.56.3",
-    "svelte-check": "^4.6.0",
+    "svelte-check": "^4.7.1",
     "svelte-fa": "^4.0.4",
     "svelte-sitemap": "^4.0.3",
     "typescript": "^6.0.3",
