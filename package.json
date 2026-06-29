@@ -44,7 +44,7 @@
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^2.0.0",
     "@fontsource/roboto": "^5.2.10",
-    "@fortawesome/free-solid-svg-icons": "^7.2.0",
+    "@fortawesome/free-solid-svg-icons": "^7.3.0",
     "@playwright/test": "^1.61.1",
     "@sveltejs/adapter-static": "^3.0.10",
     "@sveltejs/enhanced-img": "^0.11.0",
