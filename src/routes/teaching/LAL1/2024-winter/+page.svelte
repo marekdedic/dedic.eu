@@ -17,6 +17,7 @@
 </script>
 
 <svelte:head>
+  <title>Lineární algebra 1, ZS 24/25 — Marek Dědič</title>
   <meta
     name="description"
     content="Lineární algebra 1 [FJFI CTU], winter semester 2024/25 — study materials, requirements, and grading, taught by Marek Dědič."

@@ -15,6 +15,7 @@
 </script>
 
 <svelte:head>
+  <title>Neural networks, machine learning, and randomness, winter 2026 — Marek Dědič</title>
   <meta
     name="description"
     content="Neural networks, machine learning, and randomness [FJFI CTU], winter 2026 — study materials, requirements, and grading, taught by Marek Dědič."

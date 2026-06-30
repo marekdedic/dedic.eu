@@ -9,6 +9,7 @@
 </script>
 
 <svelte:head>
+  <title>Hyperparameter Optimization for GNNs with Transfer Learning — Marek Dědič</title>
   <meta
     name="description"
     content="A deep dive into hyperparameter optimization for graph neural networks using transfer learning across datasets, based on a benchmarking study presented at ICAART 2026."

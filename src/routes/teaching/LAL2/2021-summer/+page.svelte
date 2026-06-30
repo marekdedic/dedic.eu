@@ -15,6 +15,7 @@
 </script>
 
 <svelte:head>
+  <title>Lineární algebra 2, LS 20/21 — Marek Dědič</title>
   <meta
     name="description"
     content="Lineární algebra 2 [FJFI CTU], summer semester 2020/21 — study materials, requirements, and grading, taught by Marek Dědič."

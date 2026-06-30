@@ -14,6 +14,7 @@
 </script>
 
 <svelte:head>
+  <title>Neural networks, machine learning and randomness, winter 2025 — Marek Dědič</title>
   <meta
     name="description"
     content="Neural networks, machine learning and randomness [FIT CTU], winter 2025 — study materials, requirements, and grading, taught by Marek Dědič."

@@ -12,6 +12,7 @@
 </script>
 
 <svelte:head>
+  <title>Publications — Marek Dědič</title>
   <meta
     name="description"
     content="Research publications by Marek Dědič on graph neural networks, meta-learning, multi-instance learning, and computer network security."

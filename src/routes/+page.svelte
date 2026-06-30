@@ -18,6 +18,7 @@
 </script>
 
 <svelte:head>
+  <title>Marek Dědič</title>
   <meta
     name="description"
     content="Personal webpage of Marek Dědič — machine learning researcher at FJFI CTU specializing in graph neural networks."

@@ -14,6 +14,7 @@
 </script>
 
 <svelte:head>
+  <title>Theory of neural networks, summer 2022 — Marek Dědič</title>
   <meta
     name="description"
     content="Theory of neural networks [FIT CTU], summer 2022 — study materials, requirements, and grading, taught by Marek Dědič."
