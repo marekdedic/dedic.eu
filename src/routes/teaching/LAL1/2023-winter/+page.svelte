@@ -16,13 +16,6 @@
   let { data }: Props = $props();
 </script>
 
-<svelte:head>
-  <meta
-    name="description"
-    content="Lineární algebra 1 [FJFI CTU], winter semester 2023/24 — study materials, requirements, and grading, taught by Marek Dědič."
-  />
-</svelte:head>
-
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>

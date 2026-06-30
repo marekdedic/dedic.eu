@@ -8,13 +8,6 @@
   import PageContentBox from "$lib/components/PageContentBox.svelte";
 </script>
 
-<svelte:head>
-  <meta
-    name="description"
-    content="A deep dive into hyperparameter optimization for graph neural networks using transfer learning across datasets, based on a benchmarking study presented at ICAART 2026."
-  />
-</svelte:head>
-
 <PageContentBox>
   <header>
     <h1>

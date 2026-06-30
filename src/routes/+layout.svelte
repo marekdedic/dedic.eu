@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from "$app/state";
   import TopBar from "$lib/components/TopBar.svelte";
   import { theme } from "$lib/theme.svelte";
   import "@fontsource/roboto/300.css";
@@ -32,6 +33,17 @@
     document.body.classList.add("svelteKitReady");
   });
 </script>
+
+<svelte:head>
+  <title
+    >{page.data.title === undefined
+      ? "Marek Dědič"
+      : `${page.data.title} — Marek Dědič`}</title
+  >
+  {#if page.data.description}
+    <meta name="description" content={page.data.description} />
+  {/if}
+</svelte:head>
 
 <TopBar />
 

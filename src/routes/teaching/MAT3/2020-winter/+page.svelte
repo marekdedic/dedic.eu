@@ -14,13 +14,6 @@
   let { data }: Props = $props();
 </script>
 
-<svelte:head>
-  <meta
-    name="description"
-    content="Matematika 3 [FJFI CTU], winter semester 2020/21 — study materials, requirements, and grading, taught by Marek Dědič."
-  />
-</svelte:head>
-
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>
