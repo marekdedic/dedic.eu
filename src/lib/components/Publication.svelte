@@ -103,7 +103,7 @@
 </div>
 
 <style lang="scss">
-  @use "../../lib/theme.scss";
+  @use "../../lib/theme.module.scss" as theme;
 
   .abstract {
     margin-bottom: 0.5rem;

@@ -44,7 +44,7 @@
 </div>
 
 <style lang="scss">
-  @use "../../../lib/theme.scss";
+  @use "../../../lib/theme.module.scss" as theme;
 
   a,
   button {

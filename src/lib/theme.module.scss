@@ -21,3 +21,8 @@ $text-color-light: #000;
 $text-color-faded-light: #727272;
 $error-color-light: #e90c4b;
 $warning-color-light: #ffea0d;
+
+:export {
+  primaryColorDark: #{$primary-color-dark};
+  primaryColorLight: #{$primary-color-light};
+}
