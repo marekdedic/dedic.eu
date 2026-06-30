@@ -41,7 +41,7 @@
 </header>
 
 <style lang="scss">
-  @use "../theme.scss";
+  @use "../theme.module.scss" as theme;
 
   div {
     background: var(--warning-color);

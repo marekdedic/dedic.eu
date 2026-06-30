@@ -37,7 +37,7 @@
 {/if}
 
 <style lang="scss">
-  @use "../theme.scss";
+  @use "../theme.module.scss" as theme;
 
   button {
     background-color: inherit;

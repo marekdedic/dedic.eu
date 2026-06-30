@@ -16,7 +16,7 @@
 </a>
 
 <style lang="scss">
-  @use "../theme.scss";
+  @use "../theme.module.scss" as theme;
 
   a {
     color: var(--text-color);

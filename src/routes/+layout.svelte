@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from "$app/state";
   import TopBar from "$lib/components/TopBar.svelte";
+  import themeColors from "$lib/theme.module.scss";
   import { theme } from "$lib/theme.svelte";
   import "@fontsource/roboto/300.css";
   import "@fontsource/roboto/300-italic.css";
@@ -41,6 +42,16 @@
       : `${page.data.title} — Marek Dědič`}</title
   >
   <link href={`${page.url.origin}${page.url.pathname}`} rel="canonical" />
+  <meta
+    name="theme-color"
+    content={themeColors["primaryColorLight"]}
+    media="(prefers-color-scheme: light)"
+  />
+  <meta
+    name="theme-color"
+    content={themeColors["primaryColorDark"]}
+    media="(prefers-color-scheme: dark)"
+  />
   {#if page.data.description}
     <meta name="description" content={page.data.description} />
   {/if}
@@ -51,7 +62,7 @@
 {@render children()}
 
 <style lang="scss">
-  @use "../lib/theme.scss";
+  @use "../lib/theme.module.scss" as theme;
 
   :global(*) {
     box-sizing: border-box;
