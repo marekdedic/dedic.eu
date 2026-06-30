@@ -15,6 +15,7 @@ export default defineConfig({
     htaccess(options),
     svelteSitemap({
       domain: "https://dedic.eu",
+      ignore: ["fallback.html"],
       outDir: "dist",
     }),
   ],
