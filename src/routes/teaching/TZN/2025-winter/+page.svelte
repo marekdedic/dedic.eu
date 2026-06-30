@@ -14,14 +14,6 @@
   let { data }: Props = $props();
 </script>
 
-<svelte:head>
-  <title>Theoretical fundamentals of neural networks, winter 2025 — Marek Dědič</title>
-  <meta
-    name="description"
-    content="Theoretical fundamentals of neural networks [FJFI CTU], winter 2025 — study materials, requirements, and grading, taught by Marek Dědič."
-  />
-</svelte:head>
-
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>

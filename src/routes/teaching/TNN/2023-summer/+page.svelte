@@ -13,14 +13,6 @@
   let { data }: Props = $props();
 </script>
 
-<svelte:head>
-  <title>Theory of neural networks, summer 2023 — Marek Dědič</title>
-  <meta
-    name="description"
-    content="Theory of neural networks [FIT CTU], summer 2023 — study materials, requirements, and grading, taught by Marek Dědič."
-  />
-</svelte:head>
-
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>
