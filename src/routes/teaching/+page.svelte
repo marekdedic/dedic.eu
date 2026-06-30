@@ -18,6 +18,13 @@
   const past = $derived(getPastCourseList(data.teachingSpec));
 </script>
 
+<svelte:head>
+  <meta
+    name="description"
+    content="Courses taught by Marek Dědič at FIT CTU and FJFI CTU — neural networks, linear algebra, and mathematics. Study materials, requirements, and grading."
+  />
+</svelte:head>
+
 <PageContentBox>
   <header>
     <h1>teaching</h1>

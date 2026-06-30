@@ -17,6 +17,13 @@
   let { data }: Props = $props();
 </script>
 
+<svelte:head>
+  <meta
+    name="description"
+    content="Personal webpage of Marek Dědič — machine learning researcher at FJFI CTU specializing in graph neural networks."
+  />
+</svelte:head>
+
 <PageContentBox>
   <header>
     <h1><Name first="Marek" last="Dědič" /></h1>
