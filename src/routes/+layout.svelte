@@ -40,6 +40,7 @@
       ? "Marek Dědič"
       : `${page.data.title} — Marek Dědič`}</title
   >
+  <link href={`${page.url.origin}${page.url.pathname}`} rel="canonical" />
   {#if page.data.description}
     <meta name="description" content={page.data.description} />
   {/if}
