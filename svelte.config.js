@@ -1,6 +1,8 @@
 import adapter from "@sveltejs/adapter-static";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 
+export const origin = "https://dedic.eu";
+
 export default {
   kit: {
     adapter: adapter({
@@ -21,6 +23,7 @@ export default {
       },
       mode: "hash",
     },
+    prerender: { origin },
   },
   preprocess: vitePreprocess(),
 };

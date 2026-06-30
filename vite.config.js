@@ -6,6 +6,7 @@ import { defineConfig } from "vite";
 import prismjs from "vite-plugin-prismjs";
 
 import options from "./rollup-plugin-htaccess.config";
+import { origin } from "./svelte.config.js";
 
 export default defineConfig({
   plugins: [
@@ -14,7 +15,7 @@ export default defineConfig({
     sveltekit(),
     htaccess(options),
     svelteSitemap({
-      domain: "https://dedic.eu",
+      domain: origin,
       ignore: ["fallback.html"],
       outDir: "dist",
     }),
