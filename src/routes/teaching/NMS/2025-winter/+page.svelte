@@ -13,6 +13,13 @@
   let { data }: Props = $props();
 </script>
 
+<svelte:head>
+  <meta
+    name="description"
+    content="Neural networks, machine learning and randomness [FIT CTU], winter 2025 — study materials, requirements, and grading, taught by Marek Dědič."
+  />
+</svelte:head>
+
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>
