@@ -52,8 +52,14 @@
     content={themeColors["primaryColorDark"]}
     media="(prefers-color-scheme: dark)"
   />
+  <meta content={page.data.title ?? "Marek Dědič"} property="og:title" />
+  <meta content="Marek Dědič" property="og:site_name" />
+  <meta content={`${page.url.origin}${page.url.pathname}`} property="og:url" />
+  <meta content={page.data.ogType ?? "website"} property="og:type" />
+  <meta content="en_US" property="og:locale" />
   {#if page.data.description}
     <meta name="description" content={page.data.description} />
+    <meta content={page.data.description} property="og:description" />
   {/if}
 </svelte:head>
 
