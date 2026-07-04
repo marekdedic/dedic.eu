@@ -114,6 +114,10 @@
       color theme.$transition-duration ease;
   }
 
+  :global(p) {
+    text-wrap: pretty;
+  }
+
   :global(header) {
     margin-bottom: 1rem;
   }
@@ -132,6 +136,7 @@
     font-weight: 300;
     margin-bottom: 1rem;
     margin-top: 1.5rem;
+    text-wrap: balance;
   }
 
   :global(h1) {
