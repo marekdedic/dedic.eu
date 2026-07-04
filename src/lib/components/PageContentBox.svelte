@@ -15,9 +15,10 @@
 
 <style>
   div {
+    container-type: inline-size;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
     max-width: 800px;
     padding-left: 15px;
     padding-right: 15px;

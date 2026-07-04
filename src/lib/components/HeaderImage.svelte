@@ -30,7 +30,7 @@
     margin-right: 0;
   }
 
-  @media (max-width: 576px) {
+  @container (max-width: 450px) {
     .container {
       width: 100%;
     }
