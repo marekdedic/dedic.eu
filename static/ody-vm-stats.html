@@ -1,0 +1,713 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Srovnání kurzů VM a ODY</title>
+<style>
+:root {
+  --papir: #fbfaf8; --text: #1c1a17; --tich: #6d675e; --linka: #e2ddd4;
+  --vm: #2f6f8f; --ody: #9a7400; --zvyraz: #f3f0e6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papir: #17161a; --text: #eceaf0; --tich: #9e98a6; --linka: #322f38;
+    --vm: #6fb2d2; --ody: #e8c14f; --zvyraz: #1f1e22;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--papir); color: var(--text);
+  font: 16px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+.obal { max-width: 62rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+h1 { font-size: 1.6rem; line-height: 1.2; margin: 0 0 .4rem; }
+h2 { font-size: 1.15rem; margin: 2.5rem 0 .5rem; }
+h3 { font-size: 1rem; margin: 0 0 .2rem; }
+.podtitul { color: var(--tich); margin: 0 0 1.5rem; font-size: .95rem; }
+
+.souhrny { display: grid; gap: .75rem; grid-template-columns: 1fr 1fr; margin-bottom: 1.5rem; }
+.karta { border: 1px solid var(--linka); border-radius: .6rem; padding: .8rem .9rem; }
+.karta .k-nazev { font-weight: 600; font-size: .85rem; letter-spacing: .04em;
+  text-transform: uppercase; color: var(--tich); }
+.karta .k-cas { font-size: 1.5rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+.karta.vm .k-cas { color: var(--vm); } .karta.ody .k-cas { color: var(--ody); }
+.karta .k-pod { font-size: .85rem; color: var(--tich); }
+
+.legenda { display: flex; gap: 1.2rem; flex-wrap: wrap; font-size: .85rem;
+  color: var(--tich); margin: 0 0 1rem; }
+.tecka { display: inline-block; width: .7rem; height: .7rem; border-radius: 50%;
+  margin-right: .35rem; vertical-align: baseline; }
+.tecka.vm { background: var(--vm); } .tecka.ody { background: var(--ody); }
+
+.radek { border-top: 1px solid var(--linka); padding: .7rem 0 .8rem;
+  display: grid; gap: .3rem .8rem; grid-template-columns: 1fr 1fr;
+  grid-template-areas: "nazev nazev" "vm ody" "detail detail"; }
+.radek.zvyrazneno { background: var(--zvyraz); border-radius: .5rem;
+  padding: .8rem .7rem; border-top: 0; margin-bottom: .3rem; }
+.nazev { grid-area: nazev; display: flex; justify-content: space-between;
+  align-items: baseline; gap: .5rem; }
+.oblast { font-weight: 600; }
+.rozdil { font-size: .85rem; font-variant-numeric: tabular-nums; color: var(--tich); }
+.rozdil.vic-vm { color: var(--vm); } .rozdil.vic-ody { color: var(--ody); }
+.strana { display: flex; align-items: center; gap: .45rem; min-width: 0; }
+.strana.vm { grid-area: vm; flex-direction: row-reverse; }
+.strana.ody { grid-area: ody; }
+.track { flex: 1; height: .7rem; background: color-mix(in srgb, var(--linka) 70%, transparent);
+  border-radius: .35rem; overflow: hidden; display: flex; }
+.strana.vm .track { justify-content: flex-end; }
+.bar { height: 100%; border-radius: .35rem; }
+.strana.vm .bar { background: var(--vm); } .strana.ody .bar { background: var(--ody); }
+.cas { font-size: .85rem; font-variant-numeric: tabular-nums; min-width: 3.2rem; }
+.strana.vm .cas { text-align: left; color: var(--vm); }
+.strana.ody .cas { text-align: right; color: var(--ody); }
+.detail { grid-area: detail; margin: .15rem 0 0; font-size: .8rem; color: var(--tich);
+  display: flex; flex-direction: column; gap: .1rem; }
+
+@media (min-width: 46rem) {
+  .radek { grid-template-columns: 1fr 15rem 1fr;
+    grid-template-areas: "vm nazev ody" "detail detail detail"; align-items: center; }
+  .nazev { flex-direction: column; align-items: center; text-align: center; gap: .1rem; }
+  .detail { flex-direction: row; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+}
+
+.pozn { font-size: .85rem; color: var(--tich); }
+.pozn li { margin-bottom: .35rem; }
+/* záložky bez JS: skryté radio + label */
+.zalozky { display: flex; gap: .4rem; margin: 0 0 1.5rem; flex-wrap: wrap; }
+.zalozky label { border: 1px solid var(--linka); border-radius: 2rem;
+  padding: .4rem .9rem; font-size: .9rem; cursor: pointer; user-select: none; }
+.prepinac { position: absolute; opacity: 0; pointer-events: none; }
+#t1:focus-visible ~ .zalozky label[for="t1"],
+#t2:focus-visible ~ .zalozky label[for="t2"] { outline: 2px solid var(--vm); outline-offset: 2px; }
+#t1:checked ~ .zalozky label[for="t1"],
+#t2:checked ~ .zalozky label[for="t2"] {
+  background: var(--text); color: var(--papir); border-color: var(--text); }
+.panel { display: none; }
+#t1:checked ~ #panel1, #t2:checked ~ #panel2 { display: block; }
+
+.sankey-obal { overflow-x: auto; margin: 0 -1rem; padding: 0 1rem 1rem; }
+.sankey-obal svg { width: 100%; min-width: 54rem; height: auto; display: block; }
+.hlavicka { font: 600 13px ui-sans-serif, system-ui, sans-serif; }
+.hlavicka.vm { fill: var(--vm); } .hlavicka.ody { fill: var(--ody); }
+.o-nazev { font: 600 11px ui-sans-serif, system-ui, sans-serif; fill: var(--tich); }
+.b-label { font: 11px ui-sans-serif, system-ui, sans-serif; fill: var(--text); }
+.cas-l { fill: var(--tich); font-variant-numeric: tabular-nums; }
+.n-vm { fill: var(--vm); } .n-ody { fill: var(--ody); }
+.stred { fill: color-mix(in srgb, var(--tich) 35%, transparent); }
+.s-vm { fill: var(--vm); opacity: .28; } .s-ody { fill: var(--ody); opacity: .28; }
+.s-vm:hover, .s-ody:hover { opacity: .55; }
+.detail .mapovani { margin: 0; display: flex; flex-direction: column; gap: .1rem; }
+.rozbal { margin-top: .5rem; }
+.rozbal summary { cursor: pointer; width: fit-content; list-style: none;
+  font-size: .82rem; font-weight: 600; color: var(--text);
+  border: 1px solid var(--linka); border-radius: 2rem; padding: .3rem .8rem .3rem .65rem;
+  background: color-mix(in srgb, var(--linka) 28%, transparent);
+  display: inline-flex; align-items: center; gap: .4rem; }
+.rozbal summary::-webkit-details-marker { display: none; }
+.rozbal summary::before { content: "＋"; font-weight: 400; line-height: 1;
+  color: var(--tich); }
+.rozbal[open] summary::before { content: "−"; }
+.rozbal summary:hover { border-color: var(--tich);
+  background: color-mix(in srgb, var(--linka) 55%, transparent); }
+.rozbal[open] summary { margin-bottom: .6rem; }
+.programy { display: grid; gap: 1rem; }
+.programy h4 { margin: 0 0 .2rem; font-size: .78rem; letter-spacing: .04em;
+  text-transform: uppercase; }
+.p-strana.vm h4 { color: var(--vm); } .p-strana.ody h4 { color: var(--ody); }
+.programy ul { list-style: none; margin: 0; padding: 0; font-size: .8rem; }
+.programy li { display: flex; justify-content: space-between; gap: .8rem;
+  padding: .1rem 0; border-bottom: 1px solid color-mix(in srgb, var(--linka) 55%, transparent); }
+.programy li.p-balicek { font-weight: 600; color: var(--text); border-bottom: 0;
+  padding-top: .45rem; }
+.programy li.p-prazdno, .p-cas { color: var(--tich); font-variant-numeric: tabular-nums;
+  white-space: nowrap; }
+.p-pocet { color: var(--tich); font-size: .92em; font-variant-numeric: tabular-nums;
+  white-space: nowrap; }
+@media (min-width: 40rem) { .programy { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+
+.k-oblast { border-top: 1px solid var(--linka); padding: .6rem 0; }
+.k-oblast .rozbal { margin-top: .4rem; }
+.k-hlava { display: flex; justify-content: space-between; align-items: baseline; gap: .8rem; }
+.k-nazev { font-weight: 600; }
+.k-casy { font-size: .9rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.c-vm { color: var(--vm); } .c-ody { color: var(--ody); }
+table.prekryvy { border-collapse: collapse; width: 100%; font-size: .85rem; }
+table.prekryvy th, table.prekryvy td { text-align: left; padding: .3rem .5rem;
+  border-bottom: 1px solid var(--linka); vertical-align: top; }
+table.prekryvy th { color: var(--tich); font-weight: 600; }
+.tab-obal { overflow-x: auto; }
+footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--linka);
+  font-size: .8rem; color: var(--tich); }
+</style>
+</head>
+<body>
+<div class="obal">
+<h1>Srovnání časové dotace kurzů VM&nbsp;2025 a ODY&nbsp;2026</h1>
+<p class="podtitul">Programy spárované do srovnávacích oblastí. Kompetenční obory jsou
+zatím jeden blok. U VM se počítá sloupec ČLK, u obou kurzů se paralelní rotace skupin
+počítají jednou.</p>
+
+<div class="souhrny">
+  <div class="karta vm">
+    <div class="k-nazev">VM 2025</div>
+    <div class="k-cas">206:30</div>
+    <div class="k-pod">kompetenční 69:10 (33 %)</div>
+  </div>
+  <div class="karta ody">
+    <div class="k-nazev">ODY 2026</div>
+    <div class="k-cas">197:20</div>
+    <div class="k-pod">kompetenční 58:30 (30 %)</div>
+  </div>
+</div>
+
+<input class="prepinac" type="radio" name="zalozka" id="t1" checked>
+<input class="prepinac" type="radio" name="zalozka" id="t2">
+<div class="zalozky">
+  <label for="t1">Celkový čas po oblastech</label>
+  <label for="t2">Kompetenční balíčky (Sankey)</label>
+</div>
+
+<section class="panel" id="panel1">
+<h2>Oblasti a mapování</h2>
+<p class="legenda">
+  <span><span class="tecka vm"></span>VM 2025</span>
+  <span><span class="tecka ody"></span>ODY 2026</span>
+  <span>Číslo u názvu je rozdíl, obarvený podle kurzu, který má víc.</span>
+</p>
+
+      <div class="radek zvyrazneno">
+        <div class="nazev">
+          <span class="oblast">KOMPETENČNÍ (vše dohromady)</span>
+          <span class="rozdil vic-vm" title="o 10:40 víc na kurzu VM">+10:40</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">69:10</span>
+          <div class="track"><div class="bar" style="width:100.00%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:84.58%"></div></div>
+          <span class="cas">58:30</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> (všechny obory)</span>
+            <span><b>ODY:</b> (všechny obory)</span>
+          </p>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Jídlo a svačiny</span>
+          <span class="rozdil vic-vm" title="o 5:10 víc na kurzu VM">+5:10</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">35:50</span>
+          <div class="track"><div class="bar" style="width:51.81%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:44.34%"></div></div>
+          <span class="cas">30:40</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Jídlo a svačiny</span>
+            <span><b>ODY:</b> Jídlo a svačiny</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Jídlo a svačiny</li><li><span class="p-nazev">🏃+🥐+🇨🇿 <span class="p-pocet">11× 1:00</span></span><span class="p-cas">11:00</span></li><li><span class="p-nazev">🥣+🇨🇿 <span class="p-pocet">10× 0:40</span></span><span class="p-cas">6:40</span></li><li><span class="p-nazev">🥣+💤 <span class="p-pocet">12× 0:30</span></span><span class="p-cas">6:00</span></li><li><span class="p-nazev">🏃+🍏 <span class="p-pocet">18× 0:15</span></span><span class="p-cas">4:30</span></li><li><span class="p-nazev">🍏 <span class="p-pocet">5× 0:30 + 1× 0:15</span></span><span class="p-cas">2:45</span></li><li><span class="p-nazev">🏃+🥐 <span class="p-pocet">3× 0:40</span></span><span class="p-cas">2:00</span></li><li><span class="p-nazev">🥣 <span class="p-pocet">1× 1:00 + 1× 0:45</span></span><span class="p-cas">1:45</span></li><li><span class="p-nazev">🏃+🥐 mše</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Příjezd + 🥣</span><span class="p-cas">0:30</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Jídlo a svačiny</li><li><span class="p-nazev">snídaně + hygiena <span class="p-pocet">13× 0:40</span></span><span class="p-cas">8:40</span></li><li><span class="p-nazev">oběd <span class="p-pocet">13× 0:30</span></span><span class="p-cas">6:30</span></li><li><span class="p-nazev">večeře <span class="p-pocet">9× 0:30</span></span><span class="p-cas">4:30</span></li><li><span class="p-nazev">sváča + pauza <span class="p-pocet">4× 0:30 + 4× 0:20</span></span><span class="p-cas">3:20</span></li><li><span class="p-nazev">bečka <span class="p-pocet">8× 0:20</span></span><span class="p-cas">2:40</span></li><li><span class="p-nazev">svačina + pauza <span class="p-pocet">2× 0:30 + 1× 0:20</span></span><span class="p-cas">1:20</span></li><li><span class="p-nazev">Ráno na návsi</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">malá svačina + pauza <span class="p-pocet">1× 0:30 + 1× 0:20</span></span><span class="p-cas">0:50</span></li><li><span class="p-nazev">sváča <span class="p-pocet">2× 0:20</span></span><span class="p-cas">0:40</span></li><li><span class="p-nazev">večeře + výběr patronů</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">večeře - až v rámci Podsvětí</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">menší sváča + pauza</span><span class="p-cas">0:10</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Velké hry a zážitkové programy</span>
+          <span class="rozdil vic-ody" title="o 6:25 víc na kurzu ODY">+6:25</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">33:15</span>
+          <div class="track"><div class="bar" style="width:48.07%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:57.35%"></div></div>
+          <span class="cas">39:40</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Real</span>
+            <span><b>ODY:</b> Nekompetenční programy</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Real</li><li><span class="p-nazev">Závěrečný real</span><span class="p-cas">5:30</span></li><li><span class="p-nazev">Real <span class="p-pocet">2× 2:00</span></span><span class="p-cas">4:00</span></li><li><span class="p-nazev">Iniciační rituál - úvod Real</span><span class="p-cas">3:00</span></li><li><span class="p-nazev">Relax real</span><span class="p-cas">2:30</span></li><li><span class="p-nazev">Intentzivní real</span><span class="p-cas">2:30</span></li><li><span class="p-nazev">Kostelíček</span><span class="p-cas">2:15</span></li><li><span class="p-nazev">vlajky</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Real krize + 🏃</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Real běhačka</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Skanzen</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">nějaká pohoda</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Seznamovačky, prohlídka hradiště</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Příjezd účastníků</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Tabla</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Dopísky</span><span class="p-cas">0:30</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Nekompetenční programy</li><li><span class="p-nazev">Úvodní hra <span class="p-pocet">1× 2:20 + 1× 2:00 + 1× 1:30</span></span><span class="p-cas">5:50</span></li><li><span class="p-nazev">Podsvětí</span><span class="p-cas">3:10</span></li><li><span class="p-nazev">Dobývání</span><span class="p-cas">3:00</span></li><li><span class="p-nazev">Trosečníci</span><span class="p-cas">2:10</span></li><li><span class="p-nazev">Press</span><span class="p-cas">2:10</span></li><li><span class="p-nazev">Hospoda na hradbách</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Funtasia</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Venku</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Rovering</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Bitva o Helenu</span><span class="p-cas">1:40</span></li><li><span class="p-nazev">Jak se staví ležení</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Arény</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Galerie LaSen Echaque</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Přistání</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Oheň</span><span class="p-cas">1:20</span></li><li><span class="p-nazev">Vražda R. B.</span><span class="p-cas">1:10</span></li><li><span class="p-nazev">Rew Podsvětí</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Ithaka</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Přespání (odchod)</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Seznamovací večeře</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">rew Trosečníci</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">Přespání (balení)</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">Game over</span><span class="p-cas">0:30</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Organizační provoz</span>
+          <span class="rozdil vic-vm" title="o 1:40 víc na kurzu VM">+1:40</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">14:30</span>
+          <div class="track"><div class="bar" style="width:20.96%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:18.55%"></div></div>
+          <span class="cas">12:50</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Organizační provoz</span>
+            <span><b>ODY:</b> Organizační provoz</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Organizační provoz</li><li><span class="p-nazev">Búrání</span><span class="p-cas">5:00</span></li><li><span class="p-nazev">Příjezd <span class="p-pocet">1× 2:00 + 1× 1:00</span></span><span class="p-cas">3:00</span></li><li><span class="p-nazev">Palouček</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Zahájení s dvojkou</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Dekrety</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">balení a úklid</span><span class="p-cas">0:45</span></li><li><span class="p-nazev">Fitka vzorová + vysvětlení</span><span class="p-cas">0:45</span></li><li><span class="p-nazev">Focení</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">Příjezd + 🥣</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">Úklid</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">Zbytek úklidu</span><span class="p-cas">0:30</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Organizační provoz</li><li><span class="p-nazev">úklid <span class="p-pocet">1× 2:00 + 1× 1:00 + 1× 0:50</span></span><span class="p-cas">3:50</span></li><li><span class="p-nazev">Předání ČZ</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">ZV <span class="p-pocet">1× 0:30 + 2× 0:20</span></span><span class="p-cas">1:10</span></li><li><span class="p-nazev">Kafíčko</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">trojtečka</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">pravidla</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">úvod do ČZ</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">Dvojtečka (SR, Ody)</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">ubytování</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">Kam dál?</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">představení základny + ubytování</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">ubytování + přivítání</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">zadání úkolů</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">Paluba</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">společné focení</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">ZV na víkend</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">Rekapitulace úkolů Mlha</span><span class="p-cas">0:10</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Polední klid</span>
+          <span class="rozdil ">=</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">12:00</span>
+          <div class="track"><div class="bar" style="width:17.35%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:17.35%"></div></div>
+          <span class="cas">12:00</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Polední klid</span>
+            <span><b>ODY:</b> Polední klid</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Polední klid</li><li><span class="p-nazev">🥣+💤 <span class="p-pocet">12× 1:00</span></span><span class="p-cas">12:00</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Polední klid</li><li><span class="p-nazev">poledňák <span class="p-pocet">11× 1:00</span></span><span class="p-cas">11:00</span></li><li><span class="p-nazev">delší poledňák <span class="p-pocet">2× 0:30</span></span><span class="p-cas">1:00</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Pauzy</span>
+          <span class="rozdil vic-ody" title="o 15:10 víc na kurzu ODY">+15:10</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">—</span>
+          <div class="track"><div class="bar" style="width:0.00%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:21.93%"></div></div>
+          <span class="cas">15:10</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> —</span>
+            <span><b>ODY:</b> Pauzy</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-prazdno">—</li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Pauzy</li><li><span class="p-nazev">pauza <span class="p-pocet">6× 0:20 + 70× 0:10</span></span><span class="p-cas">13:40</span></li><li><span class="p-nazev">pauza + kroj <span class="p-pocet">7× 0:10</span></span><span class="p-cas">1:10</span></li><li><span class="p-nazev">volno - čas z úvodní hry</span><span class="p-cas">0:20</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Informace a nástupy</span>
+          <span class="rozdil vic-vm" title="o 3:20 víc na kurzu VM">+3:20</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">7:30</span>
+          <div class="track"><div class="bar" style="width:10.84%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:6.02%"></div></div>
+          <span class="cas">4:10</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Nástupy</span>
+            <span><b>ODY:</b> Nástupy + Zprávy + Inspiro program</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Nástupy</li><li><span class="p-nazev">🏃+🥐+🇨🇿 <span class="p-pocet">11× 0:20</span></span><span class="p-cas">3:40</span></li><li><span class="p-nazev">🥣+🇨🇿 <span class="p-pocet">10× 0:20</span></span><span class="p-cas">3:20</span></li><li><span class="p-nazev">🇨🇿</span><span class="p-cas">0:30</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Nástupy</li><li><span class="p-nazev">nástup N2 <span class="p-pocet">2× 0:10</span></span><span class="p-cas">0:20</span></li><li class="p-balicek">Zprávy</li><li><span class="p-nazev">zprávy + pauza <span class="p-pocet">8× 0:20</span></span><span class="p-cas">2:40</span></li><li><span class="p-nazev">zprávy <span class="p-pocet">3× 0:20</span></span><span class="p-cas">1:00</span></li><li class="p-balicek">Inspiro program</li><li><span class="p-nazev">inspiro-prg Mlha, N2</span><span class="p-cas">0:10</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Rituály a večerní tradice</span>
+          <span class="rozdil vic-ody" title="o 1:30 víc na kurzu ODY">+1:30</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">6:30</span>
+          <div class="track"><div class="bar" style="width:9.40%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:11.57%"></div></div>
+          <span class="cas">8:00</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Volné večery a komunita + Mše</span>
+            <span><b>ODY:</b> Rituály + Večerníčky</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Volné večery a komunita</li><li><span class="p-nazev">Oheň</span><span class="p-cas">3:30</span></li><li><span class="p-nazev">Diskusní čajovna</span><span class="p-cas">2:00</span></li><li class="p-balicek">Mše</li><li><span class="p-nazev">Mše/ Alternativní duchovní program</span><span class="p-cas">1:00</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Rituály</li><li><span class="p-nazev">rituál <span class="p-pocet">7× 0:20</span></span><span class="p-cas">2:20</span></li><li><span class="p-nazev">poslední rituál a loučeníčko</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">rituál po Podsvětí</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">rituál Kobla</span><span class="p-cas">0:10</span></li><li><span class="p-nazev">Rituál Kobla</span><span class="p-cas">0:10</span></li><li class="p-balicek">Večerníčky</li><li><span class="p-nazev">večerníček <span class="p-pocet">2× 0:20</span></span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Večerníček - Kyklop</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">Večerníček - Aiolos</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">Večerníček - Kirké</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">Večerníček - Skylla</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">Večerníček - anglický</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">Večerníček - Teresias</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">Večerníček - Kalypsó</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">Večerníček - pastýř</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">večerníček - Penny</span><span class="p-cas">0:20</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Reflexe</span>
+          <span class="rozdil vic-ody" title="o 1:40 víc na kurzu ODY">+1:40</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">4:30</span>
+          <div class="track"><div class="bar" style="width:6.51%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:8.92%"></div></div>
+          <span class="cas">6:10</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Chvilka</span>
+            <span><b>ODY:</b> Ozvěny</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Chvilka</li><li><span class="p-nazev">Chvilka <span class="p-pocet">9× 0:30</span></span><span class="p-cas">4:30</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Ozvěny</li><li><span class="p-nazev">ozvěny <span class="p-pocet">12× 0:20–0:50</span></span><span class="p-cas">6:00</span></li><li><span class="p-nazev">ozvěny  - Jár, Kob, Top</span><span class="p-cas">0:10</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Volný čas a dodělávky</span>
+          <span class="rozdil vic-vm" title="o 5:00 víc na kurzu VM">+5:00</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">6:30</span>
+          <div class="track"><div class="bar" style="width:9.40%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:2.17%"></div></div>
+          <span class="cas">1:30</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Aktivní volna</span>
+            <span><b>ODY:</b> Dodělávky</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Aktivní volna</li><li><span class="p-nazev">AV <span class="p-pocet">2× 1:30 + 1× 1:00 + 5× 0:30</span></span><span class="p-cas">6:30</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Dodělávky</li><li><span class="p-nazev">Dodělávky <span class="p-pocet">1× 1:20 + 1× 0:10</span></span><span class="p-cas">1:30</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Rozcvičky a budíček</span>
+          <span class="rozdil vic-vm" title="o 0:50 víc na kurzu VM">+0:50</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">5:00</span>
+          <div class="track"><div class="bar" style="width:7.23%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:6.02%"></div></div>
+          <span class="cas">4:10</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Rozcvičky</span>
+            <span><b>ODY:</b> Rozcvičky + Budíček</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Rozcvičky</li><li><span class="p-nazev">🏃+🥐+🇨🇿 <span class="p-pocet">11× 0:20</span></span><span class="p-cas">3:40</span></li><li><span class="p-nazev">🏃+🥐 <span class="p-pocet">3× 0:20</span></span><span class="p-cas">1:00</span></li><li><span class="p-nazev">🏃+🥐 mše</span><span class="p-cas">0:20</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Rozcvičky</li><li><span class="p-nazev">rozcvička N2, Topinka <span class="p-pocet">12× 0:10</span></span><span class="p-cas">2:00</span></li><li class="p-balicek">Budíček</li><li><span class="p-nazev">budíček <span class="p-pocet">7× 0:10</span></span><span class="p-cas">1:10</span></li><li><span class="p-nazev">budíček N2, Topinka <span class="p-pocet">5× 0:10</span></span><span class="p-cas">0:50</span></li><li><span class="p-nazev">budíček  Mlha</span><span class="p-cas">0:10</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Klany a patroni</span>
+          <span class="rozdil vic-vm" title="o 1:20 víc na kurzu VM">+1:20</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">4:00</span>
+          <div class="track"><div class="bar" style="width:5.78%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:3.86%"></div></div>
+          <span class="cas">2:40</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Klany</span>
+            <span><b>ODY:</b> Patroni</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Klany</li><li><span class="p-nazev">Klanové setkání <span class="p-pocet">4× 0:45</span></span><span class="p-cas">3:00</span></li><li><span class="p-nazev">Klanové setkání?</span><span class="p-cas">1:00</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Patroni</li><li><span class="p-nazev">patronská večeře <span class="p-pocet">1× 0:40 + 1× 0:30</span></span><span class="p-cas">1:10</span></li><li><span class="p-nazev">patronská svačina <span class="p-pocet">2× 0:30</span></span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Patronská fitka</span><span class="p-cas">0:30</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Fitka</span>
+          <span class="rozdil vic-vm" title="o 2:55 víc na kurzu VM">+2:55</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">4:45</span>
+          <div class="track"><div class="bar" style="width:6.87%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:2.65%"></div></div>
+          <span class="cas">1:50</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Fitka</span>
+            <span><b>ODY:</b> Fitka</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Fitka</li><li><span class="p-nazev">🏃+🍏 <span class="p-pocet">18× 0:15</span></span><span class="p-cas">4:30</span></li><li><span class="p-nazev">🏃</span><span class="p-cas">0:15</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Fitka</li><li><span class="p-nazev">fitka <span class="p-pocet">2× 0:20</span></span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Fitka</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">fitka na jména</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">67</span><span class="p-cas">0:20</span></li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+      <div class="radek">
+        <div class="nazev">
+          <span class="oblast">Workshopy</span>
+          <span class="rozdil vic-vm" title="o 3:00 víc na kurzu VM">+3:00</span>
+        </div>
+        <div class="strana vm">
+          <span class="cas">3:00</span>
+          <div class="track"><div class="bar" style="width:4.34%"></div></div>
+        </div>
+        <div class="strana ody">
+          <div class="track"><div class="bar" style="width:0.00%"></div></div>
+          <span class="cas">—</span>
+        </div>
+        <div class="detail">
+          <p class="mapovani">
+            <span><b>VM:</b> Relaxíky</span>
+            <span><b>ODY:</b> —</span>
+          </p>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Relaxíky</li><li><span class="p-nazev">Relaxíky <span class="p-pocet">2× 1:30</span></span><span class="p-cas">3:00</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-prazdno">—</li></ul></div>
+          </div>
+        </details>
+        </div>
+      </div>
+
+<h2>Na co si dát pozor</h2>
+<ul class="pozn">
+  <li><b>Pauzy a kompetenční čas jsou dvě strany téže mince.</b> U ODY jsou pauzy samostatné
+  buňky harmonogramu (15:10), u VM jsou uvnitř programových bloků, takže se rozpustily
+  do ostatních oblastí včetně kompetenčních. Skutečný rozdíl v oborech je proto menší
+  než 10:40.</li>
+  <li><b>Reálný rozdíl v pojetí:</b> ODY dává výrazně víc do velkých zážitkových her,
+  VM do klanů, workshopů (Relaxíky) a aktivních voln.</li>
+  <li><b>Workshopy</b> mají na straně ODY nulu: workshopy (WS) tam patří do kompetenčního
+  balíčku Tvorba programu.</li>
+</ul>
+
+</section>
+
+<section class="panel" id="panel2">
+<h2>Párování kompetenčních balíčků</h2>
+<p class="podtitul">Spojnicí jsou body kompetenčního modelu, ze kterého vycházejí oba kurzy.
+Výška uzlu i šířka proudu odpovídá času; obě strany mají stejné měřítko, takže vyšší
+sloupec znamená víc hodin. Prostřední uzel se zužuje nebo rozšiřuje podle toho, který
+kurz dané oblasti věnuje víc.</p>
+<div class="sankey-obal"><svg viewBox="0 0 900 1205" role="img" aria-label="Sankeyho diagram párování kompetenčních balíčků"><text class="hlavicka vm" x="237" y="16" text-anchor="end">VM 2025</text><text class="hlavicka ody" x="643" y="16">ODY 2026</text><path class="s-vm" d="M250,30.0 C340.0,30.0 340.0,30.0 430,30.0 L430,258.0 C340.0,258.0 340.0,258.0 250,258.0 Z"/><path class="s-ody" d="M443,138.0 C536.5,138.0 536.5,138.0 630,138.0 L630,150.0 C536.5,150.0 536.5,150.0 443,150.0 Z"/><path class="s-vm" d="M250,316.0 C340.0,316.0 340.0,316.0 430,316.0 L430,418.0 C340.0,418.0 340.0,418.0 250,418.0 Z"/><path class="s-ody" d="M443,276.0 C536.5,276.0 536.5,276.0 630,276.0 L630,384.0 C536.5,384.0 536.5,384.0 443,384.0 Z"/><path class="s-ody" d="M443,384.0 C536.5,384.0 536.5,384.0 630,384.0 L630,432.0 C536.5,432.0 536.5,432.0 443,432.0 Z"/><path class="s-ody" d="M443,432.0 C536.5,432.0 536.5,432.0 630,432.0 L630,458.0 C536.5,458.0 536.5,458.0 443,458.0 Z"/><path class="s-vm" d="M250,476.0 C340.0,476.0 340.0,476.0 430,476.0 L430,587.0 C340.0,587.0 340.0,587.0 250,587.0 Z"/><path class="s-ody" d="M443,507.5 C536.5,507.5 536.5,507.5 630,507.5 L630,555.5 C536.5,555.5 536.5,555.5 443,555.5 Z"/><path class="s-vm" d="M250,624.0 C340.0,624.0 340.0,624.0 430,624.0 L430,654.0 C340.0,654.0 340.0,654.0 250,654.0 Z"/><path class="s-ody" d="M443,605.0 C536.5,605.0 536.5,605.0 630,605.0 L630,647.0 C536.5,647.0 536.5,647.0 443,647.0 Z"/><path class="s-ody" d="M443,647.0 C536.5,647.0 536.5,647.0 630,647.0 L630,673.0 C536.5,673.0 536.5,673.0 443,673.0 Z"/><path class="s-vm" d="M250,705.0 C340.0,705.0 340.0,705.0 430,705.0 L430,783.0 C340.0,783.0 340.0,783.0 250,783.0 Z"/><path class="s-vm" d="M250,783.0 C340.0,783.0 340.0,783.0 430,783.0 L430,795.0 C340.0,795.0 340.0,795.0 250,795.0 Z"/><path class="s-ody" d="M443,691.0 C536.5,691.0 536.5,691.0 630,691.0 L630,757.0 C536.5,757.0 536.5,757.0 443,757.0 Z"/><path class="s-ody" d="M443,757.0 C536.5,757.0 536.5,757.0 630,757.0 L630,809.0 C536.5,809.0 536.5,809.0 443,809.0 Z"/><path class="s-vm" d="M250,827.0 C340.0,827.0 340.0,827.0 430,827.0 L430,875.0 C340.0,875.0 340.0,875.0 250,875.0 Z"/><path class="s-ody" d="M443,838.0 C536.5,838.0 536.5,838.0 630,838.0 L630,864.0 C536.5,864.0 536.5,864.0 443,864.0 Z"/><path class="s-vm" d="M250,899.0 C340.0,899.0 340.0,899.0 430,899.0 L430,941.0 C340.0,941.0 340.0,941.0 250,941.0 Z"/><path class="s-vm" d="M250,941.0 C340.0,941.0 340.0,941.0 430,941.0 L430,977.0 C340.0,977.0 340.0,977.0 250,977.0 Z"/><path class="s-ody" d="M443,893.0 C536.5,893.0 536.5,893.0 630,893.0 L630,939.0 C536.5,939.0 536.5,939.0 443,939.0 Z"/><path class="s-ody" d="M443,939.0 C536.5,939.0 536.5,939.0 630,939.0 L630,983.0 C536.5,983.0 536.5,983.0 443,983.0 Z"/><path class="s-vm" d="M250,1005.0 C340.0,1005.0 340.0,1005.0 430,1005.0 L430,1035.0 C340.0,1035.0 340.0,1035.0 250,1035.0 Z"/><path class="s-vm" d="M250,1035.0 C340.0,1035.0 340.0,1035.0 430,1035.0 L430,1053.0 C340.0,1053.0 340.0,1053.0 250,1053.0 Z"/><path class="s-ody" d="M443,1001.0 C536.5,1001.0 536.5,1001.0 630,1001.0 L630,1057.0 C536.5,1057.0 536.5,1057.0 443,1057.0 Z"/><path class="s-vm" d="M250,1078.5 C340.0,1078.5 340.0,1078.5 430,1078.5 L430,1173.5 C340.0,1173.5 340.0,1173.5 250,1173.5 Z"/><path class="s-ody" d="M443,1075.0 C536.5,1075.0 536.5,1075.0 630,1075.0 L630,1133.0 C536.5,1133.0 536.5,1133.0 443,1133.0 Z"/><path class="s-ody" d="M443,1133.0 C536.5,1133.0 536.5,1133.0 630,1133.0 L630,1177.0 C536.5,1177.0 536.5,1177.0 443,1177.0 Z"/><path class="stred" d="M430,30.0 L443,138.0 L443,150.0 L430,258.0 Z"/><text class="o-nazev" x="436" y="25.0" text-anchor="middle">Stranou (balíčky bez bodů)</text><rect class="n-vm" x="237" y="30.0" width="13" height="228.0" rx="2"><title>Projektorát — 19:00, body —</title></rect><text class="b-label vm" x="229" y="148.0" text-anchor="end">Projektorát <tspan class="cas-l">19:00</tspan></text><rect class="n-ody" x="630" y="138.0" width="13" height="12.0" rx="2"><title>Výprava — 1:00, body —</title></rect><text class="b-label ody" x="651" y="148.0">Výprava <tspan class="cas-l">1:00</tspan></text><path class="stred" d="M430,316.0 L443,276.0 L443,458.0 L430,418.0 Z"/><text class="o-nazev" x="436" y="271.0" text-anchor="middle">Plánování, tvorba programu a hodnocení</text><rect class="n-vm" x="237" y="316.0" width="13" height="102.0" rx="2"><title>Metodika — 8:30, body [6, 17, 18, 19, 20, 21]</title></rect><text class="b-label vm" x="229" y="371.0" text-anchor="end">Metodika <tspan class="cas-l">8:30</tspan></text><rect class="n-ody" x="630" y="276.0" width="13" height="108.0" rx="2"><title>Tvorba programu — 9:00, body 19, 20b, 29</title></rect><text class="b-label ody" x="651" y="334.0">Tvorba programu <tspan class="cas-l">9:00</tspan></text><rect class="n-ody" x="630" y="384.0" width="13" height="48.0" rx="2"><title>Plánování — 4:00, body 17a, 18, 20a, 21</title></rect><text class="b-label ody" x="651" y="412.0">Plánování <tspan class="cas-l">4:00</tspan></text><rect class="n-ody" x="630" y="432.0" width="13" height="26.0" rx="2"><title>Zpětná vazba — 2:10, body 17b, 25, 28</title></rect><text class="b-label ody" x="651" y="449.0">Zpětná vazba <tspan class="cas-l">2:10</tspan></text><path class="stred" d="M430,476.0 L443,507.5 L443,555.5 L430,587.0 Z"/><text class="o-nazev" x="436" y="471.0" text-anchor="middle">Osobnost a sebeřízení</text><rect class="n-vm" x="237" y="476.0" width="13" height="111.0" rx="2"><title>Osobnost — 9:15, body [13, 23, 24, 26, 31]</title></rect><text class="b-label vm" x="229" y="535.5" text-anchor="end">Osobnost <tspan class="cas-l">9:15</tspan></text><rect class="n-ody" x="630" y="507.5" width="13" height="48.0" rx="2"><title>Osobnost — 4:00, body 23, 24, 26, 27</title></rect><text class="b-label ody" x="651" y="535.5">Osobnost <tspan class="cas-l">4:00</tspan></text><path class="stred" d="M430,624.0 L443,605.0 L443,673.0 L430,654.0 Z"/><text class="o-nazev" x="436" y="600.0" text-anchor="middle">Komunikace a vedení</text><rect class="n-vm" x="237" y="624.0" width="13" height="30.0" rx="2"><title>Komunikace — 2:30, body [14, 16, 25, 28, 32, 34]</title></rect><text class="b-label vm" x="229" y="643.0" text-anchor="end">Komunikace <tspan class="cas-l">2:30</tspan></text><rect class="n-ody" x="630" y="605.0" width="13" height="42.0" rx="2"><title>Komunikace — 3:30, body 32, 33, 34</title></rect><text class="b-label ody" x="651" y="630.0">Komunikace <tspan class="cas-l">3:30</tspan></text><rect class="n-ody" x="630" y="647.0" width="13" height="26.0" rx="2"><title>Vedení — 2:10, body 14, 15c, 16, 35</title></rect><text class="b-label ody" x="651" y="664.0">Vedení <tspan class="cas-l">2:10</tspan></text><path class="stred" d="M430,705.0 L443,691.0 L443,809.0 L430,795.0 Z"/><text class="o-nazev" x="436" y="686.0" text-anchor="middle">Myšlenkové základy a skautská praxe</text><rect class="n-vm" x="237" y="705.0" width="13" height="78.0" rx="2"><title>MZHS — 6:30, body [1, 2, 27]</title></rect><text class="b-label vm" x="229" y="748.0" text-anchor="end">MZHS <tspan class="cas-l">6:30</tspan></text><rect class="n-vm" x="237" y="783.0" width="13" height="12.0" rx="2"><title>SVM — 1:00, body [3]</title></rect><text class="b-label vm" x="229" y="793.0" text-anchor="end">SVM <tspan class="cas-l">1:00</tspan></text><rect class="n-ody" x="630" y="691.0" width="13" height="66.0" rx="2"><title>Metodika — 5:30, body 3, 4, 6</title></rect><text class="b-label ody" x="651" y="728.0">Metodika <tspan class="cas-l">5:30</tspan></text><rect class="n-ody" x="630" y="757.0" width="13" height="52.0" rx="2"><title>Skauting — 4:20, body 1, 2</title></rect><text class="b-label ody" x="651" y="787.0">Skauting <tspan class="cas-l">4:20</tspan></text><path class="stred" d="M430,827.0 L443,838.0 L443,864.0 L430,875.0 Z"/><text class="o-nazev" x="436" y="822.0" text-anchor="middle">Hospodaření</text><rect class="n-vm" x="237" y="827.0" width="13" height="48.0" rx="2"><title>Hospodaření — 4:00, body [22]</title></rect><text class="b-label vm" x="229" y="855.0" text-anchor="end">Hospodaření <tspan class="cas-l">4:00</tspan></text><rect class="n-ody" x="630" y="838.0" width="13" height="26.0" rx="2"><title>Hospodaření — 2:10, body 22</title></rect><text class="b-label ody" x="651" y="855.0">Hospodaření <tspan class="cas-l">2:10</tspan></text><path class="stred" d="M430,899.0 L443,893.0 L443,983.0 L430,977.0 Z"/><text class="o-nazev" x="436" y="888.0" text-anchor="middle">Bezpečnost a zdravověda</text><rect class="n-vm" x="237" y="899.0" width="13" height="42.0" rx="2"><title>Zdravověda — 3:30, body [12]</title></rect><text class="b-label vm" x="229" y="924.0" text-anchor="end">Zdravověda <tspan class="cas-l">3:30</tspan></text><rect class="n-vm" x="237" y="941.0" width="13" height="36.0" rx="2"><title>Táboření a bezpečnost — 3:00, body [4, 7, 9]</title></rect><text class="b-label vm" x="229" y="963.0" text-anchor="end">Táboření a bezpečnost <tspan class="cas-l">3:00</tspan></text><rect class="n-ody" x="630" y="893.0" width="13" height="46.0" rx="2"><title>Bezpečnost — 3:50, body 12b, 7a, 9</title></rect><text class="b-label ody" x="651" y="920.0">Bezpečnost <tspan class="cas-l">3:50</tspan></text><rect class="n-ody" x="630" y="939.0" width="13" height="44.0" rx="2"><title>Zdravověda — 3:40, body 12a, 7d</title></rect><text class="b-label ody" x="651" y="965.0">Zdravověda <tspan class="cas-l">3:40</tspan></text><path class="stred" d="M430,1005.0 L443,1001.0 L443,1057.0 L430,1053.0 Z"/><text class="o-nazev" x="436" y="996.0" text-anchor="middle">Právo a organizace</text><rect class="n-vm" x="237" y="1005.0" width="13" height="30.0" rx="2"><title>Právo — 2:30, body [10, 11]</title></rect><text class="b-label vm" x="229" y="1024.0" text-anchor="end">Právo <tspan class="cas-l">2:30</tspan></text><rect class="n-vm" x="237" y="1035.0" width="13" height="18.0" rx="2"><title>Organizace — 1:30, body [5]</title></rect><text class="b-label vm" x="229" y="1048.0" text-anchor="end">Organizace <tspan class="cas-l">1:30</tspan></text><rect class="n-ody" x="630" y="1001.0" width="13" height="56.0" rx="2"><title>Právo a Organizace — 4:40, body 10, 11, 5</title></rect><text class="b-label ody" x="651" y="1033.0">Právo a Organizace <tspan class="cas-l">4:40</tspan></text><path class="stred" d="M430,1078.5 L443,1075.0 L443,1177.0 L430,1173.5 Z"/><text class="o-nazev" x="436" y="1070.0" text-anchor="middle">Pedagogika a psychologie</text><rect class="n-vm" x="237" y="1078.5" width="13" height="95.0" rx="2"><title>Psychologie — 7:55, body [8, 15, 29, 30, 33]</title></rect><text class="b-label vm" x="229" y="1130.0" text-anchor="end">Psychologie <tspan class="cas-l">7:55</tspan></text><rect class="n-ody" x="630" y="1075.0" width="13" height="58.0" rx="2"><title>Psychologie — 4:50, body 13b, 15b, 30b, 7c, 8</title></rect><text class="b-label ody" x="651" y="1108.0">Psychologie <tspan class="cas-l">4:50</tspan></text><rect class="n-ody" x="630" y="1133.0" width="13" height="44.0" rx="2"><title>Pedagogika — 3:40, body 13a, 15a, 30a, 31, 7b</title></rect><text class="b-label ody" x="651" y="1159.0">Pedagogika <tspan class="cas-l">3:40</tspan></text></svg></div>
+
+<h2>Oblasti podrobně</h2>
+<p class="podtitul">Rozbalením se ukážou programy, které do oblasti na každém kurzu patří.</p>
+<div class="k-oblast"><div class="k-hlava"><span class="k-nazev">Stranou (balíčky bez bodů)</span><span class="k-casy"><b class="c-vm">19:00</b> · <b class="c-ody">1:00</b></span></div>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Projektorát</li><li><span class="p-nazev">Projekty <span class="p-pocet">1× 2:00 + 1× 1:30</span></span><span class="p-cas">3:30</span></li><li><span class="p-nazev">Schůzka průvodců k projektům</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Projekty I</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Projekty II</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Projekty III</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Projekty IV</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Projekty - první práce</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Projekty - práce</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Projekty - prezentace</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Projekty - reflexe</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Projekty reflexe</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Projekty - zadání</span><span class="p-cas">0:30</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Výprava</li><li><span class="p-nazev">Výprava</span><span class="p-cas">1:00</span></li></ul></div>
+          </div>
+        </details></div><div class="k-oblast"><div class="k-hlava"><span class="k-nazev">Plánování, tvorba programu a hodnocení</span><span class="k-casy"><b class="c-vm">8:30</b> · <b class="c-ody">15:10</b></span></div>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Metodika</li><li><span class="p-nazev">Analýza a cíle</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Zpětná vazba</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Nástroje</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Výpravy info</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">SVM Prakticky</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Sdílení výprav</span><span class="p-cas">1:00</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Plánování</li><li><span class="p-nazev">Cíl na výpravu      Benji, Kiwi, Kobla</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Harmonogram      Benji, Kiwi, Kobla</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Úvod, teorie k cílům</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Nečekané situace</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Plán vs. Realita</span><span class="p-cas">0:40</span></li><li class="p-balicek">Tvorba programu</li><li><span class="p-nazev">WS <span class="p-pocet">7× 0:30</span></span><span class="p-cas">3:30</span></li><li><span class="p-nazev">Vývojovka</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">1. Rybička</span><span class="p-cas">1:20</span></li><li><span class="p-nazev">Ohlédnutí za WS <span class="p-pocet">7× 0:10</span></span><span class="p-cas">1:10</span></li><li><span class="p-nazev">2. Dovymýšlení proprdu</span><span class="p-cas">1:00</span></li><li class="p-balicek">Zpětná vazba</li><li><span class="p-nazev">Ústní ZV</span><span class="p-cas">1:20</span></li><li><span class="p-nazev">Úvod do ZV</span><span class="p-cas">0:50</span></li></ul></div>
+          </div>
+        </details></div><div class="k-oblast"><div class="k-hlava"><span class="k-nazev">Osobnost a sebeřízení</span><span class="k-casy"><b class="c-vm">9:15</b> · <b class="c-ody">4:00</b></span></div>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Osobnost</li><li><span class="p-nazev">🍏 + Sebeřízení</span><span class="p-cas">1:45</span></li><li><span class="p-nazev">Řeka</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Čekatel jako vychovatel</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Vztahy (hlavně v oddíle</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Kam dál</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Konec kruhu</span><span class="p-cas">1:30</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Osobnost</li><li><span class="p-nazev">1. Večerní zamyšlení</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">3. Skaut odborník</span><span class="p-cas">1:20</span></li><li><span class="p-nazev">2. Jak pracovat sám se sebou?</span><span class="p-cas">0:40</span></li></ul></div>
+          </div>
+        </details></div><div class="k-oblast"><div class="k-hlava"><span class="k-nazev">Komunikace a vedení</span><span class="k-casy"><b class="c-vm">2:30</b> · <b class="c-ody">5:40</b></span></div>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Komunikace</li><li><span class="p-nazev">Kolečko člk</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Kombíky</span><span class="p-cas">1:00</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Komunikace</li><li><span class="p-nazev">2. Komunikace</span><span class="p-cas">1:20</span></li><li><span class="p-nazev">3. Hodina s trendy</span><span class="p-cas">1:20</span></li><li><span class="p-nazev">1. Úvod do komunikace</span><span class="p-cas">0:50</span></li><li class="p-balicek">Vedení</li><li><span class="p-nazev">Pochop a rozděl!  Topinka, Benji</span><span class="p-cas">1:20</span></li><li><span class="p-nazev">Managuj a inspiruj</span><span class="p-cas">0:50</span></li></ul></div>
+          </div>
+        </details></div><div class="k-oblast"><div class="k-hlava"><span class="k-nazev">Myšlenkové základy a skautská praxe</span><span class="k-casy"><b class="c-vm">7:30</b> · <b class="c-ody">9:50</b></span></div>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">MZHS</li><li><span class="p-nazev">Výhledy</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Historický program</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Guláš skautingu</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Jde o principy</span><span class="p-cas">1:30</span></li><li class="p-balicek">SVM</li><li><span class="p-nazev">SVM běhačka</span><span class="p-cas">1:00</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Skauting</li><li><span class="p-nazev">Historie skautingu</span><span class="p-cas">1:20</span></li><li><span class="p-nazev">Ráno na návsi</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Jak předávat myšlenkové základy</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">kroužek?</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">životní styl.</span><span class="p-cas">0:30</span></li><li class="p-balicek">Metodika</li><li><span class="p-nazev">2. Vyhodnocení Bludiště</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">8 barev duhy</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Tábornické dovednosti</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Naše oddílová paleta</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Magická 8</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Pestrobarevná Ody</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">1. Bludiště</span><span class="p-cas">0:30</span></li></ul></div>
+          </div>
+        </details></div><div class="k-oblast"><div class="k-hlava"><span class="k-nazev">Hospodaření</span><span class="k-casy"><b class="c-vm">4:00</b> · <b class="c-ody">2:10</b></span></div>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Hospodaření</li><li><span class="p-nazev">Pekelné kruhy hospodaření</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Všechno co jsme nestihli</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Cesta řádného hospodáře</span><span class="p-cas">1:00</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Hospodaření</li><li><span class="p-nazev">2. Spočteno a odevzdáno!</span><span class="p-cas">0:50</span></li><li><span class="p-nazev">1. Pod pokličkou</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Jak funguje hospo v oddíle?</span><span class="p-cas">0:40</span></li></ul></div>
+          </div>
+        </details></div><div class="k-oblast"><div class="k-hlava"><span class="k-nazev">Bezpečnost a zdravověda</span><span class="k-casy"><b class="c-vm">6:30</b> · <b class="c-ody">7:30</b></span></div>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Táboření a bezpečnost</li><li><span class="p-nazev">Bezpečnost 1</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Bezpečnost 2</span><span class="p-cas">1:30</span></li><li class="p-balicek">Zdravověda</li><li><span class="p-nazev">Zdravověda <span class="p-pocet">1× 2:00 + 1× 1:30</span></span><span class="p-cas">3:30</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Bezpečnost</li><li><span class="p-nazev">Smůlkos</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">2. Bezpečnostní WS</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">Přednáška o bezpečnosti</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Krizovky</span><span class="p-cas">0:40</span></li><li class="p-balicek">Zdravověda</li><li><span class="p-nazev">2. Procházka v Růžové zahradě</span><span class="p-cas">1:10</span></li><li><span class="p-nazev">Zdravověda I.</span><span class="p-cas">0:50</span></li><li><span class="p-nazev">Zdravověda II.</span><span class="p-cas">0:50</span></li><li><span class="p-nazev">Úvod do zdravovědy</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">1. Konzultace</span><span class="p-cas">0:20</span></li><li><span class="p-nazev">3. Uzavření zdravo</span><span class="p-cas">0:10</span></li></ul></div>
+          </div>
+        </details></div><div class="k-oblast"><div class="k-hlava"><span class="k-nazev">Právo a organizace</span><span class="k-casy"><b class="c-vm">4:00</b> · <b class="c-ody">4:40</b></span></div>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Právo</li><li><span class="p-nazev">ČLK právo</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Právo - úvod + fitka!</span><span class="p-cas">0:30</span></li><li class="p-balicek">Organizace</li><li><span class="p-nazev">ČLK Organizace</span><span class="p-cas">1:30</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Právo a Organizace</li><li><span class="p-nazev">4. Odpovědnost</span><span class="p-cas">1:20</span></li><li><span class="p-nazev">5. Právní předpisy v oddílovém životě</span><span class="p-cas">1:00</span></li><li><span class="p-nazev">2. Středisko</span><span class="p-cas">0:50</span></li><li><span class="p-nazev">3. Právní jednání</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">1. Stanovy a org. struktura</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">6. Gamebook</span><span class="p-cas">0:20</span></li></ul></div>
+          </div>
+        </details></div><div class="k-oblast"><div class="k-hlava"><span class="k-nazev">Pedagogika a psychologie</span><span class="k-casy"><b class="c-vm">7:55</b> · <b class="c-ody">8:30</b></span></div>
+        <details class="rozbal">
+          <summary>Programy v oblasti</summary>
+          <div class="programy">
+            <div class="p-strana vm"><h4>VM 2025</h4>
+              <ul><li class="p-balicek">Psychologie</li><li><span class="p-nazev">Přirozený důsledek</span><span class="p-cas">2:00</span></li><li><span class="p-nazev">Vývojová psychologie</span><span class="p-cas">1:55</span></li><li><span class="p-nazev">Superheroes</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Sexualita a vztahy</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">Bezpečné prostředí</span><span class="p-cas">1:00</span></li></ul></div>
+            <div class="p-strana ody"><h4>ODY 2026</h4>
+              <ul><li class="p-balicek">Psychologie</li><li><span class="p-nazev">Vztahy, respekt, hranice</span><span class="p-cas">1:30</span></li><li><span class="p-nazev">2. Řešení krize</span><span class="p-cas">1:20</span></li><li><span class="p-nazev">1. Prevence rizik</span><span class="p-cas">0:50</span></li><li><span class="p-nazev">Specifické potřeby</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Psychická bezpečnost</span><span class="p-cas">0:30</span></li><li class="p-balicek">Pedagogika</li><li><span class="p-nazev">1. Motivace a vnitřní fungování</span><span class="p-cas">0:50</span></li><li><span class="p-nazev">Poznávání svěřenců</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Vztahy</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">2. Autorita, vzory, hranice</span><span class="p-cas">0:40</span></li><li><span class="p-nazev">Omezení</span><span class="p-cas">0:30</span></li><li><span class="p-nazev">+Vnímání sebe a okolí</span><span class="p-cas">0:20</span></li></ul></div>
+          </div>
+        </details></div>
+
+<h2>Vazby přes hranice oblastí</h2>
+<p class="podtitul">Body, kde si kurzy téma rozdělily jinak. Oblasti jsou postavené tak,
+aby těchto přesahů bylo co nejméně — úplně je odstranit nelze.</p>
+<div class="tab-obal">
+<table class="prekryvy">
+  <thead><tr><th>Bod modelu</th><th>VM</th><th>ODY</th></tr></thead>
+  <tbody><tr><td>4</td><td>Táboření a bezpečnost</td><td>Metodika</td></tr><tr><td>6</td><td>Metodika</td><td>Metodika</td></tr><tr><td>7</td><td>Táboření a bezpečnost</td><td>Pedagogika</td></tr><tr><td>7</td><td>Táboření a bezpečnost</td><td>Psychologie</td></tr><tr><td>13</td><td>Osobnost</td><td>Psychologie</td></tr><tr><td>13, 31</td><td>Osobnost</td><td>Pedagogika</td></tr><tr><td>15</td><td>Psychologie</td><td>Vedení</td></tr><tr><td>25, 28</td><td>Komunikace</td><td>Zpětná vazba</td></tr><tr><td>27</td><td>MZHS</td><td>Osobnost</td></tr><tr><td>29</td><td>Psychologie</td><td>Tvorba programu</td></tr><tr><td>33</td><td>Psychologie</td><td>Komunikace</td></tr></tbody>
+</table>
+</div>
+
+<h2>Co srovnání zkresluje</h2>
+<ul class="pozn">
+  <li><b>Projektorát (19:00) proti Výpravě (1:00).</b> Obojí je balíček bez přiřazených bodů,
+  ale u VM je to čtvrtina kompetenčního času. Bez této oblasti je poměr
+  VM 50:10 vs
+  ODY 57:30, tedy obráceně — víc má ODY.</li>
+  <li><b>Bod 35</b> („Ví, jak funguje oddíl“) si přidala ODY, ve VM není. Nadhodnocuje
+  oblast Komunikace a vedení na straně ODY.</li>
+  <li><b>ODY body skutečně dělí</b> na části s písmeny (7a–7d, 15a–15c, 17a/17b, 20a/20b,
+  12a/12b, 13a/13b, 30a/30b), zatímco VM měl jen jednu duplicitu. Jeden bod VM proto často
+  odpovídá několika balíčkům ODY.</li>
+</ul>
+</section>
+
+<footer>Generuje <code>generate_web.py</code> z <code>mapovani-kurzu.csv</code>,
+<code>soucty-balicku.csv</code> a <code>ody-soucty-balicku.csv</code>.</footer>
+</div>
+</body>
+</html>
