@@ -7,12 +7,12 @@
 <style>
 :root {
   --papir: #fbfaf8; --text: #1c1a17; --tich: #6d675e; --linka: #e2ddd4;
-  --vm: #2f6f8f; --ody: #9a7400; --zvyraz: #f3f0e6;
+  --vm: #2f6f8f; --ody: #9a7400; --zvyraz: #f3f0e6; --kriz: #8b3a8b;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --papir: #17161a; --text: #eceaf0; --tich: #9e98a6; --linka: #322f38;
-    --vm: #6fb2d2; --ody: #e8c14f; --zvyraz: #1f1e22;
+    --vm: #6fb2d2; --ody: #e8c14f; --zvyraz: #1f1e22; --kriz: #cf8fd6;
   }
 }
 * { box-sizing: border-box; }
@@ -133,11 +133,16 @@ h3 { font-size: 1rem; margin: 0 0 .2rem; }
 .k-nazev { font-weight: 600; }
 .k-casy { font-size: .9rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .c-vm { color: var(--vm); } .c-ody { color: var(--ody); }
-table.prekryvy { border-collapse: collapse; width: 100%; font-size: .85rem; }
-table.prekryvy th, table.prekryvy td { text-align: left; padding: .3rem .5rem;
-  border-bottom: 1px solid var(--linka); vertical-align: top; }
-table.prekryvy th { color: var(--tich); font-weight: 600; }
-.tab-obal { overflow-x: auto; }
+.l-shoda { fill: var(--tich); opacity: .22; }
+.l-kriz { fill: var(--kriz); opacity: .45; }
+.l-shoda:hover, .l-kriz:hover { opacity: .7; }
+.n-jen { fill: var(--tich); }
+.legenda-vazeb { display: flex; flex-wrap: wrap; gap: .3rem 1.2rem;
+  margin: .5rem 0 0; font-size: .85rem; color: var(--tich); }
+.l-legenda { display: inline-flex; align-items: center; gap: .4rem; white-space: nowrap; }
+.sw { display: inline-block; width: 1.4rem; height: .55rem; border-radius: .15rem; }
+.sw.shoda { background: color-mix(in srgb, var(--tich) 40%, transparent); }
+.sw.kriz { background: color-mix(in srgb, var(--kriz) 65%, transparent); }
 footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--linka);
   font-size: .8rem; color: var(--tich); }
 </style>
@@ -682,15 +687,143 @@ kurz dané oblasti věnuje víc.</p>
           </div>
         </details></div>
 
-<h2>Vazby přes hranice oblastí</h2>
-<p class="podtitul">Body, kde si kurzy téma rozdělily jinak. Oblasti jsou postavené tak,
-aby těchto přesahů bylo co nejméně — úplně je odstranit nelze.</p>
-<div class="tab-obal">
-<table class="prekryvy">
-  <thead><tr><th>Bod modelu</th><th>VM</th><th>ODY</th></tr></thead>
-  <tbody><tr><td>4</td><td>Táboření a bezpečnost</td><td>Metodika</td></tr><tr><td>6</td><td>Metodika</td><td>Metodika</td></tr><tr><td>7</td><td>Táboření a bezpečnost</td><td>Pedagogika</td></tr><tr><td>7</td><td>Táboření a bezpečnost</td><td>Psychologie</td></tr><tr><td>13</td><td>Osobnost</td><td>Psychologie</td></tr><tr><td>13, 31</td><td>Osobnost</td><td>Pedagogika</td></tr><tr><td>15</td><td>Psychologie</td><td>Vedení</td></tr><tr><td>25, 28</td><td>Komunikace</td><td>Zpětná vazba</td></tr><tr><td>27</td><td>MZHS</td><td>Osobnost</td></tr><tr><td>29</td><td>Psychologie</td><td>Tvorba programu</td></tr><tr><td>33</td><td>Psychologie</td><td>Komunikace</td></tr></tbody>
-</table>
-</div>
+<h2>Provázanost balíčků přes body modelu</h2>
+<p class="podtitul">Tady je jednotkou <b>dílčí bod kompetenčního modelu</b>, ne čas.
+Každý dílčí bod ODY (např.&nbsp;7a) má právě jeden odpovídající balíček VM, takže
+šířka proudu = počet společných bodů a číslo u uzlu = kolik dílčích bodů do balíčku spadá (u&nbsp;VM proto může být vyšší než počet bodů modelu — jeden bod VM odpovídá několika dílčím bodům ODY).</p>
+<p class="legenda-vazeb">
+  <span class="l-legenda"><span class="sw shoda"></span>vazba uvnitř jedné oblasti</span>
+  <span class="l-legenda"><span class="sw kriz"></span>vazba přes hranici oblastí</span>
+</p>
+<div class="sankey-obal"><svg viewBox="0 0 900 833" role="img" aria-label="Provázanost balíčků přes body kompetenčního modelu"><text class="hlavicka vm" x="288" y="14" text-anchor="end">VM 2025</text><text class="hlavicka ody" x="612" y="14">ODY 2026</text><path class="l-shoda" d="M300,26.0 C450.0,26.0 450.0,26.0 600,26.0 L600,86.0 C450.0,86.0 450.0,86.0 300,86.0 Z"><title>Metodika → Plánování:
+• Analýza současného stavu
+• Práce s cíli
+• Stanovení časového plánu
+• Vyhodnocení plánu</title></path><path class="l-shoda" d="M300,86.0 C450.0,86.0 450.0,95.0 600,95.0 L600,125.0 C450.0,125.0 450.0,116.0 300,116.0 Z"><title>Metodika → Tvorba programu:
+• Volba prostředku
+• Realizace programu</title></path><path class="l-shoda" d="M300,116.0 C450.0,116.0 450.0,149.0 600,149.0 L600,164.0 C450.0,164.0 450.0,131.0 300,131.0 Z"><title>Metodika → Zpětná vazba:
+• Získávání zpětné vazby</title></path><path class="l-kriz" d="M300,131.0 C450.0,131.0 450.0,395.0 600,395.0 L600,410.0 C450.0,410.0 450.0,146.0 300,146.0 Z"><title>Metodika → Metodika:
+• Metodické nástroje Junáka - českého skauta</title></path><path class="l-shoda" d="M300,155.0 C450.0,155.0 450.0,203.0 600,203.0 L600,248.0 C450.0,248.0 450.0,200.0 300,200.0 Z"><title>Osobnost → Osobnost:
+• Rozvoj a osobní cíle
+• Náhled na sebe
+• Sebeřízení</title></path><path class="l-kriz" d="M300,200.0 C450.0,200.0 450.0,659.0 600,659.0 L600,689.0 C450.0,689.0 450.0,230.0 300,230.0 Z"><title>Osobnost → Pedagogika:
+• Vztahy se svěřenci
+• Vlastní příklad</title></path><path class="l-kriz" d="M300,230.0 C450.0,230.0 450.0,743.0 600,743.0 L600,758.0 C450.0,758.0 450.0,245.0 300,245.0 Z"><title>Osobnost → Psychologie:
+• Budování vztahů</title></path><path class="l-kriz" d="M300,254.0 C450.0,254.0 450.0,164.0 600,164.0 L600,194.0 C450.0,194.0 450.0,284.0 300,284.0 Z"><title>Komunikace → Zpětná vazba:
+• Přijímání zpětné vazby
+• Poskytování zpětné vazby</title></path><path class="l-shoda" d="M300,284.0 C450.0,284.0 450.0,272.0 600,272.0 L600,302.0 C450.0,302.0 450.0,314.0 300,314.0 Z"><title>Komunikace → Vedení:
+• Koordinace práce
+• Spolupráce</title></path><path class="l-shoda" d="M300,314.0 C450.0,314.0 450.0,341.0 600,341.0 L600,371.0 C450.0,371.0 450.0,344.0 300,344.0 Z"><title>Komunikace → Komunikace:
+• Komunikační styly a kanály
+• Verbální a neverbální projev</title></path><path class="l-kriz" d="M300,353.0 C450.0,353.0 450.0,248.0 600,248.0 L600,263.0 C450.0,263.0 450.0,368.0 300,368.0 Z"><title>MZHS → Osobnost:
+• Unikátní odbornost</title></path><path class="l-shoda" d="M300,368.0 C450.0,368.0 450.0,449.0 600,449.0 L600,479.0 C450.0,479.0 450.0,398.0 300,398.0 Z"><title>MZHS → Skauting:
+• Poslání a principy hnutí
+• Poslání a principy hnutí</title></path><path class="l-shoda" d="M300,407.0 C450.0,407.0 450.0,410.0 600,410.0 L600,425.0 C450.0,425.0 450.0,422.0 300,422.0 Z"><title>SVM → Metodika:
+• Skautská výchovná metoda</title></path><path class="l-shoda" d="M300,431.0 C450.0,431.0 450.0,488.0 600,488.0 L600,503.0 C450.0,503.0 450.0,446.0 300,446.0 Z"><title>Hospodaření → Hospodaření:
+• Hospodaření</title></path><path class="l-kriz" d="M300,455.0 C450.0,455.0 450.0,425.0 600,425.0 L600,440.0 C450.0,440.0 450.0,470.0 300,470.0 Z"><title>Táboření a bezpečnost → Metodika:
+• Skautské dovednosti</title></path><path class="l-shoda" d="M300,470.0 C450.0,470.0 450.0,512.0 600,512.0 L600,542.0 C450.0,542.0 450.0,500.0 300,500.0 Z"><title>Táboření a bezpečnost → Bezpečnost:
+• Zajištění fyzické bezpečnosti
+• Řešení krizových situací</title></path><path class="l-shoda" d="M300,500.0 C450.0,500.0 450.0,566.0 600,566.0 L600,581.0 C450.0,581.0 450.0,515.0 300,515.0 Z"><title>Táboření a bezpečnost → Zdravověda:
+• Lékárnička</title></path><path class="l-kriz" d="M300,515.0 C450.0,515.0 450.0,689.0 600,689.0 L600,704.0 C450.0,704.0 450.0,530.0 300,530.0 Z"><title>Táboření a bezpečnost → Pedagogika:
+• Psychická omezení</title></path><path class="l-kriz" d="M300,530.0 C450.0,530.0 450.0,758.0 600,758.0 L600,773.0 C450.0,773.0 450.0,545.0 300,545.0 Z"><title>Táboření a bezpečnost → Psychologie:
+• Zajištění psychické bezpečnosti</title></path><path class="l-shoda" d="M300,554.0 C450.0,554.0 450.0,542.0 600,542.0 L600,557.0 C450.0,557.0 450.0,569.0 300,569.0 Z"><title>Zdravověda → Bezpečnost:
+• Hygiena</title></path><path class="l-shoda" d="M300,569.0 C450.0,569.0 450.0,581.0 600,581.0 L600,596.0 C450.0,596.0 450.0,584.0 300,584.0 Z"><title>Zdravověda → Zdravověda:
+• Zdravověda</title></path><path class="l-shoda" d="M300,593.0 C450.0,593.0 450.0,605.0 600,605.0 L600,635.0 C450.0,635.0 450.0,623.0 300,623.0 Z"><title>Právo → Právo a Organizace:
+• Jednání v souladu s právem
+• Jednání v souladu s právem</title></path><path class="l-shoda" d="M300,632.0 C450.0,632.0 450.0,635.0 600,635.0 L600,650.0 C450.0,650.0 450.0,647.0 300,647.0 Z"><title>Organizace → Právo a Organizace:
+• Junák - český skaut jako organizace</title></path><path class="l-kriz" d="M300,656.0 C450.0,656.0 450.0,125.0 600,125.0 L600,140.0 C450.0,140.0 450.0,671.0 300,671.0 Z"><title>Psychologie → Tvorba programu:
+• Rozvoj skupiny</title></path><path class="l-kriz" d="M300,671.0 C450.0,671.0 450.0,302.0 600,302.0 L600,317.0 C450.0,317.0 450.0,686.0 300,686.0 Z"><title>Psychologie → Vedení:
+• Inspirace v oddílové činnosti</title></path><path class="l-kriz" d="M300,686.0 C450.0,686.0 450.0,371.0 600,371.0 L600,386.0 C450.0,386.0 450.0,701.0 300,701.0 Z"><title>Psychologie → Komunikace:
+• Získávání informací</title></path><path class="l-shoda" d="M300,701.0 C450.0,701.0 450.0,704.0 600,704.0 L600,734.0 C450.0,734.0 450.0,731.0 300,731.0 Z"><title>Psychologie → Pedagogika:
+• Práce s motivací
+• Poznávání svěřenců</title></path><path class="l-shoda" d="M300,731.0 C450.0,731.0 450.0,773.0 600,773.0 L600,818.0 C450.0,818.0 450.0,776.0 300,776.0 Z"><title>Psychologie → Psychologie:
+• Hranice
+• Osobní přístup
+• Řízení rizika</title></path><path class="l-kriz" d="M300,785.0 C450.0,785.0 450.0,317.0 600,317.0 L600,332.0 C450.0,332.0 450.0,800.0 300,800.0 Z"><title>jen v ODY → Vedení:
+• Oddíl</title></path><rect class="n-vm" x="288" y="26" width="12" height="120" rx="2"><title>Metodika — 6 bodů modelu, 8 dílčích na ODY:
+• Metodické nástroje Junáka - českého skauta
+• Analýza současného stavu / Získávání zpětné vazby
+• Práce s cíli
+• Volba prostředku
+• Stanovení časového plánu / Realizace programu
+• Vyhodnocení plánu</title></rect><rect class="n-vm" x="288" y="155" width="12" height="90" rx="2"><title>Osobnost — 5 bodů modelu, 6 dílčích na ODY:
+• Vztahy se svěřenci / Budování vztahů
+• Rozvoj a osobní cíle
+• Náhled na sebe
+• Sebeřízení
+• Vlastní příklad</title></rect><rect class="n-vm" x="288" y="254" width="12" height="90" rx="2"><title>Komunikace — 6 bodů modelu:
+• Koordinace práce
+• Spolupráce
+• Přijímání zpětné vazby
+• Poskytování zpětné vazby
+• Komunikační styly a kanály
+• Verbální a neverbální projev</title></rect><rect class="n-vm" x="288" y="353" width="12" height="45" rx="2"><title>MZHS — 3 body modelu:
+• Poslání a principy hnutí
+• Poslání a principy hnutí
+• Unikátní odbornost</title></rect><rect class="n-vm" x="288" y="407" width="12" height="15" rx="2"><title>SVM — 1 bod modelu:
+• Skautská výchovná metoda</title></rect><rect class="n-vm" x="288" y="431" width="12" height="15" rx="2"><title>Hospodaření — 1 bod modelu:
+• Hospodaření</title></rect><rect class="n-vm" x="288" y="455" width="12" height="90" rx="2"><title>Táboření a bezpečnost — 3 body modelu, 6 dílčích na ODY:
+• Skautské dovednosti
+• Zajištění fyzické bezpečnosti / Psychická omezení / Zajištění psychické bezpečnosti / Lékárnička
+• Řešení krizových situací</title></rect><rect class="n-vm" x="288" y="554" width="12" height="30" rx="2"><title>Zdravověda — 1 bod modelu, 2 dílčích na ODY:
+• Zdravověda / Hygiena</title></rect><rect class="n-vm" x="288" y="593" width="12" height="30" rx="2"><title>Právo — 2 body modelu:
+• Jednání v souladu s právem
+• Jednání v souladu s právem</title></rect><rect class="n-vm" x="288" y="632" width="12" height="15" rx="2"><title>Organizace — 1 bod modelu:
+• Junák - český skaut jako organizace</title></rect><rect class="n-vm" x="288" y="656" width="12" height="120" rx="2"><title>Psychologie — 5 bodů modelu, 8 dílčích na ODY:
+• Řízení rizika
+• Práce s motivací / Hranice / Inspirace v oddílové činnosti
+• Rozvoj skupiny
+• Poznávání svěřenců / Osobní přístup
+• Získávání informací</title></rect><rect class="n-jen" x="288" y="785" width="12" height="15" rx="2"><title>jen v ODY — 1 bod:
+• Oddíl</title></rect><rect class="n-ody" x="600" y="26" width="12" height="60" rx="2"><title>Plánování — 4 body:
+• Analýza současného stavu
+• Práce s cíli
+• Stanovení časového plánu
+• Vyhodnocení plánu</title></rect><rect class="n-ody" x="600" y="95" width="12" height="45" rx="2"><title>Tvorba programu — 3 body:
+• Volba prostředku
+• Realizace programu
+• Rozvoj skupiny</title></rect><rect class="n-ody" x="600" y="149" width="12" height="45" rx="2"><title>Zpětná vazba — 3 body:
+• Získávání zpětné vazby
+• Přijímání zpětné vazby
+• Poskytování zpětné vazby</title></rect><rect class="n-ody" x="600" y="203" width="12" height="60" rx="2"><title>Osobnost — 4 body:
+• Rozvoj a osobní cíle
+• Náhled na sebe
+• Sebeřízení
+• Unikátní odbornost</title></rect><rect class="n-ody" x="600" y="272" width="12" height="60" rx="2"><title>Vedení — 4 body:
+• Koordinace práce
+• Inspirace v oddílové činnosti
+• Spolupráce
+• Oddíl</title></rect><rect class="n-ody" x="600" y="341" width="12" height="45" rx="2"><title>Komunikace — 3 body:
+• Komunikační styly a kanály
+• Získávání informací
+• Verbální a neverbální projev</title></rect><rect class="n-ody" x="600" y="395" width="12" height="45" rx="2"><title>Metodika — 3 body:
+• Skautská výchovná metoda
+• Skautské dovednosti
+• Metodické nástroje Junáka - českého skauta</title></rect><rect class="n-ody" x="600" y="449" width="12" height="30" rx="2"><title>Skauting — 2 body:
+• Poslání a principy hnutí
+• Poslání a principy hnutí</title></rect><rect class="n-ody" x="600" y="488" width="12" height="15" rx="2"><title>Hospodaření — 1 bod:
+• Hospodaření</title></rect><rect class="n-ody" x="600" y="512" width="12" height="45" rx="2"><title>Bezpečnost — 3 body:
+• Hygiena
+• Zajištění fyzické bezpečnosti
+• Řešení krizových situací</title></rect><rect class="n-ody" x="600" y="566" width="12" height="30" rx="2"><title>Zdravověda — 2 body:
+• Zdravověda
+• Lékárnička</title></rect><rect class="n-ody" x="600" y="605" width="12" height="45" rx="2"><title>Právo a Organizace — 3 body:
+• Jednání v souladu s právem
+• Jednání v souladu s právem
+• Junák - český skaut jako organizace</title></rect><rect class="n-ody" x="600" y="659" width="12" height="75" rx="2"><title>Pedagogika — 5 bodů:
+• Vztahy se svěřenci
+• Práce s motivací
+• Poznávání svěřenců
+• Vlastní příklad
+• Psychická omezení</title></rect><rect class="n-ody" x="600" y="743" width="12" height="75" rx="2"><title>Psychologie — 5 bodů:
+• Budování vztahů
+• Hranice
+• Osobní přístup
+• Zajištění psychické bezpečnosti
+• Řízení rizika</title></rect><text class="b-label vm" x="280" y="90.0" text-anchor="end">Metodika <tspan class="cas-l">8</tspan></text><text class="b-label vm" x="280" y="204.0" text-anchor="end">Osobnost <tspan class="cas-l">6</tspan></text><text class="b-label vm" x="280" y="303.0" text-anchor="end">Komunikace <tspan class="cas-l">6</tspan></text><text class="b-label vm" x="280" y="379.5" text-anchor="end">MZHS <tspan class="cas-l">3</tspan></text><text class="b-label vm" x="280" y="418.5" text-anchor="end">SVM <tspan class="cas-l">1</tspan></text><text class="b-label vm" x="280" y="442.5" text-anchor="end">Hospodaření <tspan class="cas-l">1</tspan></text><text class="b-label vm" x="280" y="504.0" text-anchor="end">Táboření a bezpečnost <tspan class="cas-l">6</tspan></text><text class="b-label vm" x="280" y="573.0" text-anchor="end">Zdravověda <tspan class="cas-l">2</tspan></text><text class="b-label vm" x="280" y="612.0" text-anchor="end">Právo <tspan class="cas-l">2</tspan></text><text class="b-label vm" x="280" y="643.5" text-anchor="end">Organizace <tspan class="cas-l">1</tspan></text><text class="b-label vm" x="280" y="720.0" text-anchor="end">Psychologie <tspan class="cas-l">8</tspan></text><text class="b-label vm" x="280" y="796.5" text-anchor="end">jen v ODY <tspan class="cas-l">1</tspan></text><text class="b-label ody" x="620" y="60.0">Plánování <tspan class="cas-l">4</tspan></text><text class="b-label ody" x="620" y="121.5">Tvorba programu <tspan class="cas-l">3</tspan></text><text class="b-label ody" x="620" y="175.5">Zpětná vazba <tspan class="cas-l">3</tspan></text><text class="b-label ody" x="620" y="237.0">Osobnost <tspan class="cas-l">4</tspan></text><text class="b-label ody" x="620" y="306.0">Vedení <tspan class="cas-l">4</tspan></text><text class="b-label ody" x="620" y="367.5">Komunikace <tspan class="cas-l">3</tspan></text><text class="b-label ody" x="620" y="421.5">Metodika <tspan class="cas-l">3</tspan></text><text class="b-label ody" x="620" y="468.0">Skauting <tspan class="cas-l">2</tspan></text><text class="b-label ody" x="620" y="499.5">Hospodaření <tspan class="cas-l">1</tspan></text><text class="b-label ody" x="620" y="538.5">Bezpečnost <tspan class="cas-l">3</tspan></text><text class="b-label ody" x="620" y="585.0">Zdravověda <tspan class="cas-l">2</tspan></text><text class="b-label ody" x="620" y="631.5">Právo a Organizace <tspan class="cas-l">3</tspan></text><text class="b-label ody" x="620" y="700.5">Pedagogika <tspan class="cas-l">5</tspan></text><text class="b-label ody" x="620" y="784.5">Psychologie <tspan class="cas-l">5</tspan></text></svg></div>
+<p class="podtitul">Bod&nbsp;35 („Ví, jak funguje oddíl“) si ODY přidala, ve VM není —
+proto vede z uzlu <i>jen v&nbsp;ODY</i>. Balíčky bez přiřazených bodů
+(VM Projektorát, ODY Výprava) v diagramu nejsou.</p>
 
 <h2>Co srovnání zkresluje</h2>
 <ul class="pozn">
