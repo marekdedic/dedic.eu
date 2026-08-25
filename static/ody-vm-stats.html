@@ -1029,32 +1029,55 @@ klávesnicí. Diagramy mají dvě rozvržení, přepínají se podle šířky ok
 (function () {
   var tip = document.getElementById("tip");
   var kdy = 0;
+
   function skryj() { tip.classList.remove("vidno"); }
+
   function ukaz(el, x, y) {
     tip.textContent = el.getAttribute("data-tip");
     tip.classList.add("vidno");
     kdy = Date.now();
     var r = tip.getBoundingClientRect();
-    var levo = Math.min(Math.max(8, x - r.width / 2), window.innerWidth - r.width - 8);
-    var horni = y - r.height - 12;
-    if (horni < 8) horni = y + 16;            // nevejde se nad prst, dáme pod
+    var okrajX = 8, okrajY = 8;
+    var maxX = window.innerWidth - r.width - okrajX;
+    var maxY = window.innerHeight - r.height - okrajY;
+    var levo = Math.min(Math.max(okrajX, x - r.width / 2), Math.max(okrajX, maxX));
+    // nad bod doteku, a když se tam nevejde, tak pod něj; nakonec vždy do okna
+    var horni = y - r.height - 14;
+    if (horni < okrajY) horni = y + 18;
+    horni = Math.min(Math.max(okrajY, horni), Math.max(okrajY, maxY));
     tip.style.left = levo + "px";
     tip.style.top = horni + "px";
   }
+
   function cil(e) {
     return e.target && e.target.closest ? e.target.closest("[data-tip]") : null;
   }
+
+  // souřadnice doteku/kliknutí; u klávesnice padne zpět na střed prvku,
+  // ale svisle omezený na viewport — bounding box dlouhé stuhy je z větší
+  // části mimo obrazovku a bublina by odletěla nad ni
+  function kde(e, el) {
+    if (e && e.clientX) return { x: e.clientX, y: e.clientY };
+    var b = el.getBoundingClientRect();
+    var x = b.left + b.width / 2;
+    var y = Math.min(Math.max(b.top, 60), window.innerHeight - 60);
+    return { x: x, y: y };
+  }
+
   document.addEventListener("click", function (e) {
     var el = cil(e);
     if (!el) { skryj(); return; }
-    var b = el.getBoundingClientRect();
-    ukaz(el, b.left + b.width / 2, b.top);
+    var p = kde(e, el);
+    ukaz(el, p.x, p.y);
   });
+
   document.addEventListener("focusin", function (e) {
     var el = cil(e);
-    if (el) { var b = el.getBoundingClientRect(); ukaz(el, b.left + b.width / 2, b.top); }
+    if (el) { var p = kde(null, el); ukaz(el, p.x, p.y); }
   });
+
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") skryj(); });
+
   // dojezd scrollu po tapnutí by bublinu zavřel dřív, než si ji jde přečíst
   window.addEventListener("scroll", function () {
     if (Date.now() - kdy > 700) skryj();
