@@ -11,7 +11,7 @@ import { origin } from "./svelte.config.js";
 
 export default defineConfig({
   build: {
-    target: "es2017",
+    target: "es2022",
   },
   plugins: [
     basicSsl(),
