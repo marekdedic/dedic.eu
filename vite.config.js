@@ -10,6 +10,9 @@ import options from "./rollup-plugin-htaccess.config";
 import { origin } from "./svelte.config.js";
 
 export default defineConfig({
+  build: {
+    target: "es2017",
+  },
   plugins: [
     basicSsl(),
     enhancedImages(),
