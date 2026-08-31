@@ -27,7 +27,7 @@
   div {
     left: 50%;
     margin-left: -750px;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 1rem;
     position: fixed;
     top: 5rem;
     width: 350px;
