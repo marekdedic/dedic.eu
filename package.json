@@ -26,7 +26,7 @@
     "clean": "rimraf dist/*",
     "lint": "run-p -c --aggregate-output lint:*",
     "lint:css": "run-p -c --aggregate-output lint:css:*",
-    "lint:css:stylelint": "stylelint --color 'src/**/*.svelte'",
+    "lint:css:stylelint": "stylelint --color --report-needless-disables 'src/**/*.svelte'",
     "lint:eslint": "eslint --color",
     "lint:svelte": "run-p -c --aggregate-output lint:svelte:*",
     "lint:svelte:svelte-check": "FORCE_COLOR=1 svelte-check",

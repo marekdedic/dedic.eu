@@ -25,15 +25,15 @@
 <style>
   .container {
     float: right;
-    width: 40%;
+
+    /* Goes full-width once the containing block drops to 450px, without a
+       container query: the percentage resolves against that block, and the
+       999 multiplier saturates the result so min/max act as a switch rather
+       than an interpolation. 450.5 rather than 450 because the term must be
+       positive at the breakpoint, not zero. */
+    width: min(100%, max(40%, (450.5px - 100%) * 999));
     margin-left: 1rem;
     margin-right: 0;
-  }
-
-  @container (max-width: 450px) {
-    .container {
-      width: 100%;
-    }
   }
 
   .title {
