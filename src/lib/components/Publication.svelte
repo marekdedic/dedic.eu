@@ -147,7 +147,7 @@
   }
 
   .preview-mobile {
-    padding: 0rem 2rem 1rem 2rem;
+    padding: 0 2rem 1rem;
   }
 
   .publication {

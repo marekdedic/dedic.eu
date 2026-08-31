@@ -103,7 +103,7 @@
   :global(body) {
     background-color: var(--background-color);
     color: var(--text-color);
-    font-family: "Roboto", sans-serif;
+    font-family: Roboto, sans-serif;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.5;
@@ -156,7 +156,7 @@
   :global(table) {
     border-collapse: collapse;
     display: block;
-    margin: 1rem auto 0 auto;
+    margin: 1rem auto 0;
     max-width: 100%;
     overflow-x: auto;
     width: max-content;
