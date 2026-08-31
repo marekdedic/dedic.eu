@@ -15,7 +15,7 @@
 
 <style>
   div {
-    container-type: inline-size;
+    display: flow-root;
     margin-left: auto;
     margin-right: auto;
     margin-top: 1.5rem;
@@ -24,7 +24,7 @@
     padding-right: 15px;
   }
 
-  @media (1150px <= width < 1500px) {
+  @media (min-width: 1150px) and (max-width: 1499.98px) {
     .left-side-panel {
       margin-left: 350px;
       margin-right: auto;
