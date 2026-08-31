@@ -103,7 +103,12 @@
   button {
     all: unset;
     cursor: pointer;
-    text-wrap: nowrap;
+    white-space: nowrap;
+
+    /* Safari has never shipped user-select unprefixed and there is no
+       autoprefixer in this build, so the prefixed copy is written by hand. */
+    /* stylelint-disable-next-line property-no-vendor-prefix */
+    -webkit-user-select: none;
     user-select: none;
   }
 
