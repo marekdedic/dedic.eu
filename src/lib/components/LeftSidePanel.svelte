@@ -33,14 +33,14 @@
     width: 350px;
   }
 
-  @media (min-width: 1150px) and (max-width: 1499.98px) {
+  @media (width >= 1150px) and (width <= 1499.98px) {
     div {
       left: 0;
       margin-left: 0;
     }
   }
 
-  @media (min-width: 800px) and (max-width: 1149.98px) {
+  @media (width >= 800px) and (width <= 1149.98px) {
     div {
       margin-left: auto;
       margin-right: auto;
@@ -49,7 +49,7 @@
     }
   }
 
-  @media (max-width: 799.98px) {
+  @media (width <= 799.98px) {
     div {
       margin-left: 0;
       position: unset;

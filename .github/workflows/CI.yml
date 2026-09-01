@@ -38,6 +38,10 @@ jobs:
         run: |
           npm run build
 
+      - name: "Check the built output"
+        run: |
+          npm run check
+
   get-playwright-version:
     name: 'Get Playwright Version'
     runs-on: ubuntu-latest
