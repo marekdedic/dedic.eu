@@ -1,6 +1,8 @@
 import { enhancedImages } from "@sveltejs/enhanced-img";
 import { sveltekit } from "@sveltejs/kit/vite";
 import basicSsl from "@vitejs/plugin-basic-ssl";
+import browserslist from "browserslist";
+import { browserslistToTargets } from "lightningcss";
 import htaccess from "rollup-plugin-htaccess";
 import { svelteSitemap } from "svelte-sitemap/vite";
 import { defineConfig } from "vite";
@@ -12,6 +14,11 @@ import { origin } from "./svelte.config.js";
 export default defineConfig({
   build: {
     target: "es2022",
+  },
+  css: {
+    // Lowers syntax and adds prefixes for the floor, so source can stay modern.
+    lightningcss: { targets: browserslistToTargets(browserslist()) },
+    transformer: "lightningcss",
   },
   plugins: [
     basicSsl(),

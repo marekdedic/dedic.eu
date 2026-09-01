@@ -24,7 +24,7 @@
     padding-right: 15px;
   }
 
-  @media (min-width: 1150px) and (max-width: 1499.98px) {
+  @media (width >= 1150px) and (width <= 1499.98px) {
     .left-side-panel {
       margin-left: 350px;
       margin-right: auto;
