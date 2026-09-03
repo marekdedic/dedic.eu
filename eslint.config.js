@@ -152,9 +152,7 @@ export default tseslint.config(
     languageOptions: {
       parserOptions: {
         extraFileExtensions: [".svelte"],
-        projectService: {
-          allowDefaultProject: ["*.config.ts"],
-        },
+        projectService: true,
       },
     },
     rules: {
