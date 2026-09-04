@@ -43,7 +43,11 @@ export default tseslint.config(
       "arrow-body-style": ["error", "as-needed"],
       "block-scoped-var": "error",
       camelcase: "error",
-      "capitalized-comments": "error",
+      "capitalized-comments": [
+        "error",
+        "always",
+        { ignoreConsecutiveComments: true },
+      ],
       "consistent-return": "error",
       "consistent-this": "error",
       "default-case": "error",
@@ -96,7 +100,6 @@ export default tseslint.config(
       "no-useless-concat": "error",
       "no-useless-rename": "error",
       "no-useless-return": "error",
-      "no-var": "error",
       "no-void": ["error", { allowAsStatement: true }],
       "no-warning-comments": "warn",
       "object-shorthand": "error",
@@ -134,8 +137,6 @@ export default tseslint.config(
       "prefer-object-has-own": "error",
       "prefer-object-spread": "error",
       "prefer-regex-literals": "error",
-      "prefer-rest-params": "error",
-      "prefer-spread": "error",
       "prefer-template": "error",
       radix: "error",
       "require-atomic-updates": "error",
@@ -177,12 +178,6 @@ export default tseslint.config(
       "@typescript-eslint/no-unnecessary-parameter-property-assignment":
         "error",
       "@typescript-eslint/no-unnecessary-qualifier": "error",
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        {
-          varsIgnorePattern: "^\\$\\$Slots$",
-        },
-      ],
       "@typescript-eslint/no-use-before-define": [
         "error",
         { functions: false },
@@ -230,6 +225,8 @@ export default tseslint.config(
       ],
       "svelte/derived-has-same-inputs-outputs": "error",
       "svelte/no-add-event-listener": "error",
+      "svelte/no-bind-value-on-checkable-inputs": "error",
+      "svelte/no-conflicting-module-names": "error",
       "svelte/no-extra-reactive-curlies": "error",
       "svelte/no-ignored-unsubscribe": "error",
       "svelte/no-inline-styles": "error",
@@ -240,7 +237,6 @@ export default tseslint.config(
       "svelte/prefer-const": "error",
       "svelte/prefer-destructured-store-props": "error",
       "svelte/prefer-style-directive": "error",
-      "svelte/prefer-writable-derived": "error",
       "svelte/require-event-prefix": "error",
       "svelte/require-optimized-style-attribute": "error",
       "svelte/require-store-callbacks-use-set-param": "error",
@@ -256,6 +252,7 @@ export default tseslint.config(
     extends: [playwright.configs["flat/recommended"]],
     files: ["tests/**/*.ts"],
     rules: {
+      "playwright/expect-expect": "error",
       "playwright/no-commented-out-tests": "error",
       "playwright/no-duplicate-hooks": "error",
       "playwright/no-get-by-title": "error",
