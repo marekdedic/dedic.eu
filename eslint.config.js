@@ -174,12 +174,6 @@ export default tseslint.config(
       "@typescript-eslint/no-unnecessary-parameter-property-assignment":
         "error",
       "@typescript-eslint/no-unnecessary-qualifier": "error",
-      "@typescript-eslint/no-unused-vars": [
-        "error",
-        {
-          varsIgnorePattern: "^\\$\\$Slots$",
-        },
-      ],
       "@typescript-eslint/no-use-before-define": [
         "error",
         { functions: false },
