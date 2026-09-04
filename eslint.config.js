@@ -248,6 +248,7 @@ export default tseslint.config(
     extends: [playwright.configs["flat/recommended"]],
     files: ["tests/**/*.ts"],
     rules: {
+      "playwright/expect-expect": "error",
       "playwright/no-commented-out-tests": "error",
       "playwright/no-duplicate-hooks": "error",
       "playwright/no-get-by-title": "error",
