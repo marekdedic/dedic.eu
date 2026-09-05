@@ -9,12 +9,12 @@ import playwright from "eslint-plugin-playwright";
 import preferArrowFunctions from "eslint-plugin-prefer-arrow-functions";
 import prettierRecommended from "eslint-plugin-prettier/recommended";
 import svelte from "eslint-plugin-svelte";
-import { globalIgnores } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 import globals from "globals";
 import svelteParser from "svelte-eslint-parser";
 import tseslint from "typescript-eslint";
 
-export default tseslint.config(
+export default defineConfig(
   globalIgnores([".svelte-kit/", "dist/", "package-lock.json", "**/.venv/"]),
   packageJson.configs.recommended,
   {
@@ -159,7 +159,12 @@ export default tseslint.config(
       parserOptions: {
         extraFileExtensions: [".svelte"],
         projectService: {
-          allowDefaultProject: ["*.config.ts"],
+          allowDefaultProject: [
+            "eslint.config.ts",
+            "playwright.config.ts",
+            "prettier.config.ts",
+            "stylelint.config.ts",
+          ],
         },
       },
     },
