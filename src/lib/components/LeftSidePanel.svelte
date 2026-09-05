@@ -12,12 +12,12 @@
 
   let { children, inlineVersion }: Props = $props();
 
-  inlineVersion ??= children;
+  const resolvedInlineVersion = $derived(inlineVersion ?? children);
 </script>
 
 <div>
   {#if inline.current}
-    {@render inlineVersion()}
+    {@render resolvedInlineVersion()}
   {:else}
     {@render children()}
   {/if}

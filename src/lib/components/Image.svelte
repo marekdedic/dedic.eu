@@ -22,7 +22,7 @@
 
   let { alt, src }: Props = $props();
 
-  const image = getImage(src);
+  const image = $derived(getImage(src));
 </script>
 
 <figure>
