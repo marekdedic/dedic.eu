@@ -159,7 +159,7 @@ export default tseslint.config(
       parserOptions: {
         extraFileExtensions: [".svelte"],
         projectService: {
-          allowDefaultProject: ["*.config.ts"],
+          allowDefaultProject: ["playwright.config.ts"],
         },
       },
     },
