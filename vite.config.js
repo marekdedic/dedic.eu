@@ -8,7 +8,7 @@ import { svelteSitemap } from "svelte-sitemap/vite";
 import { defineConfig } from "vite";
 import prismjs from "vite-plugin-prismjs";
 
-import options from "./rollup-plugin-htaccess.config";
+import options from "./rollup-plugin-htaccess.config.ts";
 import { origin } from "./svelte.config.js";
 
 export default defineConfig({
