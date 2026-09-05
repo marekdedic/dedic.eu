@@ -76,6 +76,7 @@
     "eslint-plugin-simple-import-sort": "^14.0.0",
     "eslint-plugin-svelte": "^3.23.0",
     "globals": "^17.11.0",
+    "jiti": "^2.7.0",
     "katex": "^0.18.4",
     "lightningcss": "^1.33.0",
     "npm-run-all2": "^9.0.3",
