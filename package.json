@@ -81,7 +81,7 @@
     "lightningcss": "^1.33.0",
     "npm-run-all2": "^9.0.3",
     "playwright": "^1.62.1",
-    "postcss": "^8.5.26",
+    "postcss": "^8.5.28",
     "postcss-html": "^2.0.0",
     "prettier": "^3.9.6",
     "prettier-plugin-svelte": "^4.1.1",
