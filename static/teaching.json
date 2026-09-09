@@ -79,11 +79,15 @@
     "name": "theoretical fundamentals of neural networks",
     "slug": "TZN",
     "faculty": "FJFI",
-    "current": null,
+    "current": "2026-winter",
     "versions": [
       {
           "slug": "2025-winter",
           "semester": "winter 2025"
+      },
+      {
+          "slug": "2026-winter",
+          "semester": "winter 2026"
       }
     ]
   },
