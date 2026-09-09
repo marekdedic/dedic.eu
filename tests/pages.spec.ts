@@ -195,11 +195,11 @@ test("/teaching/TZN/2025-winter", async ({ page }) => {
 test("/teaching/NSN", async ({ page }) => {
   await page.goto("/teaching/NSN");
   await page.waitForReady();
-  await expect(page).toHaveURL("/teaching/NSN/2026-winter");
+  await expect(page).toHaveURL("/teaching/NSN/2026-summer");
 });
 
-test("/teaching/NSN/2026-winter", async ({ page }) => {
-  await page.goto("/teaching/NSN/2026-winter");
+test("/teaching/NSN/2026-summer", async ({ page }) => {
+  await page.goto("/teaching/NSN/2026-summer");
   await page.waitForReady();
   await expect(page).toHaveScreenshot({
     fullPage: true,
