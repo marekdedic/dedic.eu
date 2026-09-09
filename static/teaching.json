@@ -51,7 +51,7 @@
     "name": "theory of neural networks",
     "slug": "TNN",
     "faculty": "FIT",
-    "current": "2026-summer",
+    "current": null,
     "versions": [
       {
           "slug": "2022-summer",
@@ -79,11 +79,15 @@
     "name": "theoretical fundamentals of neural networks",
     "slug": "TZN",
     "faculty": "FJFI",
-    "current": null,
+    "current": "2026-winter",
     "versions": [
       {
           "slug": "2025-winter",
           "semester": "winter 2025"
+      },
+      {
+          "slug": "2026-winter",
+          "semester": "winter 2026"
       }
     ]
   },
@@ -91,11 +95,15 @@
     "name": "neural networks, machine learning and randomness",
     "slug": "NMS",
     "faculty": "FIT",
-    "current": null,
+    "current": "2026-winter",
     "versions": [
       {
           "slug": "2025-winter",
           "semester": "winter 2025"
+      },
+      {
+          "slug": "2026-winter",
+          "semester": "winter 2026"
       }
     ]
   },
@@ -103,7 +111,7 @@
     "name": "neural networks, machine learning, and randomness",
     "slug": "NSN",
     "faculty": "FJFI",
-    "current": "2026-summer",
+    "current": null,
     "versions": [
       {
           "slug": "2026-summer",
