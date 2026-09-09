@@ -19,7 +19,7 @@
 <PageContentBox leftSidePanel={true}>
   <CouseHeader
     course={data.teachingSpec.find((c) => c.slug === "NSN")}
-    version="2026-winter"
+    version="2026-summer"
   />
 
   <article>
