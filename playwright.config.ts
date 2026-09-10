@@ -22,6 +22,8 @@ export default defineConfig({
   ],
   reporter: process.env.CI === undefined ? "list" : "html",
   retries: process.env.CI === undefined ? 0 : 2,
+  snapshotPathTemplate:
+    "{testDir}/snapshots/{testFileName}/{arg}{-projectName}{-snapshotSuffix}{ext}",
   testDir: "./tests",
   timeout: 60000,
   use: {
