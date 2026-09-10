@@ -169,7 +169,7 @@
       "Marek Dědič",
       "Martin Holeňa"
     ],
-    "bib": "@inproceedings{dedic_towards_2026,\n\taddress = {Biele Karpaty Matliare, Slovakia},\n\ttitle = {Towards Synthetic Data Pretraining for Hyperparameter Optimization in Graph Learning},\n\tbooktitle = {Proceedings of the 26nd Conference Information Technologies – Applications and Theory (ITAT 2026)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Dědič, Marek and Holeňa, Martin},\n\tyear = {2026},\n}",
+    "bib": "@inproceedings{dedic_towards_2026,\n\taddress = {Biele Karpaty, Slovakia},\n\ttitle = {Towards Synthetic Data Pretraining for Hyperparameter Optimization in Graph Learning},\n\tbooktitle = {Proceedings of the 26nd Conference Information Technologies – Applications and Theory (ITAT 2026)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Dědič, Marek and Holeňa, Martin},\n\tyear = {2026},\n}",
     "id": "dedic_towards_2026",
     "paperPdf": "publications/papers/dedic_towards_2026.pdf",
     "tags": ["ITAT"],
