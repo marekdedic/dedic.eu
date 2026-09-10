@@ -160,7 +160,19 @@
     "paperPdf": "publications/papers/dedic_benchmarking_2026.pdf",
     "posterPdf": "publications/posters/dedic_benchmarking_2026.pdf",
     "previewImage": "/images/publication-preview-images/dedic_benchmarking_2026.png",
-    "tags": ["ICAART"],
+    "tags": ["ICAART", "COSEAL", "MLG", "ECML"],
     "title": "Benchmarking and Transfer Learning for Hyperparameter Optimization of Graph Neural Networks"
+  },
+  {
+    "abstract": "An exploration of the viability of using synthetic datasets for pretraining of hyper-parameter optimization for graph learning.",
+    "authors": [
+      "Marek Dědič",
+      "Martin Holeňa"
+    ],
+    "bib": "@inproceedings{dedic_towards_2026,\n\taddress = {Biele Karpaty Matliare, Slovakia},\n\ttitle = {Towards Synthetic Data Pretraining for Hyperparameter Optimization in Graph Learning},\n\tbooktitle = {Proceedings of the 26nd Conference Information Technologies – Applications and Theory (ITAT 2026)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Dědič, Marek and Holeňa, Martin},\n\tyear = {2026},\n}",
+    "id": "dedic_towards_2026",
+    "paperPdf": "publications/papers/dedic_towards_2026.pdf",
+    "tags": ["ITAT"],
+    "title": "Towards Synthetic Data Pretraining for Hyperparameter Optimization in Graph Learning"
   }
 ]
