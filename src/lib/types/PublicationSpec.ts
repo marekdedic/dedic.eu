@@ -3,7 +3,7 @@ export interface PublicationSpec {
   authors: Array<string>;
   bib?: string;
   blogpostUrl?: string;
-  date: Date;
+  date?: Date;
   id: string;
   paperPdf?: string;
   posterPdf?: string;

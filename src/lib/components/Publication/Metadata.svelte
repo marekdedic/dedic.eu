@@ -1,6 +1,6 @@
 <script lang="ts">
   interface Props {
-    date: Date;
+    date: Date | undefined;
     inline?: boolean;
     tags: Array<string>;
   }
@@ -39,11 +39,15 @@
   }
 
   let formattedDate = $derived(
-    `${date.getDate().toString()} ${monthName(date.getMonth() + 1)} ${date.getFullYear().toString()}`,
+    date === undefined
+      ? undefined
+      : `${date.getDate().toString()} ${monthName(date.getMonth() + 1)} ${date.getFullYear().toString()}`,
   );
 </script>
 
-<div class:inline>{formattedDate}</div>
+{#if formattedDate !== undefined}
+  <div class:inline>{formattedDate}</div>
+{/if}
 <div class:inline>
   {#each tags as tag, i (i)}
     <div class="tag" class:inline>{tag}</div>

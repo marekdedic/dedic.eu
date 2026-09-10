@@ -7,7 +7,7 @@ export interface RawPublicationSpec {
   authors: Array<string>;
   bib?: string;
   blogpost?: string;
-  date: string;
+  date?: string;
   id: string;
   pdf?: string;
   previewImage?: string;
@@ -20,9 +20,17 @@ export async function loadPublications(
   kitFetch: typeof fetch,
 ): Promise<Array<PublicationSpec>> {
   return (await loadJsonConfig<Array<RawPublicationSpec>>(file, kitFetch))
-    .map((publication) => ({
+    .map(({ date, ...publication }) => ({
       ...publication,
-      date: new Date(publication.date),
+      ...(date === undefined ? {} : { date: new Date(date) }),
     }))
-    .sort((left, right) => right.date.getTime() - left.date.getTime());
+    .sort((left, right) =>
+      left.date === undefined
+        ? right.date === undefined
+          ? 0
+          : -1
+        : right.date === undefined
+          ? 1
+          : right.date.getTime() - left.date.getTime(),
+    );
 }
