@@ -58,6 +58,10 @@
       border-color theme.$transition-duration ease;
   }
 
+  :global(html[data-theme="dark"]) code[class*="language-"] {
+    color: var(--text-color);
+  }
+
   div {
     position: relative;
   }
