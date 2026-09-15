@@ -23,6 +23,7 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "vite build",
+    "postbuild": "rimraf --glob dist/**/.venv",
     "check": "FORCE_COLOR=1 run-p -c --aggregate-output check:*",
     "check:css-compat": "node scripts/check-css-compat.js",
     "check:js-compat": "es-check es2022 --module --checkFeatures 'dist/**/*.js'",
