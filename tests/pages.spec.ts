@@ -17,14 +17,12 @@ test("/publications", async ({ page }) => {
   await expect(page).toHaveScreenshot({
     fullPage: true,
     mask: [page.getByRole("img")],
-    maxDiffPixelRatio: 0.05,
   });
   // eslint-disable-next-line playwright/no-nth-methods -- General testing, what's first is irrelevant
   await page.getByLabel("Show bibtex citation").first().click();
   await expect(page).toHaveScreenshot({
     fullPage: true,
     mask: [page.getByRole("img")],
-    maxDiffPixelRatio: 0.05,
   });
 });
 

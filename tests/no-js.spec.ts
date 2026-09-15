@@ -15,7 +15,6 @@ test("no-js", async ({ page }) => {
     .click();
   await expect(page).toHaveScreenshot({
     mask: [page.getByRole("img")],
-    maxDiffPixelRatio: 0.05,
   });
   await page.getByRole("list").getByRole("link", { name: "teaching" }).click();
   await expect(page).toHaveScreenshot();
