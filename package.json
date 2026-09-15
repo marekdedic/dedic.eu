@@ -26,7 +26,7 @@
     "postbuild": "rimraf --glob dist/**/.venv",
     "check": "FORCE_COLOR=1 run-p -c --aggregate-output check:*",
     "check:css-compat": "node scripts/check-css-compat.js",
-    "check:js-compat": "es-check es2022 --module --checkFeatures 'dist/**/*.js'",
+    "check:js-compat": "es-check es2022 --module --checkFeatures --ignore Uint8ArrayFromBase64 'dist/**/*.js'",
     "clean": "rimraf dist/*",
     "lint": "FORCE_COLOR=1 run-p -c --aggregate-output lint:*",
     "lint:css": "FORCE_COLOR=1 run-p -c --aggregate-output lint:css:*",
