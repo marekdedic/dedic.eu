@@ -16,11 +16,19 @@
 
   let { code, copyButton = true, language }: Props = $props();
 
+  // We highlight manually via Prism.highlight() below. Without this, Prism
+  // auto-runs highlightAll() on DOMContentLoaded.
+  Prism.manual = true;
+
   // Missing a language? Add it to vite.config.js
   let formattedCode = $derived(
     language !== undefined && language in Prism.languages
       ? Prism.highlight(code, Prism.languages[language], language)
       : code,
+  );
+
+  let codeClass = $derived(
+    language === undefined ? undefined : `language-${language}`,
   );
 
   let copied = $state(false);
@@ -42,7 +50,7 @@
     </button>
   {/if}
   <!-- eslint-disable-next-line svelte/no-unused-class-name svelte/no-at-html-tags -->
-  <pre><code class="language-{language}">{@html formattedCode}</code></pre>
+  <pre><code class={codeClass}>{@html formattedCode}</code></pre>
 </div>
 
 <style lang="scss">
