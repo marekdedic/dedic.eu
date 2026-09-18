@@ -27,6 +27,10 @@
       : code,
   );
 
+  let codeClass = $derived(
+    language === undefined ? undefined : `language-${language}`,
+  );
+
   let copied = $state(false);
 
   function copy(): void {
@@ -46,7 +50,7 @@
     </button>
   {/if}
   <!-- eslint-disable-next-line svelte/no-unused-class-name svelte/no-at-html-tags -->
-  <pre><code class="language-{language}">{@html formattedCode}</code></pre>
+  <pre><code class={codeClass}>{@html formattedCode}</code></pre>
 </div>
 
 <style lang="scss">
