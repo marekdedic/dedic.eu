@@ -16,6 +16,10 @@
 
   let { code, copyButton = true, language }: Props = $props();
 
+  // We highlight manually via Prism.highlight() below. Without this, Prism
+  // auto-runs highlightAll() on DOMContentLoaded.
+  Prism.manual = true;
+
   // Missing a language? Add it to vite.config.js
   let formattedCode = $derived(
     language !== undefined && language in Prism.languages
