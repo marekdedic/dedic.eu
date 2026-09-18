@@ -55,7 +55,7 @@
 </div>
 
 <style lang="scss">
-  @use "../../../lib/theme.module.scss" as theme;
+  @use "../../../lib/theme.scss" as theme;
 
   div {
     font-size: 0.8rem;

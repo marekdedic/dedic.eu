@@ -18,7 +18,7 @@
 </li>
 
 <style lang="scss">
-  @use "../theme.module.scss" as theme;
+  @use "../theme.scss" as theme;
 
   button {
     background-color: inherit;

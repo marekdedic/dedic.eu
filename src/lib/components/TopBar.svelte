@@ -17,7 +17,7 @@
 </nav>
 
 <style lang="scss">
-  @use "../theme.module.scss" as theme;
+  @use "../theme.scss" as theme;
 
   nav {
     background-color: var(--background-color);
