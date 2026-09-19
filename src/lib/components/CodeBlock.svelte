@@ -54,7 +54,7 @@
 </div>
 
 <style lang="scss">
-  @use "../../lib/theme.module.scss" as theme;
+  @use "../../lib/theme.scss" as theme;
 
   pre {
     background-color: var(--primary-bg-color);

@@ -22,7 +22,7 @@
 </li>
 
 <style lang="scss">
-  @use "../theme.module.scss" as theme;
+  @use "../theme.scss" as theme;
 
   a {
     color: var(--text-color);

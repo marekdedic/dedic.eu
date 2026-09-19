@@ -13,7 +13,7 @@
 </code>
 
 <style lang="scss">
-  @use "../theme.module.scss" as theme;
+  @use "../theme.scss" as theme;
 
   code {
     background-color: var(--primary-bg-color);
