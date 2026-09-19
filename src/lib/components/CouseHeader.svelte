@@ -46,7 +46,6 @@
   div {
     background: var(--warning-color);
     border-radius: 0.25rem;
-    color: #{theme.$text-color-light};
     margin-top: 1rem;
     padding: 0.7rem;
   }

@@ -44,12 +44,12 @@
   <!-- Kept in sync with $primary-color-light / -dark in src/lib/theme.scss -->
   <meta
     name="theme-color"
-    content="#b509ac"
+    content="#af28c7"
     media="(prefers-color-scheme: light)"
   />
   <meta
     name="theme-color"
-    content="#2698ba"
+    content="#f4abff"
     media="(prefers-color-scheme: dark)"
   />
   <meta content={page.data.title ?? "Marek Dědič"} property="og:title" />
