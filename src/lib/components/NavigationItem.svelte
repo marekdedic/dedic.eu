@@ -26,13 +26,11 @@
     color: var(--text-color);
     display: block;
     padding: 0.5rem;
-    transition: color var(--transition-duration) ease;
   }
 
   a:hover {
     color: var(--primary-color);
     text-decoration: none;
-    transition: color var(--transition-duration) ease;
   }
 
   li {
@@ -42,6 +40,5 @@
   .active {
     font-weight: 400;
     color: var(--primary-color);
-    transition: color var(--transition-duration) ease;
   }
 </style>

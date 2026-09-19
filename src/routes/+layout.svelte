@@ -71,6 +71,10 @@
 <style>
   :global(*) {
     box-sizing: border-box;
+    transition:
+      background-color var(--transition-duration) ease,
+      border-color var(--transition-duration) ease,
+      color var(--transition-duration) ease;
   }
 
   :global(body) {
@@ -82,9 +86,6 @@
     line-height: 1.5;
     margin: 0;
     padding-top: 57px;
-    transition:
-      background-color var(--transition-duration) ease,
-      color var(--transition-duration) ease;
   }
 
   :global(p) {
@@ -98,7 +99,6 @@
   :global(a) {
     text-decoration: none;
     color: var(--primary-color);
-    transition: color var(--transition-duration) ease;
   }
 
   :global(a:hover) {

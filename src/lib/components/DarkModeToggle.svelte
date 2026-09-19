@@ -26,12 +26,10 @@
     padding: 0;
     padding-left: 10px;
     padding-top: 11px;
-    transition: color var(--transition-duration) ease;
   }
 
   button:hover {
     color: var(--primary-color);
-    transition: color var(--transition-duration) ease;
   }
 
   li {

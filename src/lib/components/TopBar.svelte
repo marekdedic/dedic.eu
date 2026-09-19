@@ -25,9 +25,6 @@
     top: 0;
     right: 0;
     left: 0;
-    transition:
-      background-color var(--transition-duration) ease,
-      border-color var(--transition-duration) ease;
     z-index: 1000;
   }
 

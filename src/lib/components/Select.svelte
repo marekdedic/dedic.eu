@@ -105,6 +105,10 @@
     cursor: pointer;
     white-space: nowrap;
     user-select: none;
+    transition:
+      background-color var(--transition-duration) ease,
+      border-color var(--transition-duration) ease,
+      color var(--transition-duration) ease;
   }
 
   .option {

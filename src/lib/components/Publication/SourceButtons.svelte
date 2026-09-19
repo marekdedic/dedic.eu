@@ -55,19 +55,12 @@
     font-weight: 400;
     margin-right: 20px;
     padding: 0.25rem 1rem;
-    transition:
-      color var(--transition-duration) ease,
-      background-color var(--transition-duration) ease,
-      border-color var(--transition-duration) ease;
   }
 
   a:hover,
   button:hover {
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
-    transition:
-      color var(--transition-duration) ease,
-      border-color var(--transition-duration) ease;
   }
 
   a:hover {

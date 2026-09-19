@@ -16,6 +16,5 @@
   div {
     color: var(--text-color-faded);
     font-size: 0.8rem;
-    transition: color var(--transition-duration) ease;
   }
 </style>
