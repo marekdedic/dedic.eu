@@ -153,7 +153,6 @@
     padding-bottom: 2rem;
     padding-top: 2rem;
     scroll-margin-top: 2rem;
-    transition: border-color var(--transition-duration) ease;
   }
 
   .publication:last-of-type {

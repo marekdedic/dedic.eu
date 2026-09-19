@@ -23,7 +23,6 @@
     margin-right: 1rem;
     margin-top: 0.3125rem;
     white-space: nowrap;
-    transition: color var(--transition-duration) ease;
   }
 
   a:hover {

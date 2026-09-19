@@ -22,8 +22,5 @@
       monospace;
     font-size: 87.5%;
     padding: 3px;
-    transition:
-      background-color var(--transition-duration) ease,
-      color var(--transition-duration) ease;
   }
 </style>

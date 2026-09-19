@@ -60,9 +60,6 @@
     color: var(--text-color);
     overflow-y: auto;
     padding: 0.5rem;
-    transition:
-      background-color var(--transition-duration) ease,
-      border-color var(--transition-duration) ease;
   }
 
   div {
@@ -80,9 +77,6 @@
     position: absolute;
     right: 10px;
     top: 10px;
-    transition:
-      color var(--transition-duration) ease,
-      background-color var(--transition-duration) ease;
   }
 
   button:hover {

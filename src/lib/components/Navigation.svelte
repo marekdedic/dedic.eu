@@ -44,12 +44,10 @@
     cursor: pointer;
     margin-left: auto;
     padding: 0.4rem;
-    transition: color var(--transition-duration) ease;
   }
 
   button:hover {
     color: var(--primary-color);
-    transition: color var(--transition-duration) ease;
   }
 
   div {

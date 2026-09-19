@@ -71,8 +71,5 @@
     margin-top: 0.5rem;
     padding: 0.1rem 0.3rem;
     width: fit-content;
-    transition:
-      background-color var(--transition-duration) ease,
-      border-color var(--transition-duration) ease;
   }
 </style>
