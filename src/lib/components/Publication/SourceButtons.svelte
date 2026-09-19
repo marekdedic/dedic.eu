@@ -43,9 +43,7 @@
   {/if}
 </div>
 
-<style lang="scss">
-  @use "../../../lib/theme.scss" as theme;
-
+<style>
   a,
   button {
     background-color: var(--background-color);
@@ -58,9 +56,9 @@
     margin-right: 20px;
     padding: 0.25rem 1rem;
     transition:
-      color theme.$transition-duration ease,
-      background-color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
+      color var(--transition-duration) ease,
+      background-color var(--transition-duration) ease,
+      border-color var(--transition-duration) ease;
   }
 
   a:hover,
@@ -68,8 +66,8 @@
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     transition:
-      color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
+      color var(--transition-duration) ease,
+      border-color var(--transition-duration) ease;
   }
 
   a:hover {

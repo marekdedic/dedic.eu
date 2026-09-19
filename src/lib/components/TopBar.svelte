@@ -16,9 +16,7 @@
   </div>
 </nav>
 
-<style lang="scss">
-  @use "../theme.scss" as theme;
-
+<style>
   nav {
     background-color: var(--background-color);
     border-bottom: 1px solid var(--divider-color);
@@ -28,8 +26,8 @@
     right: 0;
     left: 0;
     transition:
-      background-color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
+      background-color var(--transition-duration) ease,
+      border-color var(--transition-duration) ease;
     z-index: 1000;
   }
 

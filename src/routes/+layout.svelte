@@ -2,6 +2,7 @@
   import { page } from "$app/state";
   import TopBar from "$lib/components/TopBar.svelte";
   import { theme } from "$lib/theme.svelte";
+  import "$lib/theme.css";
   import "@fontsource/roboto/300.css";
   import "@fontsource/roboto/300-italic.css";
   import "@fontsource/roboto/400.css";
@@ -41,7 +42,7 @@
       : `${page.data.title} — Marek Dědič`}</title
   >
   <link href={`${page.url.origin}${page.url.pathname}`} rel="canonical" />
-  <!-- Kept in sync with $primary-color-light / -dark in src/lib/theme.scss -->
+  <!-- Kept in sync with --primary-color light / dark in src/lib/theme.css -->
   <meta
     name="theme-color"
     content="#af28c7"
@@ -67,37 +68,9 @@
 
 {@render children()}
 
-<style lang="scss">
-  @use "../lib/theme.scss" as theme;
-
+<style>
   :global(*) {
     box-sizing: border-box;
-  }
-
-  :global(html:not([data-theme]), html[data-theme="light"]) {
-    --background-color: #{theme.$background-color-light};
-    --divider-color: #{theme.$divider-color-light};
-    --primary-bg-color: #{theme.$primary-bg-color-light};
-    --primary-color: #{theme.$primary-color-light};
-    --table-border: #{theme.$table-border-light};
-    --table-odd-row-background: #{theme.$table-odd-row-background-light};
-    --text-color: #{theme.$text-color-light};
-    --text-color-faded: #{theme.$text-color-faded-light};
-    --error-color: #{theme.$error-color-light};
-    --warning-color: #{theme.$warning-color-light};
-  }
-
-  :global(html[data-theme="dark"]) {
-    --background-color: #{theme.$background-color-dark};
-    --divider-color: #{theme.$divider-color-dark};
-    --primary-bg-color: #{theme.$primary-bg-color-dark};
-    --primary-color: #{theme.$primary-color-dark};
-    --table-border: #{theme.$table-border-dark};
-    --table-odd-row-background: #{theme.$table-odd-row-background-dark};
-    --text-color: #{theme.$text-color-dark};
-    --text-color-faded: #{theme.$text-color-faded-dark};
-    --error-color: #{theme.$error-color-dark};
-    --warning-color: #{theme.$warning-color-dark};
   }
 
   :global(body) {
@@ -110,8 +83,8 @@
     margin: 0;
     padding-top: 57px;
     transition:
-      background-color theme.$transition-duration ease,
-      color theme.$transition-duration ease;
+      background-color var(--transition-duration) ease,
+      color var(--transition-duration) ease;
   }
 
   :global(p) {
@@ -125,7 +98,7 @@
   :global(a) {
     text-decoration: none;
     color: var(--primary-color);
-    transition: color theme.$transition-duration ease;
+    transition: color var(--transition-duration) ease;
   }
 
   :global(a:hover) {

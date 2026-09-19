@@ -21,20 +21,18 @@
   </a>
 </li>
 
-<style lang="scss">
-  @use "../theme.scss" as theme;
-
+<style>
   a {
     color: var(--text-color);
     display: block;
     padding: 0.5rem;
-    transition: color theme.$transition-duration ease;
+    transition: color var(--transition-duration) ease;
   }
 
   a:hover {
     color: var(--primary-color);
     text-decoration: none;
-    transition: color theme.$transition-duration ease;
+    transition: color var(--transition-duration) ease;
   }
 
   li {
@@ -44,6 +42,6 @@
   .active {
     font-weight: 400;
     color: var(--primary-color);
-    transition: color theme.$transition-duration ease;
+    transition: color var(--transition-duration) ease;
   }
 </style>

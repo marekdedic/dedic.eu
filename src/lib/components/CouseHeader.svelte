@@ -40,9 +40,7 @@
   {/if}
 </header>
 
-<style lang="scss">
-  @use "../theme.scss" as theme;
-
+<style>
   div {
     background: var(--warning-color);
     border-radius: 0.25rem;

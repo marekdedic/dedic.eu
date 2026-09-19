@@ -15,9 +15,7 @@
   <Name {first} {last} />
 </a>
 
-<style lang="scss">
-  @use "../theme.scss" as theme;
-
+<style>
   a {
     color: var(--text-color);
     font-size: 1.25rem;
@@ -25,7 +23,7 @@
     margin-right: 1rem;
     margin-top: 0.3125rem;
     white-space: nowrap;
-    transition: color theme.$transition-duration ease;
+    transition: color var(--transition-duration) ease;
   }
 
   a:hover {
