@@ -223,7 +223,7 @@ export default defineConfig(
         {
           enforceScriptPresent: true,
           script: "ts",
-          style: ["scss", null],
+          style: null,
         },
       ],
       "svelte/button-has-type": "error",
