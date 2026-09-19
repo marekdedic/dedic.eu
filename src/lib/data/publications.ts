@@ -1,11 +1,24 @@
 import type { PublicationSpec } from "$lib/types/PublicationSpec";
 
+import borisovExperimental2021Bib from "./bib/borisov_experimental_2021.bib?raw";
+import dedicAdaptive2022Bib from "./bib/dedic_adaptive_2022.bib?raw";
+import dedicBalancing2024Bib from "./bib/dedic_balancing_2024.bib?raw";
+import dedicBenchmarking2026Bib from "./bib/dedic_benchmarking_2026.bib?raw";
+import dedicHierarchicke2017Bib from "./bib/dedic_hierarchicke_2017.bib?raw";
+import dedicLoss2020Bib from "./bib/dedic_loss_2020.bib?raw";
+import dedicOptimalization2020Bib from "./bib/dedic_optimalization_2020.bib?raw";
+import dedicTowards2026Bib from "./bib/dedic_towards_2026.bib?raw";
+import pevnyNested2020Bib from "./bib/pevny_nested_2020.bib?raw";
+import prochazkaConvolutional2024Bib from "./bib/prochazka_convolutional_2024.bib?raw";
+import prochazkaScalable2022Bib from "./bib/prochazka_scalable_2022.bib?raw";
+import prochazkaWhich2023Bib from "./bib/prochazka_which_2023.bib?raw";
+
 export const publications: Array<PublicationSpec> = [
   {
     abstract:
       "Automatický klasifikátor rozpoznávající aktivity malware na úrovni síťových spojení za pomoci multi-instančního učení.",
     authors: ["Marek Dědič"],
-    bib: "@thesis{dedic_hierarchicke_2017,\n\taddress = {Prague, Czech Republic},\n\ttype = {Bachelor thesis},\n\ttitle = {Hierarchické modely síťového provozu},\n\turl = {https://dspace.cvut.cz/handle/10467/75824},\n\tlanguage = {Czech},\n\tschool = {Czech Technical University in Prague},\n\tauthor = {Dědič, Marek},\n\tmonth = aug,\n\tyear = {2017},\n}",
+    bib: dedicHierarchicke2017Bib,
     date: new Date("2017-08-30"),
     id: "dedic_hierarchicke_2017",
     paperPdf: "publications/papers/dedic_hierarchicke_2017.pdf",
@@ -18,7 +31,7 @@ export const publications: Array<PublicationSpec> = [
     abstract:
       "Multi-instance clustering using contrastive predictive coding, triplet and magnet loss.",
     authors: ["Marek Dědič"],
-    bib: "@mastersthesis{dedic_optimalization_2020,\n\taddress = {Prague, Czech Republic},\n\ttitle = {Optimalization of distances for multi-instance clustering},\n\tschool = {Czech Technical University in Prague},\n\tauthor = {Dědič, Marek},\n\tmonth = jan,\n\tyear = {2020},\n}",
+    bib: dedicOptimalization2020Bib,
     date: new Date("2020-01-07"),
     id: "dedic_optimalization_2020",
     paperPdf: "publications/papers/dedic_optimalization_2020.pdf",
@@ -31,7 +44,7 @@ export const publications: Array<PublicationSpec> = [
     abstract:
       "Identification of infected computers in the computer network from their HTTP traffic using recent progress in multiple-instance learning.",
     authors: ["Tomas Pevny", "Marek Dedic"],
-    bib: "@misc{pevny_nested_2020,\n\ttitle = {Nested {Multiple} {Instance} {Learning} in {Modelling} of {HTTP} network traffic},\n\turl = {http://arxiv.org/abs/2002.04059},\n\tdoi = {10.48550/arXiv.2002.04059},\n\tpublisher = {arXiv},\n\tauthor = {Pevny, Tomas and Dedic, Marek},\n\tmonth = feb,\n\tyear = {2020},\n}",
+    bib: pevnyNested2020Bib,
     date: new Date("2020-02-10"),
     id: "pevny_nested_2020",
     paperPdf: "publications/papers/pevny_nested_2020.pdf",
@@ -44,7 +57,7 @@ export const publications: Array<PublicationSpec> = [
     abstract:
       "Multi-instance clustering using contrastive predictive coding, triplet and magnet loss.",
     authors: ["Marek Dědič", "Tomáš Pevný", "Lukáš Bajer", "Martin Holeňa"],
-    bib: "@inproceedings{dedic_loss_2020,\n\taddress = {Oravská Lesná, Slovakia},\n\ttitle = {Loss {Functions} for {Clustering} in {Multi}-instance {Learning}},\n\tvolume = {2718},\n\turl = {http://ceur-ws.org/Vol-2718/#paper05},\n\tbooktitle = {Proceedings of the 20th {Conference} {Information} {Technologies} - {Applications} and {Theory} ({ITAT} 2020)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Dědič, Marek and Pevný, Tomáš and Bajer, Lukáš and Holeňa, Martin},\n\tmonth = oct,\n\tyear = {2020},\n\tpages = {137--146},\n}",
+    bib: dedicLoss2020Bib,
     date: new Date("2020-10-30"),
     id: "dedic_loss_2020",
     paperPdf: "publications/papers/dedic_loss_2020.pdf",
@@ -56,7 +69,7 @@ export const publications: Array<PublicationSpec> = [
     abstract:
       "An experimental comparison of four variants of 1-GNN and GIN from the point of view of graph representation for downstream classification.",
     authors: ["Sergej Borisov", "Marek Dědič", "Martin Holeňa"],
-    bib: "@inproceedings{borisov_experimental_2021,\n\taddress = {Heľpa, Slovakia},\n\ttitle = {Experimental {Investigation} of {Neural} and {Weisfeiler}-{Lehman}-{Kernel} {Graph} {Representations} for {Downstream} {Classification}},\n\tvolume = {2962},\n\turl = {http://ceur-ws.org/Vol-2962/#paper50},\n\tbooktitle = {Proceedings of the 21st {Conference} {Information} {Technologies} – {Applications} and {Theory} ({ITAT} 2021)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Borisov, Sergej and Dědič, Marek and Holeňa, Martin},\n\tmonth = oct,\n\tyear = {2021},\n\tpages = {130--139},\n}",
+    bib: borisovExperimental2021Bib,
     date: new Date("2021-10-02"),
     id: "borisov_experimental_2021",
     paperPdf: "publications/papers/borisov_experimental_2021.pdf",
@@ -74,7 +87,7 @@ export const publications: Array<PublicationSpec> = [
       "Pavel Procházka",
       "Martin Holeňa",
     ],
-    bib: "@inproceedings{dedic_adaptive_2022,\n\taddress = {Grenoble, France},\n\ttitle = {Adaptive graph coarsening in the context of local graph quality},\n\turl = {https://graphquality.github.io/rsc/art1.pdf},\n\tbooktitle = {Data and {Model} {Quality} for {Mining} and {Learning} with {Graphs}: {Methods} and {Open} {Challenges} @{ECML}-{PKDD} 2022},\n\tauthor = {Dědič, Marek and Bajer, Lukáš and Repický, Jakub and Procházka, Pavel and Holeňa, Martin},\n\tmonth = sep,\n\tyear = {2022},\n}",
+    bib: dedicAdaptive2022Bib,
     date: new Date("2022-09-29"),
     id: "dedic_adaptive_2022",
     paperPdf: "publications/papers/dedic_adaptive_2022.pdf",
@@ -86,7 +99,7 @@ export const publications: Array<PublicationSpec> = [
     abstract:
       "A simple scalable task-aware graph preprocessing procedure allowing us to obtain a reduced graph such that a GNN achieves a given desired performance on a given downstream task.",
     authors: ["Pavel Procházka", "Michal Mareš", "Marek Dědič"],
-    bib: "@inproceedings{prochazka_scalable_2022,\n\taddress = {Zuberec, Slovakia},\n\ttitle = {Scalable {Graph} {Size} {Reduction} for {Efficient} {GNN} {Application}},\n\tvolume = {3226},\n\turl = {http://ceur-ws.org/Vol-3226/#paper9},\n\tbooktitle = {Proceedings of the 22nd {Conference} {Information} {Technologies} – {Applications} and {Theory} ({ITAT} 2022)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Procházka, Pavel and Mareš, Michal and Dědič, Marek},\n\tmonth = sep,\n\tyear = {2022},\n\tpages = {75--84},\n}",
+    bib: prochazkaScalable2022Bib,
     date: new Date("2022-09-30"),
     id: "prochazka_scalable_2022",
     paperPdf: "publications/papers/prochazka_scalable_2022.pdf",
@@ -99,7 +112,7 @@ export const publications: Array<PublicationSpec> = [
     abstract:
       "A methodical way of linking graph properties with the performance of a GNN solving a given task on such graph via a surrogate regression model that is trained to predict the performance of the GNN from the properties of the graph dataset.",
     authors: ["Pavel Procházka", "Michal Mareš", "Marek Dědič"],
-    bib: "@inproceedings{prochazka_which_2023,\n\taddress = {Tatranské Matliare, Slovakia},\n\ttitle = {Which {Graph} {Properties} {Affect} {GNN} {Performance} for a {Given} {Downstream} {Task}?},\n\tvolume = {3498},\n\turl = {https://ceur-ws.org/Vol-3498/#paper7},\n\tbooktitle = {Proceedings of the 23nd {Conference} {Information} {Technologies} – {Applications} and {Theory} ({ITAT} 2023)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Procházka, Pavel and Mareš, Michal and Dědič, Marek},\n\tmonth = oct,\n\tyear = {2023},\n\tpages = {58--66},\n}",
+    bib: prochazkaWhich2023Bib,
     date: new Date("2023-10-07"),
     id: "prochazka_which_2023",
     paperPdf: "publications/papers/prochazka_which_2023.pdf",
@@ -112,7 +125,7 @@ export const publications: Array<PublicationSpec> = [
     abstract:
       "A method for node classification that allows a user to precisely select the resolution at which the graph in question should be pretrained.",
     authors: ["Marek Dědič", "Lukas Bajer", "Pavel Prochazka", "Martin Holena"],
-    bib: "@inproceedings{dedic_balancing_2024,\n\taddress = {Vienna, Austria},\n\ttitle = {Balancing performance and complexity with adaptive graph coarsening},\n\turl = {https://openreview.net/forum?id=DrHwIzz93C},\n\tbooktitle = {The {Second} {Tiny} {Papers} {Track} at {ICLR} 2024},\n\tauthor = {Dědič, Marek and Bajer, Lukas and Prochazka, Pavel and Holena, Martin},\n\tmonth = may,\n\tyear = {2024},\n}",
+    bib: dedicBalancing2024Bib,
     date: new Date("2024-05-11"),
     id: "dedic_balancing_2024",
     paperPdf: "publications/papers/dedic_balancing_2024.pdf",
@@ -125,7 +138,7 @@ export const publications: Array<PublicationSpec> = [
     abstract:
       "A simple, scalable and efficient baseline algorithm for classification and retrieval in hypergraphs, based on non-parametric convolution.",
     authors: ["Pavel Procházka", "Marek Dědič", "Lukáš Bajer"],
-    bib: "@inproceedings{prochazka_convolutional_2024,\n\taddress = {Vilnius, Lithuania},\n\ttitle = {Convolutional {Signal} {Propagation}: {A} {Simple} {Scalable} {Algorithm} for {Hypergraphs}},\n\turl = {https://mlg-europe.github.io/2024/papers/131/CameraReady/MLG-ECML-2024-paper.pdf},\n\tbooktitle = {21st {International} {Workshop} on {Mining} and {Learning} with {Graphs} @{ECMLPKDD} 2024},\n\tauthor = {Procházka, Pavel and Dědič, Marek and Bajer, Lukáš},\n\tmonth = sep,\n\tyear = {2024},\n}",
+    bib: prochazkaConvolutional2024Bib,
     date: new Date("2024-09-09"),
     id: "prochazka_convolutional_2024",
     paperPdf: "publications/papers/prochazka_convolutional_2024.pdf",
@@ -139,7 +152,7 @@ export const publications: Array<PublicationSpec> = [
     abstract:
       "A benchmark of hyperparameter optimization algorithms on graph neural networks and a novel, dataset-property-informed hyperparameter optimization algorithm for graph learning.",
     authors: ["Marek Dědič", "Michal Bělohlávek"],
-    bib: "@inproceedings{dedic_benchmarking_2026,\n\tlocation = {Marbella, Spain},\n\ttitle = {Benchmarking and Transfer Learning for Hyperparameter Optimization of Graph Neural Networks},\n\tvolume = {4},\n\tisbn = {978-989-758-796-2},\n\teventtitle = {18th International Conference on Agents and Artificial Intelligence},\n\tpages = {3079--3086},\n\tbooktitle = {Proceedings of the 18th International Conference on Agents and Artificial Intelligence},\n\tauthor = {Dědič, Marek and Bělohlávek, Michal},\n\tdate = {2026-04},\n}",
+    bib: dedicBenchmarking2026Bib,
     blogpostUrl:
       "/blog/hyperparameter-optimization-for-gnns-with-transfer-learning",
     date: new Date("2026-03-08"),
@@ -156,7 +169,7 @@ export const publications: Array<PublicationSpec> = [
     abstract:
       "An exploration of the viability of using synthetic datasets for pretraining of hyper-parameter optimization for graph learning.",
     authors: ["Marek Dědič", "Martin Holeňa"],
-    bib: "@inproceedings{dedic_towards_2026,\n\taddress = {Biele Karpaty, Slovakia},\n\ttitle = {Towards Synthetic Data Pretraining for Hyperparameter Optimization in Graph Learning},\n\tbooktitle = {Proceedings of the 26nd Conference Information Technologies – Applications and Theory (ITAT 2026)},\n\tpublisher = {CEUR-WS.org},\n\tauthor = {Dědič, Marek and Holeňa, Martin},\n\tyear = {2026},\n}",
+    bib: dedicTowards2026Bib,
     id: "dedic_towards_2026",
     paperPdf: "publications/papers/dedic_towards_2026.pdf",
     tags: ["ITAT"],
