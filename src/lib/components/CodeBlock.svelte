@@ -72,10 +72,6 @@
     position: relative;
   }
 
-  div:hover button {
-    display: block;
-  }
-
   button {
     background-color: var(--background-color);
     border: none;
@@ -94,5 +90,9 @@
 
   button:hover {
     color: var(--primary-color);
+  }
+
+  div:hover button {
+    display: block;
   }
 </style>
