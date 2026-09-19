@@ -4,9 +4,9 @@
     faClipboardCheck,
   } from "@fortawesome/free-solid-svg-icons";
   import Prism from "prismjs";
-  import "prismjs/themes/prism-coy.css";
   import "prismjs-bibtex";
   import Fa from "svelte-fa";
+  import "$lib/code-syntax-highlighting.css";
 
   interface Props {
     code: string;
@@ -57,15 +57,12 @@
   pre {
     background-color: var(--primary-bg-color);
     border-radius: 0.25rem;
+    color: var(--text-color);
     overflow-y: auto;
     padding: 0.5rem;
     transition:
       background-color var(--transition-duration) ease,
       border-color var(--transition-duration) ease;
-  }
-
-  :global(html[data-theme="dark"]) code[class*="language-"] {
-    color: var(--text-color);
   }
 
   div {
