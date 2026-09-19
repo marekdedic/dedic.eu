@@ -54,9 +54,7 @@
   {/each}
 </div>
 
-<style lang="scss">
-  @use "../../../lib/theme.scss" as theme;
-
+<style>
   div {
     font-size: 0.8rem;
   }
@@ -74,7 +72,7 @@
     padding: 0.1rem 0.3rem;
     width: fit-content;
     transition:
-      background-color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
+      background-color var(--transition-duration) ease,
+      border-color var(--transition-duration) ease;
   }
 </style>

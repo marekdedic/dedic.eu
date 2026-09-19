@@ -31,6 +31,38 @@ const SAFE = {
 };
 
 /**
+ * Functional-notation names (`lab`, `oklch`, `color-mix`, ...) used in a value.
+ *
+ * @param {string} value
+ * @returns {Set<string>} lower-cased function names appearing in the value
+ */
+const functionNames = (value) =>
+  new Set(
+    Array.from(value.matchAll(/([\w-]+)\(/gu), ([, name]) =>
+      name.toLowerCase(),
+    ),
+  );
+
+/*
+ * @param {import("postcss").Declaration} decl
+ * @returns {boolean}
+ */
+const guardedBySupports = (decl) => {
+  const used = functionNames(decl.value);
+  for (let node = decl.parent; node; node = node.parent) {
+    if (
+      node.type === "atrule" &&
+      node.name === "supports" &&
+      !/\bnot\b/u.test(node.params) &&
+      Array.from(functionNames(node.params)).some((name) => used.has(name))
+    ) {
+      return true;
+    }
+  }
+  return false;
+};
+
+/**
  * @param {string} dir
  * @returns {Promise<Array<string>>} every .css file below dir, recursively
  */
@@ -63,6 +95,9 @@ const problems = (
       await postcss([
         doiuse({
           onFeatureUsage: ({ feature, featureData, usage }) => {
+            if (usage.type === "decl" && guardedBySupports(usage)) {
+              return;
+            }
             if (
               Object.hasOwn(SAFE, feature) &&
               usage.type === "decl" &&

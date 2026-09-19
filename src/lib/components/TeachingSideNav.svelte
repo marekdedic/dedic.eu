@@ -85,12 +85,12 @@
     margin-top: 1rem;
   }
 
-  h3:first-child {
-    margin-top: 0;
-  }
-
   button h3 {
     margin-bottom: 0;
+  }
+
+  h3:first-child {
+    margin-top: 0;
   }
 
   a {

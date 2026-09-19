@@ -53,17 +53,15 @@
   <pre><code class={codeClass}>{@html formattedCode}</code></pre>
 </div>
 
-<style lang="scss">
-  @use "../../lib/theme.scss" as theme;
-
+<style>
   pre {
     background-color: var(--primary-bg-color);
     border-radius: 0.25rem;
     overflow-y: auto;
     padding: 0.5rem;
     transition:
-      background-color theme.$transition-duration ease,
-      border-color theme.$transition-duration ease;
+      background-color var(--transition-duration) ease,
+      border-color var(--transition-duration) ease;
   }
 
   :global(html[data-theme="dark"]) code[class*="language-"] {
@@ -72,10 +70,6 @@
 
   div {
     position: relative;
-  }
-
-  div:hover button {
-    display: block;
   }
 
   button {
@@ -90,11 +84,15 @@
     right: 10px;
     top: 10px;
     transition:
-      color theme.$transition-duration ease,
-      background-color theme.$transition-duration ease;
+      color var(--transition-duration) ease,
+      background-color var(--transition-duration) ease;
   }
 
   button:hover {
     color: var(--primary-color);
+  }
+
+  div:hover button {
+    display: block;
   }
 </style>

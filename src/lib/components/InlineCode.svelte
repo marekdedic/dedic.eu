@@ -12,9 +12,7 @@
   {@render children()}
 </code>
 
-<style lang="scss">
-  @use "../theme.scss" as theme;
-
+<style>
   code {
     background-color: var(--primary-bg-color);
     border-radius: 3px;
@@ -25,7 +23,7 @@
     font-size: 87.5%;
     padding: 3px;
     transition:
-      background-color theme.$transition-duration ease,
-      color theme.$transition-duration ease;
+      background-color var(--transition-duration) ease,
+      color var(--transition-duration) ease;
   }
 </style>

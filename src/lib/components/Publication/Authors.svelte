@@ -12,12 +12,10 @@
   {authors[authors.length - 1]}
 </div>
 
-<style lang="scss">
-  @use "../../../lib/theme.scss" as theme;
-
+<style>
   div {
     color: var(--text-color-faded);
     font-size: 0.8rem;
-    transition: color theme.$transition-duration ease;
+    transition: color var(--transition-duration) ease;
   }
 </style>

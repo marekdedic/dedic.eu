@@ -102,9 +102,7 @@
   {/if}
 </div>
 
-<style lang="scss">
-  @use "../../lib/theme.scss" as theme;
-
+<style>
   .abstract {
     margin-bottom: 0.5rem;
   }
@@ -155,7 +153,7 @@
     padding-bottom: 2rem;
     padding-top: 2rem;
     scroll-margin-top: 2rem;
-    transition: border-color theme.$transition-duration ease;
+    transition: border-color var(--transition-duration) ease;
   }
 
   .publication:last-of-type {

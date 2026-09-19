@@ -12,9 +12,7 @@
   {@render children()}
 </div>
 
-<style lang="scss">
-  @use "../../lib/theme.scss" as theme;
-
+<style>
   div {
     border: 1px solid var(--primary-color);
     background-color: var(--primary-bg-color);
