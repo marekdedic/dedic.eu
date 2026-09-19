@@ -6,14 +6,13 @@
 
 <li>
   <button
-    class:light={theme.value !== "dark"}
     aria-label="Dark mode toggle"
     onclick={(): void => {
       theme.toggle();
     }}
     type="button"
   >
-    <Fa icon={theme.value === "dark" ? faSun : faMoon} size="lg" />
+    <Fa fw icon={theme.value === "dark" ? faSun : faMoon} size="lg" />
   </button>
 </li>
 
@@ -34,9 +33,5 @@
 
   li {
     list-style: none;
-  }
-
-  .light {
-    margin-right: 0.275rem;
   }
 </style>
