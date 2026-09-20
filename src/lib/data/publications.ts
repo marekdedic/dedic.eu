@@ -2,6 +2,7 @@ import type { PublicationSpec } from "$lib/types/PublicationSpec";
 
 import borisovExperimental2021Bib from "./bib/borisov_experimental_2021.bib?raw";
 import dedicAdaptive2022Bib from "./bib/dedic_adaptive_2022.bib?raw";
+import dedicBalancing2023Bib from "./bib/dedic_balancing_2023.bib?raw";
 import dedicBalancing2024Bib from "./bib/dedic_balancing_2024.bib?raw";
 import dedicBenchmarking2026Bib from "./bib/dedic_benchmarking_2026.bib?raw";
 import dedicHierarchicke2017Bib from "./bib/dedic_hierarchicke_2017.bib?raw";
@@ -120,6 +121,20 @@ export const publications: Array<PublicationSpec> = [
     tags: ["ITAT"],
     title:
       "Which Graph Properties Affect GNN Performance for a Given Downstream Task?",
+  },
+  {
+    abstract:
+      "The full version of the method for node classification that allows a user to precisely select the resolution at which the graph in question should be pretrained.",
+    authors: ["Marek Dědič", "Lukáš Bajer", "Pavel Procházka", "Martin Holeňa"],
+    bib: dedicBalancing2023Bib,
+    date: new Date("2023-09-22"),
+    id: "dedic_balancing_2023",
+    paperPdf: "publications/papers/dedic_balancing_2023.pdf",
+    posterPdf: "publications/posters/dedic_balancing_2023.pdf",
+    previewImage: "/images/publication-preview-images/dedic_balancing_2023.png",
+    tags: ["MLG", "ECML"],
+    title:
+      "Balancing performance and complexity with adaptive graph coarsening",
   },
   {
     abstract:
