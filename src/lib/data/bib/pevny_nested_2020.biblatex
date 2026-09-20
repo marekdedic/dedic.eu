@@ -1,0 +1,11 @@
+@online{pevny_nested_2020,
+	title = {Nested {Multiple} {Instance} {Learning} in {Modelling} of {HTTP} network traffic},
+	url = {http://arxiv.org/abs/2002.04059},
+	doi = {10.48550/arXiv.2002.04059},
+	eprinttype = {arxiv},
+	eprint = {2002.04059},
+	eprintclass = {cs.CR},
+	publisher = {arXiv},
+	author = {Pevny, Tomas and Dedic, Marek},
+	date = {2020-02},
+}

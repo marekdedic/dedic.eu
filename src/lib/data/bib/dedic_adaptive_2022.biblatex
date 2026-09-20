@@ -1,0 +1,9 @@
+@inproceedings{dedic_adaptive_2022,
+	venue = {Grenoble, France},
+	title = {Adaptive graph coarsening in the context of local graph quality},
+	url = {https://graphquality.github.io/rsc/art1.pdf},
+	eventtitle = {Data and {Model} {Quality} for {Mining} and {Learning} with {Graphs}: {Methods} and {Open} {Challenges}},
+	booktitle = {Data and {Model} {Quality} for {Mining} and {Learning} with {Graphs}: {Methods} and {Open} {Challenges} @{ECML}-{PKDD} 2022},
+	author = {Dědič, Marek and Bajer, Lukáš and Repický, Jakub and Procházka, Pavel and Holeňa, Martin},
+	date = {2022-09},
+}
