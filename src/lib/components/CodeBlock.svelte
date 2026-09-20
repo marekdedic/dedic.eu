@@ -8,23 +8,21 @@
   import "$lib/code-syntax-highlighting.css";
 
   interface Props {
-    code?: string;
-    codes?: Record<string, string>;
+    code: Record<string, string> | string;
     copyButton?: boolean;
-    language?: string;
   }
 
-  let { code, codes, copyButton = true, language }: Props = $props();
+  let { code, copyButton = true }: Props = $props();
 
   let tabs: Array<{
     code: string;
     language: string | undefined;
   }> = $derived(
-    codes === undefined
-      ? [{ code: code ?? "", language }]
-      : Object.entries(codes).map(([tabLanguage, tabCode]) => ({
+    typeof code === "string"
+      ? [{ code, language: undefined }]
+      : Object.entries(code).map(([language, tabCode]) => ({
           code: tabCode,
-          language: tabLanguage,
+          language,
         })),
   );
 
