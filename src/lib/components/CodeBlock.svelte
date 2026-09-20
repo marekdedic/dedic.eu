@@ -8,28 +8,51 @@
   import "$lib/code-syntax-highlighting.css";
 
   interface Props {
-    code: string;
+    code?: string;
+    codes?: Record<string, string>;
     copyButton?: boolean;
     language?: string;
   }
 
-  let { code, copyButton = true, language }: Props = $props();
+  let { code, codes, copyButton = true, language }: Props = $props();
+
+  let tabs: Array<{
+    code: string;
+    language: string | undefined;
+  }> = $derived(
+    codes === undefined
+      ? [{ code: code ?? "", language }]
+      : Object.entries(codes).map(([tabLanguage, tabCode]) => ({
+          code: tabCode,
+          language: tabLanguage,
+        })),
+  );
+
+  let active = $state(0);
+
+  let activeTab = $derived(tabs[Math.min(active, tabs.length - 1)]);
 
   // Missing a language? Add it to vite.config.ts
   let formattedCode = $derived(
-    language !== undefined && language in Prism.languages
-      ? Prism.highlight(code, Prism.languages[language], language)
-      : code,
+    activeTab.language !== undefined && activeTab.language in Prism.languages
+      ? Prism.highlight(
+          activeTab.code,
+          Prism.languages[activeTab.language],
+          activeTab.language,
+        )
+      : activeTab.code,
   );
 
   let codeClass = $derived(
-    language === undefined ? undefined : `language-${language}`,
+    activeTab.language === undefined
+      ? undefined
+      : `language-${activeTab.language}`,
   );
 
   let copied = $state(false);
 
   function copy(): void {
-    void navigator.clipboard.writeText(code).then(() => {
+    void navigator.clipboard.writeText(activeTab.code).then(() => {
       copied = true;
       setTimeout(() => {
         copied = false;
@@ -38,9 +61,31 @@
   }
 </script>
 
-<div>
+<div class:tabbed={tabs.length > 1}>
+  {#if tabs.length > 1}
+    <div class="tabs" role="tablist">
+      {#each tabs as tab, index (tab.language ?? index)}
+        <button
+          class="tab"
+          class:active={index === active}
+          aria-selected={index === active}
+          onclick={(): void => {
+            active = index;
+            copied = false;
+          }}
+          role="tab"
+          type="button">{tab.language}</button
+        >
+      {/each}
+    </div>
+  {/if}
   {#if copyButton}
-    <button aria-label="Copy to clipboard" onclick={copy} type="button">
+    <button
+      class="copy"
+      aria-label="Copy to clipboard"
+      onclick={copy}
+      type="button"
+    >
       <Fa icon={copied ? faClipboardCheck : faClipboard} size="lg" />
     </button>
   {/if}
@@ -61,7 +106,37 @@
     position: relative;
   }
 
-  button {
+  .tabbed pre {
+    border-radius: 0 0 0.25rem 0.25rem;
+    margin-top: 0;
+  }
+
+  .tabs {
+    background-color: var(--primary-bg-color);
+    border-bottom: 1px solid var(--divider-color);
+    border-radius: 0.25rem 0.25rem 0 0;
+    padding: 0 0.5rem;
+  }
+
+  .tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    margin-bottom: -1px;
+    padding: 0.5rem 0.6rem;
+  }
+
+  .tab:hover {
+    color: var(--primary-color);
+  }
+
+  .tab.active {
+    border-bottom-color: var(--primary-color);
+    color: var(--primary-color);
+  }
+
+  .copy {
     background-color: var(--background-color);
     border: none;
     border-radius: 5px;
@@ -74,11 +149,15 @@
     top: 10px;
   }
 
-  button:hover {
+  .tabbed .copy {
+    top: 3rem;
+  }
+
+  .copy:hover {
     color: var(--primary-color);
   }
 
-  div:hover button {
+  div:hover .copy {
     display: block;
   }
 </style>
