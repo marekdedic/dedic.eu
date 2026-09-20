@@ -69,7 +69,7 @@
 
     <Heading level={2}>recent publications</Heading>
 
-    {#each data.publications.slice(0, 2) as publication (publication.title)}
+    {#each data.publications.slice(0, 2) as publication (publication.id)}
       <Publication {publication} />
     {/each}
   </article>
