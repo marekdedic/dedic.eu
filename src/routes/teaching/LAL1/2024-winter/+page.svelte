@@ -1,3 +1,7 @@
+<script lang="ts" module>
+  export const semester = "ZS 24/25";
+</script>
+
 <script lang="ts">
   import type { CourseSpec } from "$lib/types/CourseSpec";
 
