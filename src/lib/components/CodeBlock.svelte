@@ -113,6 +113,7 @@
     background-color: var(--primary-bg-color);
     border-bottom: 1px solid var(--divider-color);
     border-radius: 0.25rem 0.25rem 0 0;
+    margin-top: 1em;
     padding: 0 0.5rem;
   }
 
