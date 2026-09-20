@@ -18,7 +18,7 @@
   </header>
 
   <article>
-    {#each data.publications as publication (publication.title)}
+    {#each data.publications as publication (publication.id)}
       <Publication {publication} />
     {/each}
   </article>
