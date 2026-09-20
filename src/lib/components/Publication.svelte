@@ -60,7 +60,7 @@
       {posterPdf}
     />
     {#if showBib && bib !== undefined}
-      <CodeBlock code={bib} language="bib" />
+      <CodeBlock code={{ bib }} />
     {/if}
   {:else}
     <div class="container">
@@ -96,7 +96,7 @@
     </div>
     {#if showBib && bib !== undefined}
       <div class="bib">
-        <CodeBlock code={bib} language="bib" />
+        <CodeBlock code={{ bib }} />
       </div>
     {/if}
   {/if}
