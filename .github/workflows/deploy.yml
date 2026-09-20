@@ -74,3 +74,5 @@ jobs:
           exclude: |
             .well-known/pki-validation/*
             cgi-bin/*
+            tmp/
+            tmp/**/*
