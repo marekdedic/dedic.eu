@@ -1,3 +1,7 @@
+<script lang="ts" module>
+  export const semester = "summer 2026";
+</script>
+
 <script lang="ts">
   import type { CourseSpec } from "$lib/types/CourseSpec";
 
@@ -17,10 +21,7 @@
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>
-  <CouseHeader
-    course={data.teachingSpec.find((c) => c.slug === "NSN")}
-    version="2026-summer"
-  />
+  <CouseHeader spec={data.teachingSpec} />
 
   <article>
     <p>

@@ -1,6 +1,6 @@
 import type { CourseSpec } from "$lib/types/CourseSpec";
 
-import { loadJsonConfig } from "$lib/utils/loadJsonConfig";
+import { teachingSpec } from "$lib/data/teaching";
 
 import type { LayoutServerLoad } from "./$types";
 
@@ -11,12 +11,7 @@ export const load: LayoutServerLoad<{
   description: string;
   teachingSpec: Array<CourseSpec>;
   title: string;
-}> = async ({ fetch, url }) => {
-  const teachingSpec = await loadJsonConfig<Array<CourseSpec>>(
-    "/teaching.json",
-    fetch,
-  );
-
+}> = ({ url }) => {
   const parts = url.pathname.split("/").filter(Boolean);
   // Parts: ['teaching'] | ['teaching', courseSlug] | ['teaching', courseSlug, versionSlug]
 
