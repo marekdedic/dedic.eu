@@ -1,10 +1,9 @@
 <script lang="ts">
+  import Prism from "$lib/utils/prism";
   import {
     faClipboard,
     faClipboardCheck,
   } from "@fortawesome/free-solid-svg-icons";
-  import Prism from "prismjs";
-  import "prismjs-bibtex";
   import Fa from "svelte-fa";
   import "$lib/code-syntax-highlighting.css";
 
@@ -16,11 +15,7 @@
 
   let { code, copyButton = true, language }: Props = $props();
 
-  // We highlight manually via Prism.highlight() below. Without this, Prism
-  // auto-runs highlightAll() on DOMContentLoaded.
-  Prism.manual = true;
-
-  // Missing a language? Add it to vite.config.js
+  // Missing a language? Add it to vite.config.ts
   let formattedCode = $derived(
     language !== undefined && language in Prism.languages
       ? Prism.highlight(code, Prism.languages[language], language)
