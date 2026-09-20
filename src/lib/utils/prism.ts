@@ -6,4 +6,7 @@ import "prismjs-bibtex";
 // highlightAll() on DOMContentLoaded.
 Prism.manual = true;
 
+// BibLaTeX shares BibTeX's syntax; reuse the bibtex grammar for highlighting.
+Prism.languages["biblatex"] = Prism.languages["bib"];
+
 export default Prism;

@@ -18,6 +18,7 @@
     abstract,
     authors,
     bib,
+    biblatex,
     blogpostUrl,
     date,
     id,
@@ -27,6 +28,12 @@
     tags = [],
     title,
   } = $derived(publication);
+
+  const citations = $derived({
+    ...(bib === undefined ? {} : { bibtex: bib }),
+    ...(biblatex === undefined ? {} : { biblatex }),
+  });
+  const hasCitations = $derived(Object.keys(citations).length > 0);
 
   let showBib = $state(false);
 
@@ -51,16 +58,16 @@
       {abstract}
     </div>
     <SourceButtons
-      {bib}
       {blogpostUrl}
+      {hasCitations}
       ontoggleBib={(): void => {
         showBib = !showBib;
       }}
       {paperPdf}
       {posterPdf}
     />
-    {#if showBib && bib !== undefined}
-      <CodeBlock code={{ bib }} />
+    {#if showBib && hasCitations}
+      <CodeBlock code={citations} />
     {/if}
   {:else}
     <div class="container">
@@ -79,8 +86,8 @@
           {abstract}
         </div>
         <SourceButtons
-          {bib}
           {blogpostUrl}
+          {hasCitations}
           ontoggleBib={(): void => {
             showBib = !showBib;
           }}
@@ -96,7 +103,7 @@
     </div>
     {#if showBib && bib !== undefined}
       <div class="bib">
-        <CodeBlock code={{ bib }} />
+        <CodeBlock code={citations} />
       </div>
     {/if}
   {/if}

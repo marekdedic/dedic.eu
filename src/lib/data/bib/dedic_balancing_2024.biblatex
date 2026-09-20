@@ -1,0 +1,9 @@
+@inproceedings{dedic_balancing_2024,
+	venue = {Vienna, Austria},
+	title = {Balancing performance and complexity with adaptive graph coarsening},
+	url = {https://openreview.net/forum?id=DrHwIzz93C},
+	eventtitle = {The Twelfth International Conference on Learning Representations},
+	booktitle = {The {Second} {Tiny} {Papers} {Track} at {ICLR} 2024},
+	author = {Dědič, Marek and Bajer, Lukas and Prochazka, Pavel and Holena, Martin},
+	date = {2024-05},
+}
