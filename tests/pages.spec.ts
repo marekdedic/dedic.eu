@@ -19,7 +19,7 @@ test("/publications", async ({ page }) => {
     mask: [page.getByRole("img")],
   });
   // eslint-disable-next-line playwright/no-nth-methods -- General testing, what's first is irrelevant
-  await page.getByLabel("Show bibtex citation").first().click();
+  await page.getByLabel("Show citation").first().click();
   await expect(page).toHaveScreenshot({
     fullPage: true,
     mask: [page.getByRole("img")],

@@ -2,6 +2,7 @@ export interface PublicationSpec {
   abstract: string;
   authors: Array<string>;
   bib?: string;
+  biblatex?: string;
   blogpostUrl?: string;
   date?: Date;
   id: string;

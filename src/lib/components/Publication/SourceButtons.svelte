@@ -2,14 +2,15 @@
   import { asset, resolve } from "$app/paths";
 
   interface Props {
-    bib: string | undefined;
     blogpostUrl: string | undefined;
+    hasCitations: boolean;
     ontoggleBib(this: void): void;
     paperPdf: string | undefined;
     posterPdf: string | undefined;
   }
 
-  let { bib, blogpostUrl, ontoggleBib, paperPdf, posterPdf }: Props = $props();
+  let { blogpostUrl, hasCitations, ontoggleBib, paperPdf, posterPdf }: Props =
+    $props();
 </script>
 
 <div>
@@ -32,12 +33,8 @@
       Poster
     </a>
   {/if}
-  {#if bib !== undefined}
-    <button
-      aria-label="Show bibtex citation"
-      onclick={ontoggleBib}
-      type="button"
-    >
+  {#if hasCitations}
+    <button aria-label="Show citation" onclick={ontoggleBib} type="button">
       Cite
     </button>
   {/if}
