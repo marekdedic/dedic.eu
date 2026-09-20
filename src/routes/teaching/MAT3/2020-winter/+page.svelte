@@ -17,10 +17,7 @@
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>
-  <CouseHeader
-    course={data.teachingSpec.find((c) => c.slug === "MAT3")}
-    version="2020-winter"
-  />
+  <CouseHeader spec={data.teachingSpec} />
 
   <article>
     <p>

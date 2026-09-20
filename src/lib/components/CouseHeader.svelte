@@ -3,16 +3,21 @@
 
   import { goto } from "$app/navigation";
   import { resolve } from "$app/paths";
+  import { page } from "$app/state";
   import { findCourseRoute } from "$lib/utils/findCourseRoute";
 
   import Select from "./Select.svelte";
 
   interface Props {
-    course: CourseSpec | undefined;
-    version: string;
+    spec: Array<CourseSpec>;
   }
 
-  let { course, version }: Props = $props();
+  let { spec }: Props = $props();
+
+  // Route is /teaching/<courseSlug>/<version>
+  const parts = $derived(page.url.pathname.split("/").filter(Boolean));
+  const course = $derived(spec.find((c) => c.slug === parts[1]));
+  const version = $derived(parts[2]);
 </script>
 
 <header>
