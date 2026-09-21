@@ -121,6 +121,7 @@
     background: none;
     border: none;
     border-bottom: 2px solid transparent;
+    color: var(--text-color);
     cursor: pointer;
     margin-bottom: -1px;
     padding: 0.5rem 0.6rem;
