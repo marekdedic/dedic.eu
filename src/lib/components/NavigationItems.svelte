@@ -17,6 +17,7 @@
   {onclick}
   title="publications"
 />
+<NavigationItem href={resolve("/blog")} {onclick} title="blog" />
 <!-- NavigationItem
   href="/projects"
   title="projects"

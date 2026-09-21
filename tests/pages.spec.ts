@@ -26,6 +26,27 @@ test("/publications", async ({ page }) => {
   });
 });
 
+test("/blog", async ({ page }) => {
+  await page.goto("/blog");
+  await page.waitForReady();
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+    mask: [page.getByRole("img")],
+  });
+});
+
+test("/blog/hyperparameter-optimization-for-gnns-with-transfer-learning", async ({
+  page,
+}) => {
+  await page.goto(
+    "/blog/hyperparameter-optimization-for-gnns-with-transfer-learning",
+  );
+  await page.waitForReady();
+  await expect(page).toHaveScreenshot({
+    fullPage: true,
+  });
+});
+
 test("/teaching", async ({ page }) => {
   await page.goto("/teaching");
   await page.waitForReady();
