@@ -18,6 +18,11 @@ export default {
         "font-src": ["self", "data:"],
         "frame-src": ["https://docs.google.com/"],
         "object-src": ["none"],
+        // Hash of the inline theme-init script in src/app.html
+        "script-src": [
+          "self",
+          "sha256-upM2JqPAVnUkR/yUUybD/h+31u36R0nSCBeNKVbh/qM=",
+        ],
         "style-src": ["self", "unsafe-inline"],
         "upgrade-insecure-requests": true,
       },
