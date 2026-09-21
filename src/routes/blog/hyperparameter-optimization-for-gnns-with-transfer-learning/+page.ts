@@ -1,10 +1,21 @@
+import type { BlogPostMeta } from "$lib/types/BlogPostSpec";
+
+export const _meta: BlogPostMeta = {
+  date: new Date("2026-03-06"),
+  description:
+    "Benchmarking five hyperparameter optimization methods for graph neural networks across nine datasets, and a meta-learning approach that transfers tuning knowledge between them to warm-start the search.",
+  ogType: "article",
+  tags: ["meta-learning", "GNNs", "research"],
+  title:
+    "hyperparameter optimization for graph neural networks with transfer learning",
+};
+
 export const load = (): {
   description: string;
   ogType: "article";
   title: string;
 } => ({
-  description:
-    "A deep dive into hyperparameter optimization for Graph Neural Networks using transfer learning across datasets, based on a benchmarking study presented at ICAART 2026.",
-  ogType: "article",
-  title: "Hyperparameter Optimization for GNNs with Transfer Learning",
+  description: _meta.description,
+  ogType: _meta.ogType,
+  title: _meta.title,
 });

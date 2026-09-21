@@ -18,4 +18,9 @@ test("navigation", async ({ page }) => {
     // eslint-disable-next-line playwright/no-raw-locators -- No other way to locate publications
     mask: [page.locator(".publication")],
   });
+  await page.getByRole("list").getByRole("link", { name: "blog" }).click();
+  await page.waitForURL("/blog");
+  await expect(page).toHaveScreenshot({
+    mask: [page.getByRole("img")],
+  });
 });

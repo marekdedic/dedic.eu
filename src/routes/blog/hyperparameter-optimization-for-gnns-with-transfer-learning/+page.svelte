@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { page } from "$app/state";
   import CodeBlock from "$lib/components/CodeBlock.svelte";
   import EmphasisedBox from "$lib/components/EmphasisedBox.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
@@ -10,10 +11,7 @@
 
 <PageContentBox>
   <header>
-    <h1>
-      Hyperparameter Optimization for Graph Neural Networks with Transfer
-      Learning
-    </h1>
+    <h1>{page.data.title}</h1>
   </header>
 
   <p>
@@ -25,7 +23,7 @@
   </p>
 
   <!-- ================================================================ -->
-  <h2>The Hyperparameter Tuning Problem for GNNs</h2>
+  <h2>the hyperparameter tuning problem for GNNs</h2>
 
   <p>
     <strong>Hyperparameter optimization</strong> (HPO) is the process of finding
@@ -52,7 +50,7 @@
   </p>
 
   <!-- ================================================================ -->
-  <h2>Graph Neural Networks Overview</h2>
+  <h2>graph neural network overview</h2>
 
   <p>
     Many real-world datasets are not tables of independent rows but <em
@@ -81,7 +79,7 @@
   </p>
 
   <!-- ================================================================ -->
-  <h2>The Hyperparameter Problem for GNNs</h2>
+  <h2>the hyperparameter problem for GNNs</h2>
 
   <p>
     GNNs expose a larger-than-usual set of hyperparameters, and many of them
@@ -114,7 +112,7 @@
 
   <EmphasisedBox>
     <p>
-      <strong>The HPO problem, formally.</strong> Given a labelled dataset <InlineMath
+      <strong>the HPO problem, formally.</strong> Given a labelled dataset <InlineMath
         src={String.raw`\mathcal{D}`}
       />, a learning algorithm <InlineMath src={String.raw`\mathscr{F}`} /> parameterized
       by hyperparameters <InlineMath
@@ -136,7 +134,7 @@
   </EmphasisedBox>
 
   <!-- ================================================================ -->
-  <h2>How Do You Search Efficiently? – Common HPO Methods</h2>
+  <h2>how do you search efficiently? – common HPO methods</h2>
 
   <p>
     There is a spectrum of HPO strategies, ranging from naive to sophisticated.
@@ -202,7 +200,7 @@ return best(history)`}
   </p>
 
   <!-- ================================================================ -->
-  <h2>The Benchmark – What Was Tested</h2>
+  <h2>the benchmark – what was tested</h2>
 
   <p>
     To get a reliable picture, we ran all five methods on nine standard graph
@@ -237,7 +235,7 @@ return best(history)`}
   </p>
 
   <!-- ================================================================ -->
-  <h2>Benchmark Results – What Works?</h2>
+  <h2>benchmark results – what works?</h2>
 
   <p>
     The results are in Table 1 below. Bold indicates the best method per
@@ -340,7 +338,7 @@ return best(history)`}
   </p>
 
   <!-- ================================================================ -->
-  <h2>The Meta-Learning Idea – Learning Across Datasets</h2>
+  <h2>the meta-learning idea – learning across datasets</h2>
 
   <p>
     BO and TPE are good, but they start from scratch on every new dataset. Every
@@ -377,9 +375,9 @@ return best(history)`}
   </p>
 
   <!-- ================================================================ -->
-  <h2>How Cross-RF Works</h2>
+  <h2>how Cross-RF works</h2>
 
-  <h3>Dataset descriptors</h3>
+  <h3>dataset descriptors</h3>
 
   <p>
     Each dataset is represented by a descriptor vector <InlineMath
@@ -419,7 +417,7 @@ return best(history)`}
     work.
   </p>
 
-  <h3>The meta-model and the HPO rule</h3>
+  <h3>the meta-model and the HPO rule</h3>
 
   <p>
     A <strong>Random Forest regressor</strong>
@@ -450,7 +448,7 @@ return best(history)`}
     initial ranking.
   </p>
 
-  <h3>Evaluation with leave-one-dataset-out</h3>
+  <h3>evaluation with leave-one-dataset-out</h3>
 
   <p>
     While in practice you'd use Cross-RF on a new, unseen dataset, for the
@@ -466,7 +464,7 @@ return best(history)`}
   </p>
 
   <!-- ================================================================ -->
-  <h2>Meta-Learning Results</h2>
+  <h2>meta-learning results</h2>
 
   <p>
     Cross-RF is compared only to BO and TPE – the best methods from the
@@ -552,7 +550,7 @@ return best(history)`}
   </p>
 
   <!-- ================================================================ -->
-  <h2>Takeaways for Practitioners</h2>
+  <h2>takeaways for practitioners</h2>
 
   <p>
     If you're tuning a GNN today, a few practical conclusions follow from this
@@ -592,7 +590,7 @@ return best(history)`}
   </ul>
 
   <!-- ================================================================ -->
-  <h2>What's Next</h2>
+  <h2>what's next</h2>
 
   <p>
     This work focused on GraphSAGE and macro F1-score across nine datasets – a
