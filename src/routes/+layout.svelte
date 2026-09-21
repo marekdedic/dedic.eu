@@ -18,16 +18,9 @@
 
   let { children }: Props = $props();
 
-  onMount(() => {
-    if ("theme" in localStorage) {
-      theme.set(localStorage["theme"] as "dark" | "light");
-    } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-      theme.set("dark");
-    }
-    $effect(() => {
-      document.documentElement.dataset["theme"] = theme.value;
-      localStorage.setItem("theme", theme.value);
-    });
+  $effect(() => {
+    document.documentElement.dataset["theme"] = theme.value;
+    localStorage.setItem("theme", theme.value);
   });
 
   onMount(() => {
