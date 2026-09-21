@@ -23,7 +23,7 @@ export default defineConfig({
   plugins: [
     basicSsl(),
     enhancedImages(),
-    prismjs({ languages: [] }),
+    prismjs({ languages: ["python"] }),
     sveltekit(),
     htaccess(options),
     svelteSitemap({

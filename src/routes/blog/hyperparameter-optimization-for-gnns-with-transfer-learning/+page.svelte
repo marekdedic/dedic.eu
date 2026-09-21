@@ -185,12 +185,14 @@
   <p>All five methods share the same outer loop:</p>
 
   <CodeBlock
-    code={String.raw`history = []
+    code={{
+      python: String.raw`history = []
 while budget_remaining():
   λ = sampler.suggest(history)          # pick the next configuration
   score = train_and_evaluate(model, λ)  # this is expensive!
   history.append((λ, score))
-return best(history)`}
+return best(history)`,
+    }}
   />
 
   <p>
