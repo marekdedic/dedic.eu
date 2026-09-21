@@ -67,7 +67,7 @@
       {posterPdf}
     />
     {#if showBib && hasCitations}
-      <CodeBlock code={citations} />
+      <CodeBlock code={citations} lineNumbers={false} />
     {/if}
   {:else}
     <div class="container">
@@ -103,7 +103,7 @@
     </div>
     {#if showBib && bib !== undefined}
       <div class="bib">
-        <CodeBlock code={citations} />
+        <CodeBlock code={citations} lineNumbers={false} />
       </div>
     {/if}
   {/if}

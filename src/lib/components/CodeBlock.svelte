@@ -1,4 +1,6 @@
 <script lang="ts">
+  import type { Token, TokenStream } from "prismjs";
+
   import Prism from "$lib/utils/prism";
   import {
     faClipboard,
@@ -10,9 +12,10 @@
   interface Props {
     code: Record<string, string> | string;
     copyButton?: boolean;
+    lineNumbers?: boolean;
   }
 
-  let { code, copyButton = true }: Props = $props();
+  let { code, copyButton = true, lineNumbers = true }: Props = $props();
 
   let tabs: Array<{
     code: string;
@@ -30,22 +33,52 @@
 
   let activeTab = $derived(tabs[Math.min(active, tabs.length - 1)]);
 
-  // Missing a language? Add it to vite.config.ts
-  let formattedCode = $derived(
-    activeTab.language !== undefined && activeTab.language in Prism.languages
-      ? Prism.highlight(
-          activeTab.code,
-          Prism.languages[activeTab.language],
-          activeTab.language,
-        )
-      : activeTab.code,
-  );
+  function encode(text: string): string {
+    return text.replaceAll("&", "&amp;").replaceAll("<", "&lt;");
+  }
 
-  let codeClass = $derived(
-    activeTab.language === undefined
-      ? undefined
-      : `language-${activeTab.language}`,
-  );
+  // Prism produces a single HTML blob; split it into one entry per source line
+  // (without breaking highlight spans) so each line can be rendered as its own
+  // row and the line numbers stay aligned even when a line wraps.
+  function stringifyLines(tokens: TokenStream): Array<string> {
+    if (typeof tokens === "string") {
+      return encode(tokens).split("\n");
+    }
+    if (Array.isArray(tokens)) {
+      const lines = [""];
+      for (const token of tokens) {
+        const tokenLines = stringifyLines(token);
+        lines[lines.length - 1] += tokenLines[0];
+        lines.push(...tokenLines.slice(1));
+      }
+      return lines;
+    }
+    const className = tokenClassName(tokens);
+    return stringifyLines(tokens.content).map(
+      (line) => `<span class="${className}">${line}</span>`,
+    );
+  }
+
+  function tokenClassName(token: Token): string {
+    return [
+      "token",
+      token.type,
+      ...(Array.isArray(token.alias) ? token.alias : [token.alias]),
+    ]
+      .filter(Boolean)
+      .join(" ");
+  }
+
+  // Missing a language? Add it to vite.config.ts
+  let codeLines = $derived.by((): Array<string> => {
+    const source = activeTab.code.replace(/\n$/u, "");
+    return activeTab.language !== undefined &&
+      activeTab.language in Prism.languages
+      ? stringifyLines(
+          Prism.tokenize(source, Prism.languages[activeTab.language]),
+        )
+      : source.split("\n").map(encode);
+  });
 
   let copied = $state(false);
 
@@ -87,26 +120,54 @@
       <Fa icon={copied ? faClipboardCheck : faClipboard} size="lg" />
     </button>
   {/if}
-  <!-- eslint-disable-next-line svelte/no-unused-class-name svelte/no-at-html-tags -->
-  <pre><code class={codeClass}>{@html formattedCode}</code></pre>
+  <!-- eslint-disable svelte/no-at-html-tags -->
+  <div class="code" class:with-line-numbers={lineNumbers}>
+    <code
+      >{#each codeLines as line, index (index)}{#if lineNumbers}<span
+            class="line-number"
+            aria-hidden="true">{index + 1}</span
+          >{/if}<span class="line-content">{@html line}</span>{/each}</code
+    >
+  </div>
+  <!-- eslint-enable -->
 </div>
 
 <style>
-  pre {
+  .code {
     background-color: var(--primary-bg-color);
     border-radius: 0.25rem;
     color: var(--text-color);
-    overflow-y: auto;
     padding: 0.5rem;
+  }
+
+  .code code {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .with-line-numbers code {
+    grid-template-columns: auto 1fr;
+  }
+
+  .line-number {
+    color: var(--text-color-faded);
+    padding-right: 1.25rem;
+    text-align: right;
+    user-select: none;
+  }
+
+  .line-content {
+    min-height: 1.5em;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
   }
 
   div {
     position: relative;
   }
 
-  .tabbed pre {
+  .tabbed .code {
     border-radius: 0 0 0.25rem 0.25rem;
-    margin-top: 0;
   }
 
   .tabs {
