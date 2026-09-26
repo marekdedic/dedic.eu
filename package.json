@@ -84,7 +84,7 @@
     "playwright": "^1.63.0",
     "postcss": "^8.5.28",
     "postcss-html": "^2.0.0",
-    "prettier": "^3.9.8",
+    "prettier": "^3.9.9",
     "prettier-plugin-svelte": "^4.1.1",
     "prismjs-bibtex": "^2.1.0",
     "rimraf": "^6.1.3",
