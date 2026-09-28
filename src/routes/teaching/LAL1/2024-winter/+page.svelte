@@ -1,10 +1,19 @@
 <script lang="ts" module>
-  export const semester = "ZS 24/25";
+  import type { CourseSpec, CourseVersionMeta } from "$lib/types/CourseSpec";
+
+  export const version: CourseVersionMeta = {
+    offerings: [
+      {
+        code: "LAL1",
+        faculty: "FJFI",
+        name: "lineární algebra 1",
+      },
+    ],
+    semester: "ZS 24/25",
+  };
 </script>
 
 <script lang="ts">
-  import type { CourseSpec } from "$lib/types/CourseSpec";
-
   import { asset } from "$app/paths";
   import CourseHeader from "$lib/components/CourseHeader.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";

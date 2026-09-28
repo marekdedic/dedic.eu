@@ -24,8 +24,11 @@ export const load: LayoutServerLoad<{
     if (course !== undefined) {
       const version = course.versions.find((v) => v.slug === parts[2]);
       const semester = version?.semester ?? parts[2];
+      const faculties = (version?.offerings ?? [])
+        .map((o) => o.faculty)
+        .join(", ");
       title = `${capitalize(course.name)}, ${semester}`;
-      description = `${capitalize(course.name)} [${course.faculty} CTU], ${semester} — study materials, requirements, and grading, taught by Marek Dědič.`;
+      description = `${capitalize(course.name)} [${faculties}], ${semester} — study materials, requirements, and grading, taught by Marek Dědič.`;
     }
   }
 

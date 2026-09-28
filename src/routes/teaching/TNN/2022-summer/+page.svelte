@@ -1,10 +1,19 @@
 <script lang="ts" module>
-  export const semester = "summer 2022";
+  import type { CourseSpec, CourseVersionMeta } from "$lib/types/CourseSpec";
+
+  export const version: CourseVersionMeta = {
+    offerings: [
+      {
+        code: "TNN",
+        faculty: "FIT",
+        name: "theory of neural networks",
+      },
+    ],
+    semester: "summer 2022",
+  };
 </script>
 
 <script lang="ts">
-  import type { CourseSpec } from "$lib/types/CourseSpec";
-
   import CourseHeader from "$lib/components/CourseHeader.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import PageContentBox from "$lib/components/PageContentBox.svelte";
