@@ -17,7 +17,7 @@ export const load: LayoutServerLoad<{
 
   let title = "Teaching";
   let description =
-    "Courses taught by Marek Dědič at FIT CTU and FJFI CTU — neural networks, linear algebra, and mathematics. Study materials, requirements, and grading.";
+    "Courses taught by Marek Dědič at FIT CTU, FJFI CTU, and MFF CUNI — neural networks, linear algebra, and mathematics. Study materials, requirements, and grading.";
 
   if (parts.length >= 3) {
     const course = teachingSpec.find((c) => c.slug === parts[1]);

@@ -306,3 +306,11 @@ test("/teaching/neural-networks-machine-learning-and-randomness/2026-summer", as
     mask: [page.locator("table")],
   });
 });
+
+test("/teaching/NAIL138", async ({ page }) => {
+  await page.goto("/teaching/NAIL138");
+  await page.waitForReady();
+  await expect(page).toHaveURL(
+    "/teaching/neural-networks-machine-learning-and-randomness/2026-winter",
+  );
+});

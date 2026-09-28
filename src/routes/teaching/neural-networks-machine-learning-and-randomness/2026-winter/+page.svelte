@@ -8,6 +8,11 @@
         faculty: "FIT",
         name: "neural networks, machine learning and randomness",
       },
+      {
+        code: "NAIL138",
+        faculty: "MFF",
+        name: "neural networks, machine learning, and randomness",
+      },
     ],
     semester: "winter 2026",
   };
