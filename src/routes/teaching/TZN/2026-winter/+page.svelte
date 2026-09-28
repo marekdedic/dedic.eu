@@ -6,7 +6,7 @@
   import type { CourseSpec } from "$lib/types/CourseSpec";
 
   import { asset } from "$app/paths";
-  import CouseHeader from "$lib/components/CouseHeader.svelte";
+  import CourseHeader from "$lib/components/CourseHeader.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import PageContentBox from "$lib/components/PageContentBox.svelte";
   import TeachingSideNav from "$lib/components/TeachingSideNav.svelte";
@@ -21,7 +21,7 @@
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>
-  <CouseHeader spec={data.teachingSpec} />
+  <CourseHeader spec={data.teachingSpec} />
 
   <article>
     <p>

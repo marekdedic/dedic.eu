@@ -6,7 +6,7 @@
   import type { CourseSpec } from "$lib/types/CourseSpec";
 
   import { asset } from "$app/paths";
-  import CouseHeader from "$lib/components/CouseHeader.svelte";
+  import CourseHeader from "$lib/components/CourseHeader.svelte";
   import ExternalLink from "$lib/components/ExternalLink.svelte";
   import GoogleSheet from "$lib/components/GoogleSheet.svelte";
   import InlineCode from "$lib/components/InlineCode.svelte";
@@ -23,7 +23,7 @@
 <TeachingSideNav spec={data.teachingSpec} />
 
 <PageContentBox leftSidePanel={true}>
-  <CouseHeader spec={data.teachingSpec} />
+  <CourseHeader spec={data.teachingSpec} />
 
   <article>
     <p>
