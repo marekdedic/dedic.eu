@@ -28,7 +28,12 @@ export default defineConfig({
     htaccess(options),
     svelteSitemap({
       domain: origin,
-      ignore: ["fallback.html"],
+      ignore: [
+        "fallback.html",
+        // Course redirects: subject roots and course code aliases
+        "teaching/*.html",
+        "teaching/[A-Z]*/**",
+      ],
       outDir: "dist",
     }),
   ],

@@ -17,15 +17,18 @@ export const load: LayoutServerLoad<{
 
   let title = "Teaching";
   let description =
-    "Courses taught by Marek Dědič at FIT CTU and FJFI CTU — neural networks, linear algebra, and mathematics. Study materials, requirements, and grading.";
+    "Courses taught by Marek Dědič at FIT CTU, FJFI CTU, and MFF CUNI — neural networks, linear algebra, and mathematics. Study materials, requirements, and grading.";
 
   if (parts.length >= 3) {
     const course = teachingSpec.find((c) => c.slug === parts[1]);
     if (course !== undefined) {
       const version = course.versions.find((v) => v.slug === parts[2]);
       const semester = version?.semester ?? parts[2];
+      const faculties = (version?.offerings ?? [])
+        .map((o) => o.faculty)
+        .join(", ");
       title = `${capitalize(course.name)}, ${semester}`;
-      description = `${capitalize(course.name)} [${course.faculty} CTU], ${semester} — study materials, requirements, and grading, taught by Marek Dědič.`;
+      description = `${capitalize(course.name)} [${faculties}], ${semester} — study materials, requirements, and grading, taught by Marek Dědič.`;
     }
   }
 

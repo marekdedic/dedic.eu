@@ -1,6 +1,7 @@
 import type { RouteId } from "$app/types";
 import type { CourseSpec } from "$lib/types/CourseSpec";
 
+import { courseFaculties } from "$lib/utils/courseFaculties";
 import { findCourseRoute } from "$lib/utils/findCourseRoute";
 
 export function getCurrentCourseList(spec: Array<CourseSpec>): Array<{
@@ -12,7 +13,7 @@ export function getCurrentCourseList(spec: Array<CourseSpec>): Array<{
     .filter((course) => course.current !== null)
     .map((course) => ({
       defaultRoute: findCourseRoute(course),
-      faculty: course.faculty,
+      faculty: courseFaculties(course).join(", "),
       name: course.name,
     }))
     .reverse();
@@ -27,7 +28,7 @@ export function getPastCourseList(spec: Array<CourseSpec>): Array<{
     .filter((course) => course.current === null)
     .map((course) => ({
       defaultRoute: findCourseRoute(course),
-      faculty: course.faculty,
+      faculty: courseFaculties(course).join(", "),
       name: course.name,
     }))
     .reverse();

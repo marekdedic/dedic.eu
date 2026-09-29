@@ -1,6 +1,7 @@
 import type {
   CourseMeta,
   CourseSpec,
+  CourseVersionMeta,
   CourseVersionSpec,
 } from "$lib/types/CourseSpec";
 
@@ -8,9 +9,9 @@ const courseMetas = import.meta.glob<CourseMeta>(
   "/src/routes/teaching/*/meta.ts",
   { eager: true, import: "course" },
 );
-const versionSemesters = import.meta.glob<string>(
+const versionMetas = import.meta.glob<CourseVersionMeta>(
   "/src/routes/teaching/*/*/+page.svelte",
-  { eager: true, import: "semester" },
+  { eager: true, import: "version" },
 );
 
 const courseRe = /^\/src\/routes\/teaching\/([^/]+)\/meta\.ts$/u;
@@ -19,14 +20,14 @@ const versionRe =
 
 function buildTeachingSpec(): Array<CourseSpec> {
   const versionsByCourse = new Map<string, Array<CourseVersionSpec>>();
-  for (const [path, semester] of Object.entries(versionSemesters)) {
+  for (const [path, meta] of Object.entries(versionMetas)) {
     const match = versionRe.exec(path);
     if (match === null) {
       continue;
     }
     const [, courseSlug, slug] = match;
     const versions = versionsByCourse.get(courseSlug) ?? [];
-    versions.push({ semester, slug });
+    versions.push({ ...meta, slug });
     versionsByCourse.set(courseSlug, versions);
   }
 
