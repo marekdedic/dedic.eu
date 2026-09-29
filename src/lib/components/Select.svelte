@@ -44,16 +44,18 @@
   {#if open}
     <div class="options">
       {#each Object.entries(options) as [key, label] (key)}
-        {#if key !== current}
-          <button
-            class="option"
-            onclick={(): void => {
-              open = false;
+        <button
+          class="option"
+          class:selected={key === current}
+          aria-current={key === current}
+          onclick={(): void => {
+            open = false;
+            if (key !== current) {
               onselect(key);
-            }}
-            type="button">{label}</button
-          >
-        {/if}
+            }
+          }}
+          type="button">{label}</button
+        >
       {/each}
     </div>
   {/if}
@@ -120,5 +122,10 @@
 
   .option:hover {
     background: var(--primary-bg-color);
+  }
+
+  .selected {
+    cursor: default;
+    font-weight: bold;
   }
 </style>
