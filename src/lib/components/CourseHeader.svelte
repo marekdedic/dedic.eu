@@ -18,10 +18,22 @@
   const parts = $derived(page.url.pathname.split("/").filter(Boolean));
   const course = $derived(spec.find((c) => c.slug === parts[1]));
   const version = $derived(parts[2]);
+  const offerings = $derived(
+    course?.versions.find((v) => v.slug === version)?.offerings ?? [],
+  );
 </script>
 
 <header>
   <h1>{course?.name ?? ""}</h1>
+  {#if offerings.length > 0}
+    <p>
+      taught
+      {#each offerings as o, i (o.code)}
+        {#if i > 0}{i === offerings.length - 1 ? " and " : ", "}{/if}
+        at {o.faculty} as <strong>{o.code}</strong>
+      {/each}
+    </p>
+  {/if}
   <Select
     current={version}
     onselect={(newVersion: string): void => {
@@ -30,7 +42,10 @@
       );
     }}
     options={Object.fromEntries(
-      course?.versions.map((v) => [v.slug, v.semester]) ?? [],
+      course?.versions.map((v) => [
+        v.slug,
+        `${v.semester} [${v.offerings.map((o) => o.faculty).join(", ")}]`,
+      ]) ?? [],
     )}
   />
   {#if version !== course?.current}
@@ -46,6 +61,10 @@
 </header>
 
 <style>
+  p {
+    margin-top: 0;
+  }
+
   div {
     background: var(--warning-color);
     border-radius: 0.25rem;
