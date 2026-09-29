@@ -85,7 +85,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/theory-of-neural-networks/2025-winter/TZN-01.ipynb",
+                "/teaching/theory-of-neural-networks/2025-winter/01-introduction-to-neural-networks.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -94,7 +94,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/theory-of-neural-networks/2025-winter/TZN-01-solutions.ipynb",
+                "/teaching/theory-of-neural-networks/2025-winter/01-introduction-to-neural-networks-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -111,7 +111,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/theory-of-neural-networks/2025-winter/TZN-02.ipynb",
+                "/teaching/theory-of-neural-networks/2025-winter/02-optimization.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -120,7 +120,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/theory-of-neural-networks/2025-winter/TZN-02-solutions.ipynb",
+                "/teaching/theory-of-neural-networks/2025-winter/02-optimization-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -139,7 +139,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/theory-of-neural-networks/2025-winter/TZN-03.ipynb",
+                "/teaching/theory-of-neural-networks/2025-winter/03-regularization.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -158,14 +158,14 @@
           <td
             ><a
               href={asset(
-                "/teaching/theory-of-neural-networks/2025-winter/TZN-04-presentation/TZN-04-presentation.pdf",
+                "/teaching/theory-of-neural-networks/2025-winter/04-graph-neural-networks-presentation/04-graph-neural-networks-presentation.pdf",
               )}
               rel="noopener noreferrer"
               target="_blank">slides</a
             >,
             <a
               href={asset(
-                "/teaching/theory-of-neural-networks/2025-winter/TZN-04.ipynb",
+                "/teaching/theory-of-neural-networks/2025-winter/04-graph-neural-networks.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -180,7 +180,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/theory-of-neural-networks/2025-winter/TZN-05.ipynb",
+                "/teaching/theory-of-neural-networks/2025-winter/05-recurrent-networks.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a

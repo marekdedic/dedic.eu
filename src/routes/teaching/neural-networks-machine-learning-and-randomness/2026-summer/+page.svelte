@@ -87,7 +87,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-01.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/01-introduction-to-machine-learning.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -96,7 +96,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-01-solutions.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/01-introduction-to-machine-learning-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -114,7 +114,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-02.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/02-perceptron-and-logistic-regression.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -123,7 +123,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-02-solutions.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/02-perceptron-and-logistic-regression-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -141,7 +141,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-03.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/03-dimensionality-reduction-and-clustering.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -150,7 +150,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-03-solutions.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/03-dimensionality-reduction-and-clustering-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -167,7 +167,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-04.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/04-decision-trees.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -176,7 +176,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-04-solutions.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/04-decision-trees-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -194,7 +194,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-05.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/05-bayesian-methods.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -203,7 +203,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-05-solutions.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/05-bayesian-methods-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a

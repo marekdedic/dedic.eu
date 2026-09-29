@@ -85,7 +85,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/theory-of-neural-networks/2026-winter/TZN-01.ipynb",
+                "/teaching/theory-of-neural-networks/2026-winter/01-introduction-to-neural-networks.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
