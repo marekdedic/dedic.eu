@@ -2783,7 +2783,7 @@ wheels = [
 ]
 
 [[package]]
-name = "tzn"
+name = "theory-of-neural-networks"
 version = "2026.1.0"
 source = { virtual = "." }
 dependencies = [
