@@ -50,13 +50,17 @@
     To replicate the exact environment in which the notebooks were created, you
     can use the files
     <a
-      href={asset("/teaching/B252-NSN-materials/pyproject.toml")}
+      href={asset(
+        "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/pyproject.toml",
+      )}
       rel="noopener noreferrer"
       target="_blank">pyproject.toml</a
     >
     and
     <a
-      href={asset("/teaching/B252-NSN-materials/uv.lock")}
+      href={asset(
+        "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/uv.lock",
+      )}
       rel="noopener noreferrer"
       target="_blank">uv.lock</a
     >.
@@ -82,7 +86,9 @@
           >
           <td
             ><a
-              href={asset("/teaching/B252-NSN-materials/NSN-01.ipynb")}
+              href={asset(
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-01.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td
@@ -90,7 +96,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/B252-NSN-materials/NSN-01-solutions.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-01-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -107,7 +113,9 @@
           >
           <td
             ><a
-              href={asset("/teaching/B252-NSN-materials/NSN-02.ipynb")}
+              href={asset(
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-02.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td
@@ -115,7 +123,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/B252-NSN-materials/NSN-02-solutions.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-02-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -132,7 +140,9 @@
           >
           <td
             ><a
-              href={asset("/teaching/B252-NSN-materials/NSN-03.ipynb")}
+              href={asset(
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-03.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td
@@ -140,7 +150,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/B252-NSN-materials/NSN-03-solutions.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-03-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -156,7 +166,9 @@
           >
           <td
             ><a
-              href={asset("/teaching/B252-NSN-materials/NSN-04.ipynb")}
+              href={asset(
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-04.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td
@@ -164,7 +176,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/B252-NSN-materials/NSN-04-solutions.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-04-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -181,7 +193,9 @@
           >
           <td
             ><a
-              href={asset("/teaching/B252-NSN-materials/NSN-05.ipynb")}
+              href={asset(
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-05.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td
@@ -189,7 +203,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/B252-NSN-materials/NSN-05-solutions.ipynb",
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-summer/NSN-05-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a

@@ -50,13 +50,15 @@
     To replicate the exact environment in which the notebooks were created, you
     can use the files
     <a
-      href={asset("/teaching/B251-TZN-materials/pyproject.toml")}
+      href={asset(
+        "/teaching/theory-of-neural-networks/2025-winter/pyproject.toml",
+      )}
       rel="noopener noreferrer"
       target="_blank">pyproject.toml</a
     >
     and
     <a
-      href={asset("/teaching/B251-TZN-materials/uv.lock")}
+      href={asset("/teaching/theory-of-neural-networks/2025-winter/uv.lock")}
       rel="noopener noreferrer"
       target="_blank">uv.lock</a
     >.
@@ -82,7 +84,9 @@
           >
           <td
             ><a
-              href={asset("/teaching/B251-TZN-materials/TZN-01.ipynb")}
+              href={asset(
+                "/teaching/theory-of-neural-networks/2025-winter/TZN-01.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td
@@ -90,7 +94,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/B251-TZN-materials/TZN-01-solutions.ipynb",
+                "/teaching/theory-of-neural-networks/2025-winter/TZN-01-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -106,7 +110,9 @@
           >
           <td
             ><a
-              href={asset("/teaching/B251-TZN-materials/TZN-02.ipynb")}
+              href={asset(
+                "/teaching/theory-of-neural-networks/2025-winter/TZN-02.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td
@@ -114,7 +120,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/B251-TZN-materials/TZN-02-solutions.ipynb",
+                "/teaching/theory-of-neural-networks/2025-winter/TZN-02-solutions.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -132,7 +138,9 @@
           >
           <td
             ><a
-              href={asset("/teaching/B251-TZN-materials/TZN-03.ipynb")}
+              href={asset(
+                "/teaching/theory-of-neural-networks/2025-winter/TZN-03.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td
@@ -150,13 +158,15 @@
           <td
             ><a
               href={asset(
-                "/teaching/B251-TZN-materials/TZN-04-presentation/TZN-04-presentation.pdf",
+                "/teaching/theory-of-neural-networks/2025-winter/TZN-04-presentation/TZN-04-presentation.pdf",
               )}
               rel="noopener noreferrer"
               target="_blank">slides</a
             >,
             <a
-              href={asset("/teaching/B251-TZN-materials/TZN-04.ipynb")}
+              href={asset(
+                "/teaching/theory-of-neural-networks/2025-winter/TZN-04.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td
@@ -169,7 +179,9 @@
           <td>recurrent networks, natural language processing, transformers</td>
           <td
             ><a
-              href={asset("/teaching/B251-TZN-materials/TZN-05.ipynb")}
+              href={asset(
+                "/teaching/theory-of-neural-networks/2025-winter/TZN-05.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td
