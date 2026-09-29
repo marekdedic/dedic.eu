@@ -50,13 +50,15 @@
     To replicate the exact environment in which the notebooks were created, you
     can use the files
     <a
-      href={asset("/teaching/B261-TZN-materials/pyproject.toml")}
+      href={asset(
+        "/teaching/theory-of-neural-networks/2026-winter/pyproject.toml",
+      )}
       rel="noopener noreferrer"
       target="_blank">pyproject.toml</a
     >
     and
     <a
-      href={asset("/teaching/B261-TZN-materials/uv.lock")}
+      href={asset("/teaching/theory-of-neural-networks/2026-winter/uv.lock")}
       rel="noopener noreferrer"
       target="_blank">uv.lock</a
     >.
@@ -82,7 +84,9 @@
           >
           <td
             ><a
-              href={asset("/teaching/B261-TZN-materials/TZN-01.ipynb")}
+              href={asset(
+                "/teaching/theory-of-neural-networks/2026-winter/01-introduction-to-neural-networks.ipynb",
+              )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
             ></td

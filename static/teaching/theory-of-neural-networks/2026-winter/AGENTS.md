@@ -4,7 +4,7 @@ This file provides guidance to coding agents when working with code in this repo
 
 ## Project Overview
 
-This is the **NI-TZN (Theoretical Fundamentals of Neural Networks)** course at CTU Prague (ČVUT). The working directory contains Jupyter notebooks for 5 tutorials and their associated datasets. Course content is primarily in Czech.
+This is the winter 2026 version of the **theory of neural networks** course, taught at FJFI CTU Prague (ČVUT) as Theoretical Fundamentals of Neural Networks. The working directory contains Jupyter notebooks for 5 tutorials and their associated datasets. Course content is primarily in Czech.
 
 ## Environment Setup
 
@@ -22,19 +22,19 @@ uv run jupyter lab        # start JupyterLab
 uv run jupyter notebook   # start classic Notebook UI
 
 # Execute a notebook non-interactively
-uv run jupyter nbconvert --to notebook --execute TZN-01.ipynb
+uv run jupyter nbconvert --to notebook --execute 01-introduction-to-neural-networks.ipynb
 ```
 
 ## Repository Structure
 
 ```
-tutorials/files/
-├── TZN-0X.ipynb            # Student exercise notebooks (some cells left blank)
-├── TZN-0X-solutions.ipynb  # Complete solution notebooks (exist for TZN-01, TZN-02)
-├── TZN-05-presentation/    # LaTeX source + compiled PDF for tutorial 4
-├── data/                   # Datasets: MNIST and Cora (git-ignored, ~80 MB)
-├── pyproject.toml          # Project dependencies (torch, torch-geometric, torchvision, etc.)
-└── uv.lock                 # Pinned dependency lockfile
+./
+├── 0X-<topic>.ipynb                        # Student exercise notebooks (some cells left blank)
+├── 0X-<topic>-solutions.ipynb              # Complete solution notebooks (exist for tutorials 1, 2, 4)
+├── 05-graph-neural-networks-presentation/  # LaTeX source + compiled PDF for tutorial 5
+├── data/                                   # Datasets: MNIST and Cora (git-ignored, ~80 MB)
+├── pyproject.toml                          # Project dependencies (torch, torch-geometric, torchvision, etc.)
+└── uv.lock                                 # Pinned dependency lockfile
 ```
 
 ## Tutorial Topics
@@ -55,6 +55,6 @@ tutorials/files/
 
 ## Architecture Notes
 
-- Exercise notebooks (`TZN-0X.ipynb`) intentionally leave certain cells blank or partially filled for students to complete.
+- Exercise notebooks (`0X-<topic>.ipynb`) intentionally leave certain cells blank or partially filled for students to complete.
 - Solution notebooks are the authoritative reference for correct implementations.
 - The `data/` directory is git-ignored; datasets are downloaded on first notebook run via `torchvision.datasets` and `torch_geometric.datasets`.

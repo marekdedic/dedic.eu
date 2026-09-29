@@ -125,7 +125,7 @@
         Pro ty, kdo nenasbírají dostatečný počet bodů, budou ke konci semestru
         zadané <a
           href={asset(
-            "/teaching/B241-01LAL1-homework/B241-01LAL1-homework.pdf",
+            "/teaching/linearni-algebra-1/2024-winter/LAL1-homework.pdf",
           )}
           rel="noopener noreferrer"
           target="_blank">3 domácí úkoly</a
