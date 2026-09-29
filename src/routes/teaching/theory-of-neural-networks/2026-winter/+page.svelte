@@ -35,38 +35,49 @@
   <article>
     <p>
       The tutorials for the course Theoretical Foundations of Neural Networks
-      are held on odd weeks on Tuesdays from 12:00 to 13:40 in room T-124, or as
-      announced in lectures and tutorials.
+      are held on odd weeks on Tuesdays (there are some exceptions, exact dates
+      bellow) from 12:00 to 13:40 in room T-124.
+    </p>
+
+    <h3>credit</h3>
+    <p>
+      In order to be able to take the exam, you have to attend the tutorials and
+      actively participate in them. There is no strict limit on attendance,
+      contact me if you will have missed multiple tutorials. The tutorials are
+      not graded, but they are a prerequisite for taking the exam.
     </p>
 
     <h3>study materials</h3>
 
-    The exercise materials are in the form of <ExternalLink
-      href="https://jupyter.org/install.html">Jupyter</ExternalLink
-    > notebooks using Python. For easy installation of Python, Jupyter, and the required
-    packages, we will use <ExternalLink href="https://docs.astral.sh/uv/"
-      >uv</ExternalLink
-    >. The first exercise is intended to familiarize you with this technology.
-    To replicate the exact environment in which the notebooks were created, you
-    can use the files
-    <a
-      href={asset(
-        "/teaching/theory-of-neural-networks/2026-winter/pyproject.toml",
-      )}
-      rel="noopener noreferrer"
-      target="_blank">pyproject.toml</a
-    >
-    and
-    <a
-      href={asset("/teaching/theory-of-neural-networks/2026-winter/uv.lock")}
-      rel="noopener noreferrer"
-      target="_blank">uv.lock</a
-    >.
+    <p>
+      The exercise materials are in the form of <ExternalLink
+        href="https://jupyter.org/install.html">Jupyter</ExternalLink
+      > notebooks using Python. For easy installation of Python, Jupyter, and the
+      required packages, we will use <ExternalLink
+        href="https://docs.astral.sh/uv/">uv</ExternalLink
+      >. The first exercise is intended to familiarize you with this technology.
+      To replicate the exact environment in which the notebooks were created,
+      you can use the files
+      <a
+        href={asset(
+          "/teaching/theory-of-neural-networks/2026-winter/pyproject.toml",
+        )}
+        rel="noopener noreferrer"
+        target="_blank">pyproject.toml</a
+      >
+      and
+      <a
+        href={asset("/teaching/theory-of-neural-networks/2026-winter/uv.lock")}
+        rel="noopener noreferrer"
+        target="_blank">uv.lock</a
+      >.
+    </p>
 
     <table>
       <thead>
         <tr>
           <th>#</th>
+          <th>date</th>
           <th>name</th>
           <th>topics</th>
           <th>assignment</th>
@@ -76,6 +87,7 @@
       <tbody>
         <tr>
           <td>1</td>
+          <td>2026-10-06</td>
           <td>introduction to neural networks</td>
           <td
             >basics of machine learning in Python, automatic differentiation,
@@ -95,6 +107,7 @@
         </tr>
         <tr>
           <td>2</td>
+          <td>2026-10-20</td>
           <td>optimization</td>
           <td
             >optimization of neural networks, SGD, Momentum, Nesterov, Adagrad,
@@ -105,6 +118,7 @@
         </tr>
         <tr>
           <td>3</td>
+          <td>2026-11-03</td>
           <td>regularization</td>
           <td
             >data splitting into training and test sets, overfitting,
@@ -117,6 +131,7 @@
         </tr>
         <tr>
           <td>4</td>
+          <td>2026-12-01</td>
           <td>recurrent networks and text models</td>
           <td
             >recurrent networks, natural language processing, attention,
@@ -127,6 +142,7 @@
         </tr>
         <tr>
           <td>5</td>
+          <td>2026-12-15</td>
           <td>graph neural networks</td>
           <td
             >learning on graphs, recurrent neural networks on graphs, networks
