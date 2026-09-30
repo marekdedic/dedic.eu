@@ -236,6 +236,8 @@ test("/teaching/neural-networks-machine-learning-and-randomness/2026-winter", as
   await page.waitForReady();
   await expect(page).toHaveScreenshot({
     fullPage: true,
+    // eslint-disable-next-line playwright/no-raw-locators -- No other way to locate iframe
+    mask: [page.locator("table")],
   });
 });
 
