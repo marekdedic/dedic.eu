@@ -1,5 +1,19 @@
-# Created by https://www.toptal.com/developers/gitignore/api/vim,node,svelte,latex
-# Edit at https://www.toptal.com/developers/gitignore?templates=vim,node,svelte,latex
+# Created by https://www.toptal.com/developers/gitignore/api/vim,node,svelte,latex,jupyternotebooks
+# Edit at https://www.toptal.com/developers/gitignore?templates=vim,node,svelte,latex,jupyternotebooks
+
+### JupyterNotebooks ###
+# gitignore template for Jupyter Notebooks
+# website: http://jupyter.org/
+
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Remove previous ipynb_checkpoints
+#   git rm -r .ipynb_checkpoints/
 
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
@@ -478,7 +492,7 @@ tags
 # Persistent undo
 [._]*.un~
 
-# End of https://www.toptal.com/developers/gitignore/api/vim,node,svelte,latex
+# End of https://www.toptal.com/developers/gitignore/api/vim,node,svelte,latex,jupyternotebooks
 
 /test-results/
 /playwright-report/
