@@ -113,7 +113,15 @@
             >optimization of neural networks, SGD, Momentum, Nesterov, Adagrad,
             Adadelta, Adam, AdamW</td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "/teaching/theory-of-neural-networks/2026-winter/02-optimization.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
         </tr>
         <tr>
