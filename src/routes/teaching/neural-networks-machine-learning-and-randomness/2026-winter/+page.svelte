@@ -121,7 +121,15 @@
               target="_blank">notebook</a
             ></td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-winter/01-introduction-to-machine-learning-solutions.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
         </tr>
         <tr>
           <td>2</td>
@@ -132,7 +140,15 @@
             implementation and visualizitaion of the decision strategy,
             perceptron, its learning algorithm and implementation</td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-winter/02-perceptron-and-logistic-regression.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
         </tr>
         <tr>
