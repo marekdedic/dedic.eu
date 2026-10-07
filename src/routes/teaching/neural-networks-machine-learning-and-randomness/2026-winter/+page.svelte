@@ -149,7 +149,15 @@
               target="_blank">notebook</a
             ></td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "/teaching/neural-networks-machine-learning-and-randomness/2026-winter/02-perceptron-and-logistic-regression-solutions.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
         </tr>
         <tr>
           <td>3</td>
