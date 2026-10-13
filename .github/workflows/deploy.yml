@@ -72,7 +72,7 @@ jobs:
           local-dir: ./dist/
           log-level: verbose
           exclude: |
-            .well-known/pki-validation/*
-            cgi-bin/*
+            .well-known/pki-validation/**
+            cgi-bin/**
             tmp/
             tmp/**/*
