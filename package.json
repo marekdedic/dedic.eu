@@ -75,7 +75,7 @@
     "eslint-plugin-prefer-arrow-functions": "^3.10",
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-simple-import-sort": "^14.0.0",
-    "eslint-plugin-svelte": "^3.23.0",
+    "eslint-plugin-svelte": "^3.23.1",
     "globals": "^17.13.0",
     "jiti": "^2.7.0",
     "katex": "^0.19.0",
