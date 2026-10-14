@@ -97,7 +97,7 @@
     "svelte-fa": "^4.0.4",
     "svelte-sitemap": "^4.1.2",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.71.0",
+    "typescript-eslint": "^8.71.1",
     "vite": "^8.3.4",
     "vite-plugin-prismjs": "^0.0.11"
   }
