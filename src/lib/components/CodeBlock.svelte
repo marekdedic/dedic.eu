@@ -1,13 +1,14 @@
 <script lang="ts">
   import type { Token, TokenStream } from "prismjs";
 
-  import Prism from "$lib/utils/prism";
   import {
     faClipboard,
     faClipboardCheck,
   } from "@fortawesome/free-solid-svg-icons";
   import Fa from "svelte-fa";
-  import "$lib/code-syntax-highlighting.css";
+
+  import Prism from "#lib/utils/prism.js";
+  import "#lib/code-syntax-highlighting.css";
 
   interface Props {
     code: Record<string, string> | string;

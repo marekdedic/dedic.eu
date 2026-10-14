@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { PublicationSpec } from "$lib/types/PublicationSpec.ts";
+  import type { PublicationSpec } from "#lib/types/PublicationSpec.ts";
 
-  import PageContentBox from "$lib/components/PageContentBox.svelte";
-  import Publication from "$lib/components/Publication.svelte";
+  import PageContentBox from "#lib/components/PageContentBox.svelte";
+  import Publication from "#lib/components/Publication.svelte";
 
   interface Props {
     data: { publications: Array<PublicationSpec> };

@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
 
-  import Image from "$lib/components/Image.svelte";
+  import Image from "#lib/components/Image.svelte";
 
   interface Props {
     alt: string;

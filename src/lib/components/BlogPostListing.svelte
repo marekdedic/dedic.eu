@@ -1,9 +1,10 @@
 <script lang="ts">
-  import type { BlogPostSpec } from "$lib/types/BlogPostSpec";
-
   import { resolve } from "$app/paths";
-  import Image from "$lib/components/Image.svelte";
-  import Metadata from "$lib/components/Publication/Metadata.svelte";
+
+  import type { BlogPostSpec } from "#lib/types/BlogPostSpec.js";
+
+  import Image from "#lib/components/Image.svelte";
+  import Metadata from "#lib/components/Publication/Metadata.svelte";
 
   interface Props {
     post: BlogPostSpec;

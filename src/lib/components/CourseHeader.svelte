@@ -1,10 +1,11 @@
 <script lang="ts">
-  import type { CourseSpec } from "$lib/types/CourseSpec";
-
   import { goto } from "$app/navigation";
   import { resolve } from "$app/paths";
   import { page } from "$app/state";
-  import { findCourseRoute } from "$lib/utils/findCourseRoute";
+
+  import type { CourseSpec } from "#lib/types/CourseSpec.js";
+
+  import { findCourseRoute } from "#lib/utils/findCourseRoute.js";
 
   import Select from "./Select.svelte";
 

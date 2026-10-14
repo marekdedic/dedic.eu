@@ -1,6 +1,6 @@
-import type { CourseSpec } from "$lib/types/CourseSpec";
+import type { CourseSpec } from "#lib/types/CourseSpec.js";
 
-import { teachingSpec } from "$lib/data/teaching";
+import { teachingSpec } from "#lib/data/teaching.js";
 
 import type { LayoutServerLoad } from "./$types";
 

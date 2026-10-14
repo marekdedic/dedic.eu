@@ -1,1 +1,1 @@
-export { load } from "$lib/utils/courseRedirect";
+export { load } from "#lib/utils/courseRedirect.js";

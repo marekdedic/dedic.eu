@@ -1,7 +1,7 @@
-import type { PublicationSpec } from "$lib/types/PublicationSpec";
+import type { PublicationSpec } from "#lib/types/PublicationSpec.js";
 
-import { publications } from "$lib/data/publications";
-import { sortPublications } from "$lib/utils/sortPublications";
+import { publications } from "#lib/data/publications.js";
+import { sortPublications } from "#lib/utils/sortPublications.js";
 
 import type { PageServerLoad } from "./$types";
 

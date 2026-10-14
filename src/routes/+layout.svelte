@@ -1,8 +1,9 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import TopBar from "$lib/components/TopBar.svelte";
-  import { theme } from "$lib/theme.svelte";
-  import "$lib/theme.css";
+  import { onMount, type Snippet } from "svelte";
+
+  import TopBar from "#lib/components/TopBar.svelte";
+  import "#lib/theme.css";
   import "@fontsource/roboto/300.css";
   import "@fontsource/roboto/300-italic.css";
   import "@fontsource/roboto/400.css";
@@ -10,7 +11,8 @@
   import "@fontsource/roboto/700.css";
   import "@fontsource/roboto/700-italic.css";
   import "katex/dist/katex.min.css";
-  import { onMount, type Snippet } from "svelte";
+
+  import { theme } from "#lib/theme.svelte.js";
 
   interface Props {
     children: Snippet;

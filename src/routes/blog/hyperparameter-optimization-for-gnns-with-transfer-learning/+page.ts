@@ -1,4 +1,4 @@
-import type { BlogPostMeta } from "$lib/types/BlogPostSpec";
+import type { BlogPostMeta } from "#lib/types/BlogPostSpec.js";
 
 export const _meta: BlogPostMeta = {
   date: new Date("2026-03-06"),

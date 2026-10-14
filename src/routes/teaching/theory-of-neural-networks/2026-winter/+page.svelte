@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  import type { CourseSpec, CourseVersionMeta } from "$lib/types/CourseSpec";
+  import type { CourseSpec, CourseVersionMeta } from "#lib/types/CourseSpec.js";
 
   export const version: CourseVersionMeta = {
     offerings: [
@@ -15,10 +15,11 @@
 
 <script lang="ts">
   import { asset } from "$app/paths";
-  import CourseHeader from "$lib/components/CourseHeader.svelte";
-  import ExternalLink from "$lib/components/ExternalLink.svelte";
-  import PageContentBox from "$lib/components/PageContentBox.svelte";
-  import TeachingSideNav from "$lib/components/TeachingSideNav.svelte";
+
+  import CourseHeader from "#lib/components/CourseHeader.svelte";
+  import ExternalLink from "#lib/components/ExternalLink.svelte";
+  import PageContentBox from "#lib/components/PageContentBox.svelte";
+  import TeachingSideNav from "#lib/components/TeachingSideNav.svelte";
 
   interface Props {
     data: { teachingSpec: Array<CourseSpec> };
@@ -60,14 +61,14 @@
       you can use the files
       <a
         href={asset(
-          "/teaching/theory-of-neural-networks/2026-winter/pyproject.toml",
+          "teaching/theory-of-neural-networks/2026-winter/pyproject.toml",
         )}
         rel="noopener noreferrer"
         target="_blank">pyproject.toml</a
       >
       and
       <a
-        href={asset("/teaching/theory-of-neural-networks/2026-winter/uv.lock")}
+        href={asset("teaching/theory-of-neural-networks/2026-winter/uv.lock")}
         rel="noopener noreferrer"
         target="_blank">uv.lock</a
       >.
@@ -97,7 +98,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/theory-of-neural-networks/2026-winter/01-introduction-to-neural-networks.ipynb",
+                "teaching/theory-of-neural-networks/2026-winter/01-introduction-to-neural-networks.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
@@ -116,7 +117,7 @@
           <td
             ><a
               href={asset(
-                "/teaching/theory-of-neural-networks/2026-winter/02-optimization.ipynb",
+                "teaching/theory-of-neural-networks/2026-winter/02-optimization.ipynb",
               )}
               rel="noopener noreferrer"
               target="_blank">notebook</a
