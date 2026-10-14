@@ -3,7 +3,7 @@ import type {
   CourseSpec,
   CourseVersionMeta,
   CourseVersionSpec,
-} from "$lib/types/CourseSpec";
+} from "#lib/types/CourseSpec.js";
 
 const courseMetas = import.meta.glob<CourseMeta>(
   "/src/routes/teaching/*/meta.ts",

@@ -1,6 +1,6 @@
-import type { BlogPostSpec } from "$lib/types/BlogPostSpec";
+import type { BlogPostSpec } from "#lib/types/BlogPostSpec.js";
 
-import { blogPosts } from "$lib/data/blog";
+import { blogPosts } from "#lib/data/blog.js";
 
 import type { PageServerLoad } from "./$types";
 

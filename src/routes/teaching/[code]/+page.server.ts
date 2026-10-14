@@ -1,7 +1,8 @@
-import { teachingSpec } from "$lib/data/teaching";
-import { findCourseByCode } from "$lib/utils/findCourseByCode";
-import { findCourseRoute } from "$lib/utils/findCourseRoute";
 import { error, redirect } from "@sveltejs/kit";
+
+import { teachingSpec } from "#lib/data/teaching.js";
+import { findCourseByCode } from "#lib/utils/findCourseByCode.js";
+import { findCourseRoute } from "#lib/utils/findCourseRoute.js";
 
 import type { EntryGenerator, PageServerLoad } from "./$types";
 

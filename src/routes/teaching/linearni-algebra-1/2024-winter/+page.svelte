@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  import type { CourseSpec, CourseVersionMeta } from "$lib/types/CourseSpec";
+  import type { CourseSpec, CourseVersionMeta } from "#lib/types/CourseSpec.js";
 
   export const version: CourseVersionMeta = {
     offerings: [
@@ -15,12 +15,13 @@
 
 <script lang="ts">
   import { asset } from "$app/paths";
-  import CourseHeader from "$lib/components/CourseHeader.svelte";
-  import ExternalLink from "$lib/components/ExternalLink.svelte";
-  import GoogleSheet from "$lib/components/GoogleSheet.svelte";
-  import InlineCode from "$lib/components/InlineCode.svelte";
-  import PageContentBox from "$lib/components/PageContentBox.svelte";
-  import TeachingSideNav from "$lib/components/TeachingSideNav.svelte";
+
+  import CourseHeader from "#lib/components/CourseHeader.svelte";
+  import ExternalLink from "#lib/components/ExternalLink.svelte";
+  import GoogleSheet from "#lib/components/GoogleSheet.svelte";
+  import InlineCode from "#lib/components/InlineCode.svelte";
+  import PageContentBox from "#lib/components/PageContentBox.svelte";
+  import TeachingSideNav from "#lib/components/TeachingSideNav.svelte";
 
   interface Props {
     data: { teachingSpec: Array<CourseSpec> };
@@ -125,7 +126,7 @@
         Pro ty, kdo nenasbírají dostatečný počet bodů, budou ke konci semestru
         zadané <a
           href={asset(
-            "/teaching/linearni-algebra-1/2024-winter/LAL1-homework.pdf",
+            "teaching/linearni-algebra-1/2024-winter/LAL1-homework.pdf",
           )}
           rel="noopener noreferrer"
           target="_blank">3 domácí úkoly</a

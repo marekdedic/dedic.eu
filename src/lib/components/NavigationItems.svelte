@@ -12,12 +12,8 @@
 </script>
 
 <NavigationItem href={resolve("/")} {onclick} title="about" />
-<NavigationItem
-  href={resolve("/publications")}
-  {onclick}
-  title="publications"
-/>
-<NavigationItem href={resolve("/blog")} {onclick} title="blog" />
+<NavigationItem href={resolve("publications")} {onclick} title="publications" />
+<NavigationItem href={resolve("blog")} {onclick} title="blog" />
 <!-- NavigationItem
   href="/projects"
   title="projects"
@@ -39,5 +35,5 @@
     dispatch("click");
   }}
 / -->
-<NavigationItem href={resolve("/teaching")} {onclick} title="teaching" />
+<NavigationItem href={resolve("teaching")} {onclick} title="teaching" />
 <DarkModeToggle />

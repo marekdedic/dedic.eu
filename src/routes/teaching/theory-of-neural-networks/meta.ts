@@ -1,4 +1,4 @@
-import type { CourseMeta } from "$lib/types/CourseSpec";
+import type { CourseMeta } from "#lib/types/CourseSpec.js";
 
 export const course: CourseMeta = {
   current: "2026-winter",

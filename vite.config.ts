@@ -1,5 +1,7 @@
+import adapter from "@sveltejs/adapter-static";
 import { enhancedImages } from "@sveltejs/enhanced-img";
 import { sveltekit } from "@sveltejs/kit/vite";
+import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import basicSsl from "@vitejs/plugin-basic-ssl";
 import browserslist from "browserslist";
 import { browserslistToTargets } from "lightningcss";
@@ -9,7 +11,8 @@ import { defineConfig } from "vite";
 import prismjs from "vite-plugin-prismjs";
 
 import options from "./rollup-plugin-htaccess.config.ts";
-import { origin } from "./svelte.config.js";
+
+const origin = "https://dedic.eu";
 
 export default defineConfig({
   build: {
@@ -24,7 +27,33 @@ export default defineConfig({
     basicSsl(),
     enhancedImages(),
     prismjs({ languages: ["python"] }),
-    sveltekit(),
+    sveltekit({
+      adapter: adapter({
+        assets: "dist",
+        fallback: "fallback.html",
+        pages: "dist",
+        precompress: false,
+        strict: true,
+      }),
+      csp: {
+        directives: {
+          "default-src": ["self"],
+          "font-src": ["self", "data:"],
+          "frame-src": ["https://docs.google.com/"],
+          "object-src": ["none"],
+          // Hash of the inline theme-init script in src/app.html
+          "script-src": [
+            "self",
+            "sha256-upM2JqPAVnUkR/yUUybD/h+31u36R0nSCBeNKVbh/qM=",
+          ],
+          "style-src": ["self", "unsafe-inline"],
+          "upgrade-insecure-requests": true,
+        },
+        mode: "hash",
+      },
+      paths: { origin },
+      preprocess: vitePreprocess(),
+    }),
     htaccess(options),
     svelteSitemap({
       domain: origin,

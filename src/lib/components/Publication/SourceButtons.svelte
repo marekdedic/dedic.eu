@@ -1,12 +1,14 @@
 <script lang="ts">
+  import type { AssetPath } from "$app/types";
+
   import { asset, resolve } from "$app/paths";
 
   interface Props {
     blogpostUrl: string | undefined;
     hasCitations: boolean;
     ontoggleBib(this: void): void;
-    paperPdf: string | undefined;
-    posterPdf: string | undefined;
+    paperPdf: AssetPath | undefined;
+    posterPdf: AssetPath | undefined;
   }
 
   let { blogpostUrl, hasCitations, ontoggleBib, paperPdf, posterPdf }: Props =
@@ -24,12 +26,12 @@
     {/if}
   {/if}
   {#if paperPdf !== undefined}
-    <a href={asset(`/${paperPdf}`)} rel="noopener noreferrer" target="_blank">
+    <a href={asset(paperPdf)} rel="noopener noreferrer" target="_blank">
       Full paper
     </a>
   {/if}
   {#if posterPdf !== undefined}
-    <a href={asset(`/${posterPdf}`)} rel="noopener noreferrer" target="_blank">
+    <a href={asset(posterPdf)} rel="noopener noreferrer" target="_blank">
       Poster
     </a>
   {/if}

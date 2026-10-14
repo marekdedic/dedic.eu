@@ -1,14 +1,15 @@
 <script lang="ts">
-  import type { PublicationSpec } from "$lib/types/PublicationSpec.ts";
-
   import { resolve } from "$app/paths";
-  import ExternalLink from "$lib/components/ExternalLink.svelte";
-  import HeaderImage from "$lib/components/HeaderImage.svelte";
-  import Heading from "$lib/components/Heading.svelte";
-  import Name from "$lib/components/Name.svelte";
-  import PageContentBox from "$lib/components/PageContentBox.svelte";
-  import PageSection from "$lib/components/PageSection.svelte";
-  import Publication from "$lib/components/Publication.svelte";
+
+  import type { PublicationSpec } from "#lib/types/PublicationSpec.ts";
+
+  import ExternalLink from "#lib/components/ExternalLink.svelte";
+  import HeaderImage from "#lib/components/HeaderImage.svelte";
+  import Heading from "#lib/components/Heading.svelte";
+  import Name from "#lib/components/Name.svelte";
+  import PageContentBox from "#lib/components/PageContentBox.svelte";
+  import PageSection from "#lib/components/PageSection.svelte";
+  import Publication from "#lib/components/Publication.svelte";
 
   interface Props {
     data: { publications: Array<PublicationSpec> };
@@ -51,7 +52,7 @@
         an underdeveloped field of machine learning. I am mainly interested in
         nested hierarchical models and their use in the field of computer
         network security. See more details in the <a
-          href={resolve("/publications")}>publications</a
+          href={resolve("publications")}>publications</a
         > page.
       </p>
 

@@ -1,4 +1,4 @@
-import type { PublicationSpec } from "$lib/types/PublicationSpec";
+import type { PublicationSpec } from "#lib/types/PublicationSpec.js";
 
 export function sortPublications(
   publications: Array<PublicationSpec>,

@@ -1,4 +1,4 @@
-import type { PublicationSpec } from "$lib/types/PublicationSpec";
+import type { PublicationSpec } from "#lib/types/PublicationSpec.js";
 
 import borisovExperimental2021Bib from "./bib/borisov_experimental_2021.bib?raw";
 import borisovExperimental2021Biblatex from "./bib/borisov_experimental_2021.biblatex?raw";

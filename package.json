@@ -13,6 +13,9 @@
   "license": "MIT",
   "author": "Marek Dědič",
   "type": "module",
+  "imports": {
+    "#lib/*": "./src/lib/*"
+  },
   "exports": {
     ".": null
   },
@@ -26,7 +29,7 @@
     "postbuild": "rimraf --glob dist/**/.venv",
     "check": "FORCE_COLOR=1 run-p -c --aggregate-output check:*",
     "check:css-compat": "node scripts/check-css-compat.js",
-    "check:js-compat": "es-check es2022 --module --checkFeatures --ignore Uint8ArrayFromBase64 'dist/**/*.js'",
+    "check:js-compat": "es-check es2022 --module --checkFeatures --ignore Uint8ArrayFromBase64,Uint8ArrayToBase64 'dist/**/*.js'",
     "clean": "rimraf dist/*",
     "lint": "FORCE_COLOR=1 run-p -c --aggregate-output lint:*",
     "lint:css": "FORCE_COLOR=1 run-p -c --aggregate-output lint:css:*",
@@ -57,9 +60,9 @@
     "@fontsource/roboto": "^5.3.0",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@playwright/test": "^1.64.0",
-    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/adapter-static": "^4.0.0",
     "@sveltejs/enhanced-img": "^1.0.0",
-    "@sveltejs/kit": "^2.70.3",
+    "@sveltejs/kit": "^3.0.1",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@types/node": "^26.6.5",
     "@types/prismjs": "^1.26.6",

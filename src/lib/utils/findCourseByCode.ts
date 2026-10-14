@@ -1,4 +1,4 @@
-import type { CourseSpec } from "$lib/types/CourseSpec";
+import type { CourseSpec } from "#lib/types/CourseSpec.js";
 
 export function findCourseByCode(
   spec: Array<CourseSpec>,

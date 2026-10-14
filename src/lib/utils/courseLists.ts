@@ -1,8 +1,9 @@
 import type { RouteId } from "$app/types";
-import type { CourseSpec } from "$lib/types/CourseSpec";
 
-import { courseFaculties } from "$lib/utils/courseFaculties";
-import { findCourseRoute } from "$lib/utils/findCourseRoute";
+import type { CourseSpec } from "#lib/types/CourseSpec.js";
+
+import { courseFaculties } from "#lib/utils/courseFaculties.js";
+import { findCourseRoute } from "#lib/utils/findCourseRoute.js";
 
 export function getCurrentCourseList(spec: Array<CourseSpec>): Array<{
   defaultRoute: RouteId;

@@ -1,12 +1,13 @@
 <script lang="ts">
-  import type { CourseSpec } from "$lib/types/CourseSpec";
-
   import { resolve } from "$app/paths";
-  import PageContentBox from "$lib/components/PageContentBox.svelte";
+
+  import type { CourseSpec } from "#lib/types/CourseSpec.js";
+
+  import PageContentBox from "#lib/components/PageContentBox.svelte";
   import {
     getCurrentCourseList,
     getPastCourseList,
-  } from "$lib/utils/courseLists";
+  } from "#lib/utils/courseLists.js";
 
   interface Props {
     data: { teachingSpec: Array<CourseSpec> };

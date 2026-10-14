@@ -1,12 +1,13 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import CodeBlock from "$lib/components/CodeBlock.svelte";
-  import EmphasisedBox from "$lib/components/EmphasisedBox.svelte";
-  import ExternalLink from "$lib/components/ExternalLink.svelte";
-  import InlineCode from "$lib/components/InlineCode.svelte";
-  import InlineMath from "$lib/components/InlineMath.svelte";
-  import MathBlock from "$lib/components/MathBlock.svelte";
-  import PageContentBox from "$lib/components/PageContentBox.svelte";
+
+  import CodeBlock from "#lib/components/CodeBlock.svelte";
+  import EmphasisedBox from "#lib/components/EmphasisedBox.svelte";
+  import ExternalLink from "#lib/components/ExternalLink.svelte";
+  import InlineCode from "#lib/components/InlineCode.svelte";
+  import InlineMath from "#lib/components/InlineMath.svelte";
+  import MathBlock from "#lib/components/MathBlock.svelte";
+  import PageContentBox from "#lib/components/PageContentBox.svelte";
 </script>
 
 <PageContentBox>

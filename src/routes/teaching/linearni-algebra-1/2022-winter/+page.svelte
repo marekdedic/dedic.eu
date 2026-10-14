@@ -1,5 +1,5 @@
 <script lang="ts" module>
-  import type { CourseSpec, CourseVersionMeta } from "$lib/types/CourseSpec";
+  import type { CourseSpec, CourseVersionMeta } from "#lib/types/CourseSpec.js";
 
   export const version: CourseVersionMeta = {
     offerings: [
@@ -14,11 +14,11 @@
 </script>
 
 <script lang="ts">
-  import CourseHeader from "$lib/components/CourseHeader.svelte";
-  import ExternalLink from "$lib/components/ExternalLink.svelte";
-  import InlineCode from "$lib/components/InlineCode.svelte";
-  import PageContentBox from "$lib/components/PageContentBox.svelte";
-  import TeachingSideNav from "$lib/components/TeachingSideNav.svelte";
+  import CourseHeader from "#lib/components/CourseHeader.svelte";
+  import ExternalLink from "#lib/components/ExternalLink.svelte";
+  import InlineCode from "#lib/components/InlineCode.svelte";
+  import PageContentBox from "#lib/components/PageContentBox.svelte";
+  import TeachingSideNav from "#lib/components/TeachingSideNav.svelte";
 
   interface Props {
     data: { teachingSpec: Array<CourseSpec> };

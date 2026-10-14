@@ -1,13 +1,14 @@
 <script lang="ts">
-  import type { PublicationSpec } from "$lib/types/PublicationSpec";
-
-  import CodeBlock from "$lib/components/CodeBlock.svelte";
-  import Image from "$lib/components/Image.svelte";
-  import Authors from "$lib/components/Publication/Authors.svelte";
-  import Metadata from "$lib/components/Publication/Metadata.svelte";
-  import SourceButtons from "$lib/components/Publication/SourceButtons.svelte";
-  import Title from "$lib/components/Publication/Title.svelte";
   import { MediaQuery } from "svelte/reactivity";
+
+  import type { PublicationSpec } from "#lib/types/PublicationSpec.js";
+
+  import CodeBlock from "#lib/components/CodeBlock.svelte";
+  import Image from "#lib/components/Image.svelte";
+  import Authors from "#lib/components/Publication/Authors.svelte";
+  import Metadata from "#lib/components/Publication/Metadata.svelte";
+  import SourceButtons from "#lib/components/Publication/SourceButtons.svelte";
+  import Title from "#lib/components/Publication/Title.svelte";
 
   interface Props {
     publication: PublicationSpec;

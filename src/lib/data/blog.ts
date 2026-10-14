@@ -1,4 +1,4 @@
-import type { BlogPostMeta, BlogPostSpec } from "$lib/types/BlogPostSpec";
+import type { BlogPostMeta, BlogPostSpec } from "#lib/types/BlogPostSpec.js";
 
 const postMetas = import.meta.glob<BlogPostMeta>(
   "/src/routes/blog/*/+page.ts",

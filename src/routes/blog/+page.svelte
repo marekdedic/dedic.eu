@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { BlogPostSpec } from "$lib/types/BlogPostSpec";
+  import type { BlogPostSpec } from "#lib/types/BlogPostSpec.js";
 
-  import BlogPostListing from "$lib/components/BlogPostListing.svelte";
-  import PageContentBox from "$lib/components/PageContentBox.svelte";
+  import BlogPostListing from "#lib/components/BlogPostListing.svelte";
+  import PageContentBox from "#lib/components/PageContentBox.svelte";
 
   interface Props {
     data: { posts: Array<BlogPostSpec> };

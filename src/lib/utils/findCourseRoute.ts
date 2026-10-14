@@ -1,5 +1,6 @@
 import type { RouteId } from "$app/types";
-import type { CourseSpec, CourseVersionSpec } from "$lib/types/CourseSpec";
+
+import type { CourseSpec, CourseVersionSpec } from "#lib/types/CourseSpec.js";
 
 export function findCourseRoute(course: CourseSpec): RouteId {
   const defaultVersion = findDefaultCourseVersion(course);

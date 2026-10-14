@@ -1,7 +1,8 @@
-import type { CourseSpec } from "$lib/types/CourseSpec";
-
-import { findCourseRoute } from "$lib/utils/findCourseRoute";
 import { redirect, type ServerLoadEvent } from "@sveltejs/kit";
+
+import type { CourseSpec } from "#lib/types/CourseSpec.js";
+
+import { findCourseRoute } from "#lib/utils/findCourseRoute.js";
 
 // Shared redirect for every `teaching/<COURSE>/+page.server.ts`
 export async function load({ parent, url }: ServerLoadEvent): Promise<void> {

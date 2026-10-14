@@ -1,14 +1,15 @@
 <script lang="ts">
-  import type { CourseSpec } from "$lib/types/CourseSpec";
-
   import { resolve } from "$app/paths";
-  import LeftSidePanel from "$lib/components/LeftSidePanel.svelte";
+  import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
+  import Fa from "svelte-fa";
+
+  import type { CourseSpec } from "#lib/types/CourseSpec.js";
+
+  import LeftSidePanel from "#lib/components/LeftSidePanel.svelte";
   import {
     getCurrentCourseList,
     getPastCourseList,
-  } from "$lib/utils/courseLists";
-  import { faAngleDown, faAngleUp } from "@fortawesome/free-solid-svg-icons";
-  import Fa from "svelte-fa";
+  } from "#lib/utils/courseLists.js";
 
   interface Props {
     spec: Array<CourseSpec>;

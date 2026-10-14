@@ -1,5 +1,5 @@
 <script lang="ts">
-  import InlineMath from "$lib/components/InlineMath.svelte";
+  import InlineMath from "#lib/components/InlineMath.svelte";
 
   interface Props {
     src: string;
