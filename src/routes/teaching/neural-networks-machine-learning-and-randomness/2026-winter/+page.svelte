@@ -56,12 +56,15 @@
     <p>
       Additionally, you have to submit a semester project. The project should
       cover some of the topics of the lectures or tutorials and apply them in
-      practice and should consist of some experiments and a report. The topic of
-      the project should be agreed with me in advance. After submitting the
-      project, you will have to schedule a short call with me to discuss the
-      project and answer some questions about it. After that, the project will
-      be awarded 0-70 points. Finishing the project is a prerequisite for taking
-      the exam.
+      practice and should consist of some experiments and a report (either as a
+      Jupyter notebook or separately). The topic of the project should be agreed
+      with me in advance. Generative AI usage is allowed for code and report
+      writing but the overall idea, experiment design and interpretation must be
+      the students work. If any generative AI was used, its usage must be
+      described in the report. After submitting the project, you will have to
+      schedule a short call with me to discuss the project and answer some
+      questions about it. After that, the project will be awarded 0-70 points.
+      Finishing the project is a prerequisite for taking the exam.
     </p>
 
     <h3>study materials</h3>
