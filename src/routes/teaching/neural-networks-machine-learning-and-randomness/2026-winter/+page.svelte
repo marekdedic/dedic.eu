@@ -172,7 +172,15 @@
             mathematical concepts (SVD), visualizing data with PCA, k-means
             clustering, clustering metrics</td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "teaching/neural-networks-machine-learning-and-randomness/2026-winter/03-dimensionality-reduction-and-clustering.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
         </tr>
         <tr>
