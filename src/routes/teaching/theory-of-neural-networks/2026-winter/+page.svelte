@@ -104,7 +104,15 @@
               target="_blank">notebook</a
             ></td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "teaching/theory-of-neural-networks/2026-winter/01-introduction-to-neural-networks-solutions.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
         </tr>
         <tr>
           <td>2</td>
@@ -123,7 +131,15 @@
               target="_blank">notebook</a
             ></td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "teaching/theory-of-neural-networks/2026-winter/02-optimization-solutions.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
         </tr>
         <tr>
           <td>3</td>
@@ -135,7 +151,15 @@
             dropout, batching, cross-validation, its variants and usage, double
             descent</td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "teaching/theory-of-neural-networks/2026-winter/03-regularization.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
         </tr>
         <tr>
