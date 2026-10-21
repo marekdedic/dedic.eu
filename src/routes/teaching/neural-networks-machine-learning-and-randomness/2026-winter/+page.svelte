@@ -181,7 +181,15 @@
               target="_blank">notebook</a
             ></td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "teaching/neural-networks-machine-learning-and-randomness/2026-winter/03-dimensionality-reduction-and-clustering-solutions.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
         </tr>
         <tr>
           <td>4</td>
@@ -191,7 +199,15 @@
             >decision trees, random forrests, their construction, splitting
             criteria and implementation</td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "teaching/neural-networks-machine-learning-and-randomness/2026-winter/04-decision-trees.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
         </tr>
         <tr>
