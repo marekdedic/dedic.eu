@@ -160,7 +160,7 @@
               target="_blank">notebook</a
             ></td
           >
-          <td></td>
+          <td>N/A</td>
         </tr>
         <tr>
           <td>4</td>
@@ -170,7 +170,15 @@
             >recurrent networks, natural language processing, attention,
             transformers</td
           >
-          <td></td>
+          <td
+            ><a
+              href={asset(
+                "teaching/theory-of-neural-networks/2026-winter/04-recurrent-networks-and-text-models.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank">notebook</a
+            ></td
+          >
           <td></td>
         </tr>
         <tr>
