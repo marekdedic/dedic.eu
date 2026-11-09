@@ -92,7 +92,7 @@
     "prismjs-bibtex": "^2.1.0",
     "rimraf": "^6.1.4",
     "rollup-plugin-htaccess": "^0.14.0",
-    "stylelint": "^17.16.0",
+    "stylelint": "^18.0.0",
     "stylelint-config-html": "^2.0.0",
     "stylelint-config-standard": "^40.0.0",
     "svelte": "^5.57.3",
