@@ -211,6 +211,7 @@ export const publications: Array<PublicationSpec> = [
     authors: ["Marek Dědič", "Martin Holeňa"],
     bib: dedicTowards2026Bib,
     biblatex: dedicTowards2026Biblatex,
+    date: new Date("2026-11-09"),
     id: "dedic_towards_2026",
     paperPdf: "publications/papers/dedic_towards_2026.pdf",
     tags: ["ITAT"],
