@@ -86,7 +86,7 @@
     "npm-run-all2": "^9.0.4",
     "playwright": "^1.65.1",
     "postcss": "^8.5.32",
-    "postcss-html": "^2.0.0",
+    "postcss-html": "^2.0.1",
     "prettier": "^3.10.1",
     "prettier-plugin-svelte": "^4.1.1",
     "prismjs-bibtex": "^2.1.0",
