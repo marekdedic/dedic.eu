@@ -88,7 +88,7 @@
     "postcss": "^8.5.32",
     "postcss-html": "^2.0.1",
     "prettier": "^3.10.1",
-    "prettier-plugin-svelte": "^4.1.1",
+    "prettier-plugin-svelte": "^4.2.0",
     "prismjs-bibtex": "^2.1.0",
     "rimraf": "^6.1.4",
     "rollup-plugin-htaccess": "^0.14.0",
