@@ -230,7 +230,17 @@
               notebook
             </a>
           </td>
-          <td></td>
+          <td>
+            <a
+              href={asset(
+                "teaching/neural-networks-machine-learning-and-randomness/2026-winter/04-decision-trees-solutions.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              notebook
+            </a>
+          </td>
         </tr>
         <tr>
           <td>5</td>
@@ -241,7 +251,17 @@
             a-posteriori estimation, naive bayes classifier vs. k-nearest
             neighbor classifier
           </td>
-          <td></td>
+          <td>
+            <a
+              href={asset(
+                "teaching/neural-networks-machine-learning-and-randomness/2026-winter/05-bayesian-methods.ipynb",
+              )}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              notebook
+            </a>
+          </td>
           <td></td>
         </tr>
         <tr>
