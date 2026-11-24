@@ -31,14 +31,18 @@
       <p>
         I am the executive director of <ExternalLink
           href="https://www.efektivni-altruismus.cz/en/"
-          >Effective altruism Czechia</ExternalLink
-        > and a machine learning researcher specializing in neural networks and ways
-        to exploit data structure with them. I am doing a PhD at <ExternalLink
+        >
+          Effective altruism Czechia
+        </ExternalLink> and a machine learning researcher specializing in neural networks
+        and ways to exploit data structure with them. I am doing a PhD at <ExternalLink
           href="https://cognitive-intelligence.github.io/cognitive-web/"
-          >Cisco</ExternalLink
-        > and the <ExternalLink href="https://www.fjfi.cvut.cz/en/"
-          >Faculty of Nuclear Sciences and Physical Engineering</ExternalLink
-        > of the Czech Technical University.
+        >
+          Cisco
+        </ExternalLink> and the <ExternalLink
+          href="https://www.fjfi.cvut.cz/en/"
+        >
+          Faculty of Nuclear Sciences and Physical Engineering
+        </ExternalLink> of the Czech Technical University.
       </p>
 
       <p>
@@ -52,8 +56,10 @@
         an underdeveloped field of machine learning. I am mainly interested in
         nested hierarchical models and their use in the field of computer
         network security. See more details in the <a
-          href={resolve("publications")}>publications</a
-        > page.
+          href={resolve("publications")}
+        >
+          publications
+        </a> page.
       </p>
 
       <p>

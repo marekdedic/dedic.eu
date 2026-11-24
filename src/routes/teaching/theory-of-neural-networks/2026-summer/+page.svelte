@@ -36,12 +36,14 @@
       The tutorials for the course Theory of Neural Networks are held on odd
       weeks on Mondays from 16:15 to 17:45 in room T9:351 (see <ExternalLink
         href="https://timetable.fit.cvut.cz/new/courses/NI-TNN.25"
-        >timetable</ExternalLink
-      >), or as announced in lectures and tutorials. Information about the exam,
-      course requirements, and grading can be found on <ExternalLink
+      >
+        timetable
+      </ExternalLink>), or as announced in lectures and tutorials. Information
+      about the exam, course requirements, and grading can be found on <ExternalLink
         href="https://courses.fit.cvut.cz/NI-TNN/index.html"
-        >FIT courses</ExternalLink
-      >.
+      >
+        FIT courses
+      </ExternalLink>.
     </p>
   </article>
 </PageContentBox>

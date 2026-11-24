@@ -106,8 +106,10 @@
             copied = false;
           }}
           role="tab"
-          type="button">{tab.language}</button
+          type="button"
         >
+          {tab.language}
+        </button>
       {/each}
     </div>
   {/if}
@@ -123,12 +125,14 @@
   {/if}
   <!-- eslint-disable svelte/no-at-html-tags -->
   <div class="code" class:with-line-numbers={lineNumbers}>
-    <code
-      >{#each codeLines as line, index (index)}{#if lineNumbers}<span
+    <code>
+      {#each codeLines as line, index (index)}{#if lineNumbers}<span
             class="line-number"
-            aria-hidden="true">{index + 1}</span
-          >{/if}<span class="line-content">{@html line}</span>{/each}</code
-    >
+            aria-hidden="true"
+          >
+            {index + 1}
+          </span>{/if}<span class="line-content">{@html line}</span>{/each}
+    </code>
   </div>
   <!-- eslint-enable -->
 </div>

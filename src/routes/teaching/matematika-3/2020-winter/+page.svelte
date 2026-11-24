@@ -38,9 +38,9 @@
     </p>
     <p>
       Informace ke zkoušce, podmínky splnění předmětu a klasifikace lze nalézt v
-      Microsoft Teams, kde by všichni studenti měli být členy týmu <InlineCode
-        >Team-B201-01MAT3</InlineCode
-      >.
+      Microsoft Teams, kde by všichni studenti měli být členy týmu <InlineCode>
+        Team-B201-01MAT3
+      </InlineCode>.
     </p>
 
     <p>
@@ -52,8 +52,9 @@
       <li>
         Sérii videí <ExternalLink
           href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
-          >Essence of linear algebra</ExternalLink
-        > od 3Blue1Brown
+        >
+          Essence of linear algebra
+        </ExternalLink> od 3Blue1Brown
       </li>
     </ul>
   </article>

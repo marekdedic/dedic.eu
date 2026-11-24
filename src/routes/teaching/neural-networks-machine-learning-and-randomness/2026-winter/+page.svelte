@@ -71,28 +71,36 @@
 
     <p>
       The exercise materials are in the form of <ExternalLink
-        href="https://jupyter.org/install.html">Jupyter</ExternalLink
-      > notebooks using Python. For easy installation of Python, Jupyter, and the
-      required packages, we will use <ExternalLink
-        href="https://docs.astral.sh/uv/">uv</ExternalLink
-      >. The first exercise is intended to familiarize you with this technology.
-      To replicate the exact environment in which the notebooks were created,
-      you can use the files
+        href="https://jupyter.org/install.html"
+      >
+        Jupyter
+      </ExternalLink> notebooks using Python. For easy installation of Python, Jupyter,
+      and the required packages, we will use <ExternalLink
+        href="https://docs.astral.sh/uv/"
+      >
+        uv
+      </ExternalLink>. The first exercise is intended to familiarize you with
+      this technology. To replicate the exact environment in which the notebooks
+      were created, you can use the files
       <a
         href={asset(
           "teaching/neural-networks-machine-learning-and-randomness/2026-winter/pyproject.toml",
         )}
         rel="noopener noreferrer"
-        target="_blank">pyproject.toml</a
+        target="_blank"
       >
+        pyproject.toml
+      </a>
       and
       <a
         href={asset(
           "teaching/neural-networks-machine-learning-and-randomness/2026-winter/uv.lock",
         )}
         rel="noopener noreferrer"
-        target="_blank">uv.lock</a
-      >.
+        target="_blank"
+      >
+        uv.lock
+      </a>.
     </p>
 
     <table>
@@ -111,114 +119,128 @@
           <td>1</td>
           <td>2026-10-05</td>
           <td>introduction to machine learning</td>
-          <td
-            >basics of machine learning in Python, supervised, unsupervised,
+          <td>
+            basics of machine learning in Python, supervised, unsupervised,
             reinforcement, self-supervised learning, linear regression, cost
-            function, visualizing the regression line, evaluating simple models</td
-          >
-          <td
-            ><a
+            function, visualizing the regression line, evaluating simple models
+          </td>
+          <td>
+            <a
               href={asset(
                 "teaching/neural-networks-machine-learning-and-randomness/2026-winter/01-introduction-to-machine-learning.ipynb",
               )}
               rel="noopener noreferrer"
-              target="_blank">notebook</a
-            ></td
-          >
-          <td
-            ><a
+              target="_blank"
+            >
+              notebook
+            </a>
+          </td>
+          <td>
+            <a
               href={asset(
                 "teaching/neural-networks-machine-learning-and-randomness/2026-winter/01-introduction-to-machine-learning-solutions.ipynb",
               )}
               rel="noopener noreferrer"
-              target="_blank">notebook</a
-            ></td
-          >
+              target="_blank"
+            >
+              notebook
+            </a>
+          </td>
         </tr>
         <tr>
           <td>2</td>
           <td>2026-10-07</td>
           <td>perceptron and logistic regression</td>
-          <td
-            >logistic regression, binary classification, cost function,
+          <td>
+            logistic regression, binary classification, cost function,
             implementation and visualizitaion of the decision strategy,
-            perceptron, its learning algorithm and implementation</td
-          >
-          <td
-            ><a
+            perceptron, its learning algorithm and implementation
+          </td>
+          <td>
+            <a
               href={asset(
                 "teaching/neural-networks-machine-learning-and-randomness/2026-winter/02-perceptron-and-logistic-regression.ipynb",
               )}
               rel="noopener noreferrer"
-              target="_blank">notebook</a
-            ></td
-          >
-          <td
-            ><a
+              target="_blank"
+            >
+              notebook
+            </a>
+          </td>
+          <td>
+            <a
               href={asset(
                 "teaching/neural-networks-machine-learning-and-randomness/2026-winter/02-perceptron-and-logistic-regression-solutions.ipynb",
               )}
               rel="noopener noreferrer"
-              target="_blank">notebook</a
-            ></td
-          >
+              target="_blank"
+            >
+              notebook
+            </a>
+          </td>
         </tr>
         <tr>
           <td>3</td>
           <td>2026-10-21</td>
           <td>dimensionality reduction and clustering</td>
-          <td
-            >principal component analysis, dimensionality reduction and its
+          <td>
+            principal component analysis, dimensionality reduction and its
             mathematical concepts (SVD), visualizing data with PCA, k-means
-            clustering, clustering metrics</td
-          >
-          <td
-            ><a
+            clustering, clustering metrics
+          </td>
+          <td>
+            <a
               href={asset(
                 "teaching/neural-networks-machine-learning-and-randomness/2026-winter/03-dimensionality-reduction-and-clustering.ipynb",
               )}
               rel="noopener noreferrer"
-              target="_blank">notebook</a
-            ></td
-          >
-          <td
-            ><a
+              target="_blank"
+            >
+              notebook
+            </a>
+          </td>
+          <td>
+            <a
               href={asset(
                 "teaching/neural-networks-machine-learning-and-randomness/2026-winter/03-dimensionality-reduction-and-clustering-solutions.ipynb",
               )}
               rel="noopener noreferrer"
-              target="_blank">notebook</a
-            ></td
-          >
+              target="_blank"
+            >
+              notebook
+            </a>
+          </td>
         </tr>
         <tr>
           <td>4</td>
           <td>2026-11-18</td>
           <td>decision trees</td>
-          <td
-            >decision trees, random forrests, their construction, splitting
-            criteria and implementation</td
-          >
-          <td
-            ><a
+          <td>
+            decision trees, random forrests, their construction, splitting
+            criteria and implementation
+          </td>
+          <td>
+            <a
               href={asset(
                 "teaching/neural-networks-machine-learning-and-randomness/2026-winter/04-decision-trees.ipynb",
               )}
               rel="noopener noreferrer"
-              target="_blank">notebook</a
-            ></td
-          >
+              target="_blank"
+            >
+              notebook
+            </a>
+          </td>
           <td></td>
         </tr>
         <tr>
           <td>5</td>
           <td>2026-12-02</td>
           <td>bayesian methods</td>
-          <td
-            >bayes theorem, maximum likelihood estimation vs. maximum
+          <td>
+            bayes theorem, maximum likelihood estimation vs. maximum
             a-posteriori estimation, naive bayes classifier vs. k-nearest
-            neighbor classifier</td
-          >
+            neighbor classifier
+          </td>
           <td></td>
           <td></td>
         </tr>

@@ -16,11 +16,11 @@
   </header>
 
   <p>
-    <em
-      >Based on "Benchmarking and Transfer Learning for Hyperparameter
+    <em>
+      Based on "Benchmarking and Transfer Learning for Hyperparameter
       Optimization of Graph Neural Networks" – Dědič &amp; Bělohlávek, ICAART
-      2026.</em
-    >
+      2026.
+    </em>
   </p>
 
   <!-- ================================================================ -->
@@ -54,21 +54,22 @@
   <h2>graph neural network overview</h2>
 
   <p>
-    Many real-world datasets are not tables of independent rows but <em
-      >graphs</em
-    >: collections of entities (nodes) connected by relationships (edges). A
+    Many real-world datasets are not tables of independent rows but <em>
+      graphs
+    </em>: collections of entities (nodes) connected by relationships (edges). A
     citation network is a graph – papers are nodes, citations are edges. So are
     social networks, protein interaction maps, and computer network topologies.
   </p>
 
   <p>
-    GNNs learn from these relational structures by passing <strong
-      >messages between neighbouring nodes</strong
-    >. In each layer, every node gathers feature vectors from its neighbours,
-    combines them (via aggregation, e.g., taking the mean or the maximum), and
-    updates its own representation. After a few such rounds, each node holds a
-    compact embedding that reflects both its own attributes <em>and</em> the
-    broader neighbourhood context. The model used in this paper is
+    GNNs learn from these relational structures by passing <strong>
+      messages between neighbouring nodes
+    </strong>. In each layer, every node gathers feature vectors from its
+    neighbours, combines them (via aggregation, e.g., taking the mean or the
+    maximum), and updates its own representation. After a few such rounds, each
+    node holds a compact embedding that reflects both its own attributes
+    <em>and</em>
+    the broader neighbourhood context. The model used in this paper is
     <strong>GraphSAGE</strong>, a popular and well-studied variant that samples
     a fixed-size neighbourhood at each layer and aggregates it.
   </p>
@@ -197,9 +198,9 @@ return best(history)`,
   />
 
   <p>
-    The difference between methods is entirely in <InlineCode
-      >sampler.suggest</InlineCode
-    > e.g. whether it takes the history into account.
+    The difference between methods is entirely in <InlineCode>
+      sampler.suggest
+    </InlineCode> e.g. whether it takes the history into account.
   </p>
 
   <!-- ================================================================ -->
@@ -257,67 +258,67 @@ return best(history)`,
       </tr>
     </thead>
     <tbody>
-      <tr
-        ><td>Cora</td> <td>0.8560</td> <td>0.8491</td>
+      <tr>
+        <td>Cora</td> <td>0.8560</td> <td>0.8491</td>
         <td class="best">0.8747</td> <td class="second">0.8659</td>
-        <td>0.8351</td></tr
-      >
-      <tr
-        ><td>CiteSeer</td> <td>0.7146</td> <td>0.7046</td>
+        <td>0.8351</td>
+      </tr>
+      <tr>
+        <td>CiteSeer</td> <td>0.7146</td> <td>0.7046</td>
         <td class="second">0.7172</td><td class="best">0.7236</td>
-        <td>0.7089</td></tr
-      >
-      <tr
-        ><td>Squirrel</td> <td class="second">0.3659</td><td>0.3605</td>
-        <td>0.3544</td> <td class="best">0.3755</td> <td>0.3549</td></tr
-      >
-      <tr
-        ><td>PubMed</td> <td>0.8515</td> <td>0.8457</td>
+        <td>0.7089</td>
+      </tr>
+      <tr>
+        <td>Squirrel</td> <td class="second">0.3659</td><td>0.3605</td>
+        <td>0.3544</td> <td class="best">0.3755</td> <td>0.3549</td>
+      </tr>
+      <tr>
+        <td>PubMed</td> <td>0.8515</td> <td>0.8457</td>
         <td class="best">0.8825</td> <td class="second">0.8643</td>
-        <td>0.8596</td></tr
-      >
-      <tr
-        ><td>CoraFull</td> <td>0.6211</td> <td>0.6371</td>
+        <td>0.8596</td>
+      </tr>
+      <tr>
+        <td>CoraFull</td> <td>0.6211</td> <td>0.6371</td>
         <td class="second">0.6450</td><td class="best">0.6555</td>
-        <td>0.6385</td></tr
-      >
-      <tr
-        ><td>DBLP</td> <td>0.8051</td> <td>0.7996</td>
+        <td>0.6385</td>
+      </tr>
+      <tr>
+        <td>DBLP</td> <td>0.8051</td> <td>0.7996</td>
         <td class="best">0.8118</td> <td>0.8085</td>
-        <td class="second">0.8088</td></tr
-      >
-      <tr
-        ><td>Computers</td> <td>0.6973</td> <td>0.5999</td>
+        <td class="second">0.8088</td>
+      </tr>
+      <tr>
+        <td>Computers</td> <td>0.6973</td> <td>0.5999</td>
         <td class="best">0.8945</td> <td class="second">0.8047</td>
-        <td>0.7428</td></tr
-      >
-      <tr
-        ><td>Flickr</td> <td>0.0864</td> <td>0.0961</td>
+        <td>0.7428</td>
+      </tr>
+      <tr>
+        <td>Flickr</td> <td>0.0864</td> <td>0.0961</td>
         <td class="best">0.1908</td> <td class="second">0.1460</td>
-        <td>0.1069</td></tr
-      >
-      <tr
-        ><td>ArXiv</td> <td>0.3950</td> <td>0.3796</td>
+        <td>0.1069</td>
+      </tr>
+      <tr>
+        <td>ArXiv</td> <td>0.3950</td> <td>0.3796</td>
         <td class="second">0.3987</td><td class="best">0.4098</td>
-        <td>0.3955</td></tr
-      >
+        <td>0.3955</td>
+      </tr>
     </tbody>
   </table>
 
   <p>
-    <em
-      >Table 1. Final macro F1-scores averaged over 10 independent runs. <strong
-        >Bold</strong
-      >: best. <u>Underline</u>: second best.</em
-    >
+    <em>
+      Table 1. Final macro F1-scores averaged over 10 independent runs. <strong>
+        Bold
+      </strong>: best. <u>Underline</u>: second best.
+    </em>
   </p>
 
   <p>
-    Three patterns stand out clearly. First, <strong
-      >SMBO methods (BO and TPE) win consistently</strong
-    >. In seven out of nine datasets, both top spots go to BO or TPE. On the
-    Squirrel dataset, random search sneaks into second place; on DBLP, Sobol QMC
-    does. But the overall picture is clear: methods that learn from their
+    Three patterns stand out clearly. First, <strong>
+      SMBO methods (BO and TPE) win consistently
+    </strong>. In seven out of nine datasets, both top spots go to BO or TPE. On
+    the Squirrel dataset, random search sneaks into second place; on DBLP, Sobol
+    QMC does. But the overall picture is clear: methods that learn from their
     history outperform methods that don't. Importantly, the advantage of BO and
     TPE only becomes visible after about 10 trials – there's an initial warm-up
     period while the surrogate model is built from scratch. Before that, all
@@ -352,15 +353,15 @@ return best(history)`,
   </p>
 
   <p>
-    The key observation is that <strong
-      >graph datasets have measurable structural fingerprints</strong
-    >. You can describe any graph dataset by a vector of numerical properties:
-    how many nodes, how many edges, how densely connected, and crucially, how
-    much the graph's topology aligns with the classification task. Two datasets
-    with similar fingerprints might respond similarly to the same hyperparameter
-    settings. If we've tuned a GNN on eight datasets before, we already have a
-    wealth of evidence about which hyperparameter configurations perform well on
-    which kinds of graphs.
+    The key observation is that <strong>
+      graph datasets have measurable structural fingerprints
+    </strong>. You can describe any graph dataset by a vector of numerical
+    properties: how many nodes, how many edges, how densely connected, and
+    crucially, how much the graph's topology aligns with the classification
+    task. Two datasets with similar fingerprints might respond similarly to the
+    same hyperparameter settings. If we've tuned a GNN on eight datasets before,
+    we already have a wealth of evidence about which hyperparameter
+    configurations perform well on which kinds of graphs.
   </p>
 
   <p>
@@ -456,9 +457,9 @@ return best(history)`,
   <p>
     While in practice you'd use Cross-RF on a new, unseen dataset, for the
     purposes of our evaluation, we chose a leave-one-out style experiment. The
-    meta-model for a given target dataset is trained on all runs from the <em
-      >other</em
-    >
+    meta-model for a given target dataset is trained on all runs from the <em>
+      other
+    </em>
     eight datasets. Cross-RF has never seen the target dataset during training, so
     its initial recommendation is genuinely a <em>zero-shot transfer</em> from past
     experience. The Random Forest uses 100 trees and considers 30% of features at
@@ -484,57 +485,57 @@ return best(history)`,
       </tr>
     </thead>
     <tbody>
-      <tr
-        ><td>Cora</td> <td class="best">0.8747</td> <td>0.8659</td>
-        <td class="second">0.8727</td></tr
-      >
-      <tr
-        ><td>CiteSeer</td> <td class="second">0.7172</td>
-        <td class="best">0.7236</td> <td>0.7095</td></tr
-      >
-      <tr
-        ><td>Squirrel</td> <td>0.3544</td> <td class="second">0.3755</td>
-        <td class="best">0.3769</td></tr
-      >
-      <tr
-        ><td>PubMed</td> <td class="best">0.8825</td> <td>0.8643</td>
-        <td class="second">0.8807</td></tr
-      >
-      <tr
-        ><td>CoraFull</td> <td class="second">0.6450</td>
-        <td class="best">0.6555</td> <td>0.6426</td></tr
-      >
-      <tr
-        ><td>DBLP</td> <td class="second">0.8118</td> <td>0.8085</td>
-        <td class="best">0.8123</td></tr
-      >
-      <tr
-        ><td>Computers</td><td class="second">0.8945</td> <td>0.8047</td>
-        <td class="best">0.9023</td></tr
-      >
-      <tr
-        ><td>Flickr</td> <td class="second">0.1908</td> <td>0.1460</td>
-        <td class="best">0.1956</td></tr
-      >
-      <tr
-        ><td>ArXiv</td> <td>0.3987</td> <td class="best">0.4098</td>
-        <td class="second">0.4094</td></tr
-      >
+      <tr>
+        <td>Cora</td> <td class="best">0.8747</td> <td>0.8659</td>
+        <td class="second">0.8727</td>
+      </tr>
+      <tr>
+        <td>CiteSeer</td> <td class="second">0.7172</td>
+        <td class="best">0.7236</td> <td>0.7095</td>
+      </tr>
+      <tr>
+        <td>Squirrel</td> <td>0.3544</td> <td class="second">0.3755</td>
+        <td class="best">0.3769</td>
+      </tr>
+      <tr>
+        <td>PubMed</td> <td class="best">0.8825</td> <td>0.8643</td>
+        <td class="second">0.8807</td>
+      </tr>
+      <tr>
+        <td>CoraFull</td> <td class="second">0.6450</td>
+        <td class="best">0.6555</td> <td>0.6426</td>
+      </tr>
+      <tr>
+        <td>DBLP</td> <td class="second">0.8118</td> <td>0.8085</td>
+        <td class="best">0.8123</td>
+      </tr>
+      <tr>
+        <td>Computers</td><td class="second">0.8945</td> <td>0.8047</td>
+        <td class="best">0.9023</td>
+      </tr>
+      <tr>
+        <td>Flickr</td> <td class="second">0.1908</td> <td>0.1460</td>
+        <td class="best">0.1956</td>
+      </tr>
+      <tr>
+        <td>ArXiv</td> <td>0.3987</td> <td class="best">0.4098</td>
+        <td class="second">0.4094</td>
+      </tr>
     </tbody>
   </table>
 
   <p>
-    <em
-      >Table 2. Final macro F1-scores for BO, TPE, and Cross-RF, averaged over
-      10 independent runs. <strong>Bold</strong>: best.
-      <u>Underline</u>: second best.</em
-    >
+    <em>
+      Table 2. Final macro F1-scores for BO, TPE, and Cross-RF, averaged over 10
+      independent runs. <strong>Bold</strong>: best.
+      <u>Underline</u>: second best.
+    </em>
   </p>
 
   <p>
-    Cross-RF achieves the <strong
-      >best final performance on 4 out of 9 datasets</strong
-    >
+    Cross-RF achieves the <strong>
+      best final performance on 4 out of 9 datasets
+    </strong>
     (Squirrel, DBLP, Computers, Flickr) and is second best on another 3 (Cora, PubMed,
     ArXiv). It only falls behind both reference methods on CiteSeer and CoraFull.
     The overall average rank is <strong>1.78 for Cross-RF</strong> versus 2.0 for
@@ -600,9 +601,9 @@ return best(history)`,
     solid first systematic benchmark, but there's plenty of room to grow.
     Immediate extensions include testing other GNN architectures (GAT, GCN, GIN)
     and other performance metrics (AUC-ROC, accuracy). A particularly
-    interesting longer-term direction is pre-training the meta-model on <em
-      >synthetic</em
-    >
+    interesting longer-term direction is pre-training the meta-model on <em>
+      synthetic
+    </em>
     graphs generated from known probabilistic models (Erdős-Rényi graphs, stochastic
     block models), which could remove the dependence on having a large collection
     of real benchmark datasets as training data. Another direction is incorporating

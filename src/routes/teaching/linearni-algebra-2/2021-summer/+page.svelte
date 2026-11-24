@@ -38,12 +38,13 @@
     </p>
     <p>
       Informace ke zkoušce, podmínky splnění předmětu a klasifikace lze nalézt v
-      Microsoft Teams, kde by všichni studenti měli být členy týmu <InlineCode
-        >Team-B202-01LAL2</InlineCode
-      >, případně na <ExternalLink
+      Microsoft Teams, kde by všichni studenti měli být členy týmu <InlineCode>
+        Team-B202-01LAL2
+      </InlineCode>, případně na <ExternalLink
         href="https://kmlinux.fjfi.cvut.cz/~balkolub/vyukaLAAleto2021.html"
-        >webu přednášejících</ExternalLink
-      >.
+      >
+        webu přednášejících
+      </ExternalLink>.
     </p>
 
     <h3>studijní materiály</h3>
@@ -55,21 +56,25 @@
 
     <ul>
       <li>
-        <ExternalLink href="https://nsa.fjfi.cvut.cz/david/other/reseni-LA2.pdf"
-          >Řešené příklady ze cvičení</ExternalLink
-        > od prof. Krejčiříka
+        <ExternalLink
+          href="https://nsa.fjfi.cvut.cz/david/other/reseni-LA2.pdf"
+        >
+          Řešené příklady ze cvičení
+        </ExternalLink> od prof. Krejčiříka
       </li>
       <li>
         <ExternalLink
           href="https://kmlinux.fjfi.cvut.cz/~balkolub/Vyuka/zima2012/LAPzima2012/sbirka_array.pdf"
-          >Sbírka příkladů</ExternalLink
-        > z lineární algebry
+        >
+          Sbírka příkladů
+        </ExternalLink> z lineární algebry
       </li>
       <li>
         Sérii videí <ExternalLink
           href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
-          >Essence of linear algebra</ExternalLink
-        > od 3Blue1Brown
+        >
+          Essence of linear algebra
+        </ExternalLink> od 3Blue1Brown
       </li>
     </ul>
   </article>

@@ -37,8 +37,9 @@
       e-mail. Informace ke zkoušce, podmínky splnění předmětu a klasifikace lze
       nalézt v <ExternalLink
         href="https://courses.fit.cvut.cz/NI-TNN/@B222/index.html"
-        >FIT courses</ExternalLink
-      >.
+      >
+        FIT courses
+      </ExternalLink>.
     </p>
   </article>
 </PageContentBox>

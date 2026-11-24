@@ -54,8 +54,10 @@
               onselect(key);
             }
           }}
-          type="button">{label}</button
+          type="button"
         >
+          {label}
+        </button>
       {/each}
     </div>
   {/if}
