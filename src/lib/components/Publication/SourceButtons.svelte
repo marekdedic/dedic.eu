@@ -18,9 +18,9 @@
 <div>
   {#if blogpostUrl !== undefined}
     {#if blogpostUrl.includes("://")}
-      <a href={blogpostUrl} rel="external noopener noreferrer" target="_blank"
-        >Blog post</a
-      >
+      <a href={blogpostUrl} rel="external noopener noreferrer" target="_blank">
+        Blog post
+      </a>
     {:else}
       <a href={resolve(blogpostUrl as "/")}>Blog post</a>
     {/if}

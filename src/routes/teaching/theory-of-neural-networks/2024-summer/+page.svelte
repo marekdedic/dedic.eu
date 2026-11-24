@@ -38,8 +38,9 @@
       oznámených na přednáškách a cvičeních. Informace ke zkoušce, podmínky
       splnění předmětu a klasifikace lze nalézt v <ExternalLink
         href="https://courses.fit.cvut.cz/NI-TNN/@B232/index.html"
-        >FIT courses</ExternalLink
-      >.
+      >
+        FIT courses
+      </ExternalLink>.
     </p>
   </article>
 </PageContentBox>

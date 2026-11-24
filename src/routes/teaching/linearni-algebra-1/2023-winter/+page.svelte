@@ -37,19 +37,20 @@
 
   <article>
     <p>
-      Cvičení pro 1. kruh oboru jaderná a částicová fyzika probíhají každé <b
-        >pondělí od 14:00 do 15:30</b
-      >
+      Cvičení pro 1. kruh oboru jaderná a částicová fyzika probíhají každé <b>
+        pondělí od 14:00 do 15:30
+      </b>
       v místnosti <b>T-209</b>.
     </p>
     <p>
       Informace ke zkoušce, podmínky splnění předmětu a klasifikace lze nalézt v
-      Microsoft Teams, kde by všichni studenti měli být členy týmu <InlineCode
-        >Team-B231-01LAL</InlineCode
-      >, případně na <ExternalLink
+      Microsoft Teams, kde by všichni studenti měli být členy týmu <InlineCode>
+        Team-B231-01LAL
+      </InlineCode>, případně na <ExternalLink
         href="https://kmlinux.fjfi.cvut.cz/~ambrop1/?loc=lna1&lg=cs"
-        >webu přednášejících</ExternalLink
-      >.
+      >
+        webu přednášejících
+      </ExternalLink>.
     </p>
 
     <h3>studijní materiály</h3>
@@ -61,15 +62,16 @@
 
     <ul>
       <li>
-        <ExternalLink href="https://people.fjfi.cvut.cz/balkolub/galleryW20/"
-          >Skripta</ExternalLink
-        > k přednáškám
+        <ExternalLink href="https://people.fjfi.cvut.cz/balkolub/galleryW20/">
+          Skripta
+        </ExternalLink> k přednáškám
       </li>
       <li>
         <ExternalLink
           href="https://kmlinux.fjfi.cvut.cz/~ambrop1/?loc=lna1&lg=cs"
-          >Seznamy příkladů</ExternalLink
-        >, z nichž část budeme řešit na cvičeních
+        >
+          Seznamy příkladů
+        </ExternalLink>, z nichž část budeme řešit na cvičeních
       </li>
     </ul>
 
@@ -77,27 +79,32 @@
 
     <ul>
       <li>
-        <ExternalLink href="https://nsa.fjfi.cvut.cz/david/other/reseni-LA1.pdf"
-          >Řešené příklady ze cvičení</ExternalLink
-        > od prof. Krejčiříka
+        <ExternalLink
+          href="https://nsa.fjfi.cvut.cz/david/other/reseni-LA1.pdf"
+        >
+          Řešené příklady ze cvičení
+        </ExternalLink> od prof. Krejčiříka
       </li>
       <li>
         <ExternalLink
           href="https://kmlinux.fjfi.cvut.cz/~balkolub/Vyuka/zima2012/LAPzima2012/sbirka_array.pdf"
-          >Sbírka příkladů</ExternalLink
-        > z lineární algebry
+        >
+          Sbírka příkladů
+        </ExternalLink> z lineární algebry
       </li>
       <li>
         Sérii videí <ExternalLink
           href="https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab"
-          >Essence of linear algebra</ExternalLink
-        > od 3Blue1Brown
+        >
+          Essence of linear algebra
+        </ExternalLink> od 3Blue1Brown
       </li>
       <li>
         Interaktivní demo <ExternalLink
           href="https://yizhe-ang.github.io/matrix-explorable/"
-          >The matrix arcade</ExternalLink
-        > vhodné k 9. cvičení o lineárních zobrazeních.
+        >
+          The matrix arcade
+        </ExternalLink> vhodné k 9. cvičení o lineárních zobrazeních.
       </li>
     </ul>
 
@@ -128,8 +135,10 @@
             "teaching/linearni-algebra-1/2023-winter/LAL1-homework.pdf",
           )}
           rel="noopener noreferrer"
-          target="_blank">3 domácí úkoly</a
-        >, z každého z nich lze získat maximálně 1 bod.
+          target="_blank"
+        >
+          3 domácí úkoly
+        </a>, z každého z nich lze získat maximálně 1 bod.
       </li>
     </ul>
 

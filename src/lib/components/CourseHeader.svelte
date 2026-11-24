@@ -55,9 +55,9 @@
     <div>
       You are viewing an outdated version of this course.
       {#if course?.current}
-        <a href={resolve(findCourseRoute(course) as "/")}
-          >Visit the current version.</a
-        >
+        <a href={resolve(findCourseRoute(course) as "/")}>
+          Visit the current version.
+        </a>
       {/if}
     </div>
   {/if}
